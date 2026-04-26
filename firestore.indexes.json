@@ -40,6 +40,14 @@
       "collectionGroup": "users",
       "queryScope": "COLLECTION",
       "fields": [
+        { "fieldPath": "username", "order": "ASCENDING" },
+        { "fieldPath": "isActive", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
         { "fieldPath": "salonId", "order": "ASCENDING" },
         { "fieldPath": "role", "order": "ASCENDING" }
       ]
@@ -58,6 +66,14 @@
       "queryScope": "COLLECTION_GROUP",
       "fields": [
         { "fieldPath": "usernameLower", "order": "ASCENDING" },
+        { "fieldPath": "isActive", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "employees",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        { "fieldPath": "username", "order": "ASCENDING" },
         { "fieldPath": "isActive", "order": "ASCENDING" }
       ]
     },
@@ -350,14 +366,6 @@
         { "fieldPath": "createdAt", "order": "DESCENDING" }
       ]
     },
-    {
-      "collectionGroup": "customers",
-      "queryScope": "COLLECTION",
-      "fields": [
-        { "fieldPath": "phoneNormalized", "order": "ASCENDING" }
-      ]
-    },
-
     {
       "collectionGroup": "bookings",
       "queryScope": "COLLECTION",

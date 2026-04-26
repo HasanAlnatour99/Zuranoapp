@@ -44,6 +44,21 @@ async function findActiveStaffUserByUsernameLower(
     return userSnap.docs[0].data();
   }
 
+  // Legacy rows: canonical lowercase stored on `username` but `usernameLower` missing/wrong.
+  const userByUsernameSnap = await db
+    .collection("users")
+    .where("username", "==", usernameLower)
+    .where("isActive", "==", true)
+    .limit(5)
+    .get();
+  for (const doc of userByUsernameSnap.docs) {
+    const u = doc.data();
+    const urole = String(u.role ?? "").trim().toLowerCase();
+    if (STAFF_ROLE_SET.has(urole)) {
+      return u;
+    }
+  }
+
   const empSnap = await db
     .collectionGroup("employees")
     .where("usernameLower", "==", usernameLower)
@@ -74,17 +89,52 @@ async function findActiveStaffUserByUsernameLower(
     return u;
   }
 
+  const empByUsernameSnap = await db
+    .collectionGroup("employees")
+    .where("username", "==", usernameLower)
+    .where("isActive", "==", true)
+    .limit(5)
+    .get();
+
+  for (const doc of empByUsernameSnap.docs) {
+    const ed = doc.data();
+    const uid = String(ed.uid ?? "").trim();
+    if (!uid) {
+      continue;
+    }
+    const empRole = String(ed.role ?? "").trim().toLowerCase();
+    if (!STAFF_ROLE_SET.has(empRole)) {
+      continue;
+    }
+    const uref = await db.collection("users").doc(uid).get();
+    if (!uref.exists) {
+      continue;
+    }
+    const u = uref.data()!;
+    const urole = String(u.role ?? "").trim().toLowerCase();
+    if (!STAFF_ROLE_SET.has(urole) || u.isActive !== true) {
+      continue;
+    }
+    return u;
+  }
+
   return null;
 }
 
 /**
  * Resolves a staff username to the internal Firebase Auth email.
  * Unauthenticated; used only before password sign-in.
+ *
+ * **App Check:** `enforceAppCheck` is off here so Android emulators (and other dev
+ * setups without a registered App Check debug token) can still resolve usernames.
+ * Tokens are still accepted when present. Other callables (e.g. staff provisioning)
+ * keep enforcement. Prefer registering debug tokens in Firebase Console for full
+ * protection during development if you re-enable this.
  */
 export const resolveStaffLoginEmail = onCall(
   {
     region: "us-central1",
-    enforceAppCheck: true,
+    enforceAppCheck: false,
   },
   async (request: CallableRequest) => {
     const data = request.data as ResolveStaffLoginEmailInput;
@@ -112,15 +162,16 @@ export const resolveStaffLoginEmail = onCall(
       );
     }
 
-    if (!user.email) {
+    const emailRaw = user.email;
+    const email =
+      typeof emailRaw === "string" ? emailRaw.trim().toLowerCase() : "";
+    if (!email.includes("@")) {
       throw new HttpsError(
         "failed-precondition",
         "Staff login email is missing.",
       );
     }
 
-    return {
-      email: user.email,
-    };
+    return { email };
   },
 );

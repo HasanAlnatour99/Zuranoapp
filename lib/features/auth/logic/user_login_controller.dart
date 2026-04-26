@@ -32,8 +32,11 @@ class UserLoginController extends Notifier<UserLoginFormState> {
   UserLoginFormState build() => const UserLoginFormState();
 
   void updateIdentifier(String value) {
+    // Emails and staff usernames are matched case-insensitively; keep state canonical
+    // so validation, autofill, and submit never depend on casing the user typed.
+    final canonical = value.trim().toLowerCase();
     state = state.copyWith(
-      identifier: value,
+      identifier: canonical,
       identifierTouched: true,
       submissionError: null,
     );
