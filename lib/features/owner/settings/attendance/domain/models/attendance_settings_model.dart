@@ -222,10 +222,12 @@ class AttendanceSettingsModel {
     final zoneRadius = (zoneMap?['radiusMeters'] as num?)?.toDouble();
     final zoneAddress = zoneMap?['address']?.toString();
 
-    final lat = (data['latitude'] as num?)?.toDouble() ??
+    final lat =
+        (data['latitude'] as num?)?.toDouble() ??
         (data['salonLatitude'] as num?)?.toDouble() ??
         zoneLat;
-    final lng = (data['longitude'] as num?)?.toDouble() ??
+    final lng =
+        (data['longitude'] as num?)?.toDouble() ??
         (data['salonLongitude'] as num?)?.toDouble() ??
         zoneLng;
     final address =
@@ -233,30 +235,32 @@ class AttendanceSettingsModel {
         data['salonAddress']?.toString() ??
         zoneAddress;
 
-    final radiusRaw = (data['allowedRadiusMeters'] as num?)?.toDouble() ??
+    final radiusRaw =
+        (data['allowedRadiusMeters'] as num?)?.toDouble() ??
         zoneRadius ??
         defaults.allowedRadiusMeters.toDouble();
     final radius = radiusRaw.clamp(10.0, 500.0).round();
 
     final locationRequired =
         (data['locationRequired'] as bool?) ??
-            (data['gpsRequired'] as bool?) ??
-            (data['requireInsideZoneForPunchIn'] as bool?) ??
-            (data['requireInsideZoneForPunchOut'] as bool?) ??
-            defaults.locationRequired;
+        (data['gpsRequired'] as bool?) ??
+        (data['requireInsideZoneForPunchIn'] as bool?) ??
+        (data['requireInsideZoneForPunchOut'] as bool?) ??
+        defaults.locationRequired;
 
-    final attendanceRequired = (data['attendanceRequired'] as bool?) ??
+    final attendanceRequired =
+        (data['attendanceRequired'] as bool?) ??
         (data['attendanceEnabled'] as bool?) ??
         (data['enabled'] as bool?) ??
         defaults.attendanceRequired;
 
     final rawMaxBreaks = (data['maxBreaksPerDay'] as num?)?.toInt();
     final cycleCount = (data['maxBreakCyclesPerDay'] as num?)?.toInt();
-    final maxBreaksPerDay = rawMaxBreaks ??
-        cycleCount ??
-        defaults.maxBreaksPerDay;
+    final maxBreaksPerDay =
+        rawMaxBreaks ?? cycleCount ?? defaults.maxBreaksPerDay;
 
-    final breaksEnabled = (data['breaksEnabled'] as bool?) ??
+    final breaksEnabled =
+        (data['breaksEnabled'] as bool?) ??
         (data['allowBreaks'] as bool?) ??
         (maxBreaksPerDay > 0);
 
@@ -275,71 +279,73 @@ class AttendanceSettingsModel {
       breaksEnabled: breaksEnabled,
       maxPunchesPerDay:
           (data['maxPunchesPerDay'] as num?)?.toInt() ??
-              defaults.maxPunchesPerDay,
+          defaults.maxPunchesPerDay,
       maxBreaksPerDay: maxBreaksPerDay,
       lateGraceMinutes:
           (data['lateGraceMinutes'] as num?)?.toInt() ??
-              (data['graceLateMinutes'] as num?)?.toInt() ??
-              defaults.lateGraceMinutes,
+          (data['graceLateMinutes'] as num?)?.toInt() ??
+          defaults.lateGraceMinutes,
       earlyExitGraceMinutes:
           (data['earlyExitGraceMinutes'] as num?)?.toInt() ??
-              (data['graceEarlyExitMinutes'] as num?)?.toInt() ??
-              defaults.earlyExitGraceMinutes,
+          (data['graceEarlyExitMinutes'] as num?)?.toInt() ??
+          defaults.earlyExitGraceMinutes,
       minimumShiftMinutes:
           (data['minimumShiftMinutes'] as num?)?.toInt() ??
-              (data['minWorkingMinutesPerDay'] as num?)?.toInt() ??
-              defaults.minimumShiftMinutes,
+          (data['minWorkingMinutesPerDay'] as num?)?.toInt() ??
+          defaults.minimumShiftMinutes,
       maximumShiftMinutes:
           (data['maximumShiftMinutes'] as num?)?.toInt() ??
-              (data['maxWorkingMinutesPerDay'] as num?)?.toInt() ??
-              defaults.maximumShiftMinutes,
+          (data['maxWorkingMinutesPerDay'] as num?)?.toInt() ??
+          defaults.maximumShiftMinutes,
       correctionRequestsEnabled:
           (data['correctionRequestsEnabled'] as bool?) ??
-              (data['allowEmployeeCorrectionRequests'] as bool?) ??
-              (data['allowCorrectionRequests'] as bool?) ??
-              defaults.correctionRequestsEnabled,
-      requireCorrectionReason: (data['requireCorrectionReason'] as bool?) ??
+          (data['allowEmployeeCorrectionRequests'] as bool?) ??
+          (data['allowCorrectionRequests'] as bool?) ??
+          defaults.correctionRequestsEnabled,
+      requireCorrectionReason:
+          (data['requireCorrectionReason'] as bool?) ??
           (data['requireReasonForCorrection'] as bool?) ??
           defaults.requireCorrectionReason,
       requireOwnerApprovalForCorrection:
           (data['requireOwnerApprovalForCorrection'] as bool?) ??
-              defaults.requireOwnerApprovalForCorrection,
+          defaults.requireOwnerApprovalForCorrection,
       maxCorrectionRequestsPerMonth:
           (data['maxCorrectionRequestsPerMonth'] as num?)?.toInt() ??
-              defaults.maxCorrectionRequestsPerMonth,
+          defaults.maxCorrectionRequestsPerMonth,
       allowedLateCountPerMonth:
           (data['allowedLateCountPerMonth'] as num?)?.toInt() ??
-              (data['monthlyLateAllowanceAfterGrace'] as num?)?.toInt() ??
-              defaults.allowedLateCountPerMonth,
+          (data['monthlyLateAllowanceAfterGrace'] as num?)?.toInt() ??
+          defaults.allowedLateCountPerMonth,
       allowedEarlyExitCountPerMonth:
           (data['allowedEarlyExitCountPerMonth'] as num?)?.toInt() ??
-              (data['monthlyEarlyExitAllowanceAfterGrace'] as num?)?.toInt() ??
-              defaults.allowedEarlyExitCountPerMonth,
+          (data['monthlyEarlyExitAllowanceAfterGrace'] as num?)?.toInt() ??
+          defaults.allowedEarlyExitCountPerMonth,
       allowedMissingCheckoutCountPerMonth:
           (data['allowedMissingCheckoutCountPerMonth'] as num?)?.toInt() ??
-              defaults.allowedMissingCheckoutCountPerMonth,
-      autoCreateViolations: (data['autoCreateViolations'] as bool?) ??
+          defaults.allowedMissingCheckoutCountPerMonth,
+      autoCreateViolations:
+          (data['autoCreateViolations'] as bool?) ??
           ((data['deductMissingCheckout'] as bool?) ??
               (data['deductAbsence'] as bool?) ??
               defaults.autoCreateViolations),
       missingCheckoutDeductionPercent:
           (data['missingCheckoutDeductionPercent'] as num?)?.toInt() ??
-              defaults.missingCheckoutDeductionPercent,
+          defaults.missingCheckoutDeductionPercent,
       absenceDeductionPercent:
           (data['absenceDeductionPercent'] as num?)?.toInt() ??
-              defaults.absenceDeductionPercent,
+          defaults.absenceDeductionPercent,
       lateDeductionPercent:
           (data['lateDeductionPercent'] as num?)?.toInt() ??
-              defaults.lateDeductionPercent,
+          defaults.lateDeductionPercent,
       earlyExitDeductionPercent:
           (data['earlyExitDeductionPercent'] as num?)?.toInt() ??
-              defaults.earlyExitDeductionPercent,
+          defaults.earlyExitDeductionPercent,
       maxBreakMinutesPerDay:
           (data['maxBreakMinutesPerDay'] as num?)?.toInt() ??
-              defaults.maxBreakMinutesPerDay,
+          defaults.maxBreakMinutesPerDay,
       correctionRequestMaxDaysBack:
           (data['correctionRequestMaxDaysBack'] as num?)?.toInt() ??
-              defaults.correctionRequestMaxDaysBack,
+          defaults.correctionRequestMaxDaysBack,
       standardShiftStart: data['standardShiftStart']?.toString(),
       standardShiftEnd: data['standardShiftEnd']?.toString(),
       createdAt: (data['createdAt'] as Timestamp?)?.toDate(),
@@ -375,7 +381,8 @@ class AttendanceSettingsModel {
       'maxCorrectionRequestsPerMonth': maxCorrectionRequestsPerMonth,
       'allowedLateCountPerMonth': allowedLateCountPerMonth,
       'allowedEarlyExitCountPerMonth': allowedEarlyExitCountPerMonth,
-      'allowedMissingCheckoutCountPerMonth': allowedMissingCheckoutCountPerMonth,
+      'allowedMissingCheckoutCountPerMonth':
+          allowedMissingCheckoutCountPerMonth,
       'autoCreateViolations': autoCreateViolations,
       'missingCheckoutDeductionPercent': missingCheckoutDeductionPercent,
       'absenceDeductionPercent': absenceDeductionPercent,
@@ -486,7 +493,8 @@ class AttendanceSettingsModel {
           correctionRequestsEnabled ?? this.correctionRequestsEnabled,
       requireCorrectionReason:
           requireCorrectionReason ?? this.requireCorrectionReason,
-      requireOwnerApprovalForCorrection: requireOwnerApprovalForCorrection ??
+      requireOwnerApprovalForCorrection:
+          requireOwnerApprovalForCorrection ??
           this.requireOwnerApprovalForCorrection,
       maxCorrectionRequestsPerMonth:
           maxCorrectionRequestsPerMonth ?? this.maxCorrectionRequestsPerMonth,
@@ -496,9 +504,10 @@ class AttendanceSettingsModel {
           allowedEarlyExitCountPerMonth ?? this.allowedEarlyExitCountPerMonth,
       allowedMissingCheckoutCountPerMonth:
           allowedMissingCheckoutCountPerMonth ??
-              this.allowedMissingCheckoutCountPerMonth,
+          this.allowedMissingCheckoutCountPerMonth,
       autoCreateViolations: autoCreateViolations ?? this.autoCreateViolations,
-      missingCheckoutDeductionPercent: missingCheckoutDeductionPercent ??
+      missingCheckoutDeductionPercent:
+          missingCheckoutDeductionPercent ??
           this.missingCheckoutDeductionPercent,
       absenceDeductionPercent:
           absenceDeductionPercent ?? this.absenceDeductionPercent,

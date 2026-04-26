@@ -9,7 +9,6 @@ class CustomerBookingSettingsModel {
     required this.requireCustomerPhone,
     required this.requireCustomerName,
     required this.autoConfirmBookings,
-    required this.allowGuestBooking,
     required this.minimumNoticeMinutes,
     required this.maxBookingDaysAhead,
     required this.slotDurationMinutes,
@@ -28,7 +27,6 @@ class CustomerBookingSettingsModel {
   final bool requireCustomerPhone;
   final bool requireCustomerName;
   final bool autoConfirmBookings;
-  final bool allowGuestBooking;
   final int minimumNoticeMinutes;
   final int maxBookingDaysAhead;
   final int slotDurationMinutes;
@@ -51,7 +49,6 @@ class CustomerBookingSettingsModel {
       requireCustomerPhone: true,
       requireCustomerName: true,
       autoConfirmBookings: false,
-      allowGuestBooking: true,
       minimumNoticeMinutes: 60,
       maxBookingDaysAhead: 30,
       slotDurationMinutes: 30,
@@ -80,7 +77,6 @@ class CustomerBookingSettingsModel {
       requireCustomerPhone: _bool(data['requireCustomerPhone'], true),
       requireCustomerName: _bool(data['requireCustomerName'], true),
       autoConfirmBookings: _bool(data['autoConfirmBookings'], false),
-      allowGuestBooking: _bool(data['allowGuestBooking'], true),
       minimumNoticeMinutes: _int(data['minimumNoticeMinutes'], 60),
       maxBookingDaysAhead: _int(data['maxBookingDaysAhead'], 30),
       slotDurationMinutes: _int(data['slotDurationMinutes'], 30),
@@ -134,7 +130,6 @@ class CustomerBookingSettingsModel {
     bool? requireCustomerPhone,
     bool? requireCustomerName,
     bool? autoConfirmBookings,
-    bool? allowGuestBooking,
     int? minimumNoticeMinutes,
     int? maxBookingDaysAhead,
     int? slotDurationMinutes,
@@ -150,7 +145,6 @@ class CustomerBookingSettingsModel {
       requireCustomerPhone: requireCustomerPhone ?? this.requireCustomerPhone,
       requireCustomerName: requireCustomerName ?? this.requireCustomerName,
       autoConfirmBookings: autoConfirmBookings ?? this.autoConfirmBookings,
-      allowGuestBooking: allowGuestBooking ?? this.allowGuestBooking,
       minimumNoticeMinutes: minimumNoticeMinutes ?? this.minimumNoticeMinutes,
       maxBookingDaysAhead: maxBookingDaysAhead ?? this.maxBookingDaysAhead,
       slotDurationMinutes: slotDurationMinutes ?? this.slotDurationMinutes,
@@ -178,7 +172,8 @@ class CustomerBookingSettingsModel {
       'requireCustomerPhone': requireCustomerPhone,
       'requireCustomerName': requireCustomerName,
       'autoConfirmBookings': autoConfirmBookings,
-      'allowGuestBooking': allowGuestBooking,
+      // Product: bookings require a signed-in customer account.
+      'allowGuestBooking': false,
       'minimumNoticeMinutes': minimumNoticeMinutes,
       'maxBookingDaysAhead': maxBookingDaysAhead,
       'slotDurationMinutes': slotDurationMinutes,
@@ -204,7 +199,7 @@ class CustomerBookingSettingsModel {
       'allowSameDayBooking': allowSameDayBooking,
       'requireCustomerPhone': requireCustomerPhone,
       'requireCustomerName': requireCustomerName,
-      'allowGuestBooking': allowGuestBooking,
+      'allowGuestBooking': false,
       'minimumNoticeMinutes': minimumNoticeMinutes,
       'maxBookingDaysAhead': maxBookingDaysAhead,
       'maxAdvanceBookingDays': maxBookingDaysAhead,
@@ -231,7 +226,6 @@ class CustomerBookingSettingsModel {
         requireCustomerPhone == other.requireCustomerPhone &&
         requireCustomerName == other.requireCustomerName &&
         autoConfirmBookings == other.autoConfirmBookings &&
-        allowGuestBooking == other.allowGuestBooking &&
         minimumNoticeMinutes == other.minimumNoticeMinutes &&
         maxBookingDaysAhead == other.maxBookingDaysAhead &&
         slotDurationMinutes == other.slotDurationMinutes &&

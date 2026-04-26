@@ -13,8 +13,11 @@ class StaffLoginRemoteDataSource {
 
   Future<String> resolveEmailForStaffUsername(String username) async {
     final callable = _functions.httpsCallable(resolveEmailCallableName);
+    // Match server + login controller: staff usernames are ASCII-only and
+    // resolved case-insensitively via `usernameLower`.
+    final normalized = username.trim().toLowerCase();
     final result = await callable.call(<String, dynamic>{
-      'username': username.trim(),
+      'username': normalized,
     });
     final raw = result.data;
     if (raw is! Map) {

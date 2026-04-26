@@ -229,52 +229,8 @@ class _AppSettingsScreenState extends ConsumerState<AppSettingsScreen> {
 
     final customerArea = _customerProfileArea(context, l10n, theme);
 
-    final hrTile = sessionAsync.maybeWhen(
-      data: (AppUser? u) {
-        if (u == null) {
-          return null;
-        }
-        final salonOk = u.salonId != null && u.salonId!.trim().isNotEmpty;
-        final hrRole = u.role == UserRoles.owner || u.role == UserRoles.admin;
-        if (!hrRole || !salonOk) {
-          return null;
-        }
-        return SettingsOptionTile(
-          icon: Icons.shield_outlined,
-          title: l10n.ownerSettingsHrTileTitle,
-          subtitle: l10n.ownerSettingsHrTileSubtitle,
-          onTap: () => context.pushNamed(
-            AppRouteNames.ownerAttendanceSettings,
-            queryParameters: const {'section': 'violations'},
-          ),
-        );
-      },
-      orElse: () => null,
-    );
-    final attendanceZoneTile = sessionAsync.maybeWhen(
-      data: (AppUser? u) {
-        if (u == null) {
-          return null;
-        }
-        final salonOk = u.salonId != null && u.salonId!.trim().isNotEmpty;
-        final canManageAttendanceZone =
-            u.role == UserRoles.owner || u.role == UserRoles.admin;
-        if (!canManageAttendanceZone || !salonOk) {
-          return null;
-        }
-        return SettingsOptionTile(
-          icon: Icons.location_on_outlined,
-          title: l10n.salonAttendanceZoneTitle,
-          subtitle: l10n.salonAttendanceZoneSubtitle,
-          onTap: () => context.pushNamed(
-            AppRouteNames.ownerAttendanceSettings,
-            queryParameters: const {'section': 'zone'},
-          ),
-        );
-      },
-      orElse: () => null,
-    );
-    final attendanceRulesTile = sessionAsync.maybeWhen(
+    /// Single entry for zone + punch rules + grace + corrections + violations.
+    final attendanceSettingsTile = sessionAsync.maybeWhen(
       data: (AppUser? u) {
         if (u == null) {
           return null;
@@ -287,12 +243,9 @@ class _AppSettingsScreenState extends ConsumerState<AppSettingsScreen> {
         }
         return SettingsOptionTile(
           icon: Icons.fact_check_outlined,
-          title: l10n.ownerAttendanceRulesTileTitle,
-          subtitle: l10n.ownerAttendanceRulesTileSubtitle,
-          onTap: () => context.pushNamed(
-            AppRouteNames.ownerAttendanceSettings,
-            queryParameters: const {'section': 'rules'},
-          ),
+          title: l10n.ownerAttendanceSettingsTitle,
+          subtitle: l10n.ownerAttendanceSettingsSubtitle,
+          onTap: () => context.pushNamed(AppRouteNames.ownerAttendanceSettings),
         );
       },
       orElse: () => null,
@@ -319,11 +272,12 @@ class _AppSettingsScreenState extends ConsumerState<AppSettingsScreen> {
       orElse: () => null,
     );
 
-    final actionChildren = <Widget>[
+    final ownerSettingsTiles = <Widget>[
       ?customerBookingTile,
-      ?attendanceZoneTile,
-      ?attendanceRulesTile,
-      ?hrTile,
+      ?attendanceSettingsTile,
+    ];
+
+    final accountActionChildren = <Widget>[
       if (sessionAsync.hasValue && sessionAsync.value != null)
         SettingsOptionTile(
           icon: Icons.logout_rounded,
@@ -369,6 +323,10 @@ class _AppSettingsScreenState extends ConsumerState<AppSettingsScreen> {
                 customerArea,
                 const SizedBox(height: 20),
               ],
+              if (ownerSettingsTiles.isNotEmpty) ...[
+                AppSettingsActionsCard(children: ownerSettingsTiles),
+                const SizedBox(height: 16),
+              ],
               SettingsSectionCard(
                 icon: Icons.language_rounded,
                 title: l10n.appSettingsLanguageSection,
@@ -409,7 +367,7 @@ class _AppSettingsScreenState extends ConsumerState<AppSettingsScreen> {
                 ),
                 const SizedBox(height: 16),
               ],
-              AppSettingsActionsCard(children: actionChildren),
+              AppSettingsActionsCard(children: accountActionChildren),
               const SizedBox(height: 24),
               FutureBuilder<PackageInfo>(
                 future: PackageInfo.fromPlatform(),

@@ -17,7 +17,6 @@ class CustomerBookingSettings {
     this.bufferMinutes = 10,
     this.requireCustomerPhone = true,
     this.requireCustomerName = true,
-    this.allowGuestBooking = true,
     this.publicBookingMessage = '',
     this.allowCustomerCancellation = true,
     this.cancellationNoticeHours = 4,
@@ -42,7 +41,6 @@ class CustomerBookingSettings {
   final int bufferMinutes;
   final bool requireCustomerPhone;
   final bool requireCustomerName;
-  final bool allowGuestBooking;
   final String publicBookingMessage;
   final bool allowCustomerCancellation;
   final int cancellationNoticeHours;
@@ -86,7 +84,6 @@ class CustomerBookingSettings {
       bufferMinutes: _int(map['bufferMinutes'], 10).clamp(0, 240),
       requireCustomerPhone: _bool(map['requireCustomerPhone'], true),
       requireCustomerName: _bool(map['requireCustomerName'], true),
-      allowGuestBooking: _bool(map['allowGuestBooking'], true),
       publicBookingMessage: map['publicBookingMessage'] is String
           ? (map['publicBookingMessage'] as String)
           : '',

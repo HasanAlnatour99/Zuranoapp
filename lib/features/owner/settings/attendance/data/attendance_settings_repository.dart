@@ -14,7 +14,7 @@ import '../domain/models/attendance_settings_model.dart';
 /// which understands both new and legacy field names.
 class AttendanceSettingsRepository {
   AttendanceSettingsRepository({required FirebaseFirestore firestore})
-      : _firestore = firestore;
+    : _firestore = firestore;
 
   final FirebaseFirestore _firestore;
 

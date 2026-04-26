@@ -30,7 +30,6 @@ import '../features/sales/presentation/screens/add_sale_screen.dart';
 import '../features/sales/presentation/screens/sale_details_screen.dart';
 import '../features/sales/presentation/screens/sales_screen.dart';
 import '../features/services/presentation/screens/services_screen.dart';
-import '../features/owner/presentation/screens/hr_violations_screen.dart';
 import '../features/owner/settings/customer_booking/presentation/screens/owner_customer_booking_settings_screen.dart';
 import '../features/owner/settings/attendance/presentation/screens/owner_attendance_settings_screen.dart';
 import '../features/settings/presentation/screens/app_settings_screen.dart';
@@ -241,10 +240,8 @@ final List<RouteBase> ownerRoutes = [
             routes: [
               GoRoute(
                 path: 'hr-violations',
-                pageBuilder: (context, state) => appFadeThroughPage(
-                  key: state.pageKey,
-                  child: const HrViolationsScreen(),
-                ),
+                redirect: (_, _) =>
+                    '${AppRoutes.ownerAttendanceSettings}?section=violations',
               ),
               GoRoute(
                 path: 'attendance',

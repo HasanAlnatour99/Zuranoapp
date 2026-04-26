@@ -135,11 +135,40 @@ class ServiceSelectionCard extends StatelessWidget {
             height: 138,
             child: filtered.isEmpty
                 ? Center(
-                    child: Text(
-                      l10n.customerNoServicesListed,
-                      style: const TextStyle(
-                        color: FinanceDashboardColors.textSecondary,
-                      ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 12),
+                      child: services.isEmpty
+                          ? Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  l10n.addSaleNoActiveServicesYet,
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 15,
+                                    color: FinanceDashboardColors.textPrimary,
+                                  ),
+                                ),
+                                const SizedBox(height: 6),
+                                Text(
+                                  l10n.addSaleCreateServicesFirst,
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontSize: 13,
+                                    height: 1.35,
+                                    color: FinanceDashboardColors.textSecondary,
+                                  ),
+                                ),
+                              ],
+                            )
+                          : Text(
+                              l10n.customerNoServicesListed,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                color: FinanceDashboardColors.textSecondary,
+                              ),
+                            ),
                     ),
                   )
                 : ListView.separated(

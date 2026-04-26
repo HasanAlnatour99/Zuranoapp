@@ -86,23 +86,28 @@ class AddSaleReceiptSection extends ConsumerWidget {
             ],
             const SizedBox(height: 12),
             Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                FilledButton.icon(
-                  onPressed: () async {
-                    final picker = ImagePicker();
-                    final file = await picker.pickImage(
-                      source: ImageSource.camera,
-                      imageQuality: 82,
-                    );
-                    if (file != null) {
-                      notifier.setReceiptImage(file);
-                    }
-                  },
-                  icon: const Icon(Icons.photo_camera_rounded, size: 20),
-                  label: Text(
-                    state.receiptImage == null
-                        ? l10n.addSaleReceiptTakePhoto
-                        : l10n.addSaleReceiptRetake,
+                Expanded(
+                  child: FilledButton.icon(
+                    onPressed: () async {
+                      final picker = ImagePicker();
+                      final file = await picker.pickImage(
+                        source: ImageSource.camera,
+                        imageQuality: 82,
+                      );
+                      if (file != null) {
+                        notifier.setReceiptImage(file);
+                      }
+                    },
+                    icon: const Icon(Icons.photo_camera_rounded, size: 20),
+                    label: Text(
+                      state.receiptImage == null
+                          ? l10n.addSaleReceiptTakePhoto
+                          : l10n.addSaleReceiptRetake,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                 ),
                 if (state.receiptImage != null) ...[

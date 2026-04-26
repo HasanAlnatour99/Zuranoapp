@@ -1384,13 +1384,6 @@ class AppLocalizationsAr extends AppLocalizations {
       'قواعد الغرامات وسياسات الحضور وقائمة المراجعة';
 
   @override
-  String get ownerAttendanceRulesTileTitle => 'قواعد الحضور';
-
-  @override
-  String get ownerAttendanceRulesTileSubtitle =>
-      'البصمات، الاستراحات، السماح، التصحيح والسياسة';
-
-  @override
   String get salonAttendanceZoneTitle => 'منطقة الحضور';
 
   @override
@@ -7905,9 +7898,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get ownerCustomerBookingRequireName => 'إلزام اسم العميل';
-
-  @override
-  String get ownerCustomerBookingGuestTitle => 'السماح بالحجز بدون تسجيل دخول';
 
   @override
   String get ownerCustomerBookingTimeRulesTitle => 'قواعد الوقت';

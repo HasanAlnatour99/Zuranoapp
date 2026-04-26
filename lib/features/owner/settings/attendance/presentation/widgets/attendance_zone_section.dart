@@ -121,8 +121,7 @@ class AttendanceZoneSection extends StatelessWidget {
             label: l10n.ownerAttendanceZoneLocationRequired,
             subtitle: l10n.ownerAttendanceZoneLocationRequiredHint,
             value: draft.locationRequired,
-            onChanged: (v) =>
-                onChanged(draft.copyWith(locationRequired: v)),
+            onChanged: (v) => onChanged(draft.copyWith(locationRequired: v)),
           ),
         ],
       ),
@@ -150,9 +149,7 @@ class _RadiusChoiceChip extends StatelessWidget {
         AppLocalizations.of(context)!.salonAttendanceZoneMetersShort(meters),
         style: TextStyle(
           fontWeight: FontWeight.w700,
-          color: selected
-              ? Colors.white
-              : ZuranoPremiumUiColors.textPrimary,
+          color: selected ? Colors.white : ZuranoPremiumUiColors.textPrimary,
         ),
       ),
       selectedColor: ZuranoPremiumUiColors.primaryPurple,

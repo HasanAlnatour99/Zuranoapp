@@ -242,9 +242,7 @@ class _OwnerAttendanceSettingsScreenState
     return settingsAsync.when(
       loading: () => _scaffold(
         l10n,
-        const Expanded(
-          child: Center(child: CircularProgressIndicator()),
-        ),
+        const Expanded(child: Center(child: CircularProgressIndicator())),
       ),
       error: (err, _) => _scaffold(
         l10n,
@@ -381,7 +379,8 @@ class _HeaderCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    final isActive = draft.hasSalonLocationConfigured && draft.attendanceRequired;
+    final isActive =
+        draft.hasSalonLocationConfigured && draft.attendanceRequired;
     const emerald = Color(0xFF34D399);
     const amber = Color(0xFFF59E0B);
     final badgeColor = isActive ? emerald : amber;
@@ -422,9 +421,7 @@ class _HeaderCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: badgeColor.withValues(alpha: 0.18),
                   borderRadius: BorderRadius.circular(999),
-                  border: Border.all(
-                    color: badgeColor.withValues(alpha: 0.5),
-                  ),
+                  border: Border.all(color: badgeColor.withValues(alpha: 0.5)),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,

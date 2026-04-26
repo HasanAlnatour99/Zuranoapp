@@ -251,13 +251,6 @@ class _OwnerCustomerBookingSettingsScreenState
                               () => _draft = _draft!.copyWith(requireCustomerName: v),
                             ),
                           ),
-                          _switch(
-                            l10n.ownerCustomerBookingGuestTitle,
-                            d.allowGuestBooking,
-                            (v) => setState(
-                              () => _draft = _draft!.copyWith(allowGuestBooking: v),
-                            ),
-                          ),
                         ],
                       ),
                     ),

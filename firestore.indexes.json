@@ -55,6 +55,14 @@
     },
     {
       "collectionGroup": "employees",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        { "fieldPath": "usernameLower", "order": "ASCENDING" },
+        { "fieldPath": "isActive", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "employees",
       "queryScope": "COLLECTION",
       "fields": [
         { "fieldPath": "isActive", "order": "ASCENDING" },

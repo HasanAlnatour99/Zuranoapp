@@ -1375,13 +1375,6 @@ class AppLocalizationsEn extends AppLocalizations {
       'Penalty rules, attendance policies and review queue';
 
   @override
-  String get ownerAttendanceRulesTileTitle => 'Attendance rules';
-
-  @override
-  String get ownerAttendanceRulesTileSubtitle =>
-      'Punches, breaks, grace, corrections, policy';
-
-  @override
   String get salonAttendanceZoneTitle => 'Attendance zone';
 
   @override
@@ -7927,9 +7920,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get ownerCustomerBookingRequireName => 'Require customer name';
-
-  @override
-  String get ownerCustomerBookingGuestTitle => 'Allow booking without login';
 
   @override
   String get ownerCustomerBookingTimeRulesTitle => 'Time rules';

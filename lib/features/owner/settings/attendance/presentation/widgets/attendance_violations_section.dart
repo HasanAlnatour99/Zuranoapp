@@ -30,7 +30,8 @@ class AttendanceViolationsSection extends StatelessWidget {
             label: l10n.ownerAttendanceViolationsAuto,
             subtitle: l10n.ownerAttendanceViolationsAutoHint,
             value: draft.autoCreateViolations,
-            onChanged: (v) => onChanged(draft.copyWith(autoCreateViolations: v)),
+            onChanged: (v) =>
+                onChanged(draft.copyWith(autoCreateViolations: v)),
           ),
           const SizedBox(height: 16),
           AttendanceNumberField(

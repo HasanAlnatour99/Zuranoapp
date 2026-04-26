@@ -114,7 +114,8 @@ bool _staffMayAccessLocation(String location, bool notificationPath) {
   }
   if (location == AppRoutes.settings ||
       location == AppRoutes.ownerHrSettings ||
-      location == AppRoutes.ownerSettingsHrViolations) {
+      location == AppRoutes.ownerSettingsHrViolations ||
+      location == AppRoutes.ownerAttendanceSettings) {
     return true;
   }
   if (isAccountBootstrapPath(location)) {
@@ -132,7 +133,8 @@ bool _customerMayAccessLocation(String location, bool notificationPath) {
   }
   if (location == AppRoutes.settings ||
       location == AppRoutes.ownerHrSettings ||
-      location == AppRoutes.ownerSettingsHrViolations) {
+      location == AppRoutes.ownerSettingsHrViolations ||
+      location == AppRoutes.ownerAttendanceSettings) {
     return true;
   }
   if (isAccountBootstrapPath(location)) {
@@ -169,7 +171,8 @@ String? redirectAuthenticatedUser(
 
   if (location == AppRoutes.settings ||
       location == AppRoutes.ownerHrSettings ||
-      location == AppRoutes.ownerSettingsHrViolations) {
+      location == AppRoutes.ownerSettingsHrViolations ||
+      location == AppRoutes.ownerAttendanceSettings) {
     return null;
   }
 
@@ -287,6 +290,7 @@ bool isAuthSessionStagingPath(String location) {
       location == AppRoutes.settings ||
       location == AppRoutes.ownerHrSettings ||
       location == AppRoutes.ownerSettingsHrViolations ||
+      location == AppRoutes.ownerAttendanceSettings ||
       location == AppRoutes.changeTemporaryPassword ||
       location == AppRoutes.debugMaps) {
     return true;

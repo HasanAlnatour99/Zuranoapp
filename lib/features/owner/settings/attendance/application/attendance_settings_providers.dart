@@ -7,25 +7,22 @@ import '../domain/models/attendance_settings_model.dart';
 /// Repository provider for the unified attendance settings document.
 final attendanceSettingsRepositoryProvider =
     Provider<AttendanceSettingsRepository>((ref) {
-  return AttendanceSettingsRepository(
-    firestore: ref.watch(firestoreProvider),
-  );
-});
+      return AttendanceSettingsRepository(
+        firestore: ref.watch(firestoreProvider),
+      );
+    });
 
 /// Streams the canonical [AttendanceSettingsModel] for [salonId]. Always
 /// emits a value (defaults when the doc is missing).
 final attendanceSettingsProvider = StreamProvider.family
     .autoDispose<AttendanceSettingsModel, String>((ref, salonId) {
-  final repository = ref.watch(attendanceSettingsRepositoryProvider);
-  return repository.watchSettings(salonId);
-});
+      final repository = ref.watch(attendanceSettingsRepositoryProvider);
+      return repository.watchSettings(salonId);
+    });
 
 /// Save state for the unified attendance settings screen.
 class AttendanceSettingsControllerState {
-  const AttendanceSettingsControllerState({
-    this.isSaving = false,
-    this.error,
-  });
+  const AttendanceSettingsControllerState({this.isSaving = false, this.error});
 
   final bool isSaving;
   final Object? error;
@@ -72,7 +69,8 @@ class AttendanceSettingsController
   }
 }
 
-final attendanceSettingsControllerProvider = NotifierProvider.autoDispose<
-    AttendanceSettingsController, AttendanceSettingsControllerState>(
-  AttendanceSettingsController.new,
-);
+final attendanceSettingsControllerProvider =
+    NotifierProvider.autoDispose<
+      AttendanceSettingsController,
+      AttendanceSettingsControllerState
+    >(AttendanceSettingsController.new);

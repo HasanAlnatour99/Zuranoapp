@@ -32,8 +32,7 @@ class AttendanceRulesSection extends StatelessWidget {
             label: l10n.ownerAttendanceRulesAttendanceRequired,
             subtitle: l10n.ownerAttendanceRulesAttendanceRequiredHint,
             value: draft.attendanceRequired,
-            onChanged: (v) =>
-                onChanged(draft.copyWith(attendanceRequired: v)),
+            onChanged: (v) => onChanged(draft.copyWith(attendanceRequired: v)),
           ),
           const _SoftDivider(),
           AttendanceSwitchRow(
@@ -198,9 +197,8 @@ class AttendanceCorrectionSection extends StatelessWidget {
             label: l10n.ownerAttendanceCorrectionRequireApproval,
             value: draft.requireOwnerApprovalForCorrection,
             enabled: draft.correctionRequestsEnabled,
-            onChanged: (v) => onChanged(
-              draft.copyWith(requireOwnerApprovalForCorrection: v),
-            ),
+            onChanged: (v) =>
+                onChanged(draft.copyWith(requireOwnerApprovalForCorrection: v)),
           ),
           const SizedBox(height: 12),
           AttendanceNumberField(

@@ -57,10 +57,7 @@ class AttendanceSwitchRow extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 12),
-          ZuranoSwitch(
-            value: value,
-            onChanged: enabled ? onChanged : (_) {},
-          ),
+          ZuranoSwitch(value: value, onChanged: enabled ? onChanged : (_) {}),
         ],
       ),
     );
@@ -263,15 +260,11 @@ class _AttendanceNumberFieldState extends State<AttendanceNumberField> {
               ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(14),
-                borderSide: BorderSide(
-                  color: ZuranoPremiumUiColors.border,
-                ),
+                borderSide: BorderSide(color: ZuranoPremiumUiColors.border),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(14),
-                borderSide: BorderSide(
-                  color: ZuranoPremiumUiColors.border,
-                ),
+                borderSide: BorderSide(color: ZuranoPremiumUiColors.border),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(14),

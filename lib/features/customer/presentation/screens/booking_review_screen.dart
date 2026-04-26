@@ -90,7 +90,7 @@ class _BookingReviewScreenState extends ConsumerState<BookingReviewScreen> {
       customerPublicBookingFlowSettingsProvider(widget.salonId).future,
     );
     final user = ref.read(sessionUserProvider).asData?.value;
-    if (!settings.allowGuestBooking && user == null) {
+    if (user == null) {
       if (mounted) {
         _showError(l10n.customerBookingSignInRequired);
         context.push(AppRoutes.customerAuth);

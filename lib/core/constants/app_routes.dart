@@ -433,7 +433,7 @@ class AppRoutes {
     }
     const ownerFlatPrefixes = <String>[
       ownerHrSettings,
-      ownerSettingsHrViolations,
+      ownerAttendanceSettings,
       ownerAddSale,
       ownerSales,
       ownerExpenses,

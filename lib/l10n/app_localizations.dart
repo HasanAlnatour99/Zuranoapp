@@ -2522,18 +2522,6 @@ abstract class AppLocalizations {
   /// **'Penalty rules, attendance policies and review queue'**
   String get ownerSettingsHrTileSubtitle;
 
-  /// No description provided for @ownerAttendanceRulesTileTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Attendance rules'**
-  String get ownerAttendanceRulesTileTitle;
-
-  /// No description provided for @ownerAttendanceRulesTileSubtitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Punches, breaks, grace, corrections, policy'**
-  String get ownerAttendanceRulesTileSubtitle;
-
   /// No description provided for @salonAttendanceZoneTitle.
   ///
   /// In en, this message translates to:
@@ -13907,12 +13895,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Require customer name'**
   String get ownerCustomerBookingRequireName;
-
-  /// No description provided for @ownerCustomerBookingGuestTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Allow booking without login'**
-  String get ownerCustomerBookingGuestTitle;
 
   /// No description provided for @ownerCustomerBookingTimeRulesTitle.
   ///

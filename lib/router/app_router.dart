@@ -328,7 +328,8 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: AppRoutes.ownerHrSettings,
-        redirect: (_, _) => AppRoutes.ownerSettingsHrViolations,
+        redirect: (_, _) =>
+            '${AppRoutes.ownerAttendanceSettings}?section=violations',
       ),
       GoRoute(
         path: AppRoutes.login,

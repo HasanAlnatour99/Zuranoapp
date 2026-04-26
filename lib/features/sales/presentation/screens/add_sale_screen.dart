@@ -468,16 +468,6 @@ class _AddSaleBody extends ConsumerWidget {
 
     final services = servicesAsync.requireValue;
     final activeServices = services.where((s) => s.isActive).toList();
-    if (activeServices.isEmpty) {
-      return _ErrorShell(
-        title: l10n.addSaleNoActiveServicesYet,
-        message: l10n.addSaleCreateServicesFirst,
-        icon: AppIcons.design_services_outlined,
-        primaryActionLabel: l10n.addSaleManageServices,
-        onPrimaryAction: () => context.push(AppRoutes.ownerServices),
-        onBack: () => Navigator.of(context).maybePop(),
-      );
-    }
 
     final List<Employee> activeEmployees;
     if (entryMode == AddSaleEntryMode.employee) {
