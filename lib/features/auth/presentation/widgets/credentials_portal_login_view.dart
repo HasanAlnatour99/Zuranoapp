@@ -44,11 +44,7 @@ class _CredentialsPortalLoginViewState
     _fade = CurvedAnimation(parent: _entrance, curve: Curves.easeOutCubic);
     _entrance.forward();
     _identifierController = TextEditingController()
-      ..addListener(
-        () => ref
-            .read(userLoginControllerProvider.notifier)
-            .updateIdentifier(_identifierController.text),
-      );
+      ..addListener(_syncIdentifierToCanonical);
     _passwordController = TextEditingController()
       ..addListener(
         () => ref
@@ -60,9 +56,24 @@ class _CredentialsPortalLoginViewState
   @override
   void dispose() {
     _entrance.dispose();
+    _identifierController.removeListener(_syncIdentifierToCanonical);
     _identifierController.dispose();
     _passwordController.dispose();
     super.dispose();
+  }
+
+  /// Keeps the text field and Riverpod state in sync with lowercase identifiers.
+  void _syncIdentifierToCanonical() {
+    final raw = _identifierController.text;
+    final canonical = raw.trim().toLowerCase();
+    if (raw != canonical) {
+      final len = canonical.length;
+      _identifierController.value = TextEditingValue(
+        text: canonical,
+        selection: TextSelection.collapsed(offset: len),
+      );
+    }
+    ref.read(userLoginControllerProvider.notifier).updateIdentifier(canonical);
   }
 
   Future<void> _submit() async {

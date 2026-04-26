@@ -54,6 +54,25 @@ Future<void> _activateAppCheckForStartup() async {
               ? const Duration(seconds: 8)
               : const Duration(seconds: 12),
         );
+
+    // Prime token after native bridge settles (reduces flaky "Too many attempts" on
+    // Android emulators when callables run immediately after cold start).
+    if (useAttestationDebugProviders &&
+        !kIsWeb &&
+        defaultTargetPlatform == TargetPlatform.android) {
+      await Future<void>.delayed(const Duration(milliseconds: 400));
+      try {
+        await FirebaseAppCheck.instance.getToken();
+      } catch (e) {
+        debugPrint(
+          'AppCheck Android debug: first getToken failed ($e). '
+          'If callables return Unauthenticated, add this emulator’s debug token: '
+          'Firebase Console → App Check → your Android app → Manage debug tokens. '
+          'Find the token in logcat, e.g. `adb logcat | grep -i "app check"` or '
+          '`adb logcat -s FirebaseAppCheck:V`.',
+        );
+      }
+    }
   } catch (error, stackTrace) {
     debugPrint('AppCheck activation failed: $error\n$stackTrace');
   }

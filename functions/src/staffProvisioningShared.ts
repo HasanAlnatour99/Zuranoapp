@@ -96,7 +96,7 @@ export function buildInternalStaffEmail(args: {
 }
 
 export function normalizeStaffUsername(raw: string): string {
-  return raw.trim().toLowerCase();
+  return raw.trim().normalize("NFC").toLocaleLowerCase("en-US");
 }
 
 const STAFF_USERNAME_RE = /^[a-z0-9_.]{4,20}$/u;

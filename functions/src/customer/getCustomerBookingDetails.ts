@@ -1,0 +1,1 @@
+export { getCustomerBookingDetails } from "./customerPortalCallables";
