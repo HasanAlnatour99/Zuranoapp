@@ -1,0 +1,13 @@
+---
+alwaysApply: true
+---
+
+Use subtle animations:
+
+- fade in screens
+- button press effect
+- smooth transitions
+
+Avoid:
+- heavy animations
+- laggy UI

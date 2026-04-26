@@ -1,0 +1,19 @@
+---
+alwaysApply: true
+---
+
+Layout rules:
+
+- Use padding: 16 or 24 (only)
+- Use rounded corners: 12–16
+- Always center content properly
+- Use cards for grouping
+
+Spacing:
+- small: 8
+- medium: 16
+- large: 24
+
+Never:
+- overcrowd UI
+- place elements too close

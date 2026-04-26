@@ -1,0 +1,36 @@
+---
+alwaysApply: true
+---
+
+Path: `salons/{salonId}/attendance/{attendanceId}` — model: `lib/features/attendance/data/models/attendance_record.dart`.
+
+## Fields
+
+id: string
+salonId: string
+employeeId: string
+employeeName: string
+
+workDate: timestamp (calendar day)
+
+status: string (presence: e.g. present | late | absent)
+
+checkInAt: timestamp (optional) — **not** named `checkIn`
+checkOutAt: timestamp (optional) — **not** named `checkOut`
+
+notes: string (optional)
+
+approvalStatus: string — `AttendanceApprovalStatuses`: pending | approved | rejected
+approvedByUid: string (optional)
+approvedByName: string (optional)
+approvedAt: timestamp (optional)
+rejectionReason: string (optional)
+
+createdAt: timestamp
+updatedAt: timestamp
+
+## Implemented vs Planned
+
+**Implemented:** Presence + approval workflow fields above.
+
+**Planned:** `location` map (lat/lng) for geo check-in — not in model today.

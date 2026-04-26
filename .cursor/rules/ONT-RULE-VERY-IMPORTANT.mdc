@@ -1,0 +1,19 @@
+---
+alwaysApply: true
+---
+
+Typography rules:
+
+- Use Inter or Roboto font
+- Titles: Bold, size 20–26
+- Subtitles: Medium, size 16–18
+- Body: Regular, size 14–16
+
+Never:
+- use fancy fonts
+- use more than 2 font weights per screen
+
+Focus:
+- readability
+- spacing
+- hierarchy

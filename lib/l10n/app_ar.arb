@@ -1,0 +1,3252 @@
+{
+  "@@locale": "ar",
+  "appTitle": "Zurano",
+  "splashTitle": "صالون الحلاقة",
+  "splashTagline": "قصّات بذوق وهدوء في الحجز.",
+  "genericError": "حدث خطأ ما.",
+  "loadingPlaceholder": "…",
+  "customerDiscoverTitle": "استكشف",
+  "customerSignOut": "تسجيل الخروج",
+  "signOutSubtitle": "ستحتاج إلى تسجيل الدخول مرة أخرى لاستخدام حسابك.",
+  "customerSearchHint": "ابحث عن الصالونات أو المناطق…",
+  "customerGreeting": "مرحبًا، {name}",
+  "@customerGreeting": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "customerGuestName": "ضيفنا",
+  "customerNoSalons": "لا توجد صالونات مطابقة.",
+  "customerSalonDetails": "الصالون",
+  "customerBook": "احجز موعدًا",
+  "customerServicesPreview": "خدمات شائعة",
+  "customerNoServicesListed": "لا توجد خدمات بعد.",
+  "customerServiceMeta": "{minutes} د · {price}",
+  "@customerServiceMeta": {
+    "placeholders": {
+      "minutes": {"type": "int"},
+      "price": {"type": "String"}
+    }
+  },
+  "customerSalonNotFound": "هذا الصالون غير متاح.",
+  "customerBookAppointment": "احجز موعدًا",
+  "customerSelectDate": "التاريخ",
+  "customerSelectService": "الخدمة",
+  "customerSelectBarber": "عضو الفريق",
+  "customerSelectTime": "الوقت",
+  "customerNotes": "ملاحظات (اختياري)",
+  "customerConfirmBooking": "تأكيد الحجز",
+  "customerBookingSubmitted": "تم تأكيد حجزك",
+  "customerBackHome": "العودة للرئيسية",
+  "bookingConfirmationTitle": "التأكيد",
+  "bookingWhen": "الموعد",
+  "bookingBarber": "عضو الفريق",
+  "bookingService": "الخدمة",
+  "bookingSalon": "الصالون",
+  "bookingReference": "المرجع",
+  "bookingNotFound": "الحجز غير موجود.",
+  "customerNoBarbers": "لا يوجد أعضاء فريق متاحون بعد.",
+  "customerNoSlots": "لا توجد أوقات متاحة لهذا اليوم. جرّب تاريخًا أو عضو فريق آخر.",
+  "customerBookingIncomplete": "اختر الخدمة وعضو الفريق والوقت.",
+  "customerBookingSignInRequired": "سجّل الدخول لإكمال الحجز.",
+  "customerBookingSlotTaken": "هذا الوقت لم يعد متاحًا. اختر وقتًا آخر.",
+  "customerBookingSlotInvalid": "هذا الوقت غير متاح. اختر وقتًا مختلفًا.",
+  "customerBookingNotesTooLong": "لا يمكن أن تتجاوز الملاحظات {maxChars} حرفًا.",
+  "@customerBookingNotesTooLong": {
+    "placeholders": {
+      "maxChars": {
+        "type": "int"
+      }
+    }
+  },
+  "customerBookingScreenHint": "اختر التاريخ والخدمة وعضو الفريق والوقت. الاقتراحات أدناه تملأ عضو الفريق والوقت تلقائيًا.",
+  "customerBookingSummaryTitle": "زيارتك",
+  "ownerTabOverview": "نظرة عامة",
+  "ownerTabTeam": "الفريق",
+  "ownerTabServices": "الخدمات",
+  "ownerTabBookings": "الحجوزات",
+  "ownerTabMoney": "المالية",
+  "ownerWorkspaceWide": "مساحة عملك اليوم",
+  "ownerWorkspaceNarrow": "نظرة اليوم",
+  "ownerLoadError": "تعذر تحميل مساحة العمل. سجّل الدخول مجددًا.",
+  "ownerSalonChip": "الصالون · {id}",
+  "@ownerSalonChip": {
+    "placeholders": {
+      "id": {"type": "String"}
+    }
+  },
+  "ownerSalonSetupTitle": "أضف تفاصيل صالونك",
+  "ownerSalonSetupMessage": "اختر اسم الصالون والمدينة لبدء إدارة الحجوزات والفريق.",
+  "ownerSalonSetupCta": "إعداد الصالون",
+  "ownerSales7": "آخر 7 أيام",
+  "ownerSales30": "آخر 30 يومًا",
+  "ownerSalesAll": "الكل",
+  "ownerOverviewTitle": "يومك في لمحة",
+  "ownerOverviewSubtitle": "إجماليات مباشرة من صالونك.",
+  "ownerOverviewQuickService": "إضافة خدمة",
+  "ownerOverviewQuickBooking": "إضافة حجز",
+  "ownerOverviewQuickBarber": "إضافة حلاق",
+  "ownerOverviewEmptyRevenueToday": "لا مبيعات مسجلة اليوم.",
+  "ownerOverviewEmptyBookingsToday": "لا حجوزات مجدولة لليوم.",
+  "ownerOverviewEmptyTopBarberMonth": "لا مبيعات لأعضاء الفريق هذا الشهر بعد.",
+  "ownerOverviewEmptyTopServiceMonth": "لا استخدام لخدمات هذا الشهر بعد.",
+  "ownerOverviewLoadingMetrics": "جاري تحميل المؤشرات…",
+  "ownerOverviewTotalRevenueLabel": "إجمالي الإيرادات",
+  "ownerOverviewTotalRevenuePeriod": "هذا الشهر",
+  "ownerOverviewTotalRevenueEmpty": "لا مبيعات مكتملة هذا الشهر بعد.",
+  "ownerOverviewServicesPanelCaption": "الأسعار والمدة",
+  "ownerServicesCategoryBanner": "{category} — الأسعار والمدة",
+  "@ownerServicesCategoryBanner": {
+    "placeholders": {
+      "category": {"type": "String"}
+    }
+  },
+  "ownerServicesCategoryAll": "كل الخدمات",
+  "ownerOverviewTeamColumnMember": "العضو",
+  "ownerOverviewTeamColumnRole": "الدور",
+  "ownerOverviewTeamColumnEmail": "البريد",
+  "ownerOverviewServiceUses": "{count, plural, =0{لا استخدامات} one{استخدام واحد} two{استخدامان} few{{count} استخدامات} many{{count} استخدامًا} other{{count} استخدام}}",
+  "@ownerOverviewServiceUses": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerStatTodayBookings": "حجوزات اليوم",
+  "ownerStatRevenue": "الإيرادات (الفترة)",
+  "ownerStatUpcoming": "القادمة",
+  "ownerNoBookingsStat": "0",
+  "ownerBookingsListTitle": "الحجوزات",
+  "ownerBookingCancel": "إلغاء",
+  "ownerBookingCancelled": "تم إلغاء الحجز",
+  "ownerFilterStatus": "الحالة",
+  "ownerFilterAll": "الكل",
+  "ownerTeamTitle": "الفريق",
+  "ownerTeamSubtitle": "إدارة أعضاء الفريق والمسؤولين.",
+  "ownerTeamCardRoleLabel": "الدور",
+  "ownerTeamCardStatusLabel": "الحالة",
+  "ownerTeamCardStatusActive": "نشط",
+  "ownerTeamCardStatusInactive": "غير نشط",
+  "ownerTeamCardManage": "إدارة",
+  "ownerAddMember": "إضافة عضو",
+  "ownerEmployeeName": "الاسم",
+  "ownerEmployeeEmail": "البريد",
+  "ownerEmployeeRole": "الدور",
+  "ownerEmployeePhone": "الهاتف",
+  "ownerSave": "حفظ",
+  "ownerEditMember": "تعديل العضو",
+  "ownerDeactivate": "تعطيل",
+  "ownerActivate": "تفعيل",
+  "ownerServicesTitle": "الخدمات",
+  "ownerServicesSubtitle": "إدارة ما يمكن للعملاء حجزه وشراؤه",
+  "ownerServicesSearchPlaceholder": "ابحث عن خدمة",
+  "ownerServicesStatTotal": "الإجمالي",
+  "ownerServicesStatActive": "نشطة",
+  "ownerServicesStatInactive": "غير نشطة",
+  "ownerServicesChipAll": "الكل",
+  "ownerServicesChipHair": "شعر",
+  "ownerServicesChipBeard": "لحية",
+  "ownerServicesChipFacial": "عناية بالبشرة",
+  "ownerServicesChipPackages": "باقات",
+  "ownerServicesChipColoring": "صبغة",
+  "ownerServiceCategoryHair": "الشعر",
+  "ownerServiceCategoryBarberBeard": "الحلاقة واللحية",
+  "ownerServiceCategoryNails": "الأظافر",
+  "ownerServiceCategoryHairRemovalWaxing": "إزالة الشعر والشمع",
+  "ownerServiceCategoryOther": "أخرى",
+  "ownerServiceCategoryBrowsLashes": "الحواجب والرموش",
+  "ownerServiceCategoryFacialSkincare": "العناية بالبشرة والوجه",
+  "ownerServiceCategoryMakeup": "المكياج",
+  "ownerServiceCategoryMassageSpa": "المساج والسبا",
+  "ownerServiceCategoryPackages": "الباقات",
+  "ownerServiceCategoryColoring": "الصبغات",
+  "ownerServiceCategoryTexturedHair": "الشعر الكيرلي / المجعد",
+  "ownerServiceCategoryBridal": "العرائس",
+  "ownerServiceCategoryTanning": "التسمير",
+  "ownerServiceCategoryMedSpa": "العناية الطبية التجميلية",
+  "ownerServiceCategoryMenGrooming": "العناية الرجالية",
+  "ownerServiceCategoryHaircutStyling": "قص وتصفيف الشعر",
+  "ownerServiceCategoryHairTreatments": "علاجات الشعر",
+  "ownerServiceCategoryScalpTreatments": "علاجات فروة الرأس",
+  "ownerServiceCategoryKeratinSmoothing": "الكيراتين وتنعيم الشعر",
+  "ownerServiceCategoryHairExtensions": "وصلات الشعر",
+  "ownerServiceCategoryKidsServices": "خدمات الأطفال",
+  "ownerServiceCategoryManicurePedicure": "مانيكير وباديكير",
+  "ownerServiceCategoryNailArt": "فن الأظافر",
+  "ownerServiceCategoryThreading": "الخيط",
+  "ownerServiceCategoryLashExtensions": "تمديد الرموش",
+  "ownerServiceCategoryBodyTreatments": "علاجات الجسم",
+  "ownerServiceCategoryMakeupPermanent": "المكياج الدائم",
+  "ownerServiceCustomCategoryLabel": "اسم التصنيف",
+  "ownerServiceValidationCategoryRequired": "اختر تصنيفاً.",
+  "ownerServiceValidationCustomCategoryRequired": "أدخل اسم التصنيف.",
+  "ownerServiceValidationDuplicateCustomCategory": "لديك بالفعل تصنيف مخصص بهذا الاسم.",
+  "ownerServiceCategoriesMore": "المزيد",
+  "ownerServiceCategoriesMoreTitle": "تصنيفات إضافية",
+  "ownerServiceCategoryAllOther": "كل خدمات «أخرى»",
+  "ownerServicesEmptyTitle": "لا توجد خدمات بعد",
+  "ownerServicesEmptyDescription": "أضف أول خدمة ليتمكن العملاء من اكتشاف عروضك وحجزها.",
+  "ownerServicesNoMatches": "لا توجد خدمات مطابقة لبحثك أو للتصفية.",
+  "ownerServicesFabTooltip": "إضافة خدمة",
+  "ownerServiceSaveCta": "حفظ الخدمة",
+  "ownerServiceSavedSuccess": "تم حفظ الخدمة.",
+  "ownerServiceDeletedSuccess": "تم حذف الخدمة.",
+  "ownerServiceValidationDurationInvalid": "أدخل مدة أكبر من صفر.",
+  "ownerServiceValidationPriceInvalid": "أدخل سعراً أكبر من صفر.",
+  "ownerServiceDeleteConfirmTitle": "حذف الخدمة؟",
+  "ownerServiceDeleteConfirmBody": "سيُزال هذا العنصر من قائمة الخدمات. لا يمكن التراجع.",
+  "ownerServiceActionCancel": "إلغاء",
+  "ownerServiceActionDelete": "حذف",
+  "ownerServiceActionEdit": "تعديل",
+  "ownerServiceStatusActive": "نشطة",
+  "ownerServiceStatusInactive": "غير نشطة",
+  "ownerServiceTimesUsed": "{count, plural, zero{لم يُستخدم} one{استُخدمت مرة واحدة} two{استُخدمت مرتين} few{استُخدمت {count} مرات} many{استُخدمت {count} مرة} other{استُخدمت {count} مرة}}",
+  "@ownerServiceTimesUsed": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerServiceTotalRevenue": "الإيرادات {amount}",
+  "@ownerServiceTotalRevenue": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerServiceAnalyticsPlaceholder": "يظهر الاستخدام والإيراد عند البيع.",
+  "ownerServiceFormImageUrlHint": "رابط الصورة (اختياري)",
+  "ownerServicePhotoSectionLabel": "صورة الخدمة",
+  "ownerServiceUploadPhotoAction": "رفع صورة",
+  "ownerServicePhotoChooseGallery": "ألبوم الصور",
+  "ownerServicePhotoChooseCamera": "التقاط صورة",
+  "ownerServicePhotoRemove": "إزالة الصورة",
+  "ownerServicePhotoUploading": "جارٍ الرفع…",
+  "ownerServicePhotoTooLarge": "اختر صورة أصغر من 5 ميجابايت.",
+  "ownerServicePhotoUploadError": "تعذّر رفع الصورة. حاول مرة أخرى.",
+  "ownerServiceFormDescriptionHint": "الوصف (اختياري)",
+  "ownerServiceCategoryPickerLabel": "التصنيف",
+  "ownerServiceCategoryNone": "بدون",
+  "ownerAddService": "إضافة خدمة",
+  "ownerEditService": "تعديل الخدمة",
+  "ownerServiceName": "اسم الخدمة",
+  "ownerAddServiceSheetSubtitle": "أنشئ خدمة قابلة للحجز لعملائك",
+  "ownerServiceSectionDetailsTitle": "تفاصيل الخدمة",
+  "ownerServiceSectionDetailsSubtitle": "معلومات أساسية عن الخدمة",
+  "ownerServiceSectionDurationTitle": "المدة والتسعير",
+  "ownerServiceSectionDurationSubtitle": "حدد المدة المطلوبة والتكلفة",
+  "ownerServiceSectionPhotoSubtitle": "أضف صورة لعرض الخدمة",
+  "ownerServiceSectionDescriptionSubtitle": "أضف المزيد من التفاصيل عن هذه الخدمة",
+  "ownerServiceActiveSubtitle": "إظهار هذه الخدمة للعملاء",
+  "ownerServiceNamePlaceholder": "مثال: قص شعر كلاسيكي",
+  "ownerServiceDescriptionPlaceholderLong": "صف الخدمة وما يتضمنه والفوائد، إلخ.",
+  "ownerServicePhotoFormatsHint": "PNG أو JPG حتى 5 ميجابايت",
+  "ownerServicePhotoSizeHint": "الحجم الموصى به: 1200×800 بكسل",
+  "ownerServiceSuffixMin": "دقيقة",
+  "ownerServiceDuration": "المدة (دقائق)",
+  "ownerServicePrice": "السعر",
+  "ownerDeleteService": "حذف",
+  "ownerMoneyTitle": "المالية",
+  "ownerMoneySubtitle": "المبيعات والرواتب والمصروفات.",
+  "ownerKpiNone": "—",
+  "ownerKpiTodayRevenue": "إيرادات اليوم",
+  "ownerKpiMonthRevenue": "إيرادات الشهر",
+  "ownerKpiBookingsToday": "حجوزات اليوم",
+  "ownerKpiEmployees": "الموظفون النشطون",
+  "ownerKpiTopBarber": "أفضل حلاق (الشهر)",
+  "ownerKpiTopService": "أفضل خدمة (الشهر)",
+  "ownerKpiCompletedToday": "مكتمل اليوم",
+  "ownerKpiCancelledToday": "ملغاة اليوم",
+  "ownerKpiRescheduledToday": "أعيد جدولتها اليوم",
+  "ownerKpiCompletionRateMonth": "معدل الإكمال (الشهر)",
+  "ownerKpiCancellationRateMonth": "معدل الإلغاء (الشهر)",
+  "ownerKpiTopBarberCompletionsMonth": "أفضل حلاق · إكمال (الشهر)",
+  "ownerMoneyRecognitionOperational": "تشغيلي",
+  "ownerMoneyRecognitionCash": "نقدي",
+  "ownerMoneySalesMonth": "المبيعات (هذا الشهر)",
+  "ownerMoneyPayrollSection": "الرواتب",
+  "ownerMoneyExpensesSection": "المصروفات",
+  "ownerMoneyEmptyPayroll": "لا سجلات رواتب بعد.",
+  "ownerMoneyEmptyExpenses": "لا مصروفات مسجلة بعد.",
+  "ownerMoneyPayrollEmptyTitle": "لا رواتب",
+  "ownerMoneyExpensesEmptyTitle": "لا مصروفات",
+  "ownerDashboardTitle": "مساحة العمل",
+  "ownerAiAssistantTooltip": "افتح مساعد لوحة التحكم",
+  "aiAssistantTitle": "مساعد لوحة التحكم",
+  "aiAssistantInputLabel": "اسأل المساعد",
+  "aiAssistantInputHint": "اطلب إيراد اليوم أو إيراد الشهر أو أفضل الحلاقين.",
+  "aiAssistantSend": "أنشئ العرض",
+  "aiAssistantWelcomeTitle": "اطلب لقطة سريعة للمالك",
+  "aiAssistantWelcomeMessage": "استخدم طلبات طبيعية لإنشاء ملخص مركز للإيرادات وأداء الفريق داخل الصالون.",
+  "aiAssistantLoadingTitle": "جارٍ بناء عرض لوحة التحكم",
+  "aiAssistantLoadingMessage": "يستدعي المساعد الأدوات المعتمدة ويجهز سطحًا موجزًا ومناسبًا للجوال.",
+  "aiAssistantErrorTitle": "المساعد غير متاح",
+  "aiAssistantErrorMessage": "تعذر على المساعد إنشاء العرض الآن. حاول مرة أخرى بعد قليل.",
+  "aiAssistantRetry": "حاول مرة أخرى",
+  "aiAssistantSalonRequiredTitle": "الصالون مطلوب",
+  "aiAssistantSalonRequiredMessage": "يحتاج هذا المساعد إلى صالون صالح قبل تحميل رؤى المالك.",
+  "aiAssistantSuggestionTodayRevenue": "اعرض إيراد اليوم",
+  "aiAssistantSuggestionMonthRevenue": "اعرض إيراد هذا الشهر",
+  "aiAssistantSuggestionTopBarbers": "اعرض أفضل الحلاقين هذا الشهر",
+  "smartWorkspaceTitle": "مساحة العمل الذكية",
+  "smartWorkspaceLoadingTitle": "جارٍ تجهيز مساحة العمل",
+  "smartWorkspaceLoadingMessage": "يتم تحميل العرض المناسب لمساعد الرواتب أو التحليلات أو تصحيح الحضور.",
+  "smartWorkspaceErrorTitle": "مساحة العمل الذكية غير متاحة",
+  "smartWorkspaceErrorMessage": "تعذّر تحميل مساحة العمل الآن. حاول مرة أخرى بعد قليل.",
+  "smartWorkspaceRetryAction": "حاول مرة أخرى",
+  "smartWorkspaceSalonRequiredTitle": "الصالون مطلوب",
+  "smartWorkspaceSalonRequiredMessage": "تحتاج هذه المساحة إلى صالون صالح قبل تحميل أدوات المساعد.",
+  "smartWorkspaceWelcomeTitle": "اطلب مساحة عمل موجهة",
+  "smartWorkspaceWelcomeMessage": "استخدم هذا المساعد لإعداد الرواتب وشرحها وعرض التحليلات وتصحيح الحضور مع إبقاء منطق العمل حتميًا.",
+  "smartWorkspaceInputLabel": "اسأل مساحة العمل الذكية",
+  "smartWorkspaceInputHint": "جرّب: جهّز الرواتب لهذا الشهر، اشرح راتب أحمد، أو اعرض ملخص الرواتب والإيرادات والمصروفات لهذا الشهر.",
+  "smartWorkspaceSendAction": "افتح المساحة",
+  "smartWorkspaceUnknownTitle": "اختر تدفقًا موجّهًا",
+  "smartWorkspaceUnknownSummary": "المساعد يدعم فقط تدفقات مساحة العمل المعتمدة.",
+  "smartWorkspaceUnknownMessage": "اطلب إعداد الرواتب أو شرحها أو التحليلات أو تصحيح الحضور للمتابعة.",
+  "smartWorkspaceSuggestionPayrollSetup": "جهّز الرواتب لهذا الشهر",
+  "smartWorkspaceSuggestionPayrollExplain": "اشرح راتب أحمد لهذا الشهر",
+  "smartWorkspaceSuggestionAnalytics": "اعرض الرواتب والإيرادات والمصروفات لهذا الشهر",
+  "smartWorkspaceSuggestionAttendance": "صحّح حضور الحلاق المتأخر اليوم",
+  "smartWorkspacePayrollSetupTitle": "مساعد إعداد الرواتب",
+  "smartWorkspacePayrollSetupSummary": "راجع من هو جاهز للرواتب وافتح شاشة الإعداد المناسبة بسرعة.",
+  "smartWorkspacePayrollSetupMissingEmployees": "موظفون بدون إعداد راتب أساسي",
+  "smartWorkspacePayrollSetupActiveElements": "{count, plural, one{عنصر رواتب نشط واحد متاح} two{عنصران نشطان للرواتب متاحان} few{{count} عناصر رواتب نشطة متاحة} many{{count} عنصر رواتب نشط متاح} other{{count} عنصر رواتب نشط متاح}}",
+  "@smartWorkspacePayrollSetupActiveElements": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "smartWorkspacePayrollSetupEntriesCount": "{count, plural, =0{لا توجد قيود رواتب نشطة} one{قيد رواتب نشط واحد} two{قيدان نشطان للرواتب} few{{count} قيود رواتب نشطة} many{{count} قيد رواتب نشط} other{{count} قيد رواتب نشط}}",
+  "@smartWorkspacePayrollSetupEntriesCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "smartWorkspacePayrollSetupPickEmployeeTitle": "اختر موظفًا",
+  "smartWorkspacePayrollSetupPickEmployeeMessage": "اختر موظفًا لمراجعة قيود الرواتب الحالية وإعداد الراتب.",
+  "smartWorkspaceEmployeePickerLabel": "الموظف",
+  "smartWorkspacePeriodSelectorLabel": "فترة الرواتب",
+  "smartWorkspacePeriodPlaceholder": "اختر شهرًا",
+  "smartWorkspaceDateRangePickerLabel": "النطاق الزمني",
+  "smartWorkspaceDateRangePlaceholder": "اختر نطاقًا زمنيًا",
+  "smartWorkspaceOpenEmployeeSetup": "افتح إعداد الموظف",
+  "smartWorkspaceOpenPayrollRunReview": "افتح مراجعة دورة الرواتب",
+  "smartWorkspaceAddElementTitle": "إضافة عنصر راتب",
+  "smartWorkspaceAddElementSummary": "أكّد العنصر المقترح قبل حفظه في كتالوج الرواتب.",
+  "smartWorkspaceAddElementNeedsDetailsTitle": "نحتاج تفاصيل أكثر للعنصر",
+  "smartWorkspaceAddElementNeedsDetailsMessage": "أضف الاسم والمبلغ، مثل: أضف بدل نقل شهري بقيمة 150.",
+  "smartWorkspaceElementClassificationTitle": "التصنيف",
+  "smartWorkspaceClassificationEarning": "استحقاق",
+  "smartWorkspaceClassificationDeduction": "خصم",
+  "smartWorkspaceClassificationInformation": "معلومة",
+  "smartWorkspaceElementRecurrenceTitle": "التكرار",
+  "smartWorkspaceRecurrenceRecurring": "متكرر",
+  "smartWorkspaceRecurrenceNonRecurring": "مرة واحدة",
+  "smartWorkspaceElementCalculationTitle": "طريقة الحساب",
+  "smartWorkspaceCalculationFixed": "مبلغ ثابت",
+  "smartWorkspaceCalculationPercentage": "نسبة مئوية",
+  "smartWorkspaceCalculationDerived": "محسوب",
+  "smartWorkspaceConfirmationTitle": "تأكيد",
+  "smartWorkspaceAddElementConfirmMessage": "سيتم حفظ عنصر رواتب جديد عبر مستودع الرواتب الحالي.",
+  "smartWorkspaceFieldName": "الاسم",
+  "smartWorkspaceFieldAmount": "المبلغ",
+  "smartWorkspaceFieldClassification": "التصنيف",
+  "smartWorkspaceFieldDate": "التاريخ",
+  "smartWorkspaceFieldStatus": "الحالة",
+  "smartWorkspaceFieldCheckIn": "تسجيل الدخول",
+  "smartWorkspaceFieldCheckOut": "تسجيل الخروج",
+  "smartWorkspaceSaveElementAction": "احفظ عنصر الراتب",
+  "smartWorkspacePayrollExplanationTitle": "شرح الراتب",
+  "smartWorkspacePayrollExplanationSummary": "اعرض تفاصيل الاستحقاقات والخصومات باستخدام خدمة حساب الرواتب الحالية.",
+  "smartWorkspaceNetPayTitle": "صافي الراتب",
+  "smartWorkspacePayrollPreviewStatus": "معاينة مبنية على قواعد الرواتب الحالية",
+  "smartWorkspaceEarningsBreakdownTitle": "تفصيل الاستحقاقات",
+  "smartWorkspaceDeductionsBreakdownTitle": "تفصيل الخصومات",
+  "smartWorkspaceOpenQuickPayAction": "افتح الدفع السريع",
+  "smartWorkspaceAnalyticsTitle": "مساعد التحليلات الديناميكي",
+  "smartWorkspaceRevenueTitle": "الإيرادات",
+  "smartWorkspaceTransactionsCount": "{count, plural, one{عملية مكتملة واحدة} two{عمليتان مكتملتان} few{{count} عمليات مكتملة} many{{count} عملية مكتملة} other{{count} عملية مكتملة}}",
+  "@smartWorkspaceTransactionsCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "smartWorkspaceExpensesTitle": "المصروفات",
+  "smartWorkspacePayrollTitle": "الرواتب",
+  "smartWorkspaceDraftPayrollRuns": "{count, plural, =0{لا توجد دورات رواتب مسودة} one{دورة رواتب مسودة واحدة} two{دورتا رواتب مسودتان} few{{count} دورات رواتب مسودة} many{{count} دورة رواتب مسودة} other{{count} دورة رواتب مسودة}}",
+  "@smartWorkspaceDraftPayrollRuns": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "smartWorkspaceNetResultTitle": "النتيجة الصافية",
+  "smartWorkspaceChartTitle": "اتجاه الأشهر الأخيرة",
+  "smartWorkspaceChartSubtitle": "يتم عرض الإيرادات بنفس سياق الفترة الذي يستخدمه المساعد.",
+  "smartWorkspaceOpenSalesAction": "افتح المبيعات",
+  "smartWorkspaceOpenExpensesAction": "افتح المصروفات",
+  "smartWorkspaceOpenPayrollAction": "افتح الرواتب",
+  "smartWorkspaceAttendanceCorrectionTitle": "مساعد تصحيح الحضور",
+  "smartWorkspaceAttendanceCorrectionSummary": "راجع السجلات الجاهزة للتصحيح وأكّد التعديلات المعتمدة عبر مستودع الحضور الحالي.",
+  "smartWorkspaceAttendancePendingTitle": "طلبات الحضور المعلّقة",
+  "smartWorkspaceAttendanceCorrectionsNeeded": "{count, plural, =0{لا توجد سجلات تحتاج تصحيحًا} one{سجل واحد يحتاج تصحيحًا} two{سجلان يحتاجان تصحيحًا} few{{count} سجلات تحتاج تصحيحًا} many{{count} سجلًا يحتاج تصحيحًا} other{{count} سجل يحتاج تصحيحًا}}",
+  "@smartWorkspaceAttendanceCorrectionsNeeded": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "smartWorkspaceAttendanceNoRecordTitle": "لم يتم العثور على سجل مناسب للتصحيح",
+  "smartWorkspaceAttendanceNoRecordMessage": "عدّل الموظف أو النطاق الزمني للعثور على طلب الحضور الذي تريد مراجعته.",
+  "smartWorkspaceAttendanceRecordSummary": "حالة الحضور: {status}",
+  "@smartWorkspaceAttendanceRecordSummary": {
+    "placeholders": {
+      "status": {"type": "String"}
+    }
+  },
+  "smartWorkspaceAttendanceConfirmMessage": "راجع تفاصيل التصحيح قبل تطبيق التحديث المعتمد.",
+  "smartWorkspaceAttendancePromptForDetails": "أضف الحالة أو الوقت المطلوب تعديله في طلبك لتحضير التصحيح.",
+  "smartWorkspaceApplyAttendanceAction": "طبّق التصحيح",
+  "smartWorkspaceOpenAttendanceReviewAction": "افتح مراجعة الحضور",
+  "ownerTooltipCycleTheme": "تبديل المظهر (النظام / فاتح / داكن)",
+  "ownerTooltipCycleThemeShort": "تبديل المظهر",
+  "ownerTooltipLanguage": "تبديل اللغة (English / العربية)",
+  "ownerTooltipLanguageShort": "اللغة",
+  "ownerTooltipSignOut": "تسجيل الخروج",
+  "customerCategoryAll": "الكل",
+  "customerMyBookings": "حجوزاتي",
+  "customerMyBookingsSubtitle": "زياراتك القادمة والسابقة",
+  "customerMyBookingsEmpty": "لا توجد حجوزات بعد. استكشف صالونًا واحجز موعدًا.",
+  "bookingNotes": "ملاحظات",
+  "bookingDuration": "المدة",
+  "bookingDurationMinutes": "{minutes} د",
+  "@bookingDurationMinutes": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "bookingStatus": "الحالة",
+  "bookingStatusPending": "قيد الانتظار",
+  "bookingStatusConfirmed": "مؤكد",
+  "bookingStatusCompleted": "مكتمل",
+  "bookingStatusCancelled": "ملغى",
+  "bookingStatusNoShow": "لم يحضر",
+  "bookingStatusRescheduled": "أعيد جدولته",
+  "barberSummaryTitle": "اليوم",
+  "barberSummaryAppointments": "{count, plural, =0{لا مواعيد} one{موعد واحد} two{موعدان} few{{count} مواعيد} many{{count} موعدًا} other{{count} موعد}}",
+  "@barberSummaryAppointments": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "barberNextAppointment": "التالي",
+  "barberNextNone": "لا مواعيد أخرى اليوم",
+  "barberEarningsMonth": "هذا الشهر",
+  "barberQuickSale": "بيع سريع",
+  "barberAttendanceCardTitle": "الحضور",
+  "barberAttendanceIn": "تم تسجيل الدخول",
+  "barberAttendanceOut": "تم تسجيل الخروج",
+  "barberAttendanceNone": "لم يُسجَّل الدخول بعد",
+  "customerSectionBarbers": "الفريق",
+  "customerBarberCardCta": "احجز +",
+  "customerBarberVerifiedTooltip": "حلاق معتمد من الصالون",
+  "customerNoBarbersDetail": "لا يوجد حلاقون مدرجون لهذا الصالون بعد.",
+  "barberTabToday": "اليوم",
+  "barberTabSale": "بيع",
+  "barberTabAttendance": "الحضور",
+  "barberTodayTitle": "جدول اليوم",
+  "barberTodaySubtitle": "مواعيدك.",
+  "barberNoEmployee": "ملفك لا يحتوي ربطًا بالفريق. تواصل مع المالك.",
+  "barberRecordSaleTitle": "تسجيل بيع",
+  "barberSaleService": "الخدمة",
+  "barberSalePayment": "الدفع",
+  "barberSaleSubmit": "حفظ البيع",
+  "barberSaleSuccess": "تم تسجيل البيع",
+  "barberAttendanceTitle": "الحضور",
+  "barberAttendanceSubtitle": "تسجيلات اليوم.",
+  "barberCheckIn": "تسجيل دخول",
+  "barberCheckOut": "تسجيل خروج",
+  "barberNoAttendance": "لا سجلات حضور لليوم.",
+  "ownerMoneyPeriodToday": "اليوم",
+  "ownerMoneyPeriodMonth": "هذا الشهر",
+  "ownerMoneyPeriodCustomSoon": "مخصص (قريبًا)",
+  "ownerMoneyTotalSales": "إجمالي المبيعات",
+  "ownerMoneyTotalPayroll": "إجمالي الرواتب",
+  "ownerMoneyTotalExpenses": "إجمالي المصروفات",
+  "ownerMoneyNetResult": "صافي النتيجة",
+  "ownerBookingsLoadMore": "تحميل المزيد",
+  "ownerBookingsLoadingMore": "جارٍ التحميل…",
+  "ownerBookingDetailsTitle": "تفاصيل الحجز",
+  "ownerBookingSaveNotes": "حفظ الملاحظات",
+  "ownerBookingNotesSaved": "تم حفظ الملاحظات",
+  "ownerBookingNewTitle": "حجز جديد",
+  "ownerBookingCustomerUid": "معرّف المستخدم للعميل",
+  "ownerBookingCustomerUidHint": "الصق معرّف Firebase Auth للعميل (من ملفه).",
+  "ownerBookingCustomerUidInvalid": "معرّف المستخدم للعميل مطلوب.",
+  "ownerBookingCustomerNameOptional": "اسم العميل (اختياري)",
+  "ownerBookingCreate": "إنشاء الحجز",
+  "ownerBookingCreated": "تم إنشاء الحجز",
+  "ownerBookingRescheduled": "تمت إعادة جدولة الحجز",
+  "ownerHrSettingsTitle": "الموارد البشرية والمخالفات",
+  "ownerHrSettingsSubtitle": "إدارة غرامات الموظفين وقواعد الحضور وطلبات المراجعة.",
+  "ownerSettingsHrTileTitle": "الموارد البشرية والمخالفات",
+  "ownerSettingsHrTileSubtitle": "قواعد الغرامات وسياسات الحضور وقائمة المراجعة",
+  "ownerAttendanceRulesTileTitle": "قواعد الحضور",
+  "ownerAttendanceRulesTileSubtitle": "البصمات، الاستراحات، السماح، التصحيح والسياسة",
+  "salonAttendanceZoneTitle": "منطقة الحضور",
+  "salonAttendanceZoneSubtitle": "حدد مكان تسجيل دخول وخروج فريقك.",
+  "salonAttendanceZoneMapSectionTitle": "الخريطة",
+  "salonAttendanceZoneMapTapHint": "اضغط على الخريطة لنقل مركز المنطقة.",
+  "salonAttendanceZoneMapWebHint": "استخدم تطبيق الجوال لاختيار المنطقة على الخريطة.",
+  "salonAttendanceZoneMapCenterMarker": "مركز المنطقة",
+  "salonAttendanceZoneCoordinates": "دائرة العرض {lat}، خط الطول {lng}",
+  "salonAttendanceZonePunchRadiusMeters": "نصف قطر تسجيل الحضور المسموح: {meters} مترًا",
+  "salonAttendanceZoneMetersShort": "{meters} م",
+  "salonAttendanceZoneEnable": "تفعيل الحضور",
+  "salonAttendanceZoneRequireInPunchIn": "الاشتراط على التواجد داخل المنطقة عند تسجيل الدخول",
+  "salonAttendanceZoneRequireInPunchOut": "الاشتراط على التواجد داخل المنطقة عند تسجيل الخروج",
+  "salonAttendanceZoneAllowBreaks": "السماح بفترات الاستراحة",
+  "salonAttendanceZoneAllowCorrections": "السماح بطلبات تصحيح الحضور",
+  "salonAttendanceZoneSave": "حفظ",
+  "salonAttendanceZoneSaved": "تم حفظ إعدادات الحضور",
+  "salonAttendanceZoneSaveFailed": "تعذّر الحفظ",
+
+  "ownerAttendanceSettingsTitle": "إعدادات الحضور",
+  "ownerAttendanceSettingsSubtitle": "إدارة المنطقة، البصمات، الاستراحات، طلبات التصحيح وقواعد الموارد البشرية",
+  "ownerAttendanceSettingsStatusActive": "مفعّل",
+  "ownerAttendanceSettingsStatusLocationMissing": "الموقع غير محدّد",
+
+  "ownerAttendanceSectionZone": "منطقة الحضور",
+  "ownerAttendanceSectionPunchRules": "قواعد البصمة",
+  "ownerAttendanceSectionGrace": "السماح وأوقات العمل",
+  "ownerAttendanceSectionCorrection": "طلبات التصحيح",
+  "ownerAttendanceSectionViolations": "قواعد المخالفات",
+
+  "ownerAttendanceZoneMapPickAction": "اختيار موقع الصالون",
+  "ownerAttendanceZoneCoordinatesEmpty": "اضغط على الخريطة لتحديد موقع الصالون.",
+  "ownerAttendanceZoneRadiusLabel": "نطاق البصمة",
+  "ownerAttendanceZoneLocationRequired": "يجب وجود الموظف داخل الموقع",
+  "ownerAttendanceZoneLocationRequiredHint": "يلزم وجود الموظف داخل المنطقة لتسجيل الدخول أو الخروج.",
+
+  "ownerAttendanceRulesAttendanceRequired": "الحضور إلزامي",
+  "ownerAttendanceRulesAttendanceRequiredHint": "يجب على الموظفين تسجيل اليوم قبل العمل.",
+  "ownerAttendanceRulesPunchInRequired": "بصمة الدخول إلزامية",
+  "ownerAttendanceRulesPunchOutRequired": "بصمة الخروج إلزامية",
+  "ownerAttendanceRulesBreaksEnabled": "السماح بفترات الاستراحة",
+  "ownerAttendanceRulesMaxPunchesLabel": "الحد الأقصى للبصمات يوميًا",
+  "ownerAttendanceRulesMaxBreaksLabel": "الحد الأقصى للاستراحات يوميًا",
+
+  "ownerAttendanceGraceLateLabel": "سماح التأخير (دقائق)",
+  "ownerAttendanceGraceEarlyExitLabel": "سماح الانصراف المبكر (دقائق)",
+  "ownerAttendanceGraceMinShiftLabel": "أقل دوام (دقائق)",
+  "ownerAttendanceGraceMaxShiftLabel": "أقصى دوام (دقائق)",
+
+  "ownerAttendanceCorrectionEnabled": "تفعيل طلبات التصحيح",
+  "ownerAttendanceCorrectionRequireReason": "إلزام كتابة السبب",
+  "ownerAttendanceCorrectionRequireApproval": "اشتراط موافقة المالك/المسؤول",
+  "ownerAttendanceCorrectionMaxPerMonth": "الحد الأقصى لطلبات التصحيح شهريًا",
+
+  "ownerAttendanceViolationsAuto": "إنشاء المخالفات تلقائيًا",
+  "ownerAttendanceViolationsAutoHint": "إنشاء مخالفات الرواتب تلقائيًا عند تجاوز الحدود.",
+  "ownerAttendanceViolationsMissingCheckoutPercent": "خصم بصمة الخروج المفقودة (%)",
+  "ownerAttendanceViolationsAbsencePercent": "خصم الغياب (%)",
+  "ownerAttendanceViolationsLatePercent": "خصم التأخير (%)",
+  "ownerAttendanceViolationsEarlyExitPercent": "خصم الانصراف المبكر (%)",
+  "ownerAttendanceViolationsLateAllowance": "عدد التأخيرات المسموح بها شهريًا",
+  "ownerAttendanceViolationsEarlyExitAllowance": "عدد الانصرافات المبكرة المسموح بها شهريًا",
+  "ownerAttendanceViolationsMissingCheckoutAllowance": "عدد بصمات الخروج المفقودة المسموح بها شهريًا",
+
+  "ownerAttendanceSettingsSave": "حفظ التغييرات",
+  "ownerAttendanceSettingsSaved": "تم تحديث إعدادات الحضور",
+  "ownerAttendanceSettingsSaveFailed": "تعذّر حفظ إعدادات الحضور",
+  "ownerAttendanceSettingsValidationLocationMissing": "حدد موقع الصالون قبل الحفظ.",
+  "ownerAttendanceSettingsValidationRadius": "يجب أن يكون النطاق بين 10 و 500 متر.",
+  "ownerAttendanceSettingsValidationMaxPunches": "يجب أن يكون الحد الأقصى للبصمات بين 2 و 10.",
+  "ownerAttendanceSettingsValidationMaxBreaks": "يجب أن يكون الحد الأقصى للاستراحات بين 0 و 5.",
+  "ownerAttendanceSettingsValidationGraceLate": "يجب أن يكون سماح التأخير بين 0 و 120 دقيقة.",
+  "ownerAttendanceSettingsValidationGraceEarly": "يجب أن يكون سماح الانصراف المبكر بين 0 و 120 دقيقة.",
+  "ownerAttendanceSettingsValidationMinShift": "يجب أن يكون أقل دوام أكبر من صفر.",
+  "ownerAttendanceSettingsValidationMaxShift": "يجب أن يكون أقصى دوام أكبر من أقل دوام.",
+  "ownerAttendanceSettingsValidationDeduction": "يجب أن تكون نسب الخصم بين 0 و 100.",
+  "ownerAttendanceSettingsValidationAllowance": "يجب أن تكون الأعداد المسموح بها صفرًا أو أكبر.",
+
+  "ownerMoneySalesSection": "المبيعات",
+  "ownerMoneySalesEmptyTitle": "لا مبيعات",
+  "ownerMoneyEmptySales": "لا مبيعات في هذه الفترة بعد.",
+  "ownerAddSaleTitle": "إضافة بيع",
+  "ownerAddSaleSubtitle": "سجّل بيعًا سريعًا من الزائر أو من الكاشير.",
+  "ownerAddSaleServiceField": "الخدمة",
+  "ownerAddSaleBarberField": "مقدم الخدمة",
+  "ownerAddSalePriceLabel": "السعر",
+  "ownerAddSalePriceHint": "اختر خدمة لعرض السعر.",
+  "ownerAddSaleCustomerHint": "اسم العميل (اختياري)",
+  "ownerAddSaleSave": "حفظ البيع",
+  "ownerAddSaleSuccess": "تم حفظ البيع",
+  "ownerAddSaleValidation": "اختر خدمة واحدة على الأقل ومقدم خدمة وطريقة دفع.",
+  "ownerAddSaleOpen": "إضافة بيع",
+  "ownerAddSaleNoStaff": "أضف أعضاء الفريق قبل تسجيل المبيعات.",
+  "ownerServiceCategory": "التصنيف (اختياري)",
+  "ownerServiceActiveLabel": "الخدمة نشطة",
+  "ownerServiceInactiveBadge": "غير نشطة",
+  "roleOwner": "مالك",
+  "roleAdmin": "مسؤول",
+  "adminConsoleTitle": "لوحة المسؤول",
+  "adminWorkspaceSubtitle": "إدارة الموظفين والسياسات وتشغيل الصالون.",
+  "adminSalonIdLine": "معرّف الصالون: {salonId}",
+  "@adminSalonIdLine": {
+    "placeholders": {
+      "salonId": {"type": "String"}
+    }
+  },
+  "adminSalonNotLinked": "لا يوجد صالون مرتبط",
+  "roleBarber": "عضو فريق",
+  "roleCustomer": "عميل",
+  "paymentMethodCash": "نقدًا",
+  "paymentMethodCard": "بطاقة",
+  "paymentMethodDigitalWallet": "محفظة رقمية",
+  "paymentMethodOther": "أخرى",
+  "payrollStatusDraft": "مسودة",
+  "payrollStatusPendingApproval": "بانتظار الموافقة",
+  "payrollStatusApproved": "معتمد",
+  "payrollStatusPaid": "مدفوع",
+  "payrollStatusVoided": "ملغى",
+  "customerBookingsUpcoming": "القادمة",
+  "customerBookingsPast": "السابقة",
+  "customerBookingsUpcomingEmpty": "لا زيارات قادمة.",
+  "customerBookingsPastEmpty": "لا زيارات سابقة بعد.",
+  "customerBookingCancel": "إلغاء",
+  "customerBookingReschedule": "إعادة جدولة",
+  "customerBookingCancelledToast": "تم إلغاء الحجز",
+  "customerBookingRescheduledToast": "تم تحديث الحجز",
+  "customerBookingActionUnavailable": "لا يمكن تنفيذ هذا الإجراء لهذا الحجز.",
+  "customerRescheduleTitle": "إعادة الجدولة",
+  "customerRescheduleSubmit": "حفظ الوقت الجديد",
+  "customerMyBookingsLoading": "جارٍ تحميل حجوزاتك…",
+  "listLoadMore": "تحميل المزيد",
+  "bookingOpMarkArrived": "وصول العميل",
+  "bookingOpStartService": "بدء الخدمة",
+  "bookingOpComplete": "إكمال",
+  "bookingOpNoShowCustomer": "عدم حضور (عميل)",
+  "bookingOpNoShowBarber": "عدم حضور (حلاق)",
+  "ownerViolationsTitle": "المخالفات والغرامات",
+  "ownerViolationsSubtitle": "اعتماد الخصومات قبل تطبيقها على الرواتب.",
+  "ownerViolationsEmpty": "لا مخالفات معلّقة.",
+  "ownerViolationBooking": "الحجز",
+  "ownerViolationAmount": "المبلغ",
+  "ownerViolationApprove": "اعتماد",
+  "ownerViolationReject": "رفض",
+  "ownerViolationReviewSaved": "تم تحديث المخالفة",
+  "ownerPenaltySettingsTitle": "قواعد الغرامات",
+  "ownerPenaltySettingsSaved": "تم حفظ إعدادات الغرامات",
+  "ownerPenaltyLateEnabled": "غرامات تأخر الموظفين",
+  "ownerPenaltyGraceMinutes": "فترة السماح (دقائق)",
+  "ownerPenaltyCalcFlat": "مبلغ ثابت",
+  "ownerPenaltyCalcPercent": "نسبة من الإجمالي",
+  "ownerPenaltyCalcPerMinute": "لكل دقيقة بعد السماح",
+  "ownerPenaltyLateValue": "قيمة غرامة التأخر",
+  "ownerPenaltyNoShowEnabled": "غرامات عدم حضور الموظفين",
+  "ownerPenaltyNoShowValue": "قيمة غرامة عدم الحضور",
+  "ownerViolationsMetricPending": "مخالفات قيد المراجعة",
+  "ownerViolationsMetricRulesOn": "قواعد نشطة",
+  "ownerPenaltyAppliesWhenLabel": "تُطبّق الغرامة عند",
+  "ownerPenaltyLateWhenBody": "تسجيل عضو الطاقم حضورًا متأخرًا بعد فترة السماح",
+  "ownerPenaltyNoShowWhenBody": "تفويت عضو الطاقم للموعد",
+  "ownerPenaltyMetricCalculation": "طريقة الاحتساب",
+  "ownerKpiNoShowToday": "عدم حضور اليوم",
+  "ownerKpiNoShowRateMonth": "معدل عدم الحضور (الشهر)",
+  "ownerKpiPenaltyMonth": "الغرامات (الشهر)",
+  "ownerKpiTopPenalizedBarber": "الأكثر غرامات (الشهر)",
+  "payrollDeductionViolations": "الخصومات",
+  "payrollStatusRolledBack": "تم التراجع",
+  "payrollBadgeRecurring": "متكرر",
+  "payrollBadgeNonRecurring": "مرة واحدة",
+  "payrollLineQuantity": "الكمية {value}",
+  "@payrollLineQuantity": {
+    "placeholders": {
+      "value": {"type": "String"}
+    }
+  },
+  "payrollLineRate": "المعدل {value}",
+  "@payrollLineRate": {
+    "placeholders": {
+      "value": {"type": "String"}
+    }
+  },
+  "payrollGenericError": "تعذّر تحميل بيانات الرواتب الآن.",
+  "payrollSummaryEarnings": "الاستحقاقات",
+  "payrollSummaryDeductions": "الخصومات",
+  "payrollSummaryNetPay": "صافي الراتب",
+  "payrollSectionEarnings": "بنود الاستحقاقات",
+  "payrollSectionDeductions": "بنود الخصومات",
+  "payrollSectionInformation": "بنود المعلومات",
+  "payrollSectionEmpty": "لا توجد بنود في هذا القسم.",
+  "payrollDashboardTitle": "الرواتب",
+  "payrollDashboardSubtitle": "نظرة عامة على محرك رواتب {monthLabel}.",
+  "@payrollDashboardSubtitle": {
+    "placeholders": {
+      "monthLabel": {"type": "String"}
+    }
+  },
+  "payrollQuickPayTitle": "الدفع السريع",
+  "payrollQuickPayShortcutSubtitle": "احسب وروّج راتب موظف واحد بسرعة.",
+  "payrollRunReviewTitle": "مراجعة تشغيل الرواتب",
+  "payrollRunShortcutSubtitle": "راجع تشغيل رواتب شهري لعدة موظفين.",
+  "payrollStatusBreakdownTitle": "توزيع الحالات",
+  "payrollRecentRunsTitle": "آخر تشغيلات الرواتب",
+  "payrollRecentRunsEmpty": "ستظهر هنا آخر أنشطة الرواتب.",
+  "payrollRunGroupLabel": "{count} موظف",
+  "@payrollRunGroupLabel": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "payrollMissingSetupTitle": "موظفون بدون إعداد رواتب",
+  "payrollMissingSetupEmpty": "كل الموظفين النشطين لديهم إعداد رواتب متكرر.",
+  "payrollActionSetUp": "إعداد",
+  "payrollElementsTitle": "عناصر الرواتب",
+  "payrollElementsSeedDefaults": "إضافة العناصر الافتراضية",
+  "payrollElementsAdd": "إضافة عنصر",
+  "payrollElementsEmptyTitle": "لا توجد عناصر رواتب بعد",
+  "payrollElementsEmptySubtitle": "أضف عناصر الاستحقاقات والخصومات والمعلومات الافتراضية لبدء بناء الرواتب.",
+  "payrollElementsSystemTag": "نظامي",
+  "payrollFieldCode": "الرمز",
+  "payrollFieldName": "الاسم",
+  "payrollFieldClassification": "التصنيف",
+  "payrollFieldRecurrence": "التكرار",
+  "payrollFieldCalculationMethod": "طريقة الاحتساب",
+  "payrollFieldDefaultAmount": "المبلغ الافتراضي",
+  "payrollFieldVisibleOnPayslip": "يظهر في قسيمة الراتب",
+  "payrollFieldAffectsNetPay": "يؤثر على صافي الراتب",
+  "payrollFieldElement": "العنصر",
+  "payrollFieldAmount": "المبلغ",
+  "payrollFieldPercentageOptional": "النسبة (اختياري)",
+  "payrollFieldNote": "ملاحظة",
+  "payrollFieldEmployee": "الموظف",
+  "payrollFieldPayrollPeriod": "فترة الرواتب",
+  "payrollClassificationEarning": "استحقاق",
+  "payrollClassificationDeduction": "خصم",
+  "payrollClassificationInformation": "معلومة",
+  "payrollCalculationFixed": "ثابت",
+  "payrollCalculationPercentage": "نسبة",
+  "payrollCalculationDerived": "مشتق",
+  "payrollActionSave": "حفظ",
+  "payrollActionCalculate": "احتساب",
+  "payrollActionSaveDraft": "حفظ كمسودة",
+  "payrollActionApprove": "اعتماد",
+  "payrollActionPay": "دفع",
+  "payrollActionRollback": "تراجع",
+  "payrollEmployeeSetupTitle": "إعداد رواتب الموظف",
+  "payrollEmployeeAddEntry": "إضافة بند",
+  "payrollEmployeeSetupSubtitle": "أدر البنود المتكررة والمرات الواحدة لهذا الموظف.",
+  "payrollEmployeeEntriesEmptyTitle": "لا توجد بنود رواتب بعد",
+  "payrollEmployeeEntriesEmptySubtitle": "أضف عناصر راتب متكررة وتعديلات لمرة واحدة لهذا الموظف.",
+  "payrollQuickPayValidation": "اختر الموظف وفترة الرواتب أولاً.",
+  "payrollQuickPayStatementEmptyTitle": "لا يوجد كشف دفع سريع بعد",
+  "payrollQuickPayStatementEmptySubtitle": "اختر الموظف والفترة لاحتساب الاستحقاقات والخصومات.",
+  "payrollPayslipTitle": "قسيمة الراتب",
+  "payrollPayslipEmptyTitle": "لا توجد بنود في القسيمة",
+  "payrollPayslipEmptySubtitle": "لا يحتوي تشغيل الرواتب هذا على بنود ظاهرة للموظف المحدد.",
+  "payrollRunEmployeesLabel": "الموظفون",
+  "payrollRunAllEmployees": "كل الموظفين النشطين",
+  "payrollRunValidation": "اختر فترة الرواتب قبل الاحتساب.",
+  "payrollRunReviewEmptyTitle": "لا توجد مسودة تشغيل بعد",
+  "payrollRunReviewEmptySubtitle": "اختر الفترة واحتسب التشغيل لمراجعة إجماليات الرواتب المجمعة.",
+  "payrollRunEmployeeSummary": "{lineCount} بنود · الصافي {netPay}",
+  "@payrollRunEmployeeSummary": {
+    "placeholders": {
+      "lineCount": {"type": "int"},
+      "netPay": {"type": "String"}
+    }
+  },
+  "violationTypeBarberLate": "تأخر",
+  "violationTypeBarberNoShow": "عدم حضور الحلاق",
+  "customerRecommendationsTitle": "اقتراحات",
+  "customerRecommendationBest": "الخيار الأفضل",
+  "customerRecommendationFastest": "أسرع موعد",
+  "customerRecommendationPreferred": "حلاقك المفضّل",
+  "customerRecommendationAlternatives": "بدائل",
+  "customerRecommendationUseSlot": "{time} · {barber}",
+  "@customerRecommendationUseSlot": {
+    "placeholders": {
+      "time": {"type": "String"},
+      "barber": {"type": "String"}
+    }
+  },
+  "recommendationReasonExperiencedWithService": "خبرة بهذه الخدمة",
+  "recommendationReasonNoServiceHistoryFallback": "لا بيانات تاريخية حديثة لهذه الخدمة",
+  "recommendationReasonStrongTrackRecord": "سجل إنجاز قوي",
+  "recommendationReasonSoonestTime": "أقرب وقت متاح",
+  "recommendationReasonPreferredBarber": "حلاقك المفضّل",
+  "recommendationReasonBalancedSchedule": "جدول أخف في الأيام القادمة",
+  "recommendationReasonMoreAvailabilityToday": "موعد أبكر اليوم",
+  "notificationsCenterTitle": "الإشعارات",
+  "notificationsEmpty": "لا توجد إشعارات بعد.",
+  "notificationsPreferencesTitle": "إعدادات الإشعارات",
+  "notificationsPreferencesTooltip": "إعدادات الإشعارات",
+  "notificationsPrefPushMaster": "إشعارات الدفع",
+  "notificationsPrefBookingReminders": "تذكيرات المواعيد",
+  "notificationsPrefBookingChanges": "تحديثات الحجز",
+  "notificationsPrefPayroll": "تنبيهات الرواتب",
+  "notificationsPrefViolations": "المخالفات وعدم الحضور",
+  "notificationsPrefMarketing": "نصائح وعروض",
+  "notificationsPrefMarketingHint": "تحديثات خفيفة من الصالون أو التطبيق.",
+  "notificationsInboxTooltip": "الإشعارات",
+  "customerNotificationsTooltip": "الإشعارات",
+  "customerDiscoveryGoodMorning": "صباح الخير",
+  "customerDiscoveryGoodAfternoon": "مساء الخير",
+  "customerDiscoveryGoodEvening": "مساء الخير",
+  "customerDiscoveryNameWave": "{name} 👋",
+  "@customerDiscoveryNameWave": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "customerPromoSalonEyebrow": "{count, plural, =0{لا صالونات للعرض بعد} one{صالون واحد متاح} other{{count} صالونات متاحة}}",
+  "@customerPromoSalonEyebrow": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "customerPromoServicesTitle": "{count, plural, =0{ستظهر الخدمات عند نشرها من الصالونات.} one{خدمة واحدة للتصفّح} other{{count} خدمات للتصفّح}}",
+  "@customerPromoServicesTitle": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "customerPromoCta": "تصفّح الصالونات",
+  "customerSectionQuickServices": "خدمات من الصالونات",
+  "customerSectionNearbySalons": "صالونات لك",
+  "customerSeeAll": "عرض الكل",
+  "customerSalonDiscoveryTitle": "اعثر على صالونك",
+  "customerSalonDiscoverySubtitle": "احجز موعدك القادم",
+  "customerSalonDiscoverySearchHint": "ابحث عن صالون، خدمة، منطقة…",
+  "customerSalonDiscoveryNearYou": "بالقرب منك",
+  "customerSalonDiscoveryEmpty": "لا توجد صالونات مطابقة. جرّب تغيير الفلاتر أو البحث.",
+  "customerSalonDiscoveryRetry": "إعادة المحاولة",
+  "customerSalonDiscoveryErrorPermission": "تعذّر تحميل قائمة الصالونات. تحقّق من قواعد الفهرس في Firestore.",
+  "customerSalonDiscoveryBookingsSignIn": "سجّل الدخول لعرض حجوزاتك.",
+  "customerSalonDiscoveryNavDiscover": "استكشف",
+  "customerSalonDiscoveryNavBookings": "الحجوزات",
+  "customerSalonDiscoveryNavAccount": "الحساب",
+  "customerSalonBookmarkTooltip": "حفظ الصالون",
+  "customerSalonStartingFrom": "ابتداءً من {price}",
+  "@customerSalonStartingFrom": {
+    "placeholders": {
+      "price": {"type": "String"}
+    }
+  },
+  "customerSalonOpenNowBadge": "مفتوح الآن",
+  "customerSalonClosedBadge": "مغلق",
+  "customerSalonFilterNearby": "بالقرب",
+  "customerSalonFilterOpenNow": "مفتوح الآن",
+  "customerSalonFilterTopRated": "الأعلى تقييماً",
+  "customerSalonFilterOffers": "عروض",
+  "customerSalonFilterLadies": "سيدات",
+  "customerSalonFilterMen": "رجال",
+  "customerSalonFilterUnisex": "للكل",
+  "customerProfileTabServices": "الخدمات",
+  "customerProfileTabTeam": "الفريق",
+  "customerProfileTabReviews": "التقييمات",
+  "customerProfileTabAbout": "عن الصالون",
+  "customerProfileBookAppointment": "احجز موعدًا",
+  "customerProfileActionCall": "اتصال",
+  "customerProfileActionWhatsApp": "واتساب",
+  "customerProfileActionMap": "الخريطة",
+  "customerProfileActionShare": "مشاركة",
+  "customerProfileEmptyServices": "لا توجد خدمات متاحة بعد.",
+  "customerProfileEmptyTeam": "لا يوجد أخصائيون متاحون بعد.",
+  "customerProfileEmptyReviews": "لا توجد تقييمات بعد.",
+  "customerProfileSalonNotFound": "هذا الصالون غير متاح.",
+  "customerProfileWorkingHoursPlaceholder": "ساعات العمل ستظهر هنا قريبًا.",
+  "customerProfileMapPreviewPlaceholder": "معاينة الخريطة",
+  "customerProfileAboutArea": "المنطقة",
+  "customerProfileAboutPhone": "الهاتف",
+  "customerProfileAboutGender": "الجنس",
+  "customerProfileGenderValue": "{gender}",
+  "@customerProfileGenderValue": {
+    "placeholders": {
+      "gender": {"type": "String"}
+    }
+  },
+  "customerProfileMinutesShort": "{minutes} د",
+  "@customerProfileMinutesShort": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "customerServiceSelectionTitle": "اختر خدماتك",
+  "customerServiceSelectionSubtitle": "اختر خدمة واحدة أو أكثر",
+  "customerServiceSelectionStepLabel": "الخطوة 1 من 5",
+  "customerServiceSelectionProgressTitle": "الخدمات",
+  "customerServiceSelectionEmpty": "لا توجد خدمات متاحة بعد.",
+  "customerServiceSelectionSelectedCount": "{count} محددة",
+  "@customerServiceSelectionSelectedCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "customerServiceSelectionSummary": "المدة: {minutes} د · الإجمالي: {total}",
+  "@customerServiceSelectionSummary": {
+    "placeholders": {
+      "minutes": {"type": "int"},
+      "total": {"type": "String"}
+    }
+  },
+  "customerServiceSelectionContinue": "متابعة",
+  "customerServiceSelectionClear": "مسح",
+  "customerServiceSelectionRequiredSnack": "اختر خدمة واحدة على الأقل للمتابعة.",
+  "customerServiceSelectionComingNext": "اختيار الخدمات قادم في الخطوة التالية.\n\nمعرّف الصالون:\n{salonId}",
+  "@customerServiceSelectionComingNext": {
+    "placeholders": {
+      "salonId": {"type": "String"}
+    }
+  },
+  "customerTeamSelectionComingNext": "اختيار الفريق قادم في الخطوة التالية.\n\nمعرّف الصالون:\n{salonId}",
+  "@customerTeamSelectionComingNext": {
+    "placeholders": {
+      "salonId": {"type": "String"}
+    }
+  },
+  "customerTeamSelectionTitle": "اختر الأخصائي",
+  "customerTeamSelectionSubtitle": "اختر عضوًا من الفريق أو أي متاح",
+  "customerTeamSelectionStepLabel": "الخطوة 2 من 5",
+  "customerTeamSelectionProgressTitle": "الأخصائي",
+  "customerTeamSelectionAnyTitle": "أي أخصائي متاح",
+  "customerTeamSelectionAnySubtitle": "سنختار لك أفضل أخصائي متاح في الوقت الذي تحدده.",
+  "customerTeamSelectionEmpty": "لا يوجد أخصائيون متاحون بعد.",
+  "customerTeamSelectionRequiredSnack": "اختر أخصائيًا للمتابعة.",
+  "customerTeamSelectionServicesRequiredSnack": "اختر خدمة واحدة على الأقل أولاً.",
+  "customerTeamSelectionNoStaffHint": "أضف أعضاء فريق قابلين للحجز للمتابعة.",
+  "customerTeamSelectionRating": "التقييم {rating} ({count})",
+  "@customerTeamSelectionRating": {
+    "placeholders": {
+      "rating": {"type": "String"},
+      "count": {"type": "int"}
+    }
+  },
+  "customerDateTimeSelectionComingNext": "اختيار التاريخ والوقت قادم في الخطوة التالية.\n\nمعرّف الصالون:\n{salonId}",
+  "@customerDateTimeSelectionComingNext": {
+    "placeholders": {
+      "salonId": {"type": "String"}
+    }
+  },
+  "customerDateTimeTitle": "اختر التاريخ والوقت",
+  "customerDateTimeSubtitle": "اختر موعدًا متاحًا للحجز",
+  "customerDateTimeStepLabel": "الخطوة 3 من 5",
+  "customerDateTimeProgressTitle": "التاريخ والوقت",
+  "customerDateTimeToday": "اليوم",
+  "customerDateTimeTomorrow": "غدًا",
+  "customerDateTimeMorning": "الصباح",
+  "customerDateTimeAfternoon": "بعد الظهر",
+  "customerDateTimeEvening": "المساء",
+  "customerDateTimeEmpty": "لا توجد مواعيد متاحة",
+  "customerDateTimeChooseAnotherDate": "يرجى اختيار تاريخ آخر",
+  "customerDateTimeRequiredSnack": "اختر وقتًا متاحًا للمتابعة.",
+  "customerDateTimeSummaryTitle": "{count} خدمات · {specialist}",
+  "@customerDateTimeSummaryTitle": {
+    "placeholders": {
+      "count": {"type": "int"},
+      "specialist": {"type": "String"}
+    }
+  },
+  "customerDateTimeSummarySubtitle": "المدة: {minutes} د · الإجمالي: {total}",
+  "@customerDateTimeSummarySubtitle": {
+    "placeholders": {
+      "minutes": {"type": "int"},
+      "total": {"type": "String"}
+    }
+  },
+  "customerDetailsComingNext": "تفاصيل العميل قادمة في الخطوة التالية.\n\nمعرّف الصالون:\n{salonId}",
+  "@customerDetailsComingNext": {
+    "placeholders": {
+      "salonId": {"type": "String"}
+    }
+  },
+  "customerDetailsTitle": "بياناتك",
+  "customerDetailsSubtitle": "أضف بيانات التواصل لموعدك",
+  "customerDetailsStepLabel": "الخطوة 4 من 5",
+  "customerDetailsProgressTitle": "البيانات",
+  "customerDetailsFullName": "الاسم الكامل",
+  "customerDetailsPhoneNumber": "رقم الهاتف",
+  "customerDetailsGender": "الجنس",
+  "customerDetailsGenderMale": "ذكر",
+  "customerDetailsGenderFemale": "أنثى",
+  "customerDetailsGenderPreferNotToSay": "أفضل عدم الإجابة",
+  "customerDetailsNotes": "ملاحظات",
+  "customerDetailsNotesHint": "أي ملاحظات للصالون؟",
+  "customerDetailsPhoneInfo": "سنستخدم رقم هاتفك فقط لتأكيد الحجز والعثور عليه.",
+  "customerDetailsRequiredField": "حقل مطلوب",
+  "customerDetailsInvalidPhone": "أدخل رقم هاتف صحيح",
+  "customerDetailsNameTooShort": "يجب ألا يقل الاسم عن حرفين",
+  "customerDetailsNotesTooLong": "لا يمكن أن تتجاوز الملاحظات 300 حرف",
+  "customerDetailsSummaryTitle": "{count} خدمات · {specialist}",
+  "@customerDetailsSummaryTitle": {
+    "placeholders": {
+      "count": {"type": "int"},
+      "specialist": {"type": "String"}
+    }
+  },
+  "customerDetailsSummarySubtitle": "{dateTime} · {total}",
+  "@customerDetailsSummarySubtitle": {
+    "placeholders": {
+      "dateTime": {"type": "String"},
+      "total": {"type": "String"}
+    }
+  },
+  "customerBookingReviewComingNext": "مراجعة الحجز قادمة في الخطوة التالية.\n\nمعرّف الصالون:\n{salonId}",
+  "@customerBookingReviewComingNext": {
+    "placeholders": {
+      "salonId": {"type": "String"}
+    }
+  },
+  "customerBookingReviewTitle": "راجع الحجز",
+  "customerBookingReviewSubtitle": "تأكد من تفاصيل موعدك قبل التأكيد",
+  "customerBookingReviewStepLabel": "الخطوة 5 من 5",
+  "customerBookingReviewProgressTitle": "المراجعة",
+  "customerBookingReviewSalon": "الصالون",
+  "customerBookingReviewServices": "الخدمات",
+  "customerBookingReviewSpecialist": "المختص",
+  "customerBookingReviewDateTime": "التاريخ والوقت",
+  "customerBookingReviewCustomer": "العميل",
+  "customerBookingReviewPaymentSummary": "ملخص الدفع",
+  "customerBookingReviewSubtotal": "المجموع الفرعي",
+  "customerBookingReviewDiscount": "الخصم",
+  "customerBookingReviewTotal": "الإجمالي",
+  "customerBookingReviewConfirm": "تأكيد الحجز",
+  "customerBookingReviewSlotUnavailable": "هذا الموعد لم يعد متاحاً. يرجى اختيار وقت آخر.",
+  "customerBookingReviewChooseSpecialistAgain": "يرجى اختيار مختص مرة أخرى.",
+  "customerBookingReviewGenericError": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+  "customerBookingSuccessPlaceholder": "تم تأكيد الحجز\n\nرمز الحجز:\n{bookingCode}",
+  "@customerBookingSuccessPlaceholder": {
+    "placeholders": {
+      "bookingCode": {"type": "String"}
+    }
+  },
+  "customerBookingSuccessTitle": "تم تأكيد الحجز",
+  "customerBookingSuccessSubtitle": "تم حفظ موعدك بنجاح.",
+  "customerBookingSuccessCode": "رمز الحجز",
+  "customerBookingSuccessStatus": "الحالة",
+  "customerBookingSuccessDate": "التاريخ",
+  "customerBookingSuccessTime": "الوقت",
+  "customerBookingSuccessStatusFallback": "محفوظ",
+  "customerBookingSuccessFallback": "متاح في تفاصيل الحجز",
+  "customerBookingSuccessSaveCodeInfo": "احفظ رمز الحجز. يمكنك استخدامه لاحقاً للعثور على موعدك.",
+  "customerBookingSuccessViewBooking": "عرض الحجز",
+  "customerBookingSuccessBookAnother": "حجز موعد آخر",
+  "customerBookingSuccessBackToSalon": "العودة إلى الصالون",
+  "customerBookingSuccessCodeCopied": "تم نسخ رمز الحجز.",
+  "customerBookingLookupTitle": "ابحث عن حجزك",
+  "customerBookingLookupSubtitle": "أدخل رقم هاتفك لعرض موعدك",
+  "customerBookingLookupPhoneNumber": "رقم الهاتف",
+  "customerBookingLookupBookingCode": "رمز الحجز",
+  "customerBookingLookupBookingCodeOptional": "رمز الحجز اختياري",
+  "customerBookingLookupSearch": "بحث",
+  "customerBookingLookupPhoneHint": "استخدم نفس رقم الهاتف الذي استخدمته عند الحجز.",
+  "customerBookingLookupNoBookings": "لم يتم العثور على حجوزات",
+  "customerBookingLookupViewDetails": "عرض التفاصيل",
+  "customerBookingStatusPending": "قيد الانتظار",
+  "customerBookingStatusConfirmed": "مؤكد",
+  "customerBookingStatusCheckedIn": "تم تسجيل الوصول",
+  "customerBookingStatusCompleted": "مكتمل",
+  "customerBookingStatusCancelled": "ملغى",
+  "customerBookingStatusNoShow": "لم يحضر",
+  "customerBookingLookupInvalidPhone": "أدخل رقم هاتف صحيح",
+  "customerBookingLookupGenericError": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+  "customerBookingLookupAnySpecialist": "أي مختص متاح",
+  "customerBookingDetailsTitle": "تفاصيل الحجز",
+  "customerBookingDetailsSubtitle": "اعرض معلومات موعدك",
+  "customerBookingDetailsCopied": "تم النسخ",
+  "customerBookingDetailsDurationPrice": "{minutes} د · {price}",
+  "@customerBookingDetailsDurationPrice": {
+    "placeholders": {
+      "minutes": {"type": "int"},
+      "price": {"type": "String"}
+    }
+  },
+  "customerBookingDetailsTimelineTitle": "المراحل",
+  "customerBookingDetailsTimelineCreated": "تم الإنشاء",
+  "customerBookingDetailsTimelineUpcoming": "قادم",
+  "customerBookingDetailsTimelineConfirmed": "مؤكد",
+  "customerBookingDetailsPendingConfirmation": "بانتظار التأكيد",
+  "customerBookingDetailsSpecialist": "المختص",
+  "customerBookingDetailsCall": "اتصال",
+  "customerBookingDetailsWhatsApp": "واتساب",
+  "customerBookingDetailsWhatsAppMessage": "مرحبًا — لدي سؤال بخصوص حجزي.",
+  "customerBookingDetailsPhoneUnavailable": "رقم الهاتف غير متوفر",
+  "customerBookingDetailsReschedule": "إعادة الجدولة",
+  "customerBookingDetailsCancelBooking": "إلغاء الحجز",
+  "customerBookingDetailsLeaveFeedback": "ترك ملاحظة",
+  "customerBookingDetailsBookAgain": "احجز مجددًا",
+  "customerBookingDetailsComingSoon": "قريبًا",
+  "customerBookingDetailsActionsTitle": "الخطوة التالية",
+  "customerBookingDetailsArea": "المنطقة",
+  "customerCancelBookingTitle": "إلغاء الحجز",
+  "customerCancelBookingConfirmMessage": "هل أنت متأكد أنك تريد إلغاء هذا الحجز؟",
+  "customerCancelBookingReasonLabel": "السبب",
+  "customerCancelBookingReasonHint": "السبب (اختياري)",
+  "customerCancelBookingKeep": "الإبقاء على الحجز",
+  "customerCancelBookingConfirm": "تأكيد الإلغاء",
+  "customerCancelBookingSuccess": "تم إلغاء الحجز بنجاح",
+  "customerCancelBookingCannotCancelOnline": "لا يمكن إلغاء هذا الحجز عبر الإنترنت.",
+  "customerCancelBookingTooCloseToStart": "اقترب موعد الحجز كثيرًا لإلغائه عبر الإنترنت. يُرجى التواصل مع الصالون.",
+  "customerCancelBookingReasonTooLong": "لا يمكن أن يتجاوز السبب 200 حرف",
+  "customerRescheduleTitle": "إعادة جدولة الحجز",
+  "customerRescheduleSubtitle": "اختر موعدًا جديدًا",
+  "customerRescheduleCurrentAppointment": "الموعد الحالي",
+  "customerRescheduleNewAppointment": "الموعد الجديد",
+  "customerRescheduleConfirmTime": "تأكيد الوقت الجديد",
+  "customerRescheduleSuccess": "تمت إعادة جدولة الحجز بنجاح",
+  "customerRescheduleCannotOnline": "لا يمكن إعادة جدولة هذا الحجز عبر الإنترنت.",
+  "customerRescheduleTooCloseToStart": "اقترب موعد الحجز كثيرًا لإعادة جدولته عبر الإنترنت. يُرجى التواصل مع الصالون.",
+  "customerRescheduleNoSlots": "لا توجد أوقات متاحة",
+  "customerRescheduleChooseAnotherDate": "يُرجى اختيار تاريخ آخر",
+  "customerRescheduleStepLabel": "إعادة الجدولة",
+  "customerRescheduleProgressTitle": "وقت جديد",
+  "customerFeedbackTitle": "ترك ملاحظة",
+  "customerFeedbackSubtitle": "أخبرنا عن تجربتك في الموعد",
+  "customerFeedbackCommentHint": "شارك تجربتك",
+  "customerFeedbackCommentLabel": "تعليق",
+  "customerFeedbackRatingSection": "تقييمك",
+  "customerFeedbackWouldComeAgain": "هل ستعود مرة أخرى؟",
+  "customerFeedbackYes": "نعم",
+  "customerFeedbackNo": "لا",
+  "customerFeedbackSubmit": "إرسال الملاحظة",
+  "customerFeedbackThankYouTitle": "شكرًا لملاحظتك",
+  "customerFeedbackThankYouSubtitle": "نقدّر وقتك.",
+  "customerFeedbackAlreadySubmittedTitle": "تم إرسال الملاحظة مسبقًا",
+  "customerFeedbackAlreadySubmittedSubtitle": "يمكنك عرض هذا الحجز في أي وقت من البحث عن الحجز.",
+  "customerFeedbackSubmittedBadge": "تم إرسال الملاحظة",
+  "customerFeedbackBackToDetails": "العودة إلى تفاصيل الحجز",
+  "customerFeedbackRatingPoor": "ضعيف",
+  "customerFeedbackRatingFair": "مقبول",
+  "customerFeedbackRatingGood": "جيد",
+  "customerFeedbackRatingVeryGood": "جيد جدًا",
+  "customerFeedbackRatingExcellent": "ممتاز",
+  "customerFeedbackRatingRequired": "التقييم مطلوب",
+  "customerFeedbackCommentTooLong": "لا يمكن أن يتجاوز التعليق 500 حرفًا",
+  "customerFeedbackOnlyCompleted": "لا يمكن إرسال الملاحظة إلا للحجوزات المكتملة.",
+  "customerFeedbackGenericError": "حدث خطأ ما. يُرجى المحاولة مرة أخرى.",
+  "customerSalonBadgeOpen": "مفتوح",
+  "customerStatBookings": "الحجوزات",
+  "customerStatSalonsVisited": "صالونات زرتها",
+  "customerStatUpcoming": "قادمة",
+  "customerProfileEdit": "تعديل",
+  "customerSettingsTileNotificationsSubtitle": "تنبيهات الحجز والتذكيرات",
+  "customerSettingsTileBookingsSubtitle": "الزيارات القادمة والسابقة",
+  "customerAppFooterVersion": "{appName} الإصدار {version}",
+  "@customerAppFooterVersion": {
+    "placeholders": {
+      "appName": {"type": "String"},
+      "version": {"type": "String"}
+    }
+  },
+  "customerProfileTitle": "الملف الشخصي",
+  "ownerInsightsTitle": "رؤى ذكية",
+  "ownerInsightsSubtitle": "أبرز المؤشرات أسبوعياً من المبيعات والحجوزات (تُحدَّث كل اثنين).",
+  "ownerInsightsEmpty": "ستظهر الرؤى بعد تشغيل الملخص الأسبوعي.",
+  "ownerInsightsError": "تعذّر تحميل الرؤى.",
+  "ownerRetentionTitle": "احتفاظ بالعملاء",
+  "ownerRetentionSubtitle": "يعتمد على الزيارات المكتملة وعدم الحضور (منطقة زمنية للصالون عند ضبطها).",
+  "ownerRetentionEmpty": "ستظهر مؤشرات الاحتفاظ بعد تشغيل المهمة الأسبوعية.",
+  "ownerRetentionMonthLabel": "{year}-{month}",
+  "@ownerRetentionMonthLabel": {
+    "placeholders": {
+      "year": {"type": "int"},
+      "month": {"type": "String"}
+    }
+  },
+  "ownerRetentionTimeZoneUsed": "المنطقة الزمنية: {tz}",
+  "@ownerRetentionTimeZoneUsed": {
+    "placeholders": {
+      "tz": {"type": "String"}
+    }
+  },
+  "ownerRetentionRepeatCustomers": "عملاء متكررون هذا الشهر",
+  "ownerRetentionFirstTimeCustomers": "عملاء لأول مرة هذا الشهر",
+  "ownerRetentionDistinctThisMonth": "عملاء بزيارة مكتملة (منذ بداية الشهر)",
+  "ownerRetentionReturningThisMonth": "عملاء عائدون (لديهم زيارة سابقة)",
+  "ownerRetentionRate": "معدل الاحتفاظ",
+  "ownerRetentionInactive30Days": "عملاء بلا زيارة منذ 30 يومًا",
+  "ownerRetentionNoShowTrend": "اتجاه عدم الحضور (أسابيع محلية)",
+  "ownerRetentionNoShowLastLocalWeek": "آخر أسبوع محلي مكتمل",
+  "ownerRetentionNoShowPreviousLocalWeek": "الأسبوع المحلي السابق",
+  "ownerRetentionNoShowDelta": "التغيير مقارنة بالأسبوع السابق",
+  "ownerRetentionDeltaFlat": "لا تغيير",
+  "ownerRetentionDeltaUp": "+{n}",
+  "@ownerRetentionDeltaUp": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "ownerRetentionDeltaDown": "−{n}",
+  "@ownerRetentionDeltaDown": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "onboardingLanguageTitle": "اللغة",
+  "onboardingLanguageSubtitle": "اختر لغة التطبيق المفضّلة لديك.",
+  "onboardingLanguageEnglish": "الإنجليزية",
+  "onboardingLanguageArabic": "العربية",
+  "onboardingContinue": "متابعة",
+  "onboardingCountryTitle": "البلد / المنطقة",
+  "onboardingCountrySubtitle": "تُستخدم للتنسيقات وخيارات إقليمية لاحقًا.",
+  "preAuthLanguageTitle": "اختر اللغة",
+  "preAuthLanguageSubtitle": "اختر اللغة التي تريد استخدامها في التطبيق",
+  "preAuthLanguageEnglish": "الإنجليزية",
+  "preAuthLanguageArabic": "العربية",
+  "preAuthContinue": "متابعة",
+  "preAuthCountryTitle": "اختر الدولة",
+  "preAuthCountrySubtitle": "هذا يساعدنا على تخصيص تجربة التطبيق لك",
+  "preAuthRoleTitle": "كيف تريد استخدام التطبيق؟",
+  "preAuthRoleSubtitle": "اختر التجربة المناسبة لك",
+  "preAuthRoleCustomerTitle": "مستخدم",
+  "preAuthRoleCustomerSubtitle": "العملاء يسجّلون بالبريد. موظفو الصالون باسم المستخدم.",
+  "preAuthRoleOwnerTitle": "صاحب صالون",
+  "preAuthRoleOwnerSubtitle": "أدر الصالون والفريق والحجوزات والأعمال",
+  "startupEntryTitle": "مرحبًا",
+  "startupEntrySubtitle": "اختر كيف تريد البدء",
+  "startupBookOrAccessTitle": "احجز أو استخدم الخدمات",
+  "startupBookOrAccessSubtitle": "اعثر على الصالونات، احجز زياراتك، أو تابع مع صلاحية فريقك",
+  "startupManageSalonTitle": "أدير صالوني",
+  "startupManageSalonSubtitle": "يُدير المالكون الصالون والفريق والإيرادات من هنا",
+  "startupContinueAsUserTitle": "متابعة كمستخدم",
+  "startupContinueAsUserSubtitle": "احجز الزيارات، استكشف الصالونات، أو سجّل دخولك كطاقم",
+  "startupOwnSalonTitle": "أملك صالونًا",
+  "startupOwnSalonSubtitle": "أدر عملك وفريقك وحجوزاتك وإيراداتك",
+  "userSelectionContinueTitle": "اختر كيف تريد المتابعة",
+  "userSelectionContinueSubtitle": "اختر المسار المناسب لك",
+  "userSelectionTitle": "كيف ستستخدم التطبيق؟",
+  "userSelectionSubtitle": "العملاء وطاقم الصالون يستخدمون طرق تسجيل مختلفة",
+  "userSelectionCustomerTitle": "متابعة كعميل",
+  "userSelectionCustomerSubtitle": "تصفّح الصالونات واحجز المواعيد بالبريد",
+  "userSelectionStaffTitle": "متابعة كطاقم",
+  "userSelectionStaffSubtitle": "استخدم اسم المستخدم الذي شاركه صالونك معك",
+  "customerProfileSetupTitle": "ملفك",
+  "customerProfileSetupSubtitle": "خطوة سريعة قبل إنشاء حسابك",
+  "customerProfileSetupContinue": "متابعة",
+  "customerProfileSetupNameLabel": "الاسم الكامل",
+  "customerProfileSetupNameError": "أدخل اسمك",
+  "customerProfileSetupPhoneLabel": "الهاتف (اختياري)",
+  "staffLoginHeadline": "تسجيل دخول الطاقم",
+  "staffLoginSubtitle": "سجّل بالبريد وكلمة المرور التي أنشأها مالك الصالون لك، أو باسم المستخدم إن وُجد.",
+  "staffLoginNoSignupHint": "حسابات الطاقم تُنشأ من الصالون. تواصل مع المالك إذا احتجت صلاحية.",
+  "preAuthSlideSalonTitle": "اكتشف صالونات قريبة منك",
+  "preAuthSlideSalonSubtitle": "اعثر على أفضل الصالونات وخبراء التجميل قربك — في أي وقت وأي مكان.",
+  "preAuthSlideBarberTitle": "احجز في ثوانٍ",
+  "preAuthSlideBarberSubtitle": "اختر الحلاق والوقت وأكد الحجز فورًا.",
+  "preAuthSlideBookingTitle": "تحكم بكل شيء",
+  "preAuthSlideBookingSubtitle": "أدر الحجوزات واحفظ المفضّلة واستمتع بتجربة سلسة.",
+  "preAuthNext": "التالي",
+  "preAuthGetStarted": "ابدأ الآن",
+  "preAuthSkip": "تخطي",
+  "authGateTitle": "مرحبًا",
+  "authGateSubtitle": "سجّل الدخول، أو أنشئ حساب عميل للحجز، أو سجّل صالونًا جديدًا.",
+  "authGateSignIn": "تسجيل الدخول",
+  "authGateCreateAccount": "إنشاء حساب عميل",
+  "authGateCreateAccountSubtitle": "لحجز المواعيد فقط. مالكو الصالون يستخدمون «إنشاء صالون» أدناه.",
+  "authGateRegionSettings": "إعدادات اللغة والمنطقة",
+  "appSettingsTitle": "إعدادات التطبيق",
+  "appSettingsIntroBody": "خصّص التفضيلات وأدر الإعدادات لتناسب سير عمل صالونك.",
+  "appSettingsLanguageSubtitle": "اختر لغتك المفضّلة",
+  "appSettingsCountrySubtitle": "حدّد منطقة التشغيل الحالية",
+  "appSettingsChangeAnytimeBanner": "يمكنك تغيير ذلك في أي وقت.",
+  "appSettingsMoreActionSubtitle": "معلومات التطبيق والخصوصية وخيارات أخرى",
+  "signOutDialogTitle": "تسجيل الخروج؟",
+  "hrViolationsSummaryAwaitingApproval": "بانتظار الموافقة",
+  "hrViolationsSummaryActiveRulesSubtitle": "قواعد غرامات مفعّلة",
+  "hrViolationsSummaryStaffFlaggedTitle": "طاقم مُعلَم",
+  "hrViolationsEnabledChip": "مفعّل",
+  "hrViolationsDisabledChip": "غير مفعّل",
+  "hrViolationsLateRuleTitle": "قاعدة التأخر",
+  "hrViolationsNoShowRuleTitle": "قاعدة عدم الحضور",
+  "hrViolationsGraceTimeLabel": "فترة السماح",
+  "hrViolationsPendingEmptyTitle": "لا طلبات مخالفات معلّقة",
+  "hrViolationsPendingEmptyBody": "لا يوجد شيء معلّق. ستظهر طلبات المخالفات هنا عند وصولها.",
+  "hrViolationsAddRule": "إضافة قاعدة",
+  "hrViolationsAddRuleComingSoon": "المزيد من أنواع القواعد قريبًا.",
+  "hrViolationsToggleConfirmTitle": "تحديث قاعدة الغرامة؟",
+  "hrViolationsToggleConfirmBody": "يؤثر ذلك على الرواتب والخصومات لفريقك.",
+  "hrViolationsToggleConfirmAction": "تحديث",
+  "hrViolationsSummaryLoadError": "تعذّر تحميل ملخص الموارد البشرية.",
+  "appSettingsLanguageSection": "اللغة",
+  "appSettingsCountrySection": "البلد / المنطقة",
+  "appSettingsCountryLabel": "البلد",
+  "appSettingsCountryHint": "يمكنك تغيير ذلك في أي وقت من هنا.",
+  "appSettingsAppearanceSection": "المظهر",
+  "appSettingsThemeLight": "فاتح",
+  "appSettingsThemeDark": "داكن",
+  "appSettingsThemeSystem": "حسب النظام",
+  "appSettingsMoreSectionTitle": "المزيد",
+  "appSettingsMoreSectionBody": "ستُضاف لاحقًا خيارات الإشعارات والمزيد.",
+  "validationEmailRequired": "نحتاج بريدك لتسجيل الدخول بأمان.",
+  "validationEmailInvalid": "استخدم بريدًا صالحًا، مثل name@salon.com.",
+  "validationPasswordRequired": "اختر كلمة مرور لحماية حسابك.",
+  "validationPasswordShort": "استخدم 8 أحرف على الأقل.",
+  "validationPasswordMinSixChars": "استخدم 6 أحرف على الأقل.",
+  "authSignupTitleCreateAccount": "إنشاء حساب",
+  "authSignupSubtitleGetStarted": "سجّل للبدء",
+  "authSignupPrimaryCta": "إنشاء الحساب",
+  "authSignupPasswordHintMinSix": "6 أحرف على الأقل",
+  "registerHintPhone": "رقم جوالك",
+  "registerHintCity": "الدوحة",
+  "validationPhoneRequired": "أضف رقمًا يصل به فريقك وعملاؤك.",
+  "validationPhoneShort": "الرقم قصير جدًا—أدخل الرقم كاملًا.",
+  "validationPhoneOptionalInvalid": "أدخل رقمًا صالحًا أو اترك الحقل فارغًا.",
+  "validationFieldRequired": "{fieldName} مطلوب.",
+  "@validationFieldRequired": {
+    "placeholders": {
+      "fieldName": {"type": "String"}
+    }
+  },
+  "validationConfirmPasswordEmpty": "أعد إدخال كلمة المرور للتأكد.",
+  "validationConfirmPasswordMismatch": "كلمتا المرور غير متطابقتين.",
+  "validationUserLoginIdentifierRequired": "أدخل البريد أو اسم المستخدم.",
+  "validationStaffUsernameRequired": "اسم المستخدم مطلوب.",
+  "validationStaffUsernameInvalid": "من 4 إلى 20 حرفًا: أحرف صغيرة وأرقام وشرطة سفلية أو نقطة فقط.",
+  "fieldLabelName": "الاسم",
+  "fieldLabelFullName": "الاسم الكامل",
+  "fieldLabelEmail": "البريد الإلكتروني",
+  "fieldLabelEmailOrUsername": "البريد أو اسم المستخدم",
+  "fieldLabelPassword": "كلمة المرور",
+  "fieldLabelConfirmPassword": "تأكيد كلمة المرور",
+  "fieldLabelSalonName": "اسم الصالون",
+  "fieldLabelPhone": "الهاتف",
+  "fieldLabelAddress": "العنوان",
+  "authCommonBack": "رجوع",
+  "authCommonSettings": "الإعدادات",
+  "authGateCreateSalon": "إنشاء صالون",
+  "authGateCreateSalonSubtitle": "سجّل كمالك صالون ثم أعد مساحة عملك. إن كان لديك حساب، استخدم تسجيل الدخول.",
+  "loginEyebrow": "تسجيل الدخول",
+  "loginTitle": "مرحبًا بعودتك.",
+  "loginDescription": "احجز كعميل أو أدر صالونك كمالك. حسابات الفريق تسجّل الدخول من هنا أيضًا.",
+  "loginSectionEmailPassword": "البريد وكلمة المرور",
+  "loginSectionSubtitle": "العملاء والمالكون يستخدمون نفس تسجيل الدخول. لوحة التحكم تعتمد على دورك.",
+  "loginHintIdentifier": "you@example.com أو اسم.مستخدم",
+  "loginSignInButton": "تسجيل الدخول",
+  "loginFooterCreateAccount": "جديد هنا؟ أنشئ حسابًا",
+  "loginTeamHint": "يُنشئ مالك الصالون حسابات الحلاق والمسؤولين. سجّل الدخول باسم المستخدم الذي زوّدك به.",
+  "registerEyebrow": "إنشاء حساب",
+  "registerTitle": "انضم إلى المنصة.",
+  "registerDescription": "بعد التسجيل ستختار عميلًا أو مالك صالون. يُنشئ مالك الصالون حسابات الحلاق والمسؤولين—استخدم تسجيل الدخول بدلًا من ذلك.",
+  "registerCustomerTitle": "أنشئ حسابك كعميل.",
+  "registerCustomerDescription": "احجز الزيارات، تابع سجلك، وأدر ملفك. يُنشئ مالك الصالون حسابات الحلاق والمسؤولين—استخدم تسجيل الدخول بدلًا من ذلك.",
+  "registerSalonOwnerTitle": "سجّل كمالك صالون.",
+  "registerSalonOwnerDescription": "بعدها ستضيف تفاصيل صالونك. إن كان لديك حساب، ارجع وسجّل الدخول.",
+  "registerSalonOwnerStepLabel": "الحساب — الخطوة 1 من 2",
+  "registerStepLabel": "الحساب — الخطوة 1 من 3",
+  "registerSectionYourDetails": "بياناتك",
+  "registerSectionProfileHint": "نخزّن ملفك في Firestore مرتبطًا بحساب Firebase Auth.",
+  "registerContinueButton": "متابعة",
+  "registerFooterSignIn": "لديك حساب؟ سجّل الدخول",
+  "registerOwnerIntentBanner": "في الخطوة التالية اختر «مالك صالون» لإنشاء صالونك.",
+  "registerHintFullName": "أحمد الراشد",
+  "registerHintEmail": "you@example.com",
+  "registerHintPassword": "8 أحرف على الأقل",
+  "registerHintConfirmPassword": "أعد كتابة كلمة المرور",
+  "createSalonEyebrow": "إعداد الصالون",
+  "createSalonTitle": "أنشئ الصالون الذي سيعمل فيه فريقك.",
+  "createSalonDescription": "أضف البيانات الأساسية الآن. هذا السجل أساس للموظفين والحضور والرواتب والحجوزات لاحقًا.",
+  "createSalonStepLabel": "إعداد الصالون — الخطوة 2 من 2",
+  "createSalonFooterDifferentAccount": "استخدام حساب آخر",
+  "createSalonSectionTitle": "تفاصيل الصالون",
+  "createSalonSectionSubtitle": "أكمل ملف الصالون لفتح لوحة المالك ودعوة فريقك.",
+  "createSalonOwnerFallback": "حساب المالك",
+  "createSalonButton": "إنشاء الصالون",
+  "createSalonPhoneTip": "المسافات والشرطات والأقواس مسموحة—نُطبّع الرقم عند الحفظ.",
+  "createSalonHintSalonName": "صالون الكرسي الذهبي",
+  "createSalonHintPhone": "+962 7X XXX XXXX",
+  "createSalonHintAddress": "عمان، عبدون، الشارع الرئيسي 12",
+  "roleEyebrow": "اختر المسار",
+  "roleTitle": "كيف ستستخدم التطبيق؟",
+  "roleDescription": "العملاء يحجزون ويديرون الزيارات. المالكون يجهّزون مساحة الصالون. يصدر مالك الصالون حسابات الحلاق والمسؤولين.",
+  "roleStepLabel": "الدور — الخطوة 2 من 2",
+  "roleSectionPrompt": "أنا…",
+  "roleCustomerTitle": "عميل",
+  "roleCustomerSubtitle": "احجز الخدمات، تابع السجل، وأدر ملفك.",
+  "roleOwnerTitle": "مالك صالون",
+  "roleOwnerSubtitle": "أنشئ صالونك، ادعُ الموظفين، وأدر التشغيل.",
+  "roleSignOut": "تسجيل الخروج",
+  "socialAuthOr": "أو",
+  "socialAuthContinueTitle": "المتابعة عبر",
+  "socialAuthGoogle": "Google",
+  "socialAuthApple": "Apple",
+  "socialAuthFacebook": "Facebook",
+  "passwordStrengthHintWeak": "أضف طولًا وامزج أحرفًا وأرقامًا.",
+  "passwordStrengthHintOk": "بداية جيدة—فكّر بعبارة أطول.",
+  "passwordStrengthHintStrong": "قوية وفق الحد الأدنى للتطبيق.",
+  "passwordStrengthHintExcellent": "ممتازة—صعبة التخمين.",
+  "passwordStrengthSemanticLabel": "قوة كلمة المرور: {level}",
+  "@passwordStrengthSemanticLabel": {
+    "placeholders": {
+      "level": {"type": "String"}
+    }
+  },
+  "accessibilityShowPassword": "إظهار كلمة المرور",
+  "accessibilityHidePassword": "إخفاء كلمة المرور",
+  "loginHintEmail": "you@example.com",
+  "loginHintPassword": "كلمة المرور",
+  "validationCountryRequired": "اختر بلدك لننسّق رقم هاتفك بشكل صحيح.",
+  "validationBusinessTypeRequired": "اختر نوع الصالون.",
+  "fieldLabelCountry": "البلد",
+  "fieldLabelCity": "المدينة",
+  "fieldLabelStreet": "الشارع",
+  "fieldLabelBuildingUnit": "المبنى / الوحدة",
+  "fieldLabelPostalCode": "الرمز البريدي (اختياري)",
+  "fieldLabelSalonPhoneOptional": "هاتف الصالون (اختياري)",
+  "fieldLabelBusinessType": "نوع النشاط",
+  "businessTypeBarber": "صالون حلاقة",
+  "businessTypeWomenSalon": "صالون نسائي",
+  "businessTypeUnisex": "للجميع",
+  "onboardingSearchCountryHint": "ابحث عن البلد أو الرمز",
+  "onboardingCountryPopularSection": "دول شائعة",
+  "onboardingCountryAllSection": "جميع الدول",
+  "customerSignupEyebrow": "عميل",
+  "customerSignupTitle": "أنشئ حسابك كعميل",
+  "customerSignupDescription": "نحفظ ملفك بأمان لحجز الزيارات وإدارتها.",
+  "customerSignupAddressHint": "يساعد الصالونات على التعرّف عليك وإرسال تحديثات الحجز.",
+  "customerSignupSubmit": "إنشاء الحساب",
+  "salonOwnerSignupEyebrow": "مالك صالون",
+  "salonOwnerSignupTitle": "حساب المالك — الخطوة 1 من 2",
+  "salonOwnerSignupDescription": "بعدها ستضيف موقع الصالون ونوع النشاط.",
+  "salonOwnerSignupSubmit": "متابعة لتفاصيل الصالون",
+  "onboardingMobileNationalHint": "الرقم المحلي بدون مفتاح البلد",
+  "createSalonBusinessTypeSection": "نوع النشاط",
+  "createSalonLocationSection": "الموقع",
+  "createSalonContactSection": "التواصل (اختياري)",
+  "createSalonProfileSyncTimeout": "تم حفظ الصالون لكن لم نتمكن من تأكيد ملفك بعد. تحقق من الاتصال ثم اسحب للتحديث أو سجّل الخروج والدخول مجددًا.",
+  "accountProfileBootstrapEyebrow": "استكمال الحساب",
+  "accountProfileBootstrapTitleMissing": "أكمل إعداد ملفك",
+  "accountProfileBootstrapDescriptionMissing": "تعذّر تحميل ملفك المحفوظ. اختر كيف تستخدم التطبيق لإنشاء سجل المستخدم، أو سجّل الدخول بحساب آخر إذا كان هذا الحساب جديدًا.",
+  "accountProfileBootstrapTitleStaff": "ملف عضو الفريق غير مكتمل",
+  "accountProfileBootstrapDescriptionStaff": "حسابك يفتقد الربط بالصالون (معرّف الصالون أو الموظف). يحدث هذا عادة إذا لم يكتمل الملف أو حُذفت بيانات. سجّل الخروج واطلب من مالك الصالون إعادة دعوتك، أو استخدم حسابًا آخر.",
+  "accountProfileBootstrapContinueCustomer": "أحجز كعميل",
+  "accountProfileBootstrapContinueOwner": "أدير صالونًا (مالك)",
+  "accountProfileBootstrapCreateProfile": "إنشاء ملفي",
+  "accountProfileBootstrapChoosePath": "اختر أحد الخيارين للمتابعة:",
+  "accountProfileBootstrapFooterDifferentAccount": "استخدام حساب آخر",
+  "accountProfileBootstrapErrorNoAuthUser": "لا يوجد مستخدم مسجّل. سجّل الدخول مجددًا.",
+  "accountProfileBootstrapErrorGeneric": "تعذّر حفظ الملف. حاول مرة أخرى.",
+  "ownerStaffInviteSuccessTitle": "تمت إضافة عضو الفريق",
+  "ownerStaffInviteSuccessBody": "يمكن لـ {name} تسجيل الدخول بهذا البريد وكلمة مرور مؤقتة. اطلب منه تغيير كلمة المرور بعد أول دخول.\n\nالبريد:\n{email}\n\nكلمة المرور المؤقتة:\n{password}",
+  "@ownerStaffInviteSuccessBody": {
+    "placeholders": {
+      "name": {"type": "String"},
+      "email": {"type": "String"},
+      "password": {"type": "String"}
+    }
+  },
+  "ownerStaffInviteOk": "تم",
+  "staffInviteErrorEmailTaken": "اسم المستخدم محجوز أو الحساب موجود مسبقًا",
+  "staffInviteErrorPermission": "يمكن للمالكين والمشرفين فقط إنشاء حسابات للموظفين",
+  "staffInviteErrorNetwork": "خطأ في الشبكة. تحقق من الاتصال وحاول مرة أخرى.",
+  "staffInviteErrorInvalidArgs": "بعض البيانات غير صالحة. راجع الحقول وحاول مرة أخرى.",
+  "staffInviteErrorGeneric": "تعذّر إنشاء حساب الحلاق. حاول مرة أخرى.",
+  "ownerHeaderGreeting": "أهلاً، {name}",
+  "@ownerHeaderGreeting": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "ownerOverviewGreetingMorning": "صباح الخير",
+  "ownerOverviewGreetingAfternoon": "مساء الخير",
+  "ownerOverviewGreetingEvening": "مساء الخير",
+  "ownerOverviewHeroSearchHint": "ابحث في فريقك، الإيرادات، والطلبات",
+  "ownerOverviewRevenueMonthLabel": "إيرادات هذا الشهر",
+  "ownerOverviewRevenueMonthHintEmpty": "لم يتم تسجيل مبيعات بعد",
+  "ownerOverviewRevenueThisWeekTitle": "إيرادات هذا الأسبوع",
+  "ownerOverviewRevenueThisWeekSubtitle": "اتجاه الإيرادات للأسبوع الحالي",
+  "ownerOverviewRevenueThisWeekEmpty": "لا توجد إيرادات هذا الأسبوع بعد",
+  "ownerOverviewRevenueThisWeekTotal": "إجمالي الأسبوع: {amount}",
+  "@ownerOverviewRevenueThisWeekTotal": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerOverviewKpiPendingRequests": "طلبات معلّقة",
+  "ownerOverviewDashboardTagline": "تابع الإيرادات والفريق والحجوزات من مكان واحد.",
+  "ownerOverviewTodayInsightTitle": "رؤية اليوم",
+  "ownerOverviewTodayInsightNoActivity": "لا يوجد نشاط اليوم بعد. ابدأ بإضافة بيع أو حجز.",
+  "ownerOverviewTodayInsightRevenue": "أداؤك جيد اليوم. الإيراد {amount}.",
+  "@ownerOverviewTodayInsightRevenue": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerOverviewTodayInsightBookings": "{count, plural, =0{لا توجد حجوزات اليوم بعد.} one{لديك حجز واحد اليوم. اجعله زيارة سلسة.} two{لديك حجزان اليوم. حافظ على تنظيم التقويم.} few{لديك {count} حجوزات اليوم. حافظ على حركة التقويم.} many{لديك {count} حجزًا اليوم. حافظ على حركة التقويم.} other{لديك {count} حجز اليوم. حافظ على حركة التقويم.}}",
+  "@ownerOverviewTodayInsightBookings": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewTodayInsightPendingRequests": "{count, plural, =0{لا توجد طلبات للمراجعة.} one{طلب واحد يحتاج إلى مراجعة.} two{طلبان يحتاجان إلى مراجعة.} few{{count} طلبات تحتاج إلى مراجعة.} many{{count} طلبًا يحتاج إلى مراجعة.} other{{count} طلب يحتاج إلى مراجعة.}}",
+  "@ownerOverviewTodayInsightPendingRequests": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewRecentServicesTitle": "أحدث الخدمات",
+  "ownerOverviewRecentServicesEmpty": "لا توجد خدمات نشطة بعد.",
+  "ownerOverviewPerformanceNoData": "لا توجد بيانات بعد",
+  "ownerOverviewBestServiceSubtitle": "{count, plural, =0{أفضل خدمة هذا الأسبوع · لا مبيعات} one{أفضل خدمة هذا الأسبوع · عملية بيع واحدة} two{أفضل خدمة هذا الأسبوع · عمليتا بيع} few{أفضل خدمة هذا الأسبوع · {count} مبيعات} many{أفضل خدمة هذا الأسبوع · {count} عملية بيع} other{أفضل خدمة هذا الأسبوع · {count} عملية بيع}}",
+  "@ownerOverviewBestServiceSubtitle": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewBestBarberSubtitle": "أفضل حلاق اليوم · {amount}",
+  "@ownerOverviewBestBarberSubtitle": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerOverviewRecentActivityTitle": "النشاط الأخير",
+  "ownerOverviewRecentActivityEmpty": "لا يوجد نشاط حديث بعد",
+  "ownerOverviewLatestSaleSubtitle": "آخر بيع: {service} · {amount}",
+  "@ownerOverviewLatestSaleSubtitle": {
+    "placeholders": {
+      "service": {"type": "String"},
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerOverviewLatestSaleFallbackService": "عملية بيع",
+  "ownerOverviewViewTeam": "عرض الفريق",
+  "ownerOverviewSmartCardServiceTitle": "أضف خدمتك الأولى",
+  "ownerOverviewSmartCardServiceSubtitle": "يحتاج العملاء إلى قائمة للحجز.",
+  "ownerOverviewSmartCardBarberTitle": "أضف حلّاقك الأول",
+  "ownerOverviewSmartCardBarberSubtitle": "يظهر الطاقم على الأرضية وفي الرواتب.",
+  "ownerOverviewSmartCardBookingTitle": "أنشئ حجزك الأول",
+  "ownerOverviewSmartCardBookingSubtitle": "املأ التقويم وتابع الإيرادات.",
+  "ownerOverviewRevenueTodayLine": "اليوم: {amount}",
+  "@ownerOverviewRevenueTodayLine": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerOverviewRevenueDeltaUp": "{percent} مقارنةً بالشهر الماضي",
+  "@ownerOverviewRevenueDeltaUp": {
+    "placeholders": {
+      "percent": {"type": "String"}
+    }
+  },
+  "ownerOverviewRevenueDeltaDown": "{percent} مقارنةً بالشهر الماضي",
+  "@ownerOverviewRevenueDeltaDown": {
+    "placeholders": {
+      "percent": {"type": "String"}
+    }
+  },
+  "ownerOverviewStatRevenueToday": "إيراد اليوم",
+  "ownerOverviewStatBookingsToday": "حجوزات اليوم",
+  "ownerOverviewStatCompletedToday": "المكتملة",
+  "ownerOverviewStatCheckedIn": "الحضور",
+  "ownerOverviewQuickActionsTitle": "إجراءات سريعة",
+  "ownerOverviewQuickAddSale": "إضافة بيع",
+  "ownerOverviewQuickAddExpense": "إضافة مصروف",
+  "ownerOverviewNeedsAttentionTitle": "يحتاج إلى مراجعة",
+  "ownerOverviewNeedsAttentionNone": "كل شيء تمام. لا يوجد ما يستدعي الانتباه الآن.",
+  "ownerOverviewFabLabel": "إضافة سريعة",
+  "ownerOverviewRunPayroll": "تشغيل الرواتب",
+  "ownerOverviewSmartSuggestionsTitle": "اقتراحات ذكية",
+  "ownerOverviewSmartSuggestionsSubtitle": "ابدأ بالأساسيات لضبط الحجوزات والمدفوعات.",
+  "ownerOverviewSmartAddBarber": "إضافة حلاق",
+  "ownerOverviewSmartAddService": "إضافة خدمة",
+  "ownerOverviewSmartCreateBooking": "إنشاء حجز",
+  "ownerOverviewStatDeltaSameAsYesterday": "مثل أمس",
+  "ownerOverviewStatDeltaVsYesterday": "{amount} مقارنةً بالأمس",
+  "@ownerOverviewStatDeltaVsYesterday": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerOverviewKpiBadgeLive": "نشط",
+  "ownerOverviewKpiBadgeQuiet": "هادئ",
+  "ownerOverviewKpiBadgeBusy": "مزدحم",
+  "ownerOverviewKpiBadgeDone": "تم",
+  "ownerOverviewKpiBadgeNone": "لا يوجد",
+  "ownerOverviewKpiBadgeOnFloor": "على الأرض",
+  "ownerOverviewRevenueLastMonthTotal": "الشهر الماضي: {amount}",
+  "@ownerOverviewRevenueLastMonthTotal": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerOverviewRevenueNoPriorMonthCompare": "لا مبيعات مكتملة الشهر الماضي للمقارنة",
+  "ownerOverviewRevenueDeltaFlatVsLastMonth": "مستقر مقارنةً بالشهر الماضي",
+  "ownerOverviewAttentionPendingBookings": "{count, plural, =0{لا توجد حجوزات بانتظار التأكيد} one{حجز واحد بانتظار التأكيد} two{حجزان بانتظار التأكيد} few{{count} حجوزات بانتظار التأكيد} many{{count} حجزًا بانتظار التأكيد} other{{count} حجز بانتظار التأكيد}}",
+  "@ownerOverviewAttentionPendingBookings": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewAttentionPendingApprovals": "{count, plural, =0{لا توجد طلبات حضور} one{طلب حضور واحد للمراجعة} two{طلبا حضور للمراجعة} few{{count} طلبات حضور للمراجعة} many{{count} طلب حضور للمراجعة} other{{count} طلب حضور للمراجعة}}",
+  "@ownerOverviewAttentionPendingApprovals": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewAttentionPayrollPending": "لم يتم تشغيل الرواتب لهذا الشهر بعد.",
+  "ownerOverviewAttentionNoServices": "أضف خدمة واحدة على الأقل حتى يستطيع العملاء الحجز.",
+  "ownerOverviewReview": "مراجعة",
+  "ownerOverviewSeeAll": "عرض الكل",
+  "ownerOverviewTeamCardTitle": "الفريق",
+  "ownerOverviewTeamCardSubtitle": "{active} نشط · {checkedIn} حاضر اليوم",
+  "@ownerOverviewTeamCardSubtitle": {
+    "placeholders": {
+      "active": {"type": "int"},
+      "checkedIn": {"type": "int"}
+    }
+  },
+  "ownerOverviewTeamCardTopBarber": "أفضل عضو فريق اليوم: {name}",
+  "@ownerOverviewTeamCardTopBarber": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "ownerOverviewTeamCardInactive": "{count, plural, =0{لا يوجد أعضاء غير نشطين} one{عضو غير نشط} two{عضوان غير نشطين} few{{count} أعضاء غير نشطين} many{{count} عضوًا غير نشط} other{{count} عضو غير نشط}}",
+  "@ownerOverviewTeamCardInactive": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewServicesCardTitle": "الخدمات",
+  "ownerOverviewServicesCardSubtitle": "{count, plural, =0{لا توجد خدمات نشطة بعد} one{خدمة نشطة واحدة} two{خدمتان نشطتان} few{{count} خدمات نشطة} many{{count} خدمة نشطة} other{{count} خدمة نشطة}}",
+  "@ownerOverviewServicesCardSubtitle": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewServicesAveragePrice": "متوسط السعر: {amount}",
+  "@ownerOverviewServicesAveragePrice": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerOverviewServicesTopToday": "الأعلى اليوم: {name}",
+  "@ownerOverviewServicesTopToday": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "ownerOverviewServicesTopMonth": "الأكثر حجزًا هذا الشهر: {name}",
+  "@ownerOverviewServicesTopMonth": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "commonCancel": "إلغاء",
+  "commonRetry": "إعادة المحاولة",
+  "ownerOverviewAttentionInactiveEmployees": "{count, plural, zero{لا يوجد أعضاء فريق غير نشطين} one{عضو فريق غير نشط بانتظار المراجعة} two{عضوان غير نشطان بانتظار المراجعة} few{{count} أعضاء غير نشطين بانتظار المراجعة} many{{count} عضوًا غير نشط بانتظار المراجعة} other{{count} عضو غير نشط بانتظار المراجعة}}",
+  "@ownerOverviewAttentionInactiveEmployees": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewInsightsTitle": "ملخّص الأداء",
+  "ownerOverviewInsightRevenueUp": "الإيرادات ارتفعت بنسبة {percent} مقارنةً بالشهر الماضي.",
+  "@ownerOverviewInsightRevenueUp": {
+    "placeholders": {
+      "percent": {"type": "String"}
+    }
+  },
+  "ownerOverviewInsightRevenueDown": "الإيرادات انخفضت بنسبة {percent} مقارنةً بالشهر الماضي.",
+  "@ownerOverviewInsightRevenueDown": {
+    "placeholders": {
+      "percent": {"type": "String"}
+    }
+  },
+  "ownerOverviewInsightRevenueFlat": "لا تغيير يُذكر في الإيرادات مقارنةً بالشهر الماضي.",
+  "ownerOverviewInsightRevenueFresh": "بداية جديدة لهذا الشهر — لا يوجد ما يُقارن به بعد.",
+  "ownerOverviewInsightTopBarberContribution": "{name} حقّق {percent} من إيرادات اليوم.",
+  "@ownerOverviewInsightTopBarberContribution": {
+    "placeholders": {
+      "name": {"type": "String"},
+      "percent": {"type": "String"}
+    }
+  },
+  "ownerOverviewInsightTopBarberEmpty": "لا يوجد نشاط لأي عضو فريق اليوم بعد.",
+  "ownerOverviewInsightPopularService": "{name} هي الخدمة الأكثر طلبًا هذا الشهر.",
+  "@ownerOverviewInsightPopularService": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "ownerOverviewAddExpenseTitle": "إضافة مصروف",
+  "ownerOverviewAddExpenseSubtitle": "سجّل مصروف الصالون بسرعة.",
+  "ownerOverviewAddExpenseTitleField": "العنوان",
+  "ownerOverviewAddExpenseCategoryField": "الفئة",
+  "ownerOverviewAddExpenseAmountField": "المبلغ",
+  "ownerOverviewAddExpenseVendorField": "المورد (اختياري)",
+  "ownerOverviewAddExpenseNotesField": "ملاحظات (اختياري)",
+  "ownerOverviewAddExpenseSubmit": "حفظ المصروف",
+  "ownerOverviewAddExpenseDateField": "التاريخ",
+  "ownerOverviewAddExpenseSuggestedCategories": "فئات مقترحة",
+  "ownerOverviewAddExpenseValidationError": "يرجى إدخال العنوان والفئة ومبلغ موجب.",
+  "ownerOverviewExpenseCreated": "تم تسجيل المصروف",
+  "ownerOverviewSummaryEarnedFromSales": "ربحت اليوم {amount} من {count, plural, zero{لا مبيعات مكتملة} one{بيعة مكتملة واحدة} two{بيعتين مكتملتين} few{{count} مبيعات مكتملة} many{{count} بيعة مكتملة} other{{count} بيعة مكتملة}}.",
+  "@ownerOverviewSummaryEarnedFromSales": {
+    "placeholders": {
+      "amount": {"type": "String"},
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewSummaryEarnedOnly": "ربحت اليوم {amount}.",
+  "@ownerOverviewSummaryEarnedOnly": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerOverviewSummaryNoSalesToday": "لا مبيعات مكتملة اليوم بعد.",
+  "ownerOverviewSummaryPendingSegment": "{count, plural, =0{لا حجوزات بانتظار التأكيد} one{حجز واحد بانتظار التأكيد} two{حجزان بانتظار التأكيد} few{{count} حجوزات بانتظار التأكيد} many{{count} حجزًا بانتظار التأكيد} other{{count} حجز بانتظار التأكيد}}",
+  "@ownerOverviewSummaryPendingSegment": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewSummaryBarbersCheckedInSegment": "{count, plural, =0{لا أحد من أعضاء الفريق سجّل حضورًا} one{عضو فريق واحد سجّل حضورًا} two{عضوا فريق سجّلا حضورًا} few{{count} أعضاء فريق سجّلوا حضورًا} many{{count} عضو فريق سجّلوا حضورًا} other{{count} عضو فريق سجّل حضورًا}}",
+  "@ownerOverviewSummaryBarbersCheckedInSegment": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewSummaryPayrollPendingSegment": "الرواتب بانتظار التشغيل",
+  "ownerOverviewEmptyBookingsTodayTitle": "لا حجوزات اليوم.",
+  "ownerOverviewEmptyCompletedTodayTitle": "لا خدمات مكتملة اليوم بعد.",
+  "ownerOverviewEmptyCheckedInTitle": "لم يسجّل أحد حضوره بعد.",
+  "ownerOverviewTeamMarkAttendance": "تسجيل الحضور",
+  "ownerOverviewTeamActiveBarbersLabel": "{count, plural, =0{لا أعضاء فريق بعد} one{عضو فريق نشط واحد} two{عضوا فريق نشطان} few{{count} أعضاء فريق نشطون} many{{count} عضو فريق نشطًا} other{{count} عضو فريق نشط}}",
+  "@ownerOverviewTeamActiveBarbersLabel": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewTeamCheckedInShort": "{count} سجّلوا حضورهم",
+  "@ownerOverviewTeamCheckedInShort": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewTeamEmptyTitle": "لم تُضف أي عضو فريق بعد.",
+  "ownerOverviewTeamEmptyBody": "أضف أول عضو فريق لتبدأ تتبّع الحضور والمبيعات.",
+  "ownerOverviewTeamStatusCheckedIn": "حاضر",
+  "ownerOverviewTeamStatusNotCheckedIn": "لم يُسجَّل الحضور",
+  "ownerOverviewTeamStatusOnService": "في الخدمة",
+  "ownerOverviewTeamStatusLate": "متأخر",
+  "ownerOverviewInsightTopServiceWeek": "{name} هي الخدمة الأكثر طلبًا هذا الأسبوع.",
+  "@ownerOverviewInsightTopServiceWeek": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "ownerOverviewInsightBookingsUp": "الحجوزات ارتفعت بنسبة {percent} مقارنةً بالأمس.",
+  "@ownerOverviewInsightBookingsUp": {
+    "placeholders": {
+      "percent": {"type": "String"}
+    }
+  },
+  "ownerOverviewInsightBookingsDown": "الحجوزات انخفضت بنسبة {percent} مقارنةً بالأمس.",
+  "@ownerOverviewInsightBookingsDown": {
+    "placeholders": {
+      "percent": {"type": "String"}
+    }
+  },
+  "ownerOverviewInsightNoBookingsToday": "لا حجوزات اليوم — أهدأ من الأمس.",
+  "ownerOverviewInsightsGrowing": "ستظهر الرؤى هنا مع نمو نشاط صالونك.",
+  "ownerOverviewAttentionBarbersNotCheckedIn": "{count, plural, one{عضو فريق واحد لم يُسجّل حضوره} two{عضوا فريق لم يُسجّلا حضورهما} few{{count} أعضاء فريق لم يُسجّلوا حضورهم} many{{count} عضو فريق لم يُسجّلوا حضورهم} other{{count} عضو فريق لم يُسجّل حضوره}}",
+  "@ownerOverviewAttentionBarbersNotCheckedIn": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewFabSheetTitle": "إجراءات سريعة",
+  "attendanceReviewTitle": "طلبات الحضور",
+  "attendanceReviewEmptyTitle": "لا توجد طلبات حضور بانتظار المراجعة",
+  "attendanceReviewEmptyMessage": "كل شيء محدّث.",
+  "attendanceReviewErrorTitle": "تعذّر تحميل الطلبات",
+  "attendanceReviewStatusPending": "بانتظار المراجعة",
+  "attendanceReviewApprove": "موافقة",
+  "attendanceReviewReject": "رفض",
+  "attendanceReviewRejectDialogTitle": "أضف ملاحظة رفض",
+  "attendanceReviewRejectDialogHint": "اختياري — يساعد الموظف على الفهم.",
+  "attendanceReviewRejectConfirm": "رفض",
+  "attendanceReviewCheckInAt": "تم تسجيل الدخول في {time}",
+  "@attendanceReviewCheckInAt": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "attendanceReviewCheckOutAt": "تم تسجيل الخروج في {time}",
+  "@attendanceReviewCheckOutAt": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "attendanceReviewSubmittedAt": "تم الإرسال في {time}",
+  "@attendanceReviewSubmittedAt": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "attendanceReviewUnknownEmployee": "موظّف غير معروف",
+  "attendanceReviewTypePresent": "طلب تعديل حضور",
+  "attendanceReviewTypeAbsent": "طلب غياب",
+  "attendanceReviewTypeLeave": "طلب إجازة",
+  "attendanceReviewTypeGeneric": "طلب حضور",
+  "attendanceReviewApprovedSnackbar": "تمت الموافقة على الحضور",
+  "attendanceReviewRejectedSnackbar": "تم رفض الحضور",
+  "attendanceReviewErrorSnackbar": "تعذّر التحديث: {message}",
+  "@attendanceReviewErrorSnackbar": {
+    "placeholders": {
+      "message": {"type": "String"}
+    }
+  },
+  "teamManagementTitle": "الفريق",
+  "teamManagementSubtitle": "إدارة أعضاء فريقك والمشرفين",
+  "teamSummaryTotalBarbers": "إجمالي أعضاء الفريق",
+  "teamSummaryCheckedInToday": "المسجّلون اليوم",
+  "teamSummarySalesToday": "مبيعات اليوم",
+  "teamSummaryCommissionToday": "عمولة اليوم",
+  "teamSummaryTotalMembers": "إجمالي الأعضاء",
+  "teamSummaryTotalMembersHelper": "قائمة الفريق",
+  "teamSummaryWorkingNow": "يعملون الآن",
+  "teamSummaryWorkingNowHelper": "{count, plural, =0{لا يوجد أعضاء بعد} one{من عضو واحد} other{من {count} أعضاء}}",
+  "@teamSummaryWorkingNowHelper": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "teamSummaryAbsentToday": "غائبون اليوم",
+  "teamSummaryAbsentTodayHelper": "يحتاج متابعة",
+  "teamSummaryRevenueToday": "إيراد اليوم",
+  "teamSummaryRevenueTodayHelper": "مبيعات مباشرة",
+  "teamAnalyticsAction": "تحليلات الفريق",
+  "teamAnalyticsComingSoon": "ستتوفر تحليلات الفريق قريبًا.",
+  "teamAnalyticsActiveInactiveLabel": "نشط / غير نشط",
+  "teamAnalyticsTopPerformerLabel": "الأفضل أداءً",
+  "teamGuideDescription": "يساعدك أعضاء الفريق على إدارة الحضور والخدمات والمبيعات والعمولات والرواتب من مكان واحد.",
+  "teamFilterAll": "الكل",
+  "teamFilterActive": "نشط",
+  "teamFilterCheckedIn": "حاضر",
+  "teamFilterWorking": "يعمل الآن",
+  "teamFilterInactive": "غير نشط",
+  "teamFilterTopSellers": "الأعلى مبيعًا",
+  "teamFilterTopPerformers": "الأفضل أداءً",
+  "teamFilterNeedsAttention": "يحتاج متابعة",
+  "teamAddBarberAction": "إضافة عضو فريق",
+  "teamSearchHint": "ابحث بالاسم أو الهاتف أو اسم المستخدم...",
+  "teamFilterAction": "تصفية الفريق",
+  "teamEmptyTitle": "لا يوجد أعضاء في الفريق بعد",
+  "teamEmptySubtitle": "أضف أول عضو فريق لبدء تتبّع الحضور والمبيعات والرواتب.",
+  "teamEmptyBuildTitle": "ابنِ فريقك",
+  "teamEmptyBuildSubtitle": "أضف أول عضو فريق أو مشرف لبدء تتبّع الحضور والمبيعات والعمولات والرواتب.",
+  "teamEmptyNoMatchTitle": "لا يوجد عضو فريق مطابق",
+  "teamEmptyNoMatchSubtitle": "لم نجد أي نتيجة تطابق \"{query}\". جرّب اسمًا أو هاتفًا أو رقم موظف أو دورًا آخر.",
+  "@teamEmptyNoMatchSubtitle": {
+    "placeholders": {
+      "query": {"type": "String"}
+    }
+  },
+  "teamEmptyNoFilterResultTitle": "لا يوجد أعضاء فريق بحالة {filter}",
+  "@teamEmptyNoFilterResultTitle": {
+    "placeholders": {
+      "filter": {"type": "String"}
+    }
+  },
+  "teamEmptyNoFilterResultSubtitle": "لا يوجد أعضاء فريق ضمن حالة {filter} حاليًا. امسح الفلاتر أو اختر حالة مختلفة.",
+  "@teamEmptyNoFilterResultSubtitle": {
+    "placeholders": {
+      "filter": {"type": "String"}
+    }
+  },
+  "teamEmptyPrimaryClearSearch": "مسح البحث",
+  "teamEmptyPrimaryAddMember": "إضافة عضو فريق",
+  "teamEmptySecondaryAddMember": "إضافة عضو فريق",
+  "teamEmptySecondaryLearnHow": "تعرّف كيف يعمل الفريق",
+  "teamLoadErrorTitle": "تعذّر تحميل الفريق",
+  "teamStatusActive": "نشط",
+  "teamStatusCheckedIn": "حاضر",
+  "teamStatusLate": "متأخر",
+  "teamStatusInactive": "غير نشط",
+  "teamMemberMoreActions": "إجراءات إضافية",
+  "teamMemberViewProfileAction": "عرض الملف",
+  "teamMemberEditAction": "تعديل العضو",
+  "teamMemberAttendanceAction": "الحضور",
+  "teamMemberPayrollAction": "الرواتب",
+  "teamMemberDeactivateAction": "إيقاف",
+  "teamMemberActivateAction": "تفعيل",
+  "teamMemberResetPasswordPlaceholder": "إعادة تعيين كلمة المرور لاحقًا",
+  "teamMemberSalesToday": "مبيعات اليوم",
+  "teamMemberServicesToday": "خدمات اليوم",
+  "teamMemberServicesShort": "الخدمات",
+  "teamMemberRevenueToday": "الإيراد",
+  "teamMemberPerformance": "الأداء",
+  "teamMemberPerformancePercent": "{percent}%",
+  "@teamMemberPerformancePercent": {
+    "placeholders": {
+      "percent": {"type": "int"}
+    }
+  },
+  "teamMemberCommissionToday": "عمولة اليوم",
+  "employeeDashboardFirestorePermissionBanner": "تعذّر تحميل حضورك. اطلب من المشرف نشر أحدث صلاحيات قاعدة البيانات.",
+  "employeeDashboardAttendanceNotStartedYet": "لم يبدأ بعد",
+  "teamMemberNoAttendanceToday": "لا يوجد حضور اليوم بعد",
+  "teamMemberNotCheckedIn": "لم يسجل الحضور",
+  "teamMemberInactiveStatus": "غير نشط",
+  "teamMemberLateAt": "متأخر · {time}",
+  "@teamMemberLateAt": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "teamMemberCheckedOutAt": "تم تسجيل الخروج عند {time}",
+  "@teamMemberCheckedOutAt": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "teamMemberCheckedInAt": "تم تسجيل الحضور عند {time}",
+  "@teamMemberCheckedInAt": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "teamMemberAddSaleAction": "إضافة بيع",
+  "teamMemberMarkAttendanceAction": "تسجيل الحضور",
+  "teamMemberViewDetailsAction": "عرض التفاصيل",
+  "teamFieldFullName": "الاسم الكامل",
+  "teamFieldEmail": "البريد الإلكتروني",
+  "teamFieldUsername": "اسم المستخدم",
+  "teamFieldPhone": "الهاتف",
+  "teamFieldRole": "الدور",
+  "teamRoleRequired": "اختر الدور.",
+  "teamCommissionValueRequired": "أدخل قيمة العمولة.",
+  "teamCommissionValueInvalid": "أدخل قيمة عمولة صحيحة.",
+  "teamCommissionValueNegative": "لا يمكن أن تكون العمولة سالبة.",
+  "teamSaveErrorGeneric": "تعذّر حفظ بيانات عضو الفريق.",
+  "teamAddBarberSuccess": "تمت إضافة {name} إلى الفريق.",
+  "@teamAddBarberSuccess": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "teamEditBarberSuccess": "تم تحديث {name}.",
+  "@teamEditBarberSuccess": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "teamAddBarberSheetTitle": "إضافة عضو فريق",
+  "teamEditBarberSheetTitle": "تعديل عضو الفريق",
+  "teamAddBarberSheetSubtitle": "اضبط الأساسيات الآن وأبقِ الملف جاهزًا للحضور والمبيعات والرواتب والحجوزات مستقبلًا.",
+  "teamPhotoPickerTitle": "صورة الملف الشخصي",
+  "teamPhotoActionTake": "التقاط صورة",
+  "teamPhotoActionGallery": "اختيار من المعرض",
+  "teamPhotoActionRemove": "إزالة الصورة",
+  "teamPhotoActionCancel": "إلغاء",
+  "teamRolePickerTitle": "اختر الدور",
+  "teamRolePickerSubtitle": "حدّد ما يمكن لعضو الفريق الوصول إليه داخل الصالون.",
+  "teamRolePickerBarberTitle": "عضو فريق",
+  "teamRolePickerBarberSubtitle": "يمكنه تسجيل الخدمات وعرض حضوره ومبيعاته وكشوف رواتبه.",
+  "teamRolePickerBarberBadge": "فريق الخدمة",
+  "teamRolePickerAdminTitle": "مشرف",
+  "teamRolePickerAdminSubtitle": "يمكنه إدارة العمليات اليومية حسب الصلاحيات التي يحددها المالك.",
+  "teamRolePickerAdminBadge": "إدارة",
+  "teamCommissionPickerTitle": "نوع العمولة",
+  "teamCommissionPickerSubtitle": "اختر طريقة احتساب عمولة عضو الفريق.",
+  "teamCommissionPickerPercentageTitle": "نسبة فقط",
+  "teamCommissionPickerPercentageSubtitle": "تُحسب العمولة كنسبة من المبيعات.",
+  "teamCommissionPickerFixedTitle": "مبلغ ثابت فقط",
+  "teamCommissionPickerFixedSubtitle": "يحصل عضو الفريق على مبلغ ثابت لكل خدمة أو فترة.",
+  "teamCommissionPickerMixedTitle": "نسبة + مبلغ ثابت",
+  "teamCommissionPickerMixedSubtitle": "اجمع بين نسبة عمولة ومبلغ ثابت.",
+  "addBarberSheetHeroSubtitle": "إنشاء حساب جديد لعضو الفريق وإعداد بياناته الأساسية.",
+  "addBarberSectionLoginPassword": "الدخول وكلمة المرور",
+  "addBarberSectionCommissionWork": "العمولة وإعدادات العمل",
+  "addBarberProfilePhotoTitle": "صورة الملف الشخصي",
+  "addBarberProfilePhotoCaption": "أضف صورة واضحة لعضو الفريق",
+  "addBarberProfilePhotoButton": "أضف صورة",
+  "addBarberProfilePhotoAfterCreateSnack": "يمكنك إضافة صورة الملف بعد إنشاء الحساب من ملف عضو الفريق.",
+  "addBarberMainTitle": "تفاصيل حساب عضو الفريق",
+  "addBarberMainSubtitle": "أنشئ بيانات تسجيل لعضو الفريق واضبط كلمة مرور أولية",
+  "addBarberSectionPersonalDetails": "البيانات الشخصية",
+  "addBarberSectionAccountAccess": "الوصول إلى الحساب",
+  "addBarberFieldFullName": "الاسم الكامل",
+  "addBarberFieldEmailAddress": "عنوان البريد الإلكتروني",
+  "addBarberFieldUsername": "اسم المستخدم",
+  "addBarberFieldPhoneNumber": "رقم الجوال",
+  "addBarberFieldRole": "الدور",
+  "addBarberFieldPassword": "كلمة المرور",
+  "addBarberFieldConfirmPassword": "تأكيد كلمة المرور",
+  "addBarberPlaceholderFullName": "أدخل الاسم الكامل",
+  "addBarberPlaceholderEmail": "أدخل عنوان البريد",
+  "addBarberHelperEmailLogin": "يُستخدم هذا البريد لتسجيل الدخول مع كلمة المرور. يمكنهم أيضاً استخدام اسم المستخدم على شاشة «مستخدم».",
+  "addBarberPlaceholderUsername": "مثال: jane.doe",
+  "addBarberPlaceholderPhone": "أدخل رقم الجوال",
+  "addBarberPlaceholderPassword": "أدخل كلمة المرور",
+  "addBarberPlaceholderConfirmPassword": "أعد إدخال كلمة المرور",
+  "addBarberHelperPasswordShared": "ستشارك كلمة المرور مع عضو الفريق بصفتك مالك الصالون",
+  "addBarberHelperMustChangePassword": "سيُطلب من عضو الفريق تغيير كلمة المرور عند أول تسجيل دخول",
+  "addBarberPasswordRulesHint": "استخدم 8 أحرف على الأقل تتضمّن أحرفًا كبيرة وصغيرة ورقمًا",
+  "addBarberValidationFullNameRequired": "الاسم الكامل مطلوب",
+  "addBarberValidationEmailRequired": "عنوان البريد الإلكتروني مطلوب",
+  "addBarberValidationEmailInvalid": "أدخل بريدًا إلكترونيًا صالحًا",
+  "addBarberValidationEmailInternalNotAllowed": "استخدم البريد الحقيقي لعضو الفريق، وليس عنوانًا داخليًا للتطبيق.",
+  "addBarberValidationPasswordRequired": "كلمة المرور مطلوبة",
+  "addBarberValidationConfirmPasswordRequired": "تأكيد كلمة المرور مطلوب",
+  "addBarberValidationPasswordMinLength": "يجب أن تكون كلمة المرور 8 أحرف على الأقل",
+  "addBarberValidationPasswordComplexity": "يجب أن تتضمّن كلمة المرور أحرفًا كبيرة وصغيرة ورقمًا",
+  "addBarberValidationPasswordsMismatch": "كلمتا المرور غير متطابقتين",
+  "addBarberButtonCreate": "إنشاء عضو فريق",
+  "addBarberButtonCreating": "جارٍ إنشاء عضو فريق...",
+  "addBarberSuccessMessage": "تم إنشاء عضو الفريق بنجاح",
+  "addBarberSuccessSubtext": "اطلب منه تسجيل الدخول من شاشة «مستخدم» بهذا البريد أو اسم المستخدم وكلمة المرور التي ضبطتها، ثم التغيير عند أول دخول إن لزم",
+  "addBarberRequirePasswordChangeOnFirstLogin": "طلب تغيير كلمة المرور عند أول تسجيل دخول",
+  "addBarberChecklistMinLength": "8 أحرف على الأقل",
+  "addBarberChecklistUppercase": "تتضمّن حرفًا كبيرًا",
+  "addBarberChecklistLowercase": "تتضمّن حرفًا صغيرًا",
+  "addBarberChecklistDigit": "تتضمّن رقمًا",
+  "addBarberChecklistPasswordsMatch": "كلمتا المرور متطابقتان",
+  "teamFieldCommissionType": "نوع العمولة",
+  "teamCommissionTypePercentage": "نسبة فقط",
+  "teamCommissionTypeFixed": "مبلغ ثابت فقط",
+  "teamCommissionTypePercentagePlusFixed": "نسبة + مبلغ ثابت",
+  "teamFieldCommissionPercentagePercent": "نسبة العمولة (%)",
+  "teamFieldCommissionFixedSar": "مبلغ ثابت (ريال)",
+  "teamCommissionPercentInputHint": "أدخل النسبة مثل 2 أو 10 أو 25",
+  "teamCommissionHelperPercentage": "تحسب النسبة من إجمالي المبيعات والخدمات.",
+  "teamCommissionHelperFixed": "يُضاف مبلغ ثابت لعمولة عضو الفريق.",
+  "teamCommissionHelperPercentagePlusFixed": "تجمع بين نسبة من المبيعات ومبلغ ثابت.",
+  "teamCommissionPreviewLabel": "قيمة العمولة التقديرية",
+  "teamCommissionPreviewDisclaimer": "هذه القيمة للمعاينة فقط",
+  "teamCommissionPreviewSampleNote": "مثال توضيحي فقط لحساب العمولة",
+  "teamCommissionPreviewEquationPercent": "{sales} × {percent} = {result}",
+  "@teamCommissionPreviewEquationPercent": {
+    "placeholders": {
+      "sales": {"type": "String"},
+      "percent": {"type": "String"},
+      "result": {"type": "String"}
+    }
+  },
+  "teamCommissionPreviewEquationFixed": "{result}",
+  "@teamCommissionPreviewEquationFixed": {
+    "placeholders": {
+      "result": {"type": "String"}
+    }
+  },
+  "teamCommissionPreviewEquationMixed": "{fixed} + ({sales} × {percent}) = {result}",
+  "@teamCommissionPreviewEquationMixed": {
+    "placeholders": {
+      "fixed": {"type": "String"},
+      "sales": {"type": "String"},
+      "percent": {"type": "String"},
+      "result": {"type": "String"}
+    }
+  },
+  "teamCommissionPercentRequired": "أدخل نسبة أكبر من 0.",
+  "teamCommissionPercentInvalidRange": "يجب أن تكون النسبة بين 0 و100.",
+  "teamCommissionFixedInvalid": "أدخل مبلغًا صحيحًا (0 أو أكثر).",
+  "teamCommissionCombinedInvalid": "أدخل نسبة و/أو مبلغًا ثابتًا صالحًا.",
+  "teamCommissionSummaryFixed": "{amount} ر.س",
+  "@teamCommissionSummaryFixed": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "teamCommissionSummaryMixed": "{percent}% + {amount} ر.س",
+  "@teamCommissionSummaryMixed": {
+    "placeholders": {
+      "percent": {"type": "String"},
+      "amount": {"type": "String"}
+    }
+  },
+  "teamFieldCommissionValue": "قيمة العمولة",
+  "teamCommissionValueHelper": "القيمة المستخدمة لحسابات المبيعات والرواتب.",
+  "teamFieldAttendanceRequired": "الحضور مطلوب",
+  "teamFieldAttendanceRequiredHint": "يقبل التعديل اليدوي للحضور",
+  "teamFieldBookable": "قابل للحجز لاحقًا",
+  "teamFieldBookableHint": "حضّر هذا الملف لتجربة حجز العملاء مستقبلًا.",
+  "teamFieldActiveStatus": "حالة التفعيل",
+  "teamFieldActiveStatusHint": "الأعضاء غير النشطين يُخفون من الإجراءات التشغيلية.",
+  "teamSaveBarberAction": "حفظ عضو الفريق",
+  "teamSaveChangesAction": "حفظ التغييرات",
+  "teamResetPasswordPlaceholderNotice": "إعادة تعيين كلمة المرور ستُضاف في تحديث لاحق.",
+  "teamMemberDeactivated": "تم إيقاف {name}.",
+  "@teamMemberDeactivated": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "teamMemberActivated": "تم تفعيل {name}.",
+  "@teamMemberActivated": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "teamAttendanceMarkedSuccess": "تم تسجيل الحضور.",
+  "teamAttendanceCheckoutSuccess": "تم تسجيل الخروج.",
+  "teamAttendanceAlreadyCompleted": "تم إكمال حضور اليوم بالفعل.",
+  "teamAttendanceMarkError": "تعذّر تحديث الحضور.",
+  "teamMemberAttendanceAdminNoRecordTitle": "لا يوجد حضور اليوم",
+  "teamMemberAttendanceAdminNoRecordSubtitle": "لم يسجّل {name} الحضور بعد.",
+  "@teamMemberAttendanceAdminNoRecordSubtitle": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "teamMemberAttendanceAdminCheckedInTitle": "حاضر حالياً",
+  "teamMemberAttendanceAdminCheckedInSubtitle": "تم تسجيل الدخول ولم يُسجَّل الخروج بعد.",
+  "teamMemberAttendanceAdminCompletedTitle": "تم إكمال الحضور",
+  "teamMemberAttendanceAdminCompletedSubtitle": "تم تسجيل الدخول والخروج لهذا اليوم.",
+  "teamMemberAttendanceStatusNone": "بدون سجل",
+  "teamMemberAttendanceCheckInLabel": "دخول",
+  "teamMemberAttendanceCheckOutLabel": "خروج",
+  "teamMemberAttendanceAddManual": "إضافة حضور يدوي",
+  "teamMemberAttendanceEditManual": "تعديل سجل الحضور",
+  "teamMemberAttendanceSummaryWeek": "حضور هذا الأسبوع",
+  "teamMemberAttendanceSummaryLateMonth": "عدد التأخير",
+  "teamMemberAttendanceSummaryLateMonthHint": "هذا الشهر",
+  "teamMemberAttendanceSummaryMissingCheckout": "نقص تسجيل الخروج",
+  "teamMemberAttendanceSummaryMissingCheckoutHint": "مرة",
+  "teamMemberAttendanceSummaryPendingRequests": "طلبات معلقة",
+  "teamMemberAttendanceSummaryPendingRequestsHint": "تعديل حضور",
+  "teamMemberAttendanceSummaryDaysUnit": "أيام",
+  "teamMemberAttendanceCorrectionsTitle": "طلبات تعديل الحضور",
+  "teamMemberAttendanceCorrectionEmptyTitle": "لا توجد طلبات تعديل حالياً",
+  "teamMemberAttendanceCorrectionEmptySubtitle": "ستُعرض طلبات هذا الموظف هنا.",
+  "teamMemberAttendanceApprove": "اعتماد",
+  "teamMemberAttendanceReject": "رفض",
+  "teamMemberAttendanceRequestTypeMissingCheckIn": "نسيان تسجيل الدخول",
+  "teamMemberAttendanceRequestTypeMissingCheckout": "نسيان تسجيل الخروج",
+  "teamMemberAttendanceRequestTypeWrongCheckIn": "تعديل وقت الدخول",
+  "teamMemberAttendanceRequestTypeWrongCheckOut": "تعديل وقت الخروج",
+  "teamMemberAttendanceRequestTypeAbsence": "تعديل غياب",
+  "teamMemberAttendanceRequestTypeGeneric": "طلب تعديل حضور",
+  "teamMemberAttendanceStatusPending": "معلق",
+  "teamMemberAttendanceStatusApproved": "معتمد",
+  "teamMemberAttendanceStatusRejected": "مرفوض",
+  "teamMemberAttendanceNoReason": "لا يوجد سبب مذكور",
+  "teamMemberAttendanceHistoryTitle": "سجل الحضور الأخير",
+  "teamMemberAttendanceViewAll": "عرض الكل",
+  "teamMemberAttendanceHistoryEmpty": "لا توجد سجلات حضور بعد",
+  "teamMemberAttendanceRecordStatusPresent": "مكتمل",
+  "teamMemberAttendanceRecordStatusLate": "متأخر",
+  "teamMemberAttendanceRecordStatusIncomplete": "غير مكتمل",
+  "teamMemberAttendanceRecordStatusManual": "يدوي",
+  "teamMemberAttendanceRecordStatusAbsent": "غياب",
+  "teamMemberAttendanceManualSaved": "تم حفظ سجل الحضور بنجاح",
+  "teamMemberAttendanceCorrectionApproved": "تم اعتماد طلب تعديل الحضور",
+  "teamMemberAttendanceCorrectionRejected": "تم رفض طلب تعديل الحضور",
+  "teamMemberAttendanceManualSheetTitle": "حضور يدوي",
+  "teamMemberAttendanceSave": "حفظ",
+  "teamMemberAttendanceDateLabel": "التاريخ",
+  "teamMemberAttendanceStatusFieldLabel": "الحالة",
+  "teamMemberAttendanceLateMinutes": "دقائق التأخير",
+  "teamMemberAttendanceEarlyExitMinutes": "دقائق الخروج المبكر",
+  "teamMemberAttendanceMissingCheckoutSwitch": "نقص تسجيل الخروج",
+  "teamMemberAttendanceNotes": "ملاحظات",
+  "teamMemberAttendanceReviewApproveTitle": "اعتماد طلب التعديل",
+  "teamMemberAttendanceReviewRejectTitle": "رفض طلب التعديل",
+  "teamMemberAttendanceReviewNoteLabel": "ملاحظة المراجعة",
+  "teamMemberAttendanceReviewConfirmApprove": "اعتماد",
+  "teamMemberAttendanceReviewConfirmReject": "رفض",
+  "teamDetailsLoadErrorTitle": "تعذّر تحميل تفاصيل عضو الفريق",
+  "teamDetailsTabOverview": "نظرة عامة",
+  "teamDetailsTabSales": "المبيعات",
+  "teamDetailsTabAttendance": "الحضور",
+  "teamDetailsTabPayroll": "الرواتب",
+  "teamDetailsTabServices": "الخدمات",
+  "teamDetailsTabBookingPrep": "تهيئة الحجز",
+  "teamDetailsStatusLabel": "الحالة",
+  "teamDetailsJoinDate": "تاريخ الانضمام",
+  "teamDetailsCommissionRate": "نسبة العمولة",
+  "teamDetailsBookableLater": "قابل للحجز لاحقًا",
+  "teamProfileStatusFrozen": "مجمّد",
+  "teamProfileJoinDateMissing": "تاريخ الانضمام غير متوفر",
+  "teamProfileSectionContact": "جهة الاتصال",
+  "teamProfileSectionWorkSettings": "إعدادات العمل",
+  "teamProfileTodaySalesLabel": "مبيعات اليوم",
+  "teamProfileServicesLabel": "الخدمات",
+  "teamProfileAttendanceLabel": "الحضور",
+  "teamProfileActionCall": "اتصال",
+  "teamProfileActionAddBooking": "إضافة حجز",
+  "teamProfilePhoneMissingSnack": "رقم الهاتف غير متوفر",
+  "teamProfileDialerErrorSnack": "تعذّر فتح تطبيق الاتصال",
+  "teamProfileWhatsAppUnavailableSnack": "واتساب غير متوفر على هذا الجهاز",
+  "teamProfileBookingUnavailableSnack": "لا يمكن حجز هذا العضو حالياً",
+  "teamProfileAttendanceNotRequiredSummary": "غير مطلوب",
+  "teamProfilePermissionDenied": "ليست لديك صلاحية لعرض هذا العضو.",
+  "teamProfileLoadGenericError": "حدث خطأ أثناء تحميل بيانات العضو.",
+  "teamProfileNotFound": "لم يتم العثور على العضو.",
+  "teamValueNotAvailable": "غير متاح",
+  "teamValueYes": "نعم",
+  "teamValueNo": "لا",
+  "teamValueEnabled": "مفعّل",
+  "teamValueDisabled": "معطّل",
+  "teamCommissionPercentValue": "{value}%",
+  "@teamCommissionPercentValue": {
+    "placeholders": {
+      "value": {"type": "String"}
+    }
+  },
+  "teamNoSalesTodayTitle": "لا توجد مبيعات مسجلة اليوم",
+  "teamNoSalesTodaySubtitle": "سجّل أول عملية بيع لعضو الفريق هذا.",
+  "teamSalesRecentSalesTitle": "المبيعات الأخيرة",
+  "teamSalesTopServicesTitle": "أكثر الخدمات مبيعًا",
+  "teamTopServicesEmpty": "لا يوجد أداء خدمات بعد.",
+  "teamSalesTopServiceCount": "تم بيع {count}",
+  "@teamSalesTopServiceCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "teamSalesAverageTicketTitle": "متوسط قيمة الفاتورة",
+  "teamPlaceholderLaterReady": "عنصر جاهز للإضافة لاحقًا",
+  "teamSalesRevenueToday": "إيراد اليوم",
+  "teamSalesRevenueWeek": "إيراد هذا الأسبوع",
+  "teamSalesRevenueMonth": "إيراد هذا الشهر",
+  "teamSalesServicesToday": "خدمات اليوم",
+  "teamSalesServicesMonth": "خدمات هذا الشهر",
+  "teamSalesCommissionLabel": "العمولة {value}",
+  "@teamSalesCommissionLabel": {
+    "placeholders": {
+      "value": {"type": "String"}
+    }
+  },
+  "teamMemberSalesHistoryTitle": "سجل المبيعات",
+  "teamMemberSalesFilterThisMonth": "هذا الشهر",
+  "teamMemberSalesFilterToday": "اليوم",
+  "teamMemberSalesFilterThisWeek": "هذا الأسبوع",
+  "teamMemberSalesFilterCustom": "مخصص",
+  "teamMemberSalesShowing": "العرض: {filter}",
+  "@teamMemberSalesShowing": {
+    "placeholders": {
+      "filter": {"type": "String"}
+    }
+  },
+  "teamMemberSalesHistoryTotal": "الإجمالي: {amount}",
+  "@teamMemberSalesHistoryTotal": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "teamMemberSalesLoadError": "تعذّر تحميل المبيعات. حاول مرة أخرى.",
+  "teamMemberSalesPermissionDenied": "ليست لديك صلاحية لعرض هذه المبيعات.",
+  "teamMemberSalesEmptyHistoryTitle": "لا مبيعات في هذه الفترة",
+  "teamMemberSalesEmptyHistorySubtitle": "جرّب نطاق تاريخ آخر أو سجّل عملية بيع جديدة.",
+  "teamMemberSalesWalkInCustomer": "عميل بدون حجز",
+  "teamMemberSalesServiceSummaryFallback": "الخدمات",
+  "teamMemberSalesSmartSummaryTitle": "ملخص سريع",
+  "teamMemberSalesNotAvailableShort": "—",
+  "teamNoAttendanceTodayTitle": "لا يوجد حضور اليوم بعد",
+  "teamNoAttendanceTodaySubtitle": "سجّل الحضور لبدء اليوم.",
+  "teamAttendanceTodayStatusTitle": "حضور اليوم",
+  "teamAttendanceCheckedInLabel": "وقت تسجيل الدخول",
+  "teamAttendanceCheckedOutLabel": "وقت تسجيل الخروج",
+  "teamAttendanceStatusLabel": "حالة الحضور",
+  "teamAttendanceWeeklySummary": "حضور الأسبوع",
+  "teamAttendanceLateCount": "عدد التأخير",
+  "teamAttendanceMissingCheckoutCount": "مرات نقص تسجيل الخروج",
+  "teamAttendanceCorrectionRequestsTitle": "طلبات تصحيح الحضور",
+  "teamPayrollCommissionPercentage": "نسبة العمولة",
+  "teamPayrollCommissionToday": "عمولة اليوم",
+  "teamPayrollCommissionMonth": "عمولة هذا الشهر",
+  "teamPayrollBonusesTotal": "إجمالي المكافآت",
+  "teamPayrollDeductionsTotal": "إجمالي الخصومات",
+  "teamPayrollEstimatedPayout": "الدفعة المتوقعة",
+  "teamPayrollHistoryEmptyTitle": "لا يوجد سجل رواتب بعد",
+  "teamPayrollHistoryEmptySubtitle": "سيظهر سجل الرواتب الشهري هنا عند إنشاء السجلات.",
+  "teamPayrollHistoryTitle": "سجل الرواتب",
+  "teamServicesEditAssignmentsAction": "تعديل ربط الخدمات",
+  "teamServicesEmptyTitle": "لا توجد خدمات مخصصة بعد",
+  "teamServicesEmptySubtitle": "خصّص خدمات لعضو الفريق هذا لتجهيزه للتشغيل وللحجز مستقبلًا.",
+  "teamServicesAssignedTitle": "الخدمات المخصصة",
+  "teamServicesServiceActive": "نشط",
+  "teamServicesServiceInactive": "غير نشط",
+  "teamBookingPrepPublicDisplayName": "اسم العرض العام",
+  "teamBookingPrepPublicBio": "النبذة العامة",
+  "teamBookingPrepWorkingHoursProfile": "ملف ساعات العمل",
+  "teamBookingPrepSlotDuration": "مدة فتحة الحجز",
+  "teamBookingPrepDisplayOrder": "ترتيب العرض",
+  "teamBookingPrepProfileImage": "صورة الملف",
+  "teamBookingPrepVisibleServicesTitle": "الخدمات الظاهرة للعملاء",
+  "teamBookingPrepVisibleServicesEmpty": "لا توجد خدمات ظاهرة للعملاء بعد.",
+  "moneyDashboardTitle": "المالية",
+  "moneyDashboardSubtitle": "إشارات مالية شهرية واتجاهات ورؤى تشغيلية واضحة.",
+  "moneyDashboardErrorTitle": "تعذّر تحميل لوحة المالية",
+  "moneyDashboardErrorMessage": "حاول مرة أخرى بعد قليل.",
+  "moneyDashboardRetry": "إعادة المحاولة",
+  "moneyDashboardTrendTitle": "المبيعات مقابل المصروفات",
+  "moneyDashboardTrendSubtitle": "تابع حركة الإيرادات والتكاليف خلال الشهر المحدد.",
+  "moneyDashboardSalesLegend": "المبيعات",
+  "moneyDashboardExpensesLegend": "المصروفات",
+  "moneyDashboardInsightsTitle": "الرؤى",
+  "moneyDashboardInsightsEmpty": "ستظهر رؤى أكثر كلما تراكمت المبيعات والرواتب والمصروفات.",
+  "moneyDashboardSalesNavSubtitle": "افتح محرك المعاملات وسجّل مبيعات جديدة.",
+  "moneyDashboardExpensesNavSubtitle": "راجع التكاليف والفئات وآخر المصروفات.",
+  "moneyDashboardSummaryHeadline": "الملخص المالي",
+  "moneyDashboardSalesTotal": "إجمالي المبيعات",
+  "moneyDashboardExpensesTotal": "إجمالي المصروفات",
+  "moneyDashboardPayrollTotal": "إجمالي الرواتب",
+  "moneyDashboardNetProfit": "صافي الربح",
+  "moneyDashboardInsightTopBarber": "{name} يتصدر هذا الشهر بمبيعات بلغت {amount}.",
+  "@moneyDashboardInsightTopBarber": {
+    "placeholders": {
+      "name": {},
+      "amount": {}
+    }
+  },
+  "moneyDashboardInsightTopService": "{service} هي الخدمة الأعلى دخلاً بقيمة {amount}.",
+  "@moneyDashboardInsightTopService": {
+    "placeholders": {
+      "service": {},
+      "amount": {}
+    }
+  },
+  "moneyDashboardInsightExpenseCategory": "{category} تستحوذ على أكبر حصة من المصروفات بنسبة {share}.",
+  "@moneyDashboardInsightExpenseCategory": {
+    "placeholders": {
+      "category": {},
+      "share": {}
+    }
+  },
+  "moneyDashboardUncategorized": "غير مصنّف",
+  "moneyDashboardNetLossWarning": "صافي الربح سالب بعد الرواتب. راجع المصروفات الاختيارية والتسعير وتوقيت الرواتب لهذا الشهر.",
+  "moneyDashboardTrendPeakSalesSummary": "أعلى يوم مبيعات {day} · {amount}",
+  "@moneyDashboardTrendPeakSalesSummary": {
+    "placeholders": {
+      "day": {},
+      "amount": {}
+    }
+  },
+  "moneyDashboardInsightActionTopBarber": "ركّز على {name} ({amount} مبيعات) — احمِ وقت الكرسي، انسخ ما ينجح في الاستشارات، وأعد توزيع الحجوزات الأقل ازدحامًا.",
+  "@moneyDashboardInsightActionTopBarber": {
+    "placeholders": {
+      "name": {},
+      "amount": {}
+    }
+  },
+  "moneyDashboardInsightActionTopService": "اعرض {service} ضمن الباقات والبيع الإضافي — حقق {amount} هذا الشهر.",
+  "@moneyDashboardInsightActionTopService": {
+    "placeholders": {
+      "service": {},
+      "amount": {}
+    }
+  },
+  "moneyDashboardInsightActionExpenseCategory": "تركيز الإنفاق على {category} ({share}) — راجع الموردين والاشتراكات وقواعد الفئة قبل أن يتفاقم الأمر.",
+  "@moneyDashboardInsightActionExpenseCategory": {
+    "placeholders": {
+      "category": {},
+      "share": {}
+    }
+  },
+  "moneyDashboardSearchHint": "ابحث عن الفريق والإيرادات والطلبات",
+  "moneyDashboardChartGranularityDaily": "يومي",
+  "moneyDashboardKpiTrendNoData": "—",
+  "moneyDashboardKpiTrendNew": "جديد",
+  "moneyDashboardKpiTrendUpVsMonth": "↗ {percent}% مقارنة بـ {month}",
+  "@moneyDashboardKpiTrendUpVsMonth": {
+    "placeholders": {
+      "percent": {},
+      "month": {}
+    }
+  },
+  "moneyDashboardKpiTrendDownVsMonth": "↘ {percent}% مقارنة بـ {month}",
+  "@moneyDashboardKpiTrendDownVsMonth": {
+    "placeholders": {
+      "percent": {},
+      "month": {}
+    }
+  },
+  "moneyDashboardKpiTrendFlatVsMonth": "→ {percent}% مقارنة بـ {month}",
+  "@moneyDashboardKpiTrendFlatVsMonth": {
+    "placeholders": {
+      "percent": {},
+      "month": {}
+    }
+  },
+  "moneyDashboardQuickPayrollSubtitle": "راجع دورات الرواتب الشهرية وكشوف الدفع.",
+  "moneyDashboardQuickSalesBody": "سجّل المعاملات وراقب إيرادات الخدمات.",
+  "moneyDashboardQuickExpensesBody": "تابع التكاليف والفئات والإنفاق الأخير.",
+  "salesScreenTitle": "المبيعات",
+  "salesScreenSubtitle": "تابع الإيرادات والخدمات والأداء.",
+  "salesScreenAddSale": "إضافة بيع",
+  "salesScreenErrorTitle": "تعذّر تحميل المبيعات",
+  "salesScreenErrorMessage": "سجل المعاملات غير متاح حالياً.",
+  "salesScreenSummaryTitle": "الملخص الذكي",
+  "salesScreenTransactionCount": "عدد العمليات",
+  "salesScreenAverageTicket": "متوسط الفاتورة",
+  "salesScreenTopBarber": "أفضل عضو فريق",
+  "salesScreenTopService": "أفضل خدمة",
+  "salesScreenValuePending": "—",
+  "salesScreenCustomRange": "النطاق المخصص: {start} - {end}",
+  "@salesScreenCustomRange": {
+    "placeholders": {
+      "start": {},
+      "end": {}
+    }
+  },
+  "salesScreenBarberFilter": "عضو الفريق",
+  "salesScreenAllBarbers": "كل أعضاء الفريق",
+  "salesScreenEmptyTitle": "لا توجد مبيعات بعد",
+  "salesScreenEmptyMessage": "سجّل أول عملية بيع لبدء تتبع الإيرادات هنا.",
+  "salesScreenDayTotal": "إجمالي اليوم {amount}",
+  "@salesScreenDayTotal": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "salesScreenUnknownService": "خدمة",
+  "salesScreenAllPayments": "كل طرق الدفع",
+  "salesScreenFiltersButton": "عوامل التصفية",
+  "salesScreenFiltersSheetTitle": "تصفية المبيعات",
+  "salesScreenTopServicesTitle": "أعلى الخدمات حسب الإيراد",
+  "salesScreenBarberRankingTitle": "أداء الفريق",
+  "salesScreenTopServicesEmpty": "سيظهر مزيج الخدمات عند تضمين بنود في المبيعات.",
+  "salesScreenPaymentSingleMethod": "كل المبيعات عبر {method}. فكّر بتشجيع البطاقة أو المحفظة لتقليل التعامل النقدي.",
+  "@salesScreenPaymentSingleMethod": {
+    "placeholders": {
+      "method": {}
+    }
+  },
+  "salesDetailsTitle": "تفاصيل البيع",
+  "salesDetailsNotFoundTitle": "لم يتم العثور على عملية البيع",
+  "salesDetailsNotFoundMessage": "لم تعد هذه العملية متاحة لهذا الصالون.",
+  "salesDetailsOverviewTitle": "نظرة عامة",
+  "salesDetailsLineItemsTitle": "بنود البيع",
+  "salesDetailsCustomerLabel": "العميل",
+  "salesDetailsRecordedByLabel": "تم التسجيل بواسطة",
+  "salesDetailsStatusLabel": "الحالة",
+  "salesDetailsPaymentLabel": "الدفع",
+  "salesDetailsSoldAtLabel": "وقت البيع",
+  "salesDetailsSubtotalLabel": "الإجمالي الفرعي",
+  "salesDetailsTaxLabel": "الضريبة",
+  "salesDetailsDiscountLabel": "الخصم",
+  "salesDetailsCommissionLabel": "العمولة",
+  "salesStatusCompleted": "مكتمل",
+  "salesStatusPending": "قيد الانتظار",
+  "salesStatusRefunded": "مسترد",
+  "salesStatusVoided": "ملغى",
+  "salesDateToday": "اليوم",
+  "salesDateThisWeek": "هذا الأسبوع",
+  "salesDateThisMonth": "هذا الشهر",
+  "salesDateCustom": "مخصص",
+  "salesHeroTotalSalesLabel": "إجمالي المبيعات",
+  "salesChartSalesVsExpenses": "المبيعات مقابل المصروفات",
+  "salesChartLegendSales": "المبيعات",
+  "salesChartLegendExpenses": "المصروفات",
+  "salesInsightTopServicesSubtitle": "حسب الإيراد",
+  "salesInsightBarberSubtitle": "حسب الإيراد",
+  "salesInsightPaymentMixTitle": "مزيج طرق الدفع",
+  "salesInsightPaymentSubtitle": "حسب الطريقة",
+  "salesInsightHelperTopServices": "سجّل المبيعات لمعرفة أكثر الخدمات ربحًا.",
+  "salesInsightHelperBarber": "سجّل المبيعات لمعرفة أداء أعضاء الفريق.",
+  "salesInsightHelperPayment": "سجّل المبيعات لمعرفة توزيع طرق الدفع.",
+  "salesInsightActionAddServices": "إضافة خدمات",
+  "salesInsightActionAddSales": "إضافة مبيعات",
+  "salesRecentCardTitle": "أحدث المبيعات",
+  "salesRecentEmptyTitle": "لا مبيعات بعد",
+  "salesRecentEmptyBody": "ابدأ بإضافة المبيعات لعرض أحدث المعاملات هنا.",
+  "paymentMethodMixed": "مختلط",
+  "addSaleSelectServicesTitle": "اختر الخدمات",
+  "addSaleManageServices": "إدارة الخدمات",
+  "addSaleSearchServicesHint": "ابحث عن خدمة",
+  "addSaleSelectedServicesTitle": "الخدمات المختارة ({count})",
+  "@addSaleSelectedServicesTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "addSaleAddAnotherService": "إضافة خدمة أخرى",
+  "addSaleBarberLabel": "مقدم الخدمة",
+  "addSaleWalkInCustomer": "عميل زائر",
+  "addSaleAddNameLink": "إضافة اسم",
+  "addSaleOrderSummaryTitle": "ملخص الطلب",
+  "addSaleSubtotal": "المجموع الفرعي",
+  "addSaleDiscountLink": "إضافة خصم",
+  "addSaleDiscountTitle": "الخصم",
+  "addSaleDiscountHint": "المبلغ المخصوم من المجموع الفرعي",
+  "addSaleTotal": "الإجمالي",
+  "addSaleRecordSale": "تسجيل البيع",
+  "addSaleDiscountInvalid": "لا يمكن أن يتجاوز الخصم المجموع الفرعي.",
+  "expensesScreenTitle": "المصروفات",
+  "expensesScreenSubtitle": "تابع مصروفات الصالون وأدرها من مكان واحد.",
+  "expensesScreenSalonMissing": "لم يتم العثور على ملف الصالون.",
+  "expensesScreenRetry": "إعادة المحاولة",
+  "expensesScreenTotalExpensesLabel": "إجمالي المصروفات",
+  "expensesScreenTransactionsLabel": "المعاملات",
+  "expensesScreenTransactionsCount": "{count, plural, zero{لا معاملات} one{معاملة واحدة} two{معاملتان} few{{count} معاملات} many{{count} معاملة} other{{count} معاملة}}",
+  "@expensesScreenTransactionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "expensesScreenViewAll": "عرض الكل",
+  "expensesScreenNoCategoriesTitle": "لا فئات بعد",
+  "expensesScreenNoCategoriesMessage": "أضف أول مصروف لرؤية توزيع الفئات.",
+  "expensesScreenRecentTitle": "أحدث المصروفات",
+  "expensesScreenReportComingSoon": "التقارير ستتوفر قريباً.",
+  "expensesScreenRecordedByLabel": "سجّل بواسطة",
+  "expensesScreenAllCreators": "الجميع",
+  "expensesScreenClearFilters": "مسح عوامل التصفية",
+  "expensesScreenApplyFilters": "تطبيق",
+  "expensesScreenAddExpense": "إضافة مصروف",
+  "expensesScreenErrorTitle": "تعذّر تحميل المصروفات",
+  "expensesScreenErrorMessage": "سجل المصروفات غير متاح حالياً.",
+  "expensesScreenSummaryTitle": "الملخص الذكي",
+  "expensesScreenCount": "عدد المصروفات",
+  "expensesScreenTopCategory": "أعلى فئة",
+  "expensesScreenValuePending": "لا توجد بيانات كافية",
+  "expensesScreenAllCategories": "كل الفئات",
+  "expensesScreenBreakdownTitle": "توزيع الفئات",
+  "expensesScreenBreakdownEmpty": "سيظهر التوزيع بعد تسجيل المصروفات.",
+  "expensesScreenEmptyTitle": "لا توجد مصروفات بعد",
+  "expensesScreenEmptyMessage": "أضف أول مصروف لبدء تتبع التكاليف هنا.",
+  "expensesScreenDayTotal": "إجمالي اليوم {amount}",
+  "@expensesScreenDayTotal": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "expensesScreenUnknownExpense": "مصروف",
+  "expensesScreenFiltersButton": "عوامل التصفية",
+  "expensesScreenFiltersSheetTitle": "تصفية المصروفات",
+  "expensesScreenAverageExpense": "متوسط / مصروف",
+  "expensesScreenHighestExpense": "الأعلى",
+  "expensesScreenTrend": "الاتجاه",
+  "expensesScreenTrendVsPrior": "{percent} مقارنة بالفترة السابقة",
+  "@expensesScreenTrendVsPrior": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+  "expenseScreenLinkedBarber": "عضو الفريق المرتبط",
+  "addSalePaymentMethodField": "طريقة الدفع",
+  "employeeAddSaleFab": "إضافة بيع",
+  "employeeSectionPermissionDenied": "لا تملك صلاحية عرض هذا القسم.",
+  "employeeTodayWorkspaceSubtitle": "مساحة عملك اليوم",
+  "employeeTodayAttendanceTitle": "حضور اليوم",
+  "employeeTodayAttendanceTagline": "كن في الموعد، وكن متميزًا.",
+  "employeeTodayStatusNotCheckedIn": "لم يتم تسجيل الدخول",
+  "employeeTodayStatusCheckedIn": "تم تسجيل الدخول",
+  "employeeTodayStatusOnBreak": "في استراحة",
+  "employeeTodayStatusCheckedOut": "تم تسجيل الخروج",
+  "employeeTodayZoneInside": "داخل نطاق الصالون",
+  "employeeTodayZoneOutside": "خارج نطاق الصالون",
+  "employeeTodaySalonLabel": "الصالون",
+  "employeeTodayAddressOnFile": "العنوان المحفوظ",
+  "employeeTodayDistanceMeters": "حوالي {meters} م من المركز",
+  "@employeeTodayDistanceMeters": {
+    "placeholders": {
+      "meters": {
+        "type": "int"
+      }
+    }
+  },
+  "employeeTodayAttendanceRequestTitle": "طلب حضور",
+  "employeeTodayAttendanceRequestSubtitle": "نسيت تسجيلًا؟ أرسل طلبًا لموافقة المشرف.",
+  "employeeTodayRequestCorrection": "طلب تصحيح",
+  "employeeTodayPendingCount": "قيد الانتظار: {count}",
+  "@employeeTodayPendingCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "employeeTodayNoActivity": "لا نشاط اليوم بعد.",
+  "employeeTodayPrivacyNote": "يمكنك فقط عرض حضورك ومبيعاتك وطلباتك.",
+  "employeeTodayViewPolicy": "عرض السياسة",
+  "employeeTodaySalonLocationMissing": "لم يتم ضبط موقع حضور الصالون. تواصل مع المالك.",
+  "employeeTodayPunchIn": "تسجيل دخول",
+  "employeeTodayPunchOut": "تسجيل خروج",
+  "employeeTodayBreakOut": "بدء استراحة",
+  "employeeTodayBreakIn": "إنهاء استراحة",
+  "employeeTodayCompletedForToday": "اكتمل اليوم",
+  "employeeTodayHoursLabel": "{hours} س",
+  "@employeeTodayHoursLabel": {
+    "placeholders": {
+      "hours": {}
+    }
+  },
+  "employeeTodaySalesAmount": "مبيعات {amount}",
+  "@employeeTodaySalesAmount": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "employeeTodayServicesCount": "{count} خدمات",
+  "@employeeTodayServicesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "employeeTodayTeamMemberFallback": "عضو الفريق",
+  "employeeTodayPunchRecorded": "تم تسجيل {action}",
+  "@employeeTodayPunchRecorded": {
+    "placeholders": {
+      "action": {}
+    }
+  },
+  "employeeTodayOfflinePunch": "تحتاج إلى اتصال بالإنترنت للتسجيل.",
+  "employeeActivityTimelineTitle": "نشاط اليوم",
+  "employeeActivityTimelineLive": "مباشر",
+  "employeeActivityTimelineEmpty": "لا تسجيلات اليوم بعد.",
+  "employeeSalesTitle": "مبيعاتي",
+  "employeeSalesSubtitle": "تابع إيرادك وعمولتك",
+  "employeeSalesNotAllowedAdd": "لا يمكنك تسجيل المبيعات. تواصل مع مالك الصالون.",
+  "employeeSaleRecordedSuccess": "تم تسجيل البيع بنجاح.",
+  "employeeSalesEmptyPeriod": "لا مبيعات في هذه الفترة بعد.",
+  "employeeSalesEmptyCta": "اضغط «إضافة بيع» لتسجيل أول بيع لك اليوم.",
+  "employeeSalesRecentTitle": "أحدث المبيعات",
+  "employeeSalesViewReceipts": "عرض الإيصالات",
+  "employeeSalesViewReceiptsHint": "مراجعة الإيصالات للمالك قريبًا.",
+  "employeeSalesTotalLabel": "إجمالي المبيعات",
+  "employeeSalesHeroNoSales": "لا مبيعات في هذه الفترة بعد.",
+  "employeeSalesKpiTotal": "إجمالي المبيعات",
+  "employeeSalesKpiServices": "الخدمات",
+  "employeeSalesKpiCommission": "العمولة التقديرية",
+  "employeeSalesKpiAvgService": "متوسط قيمة الخدمة",
+  "employeeSalesCommissionRate": "نسبة العمولة",
+  "employeeSalesCommissionHint": "نسبة عمولتك",
+  "employeeSalesEstimatedCommission": "العمولة التقديرية",
+  "employeeSalesFromSales": "من مبيعات بقيمة {amount}",
+  "@employeeSalesFromSales": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "employeeSalesCustomersLabel": "العملاء",
+  "employeeSalesServicesCustomersRow": "{services} خدمات · {customers} عملاء",
+  "@employeeSalesServicesCustomersRow": {
+    "placeholders": {
+      "services": {},
+      "customers": {}
+    }
+  },
+  "employeeSalesShowingLatest": "عرض أحدث {count} عملية بيع",
+  "@employeeSalesShowingLatest": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "addSaleReceiptSectionTitle": "صورة الإيصال",
+  "addSaleReceiptSectionBody": "التقط صورة لإيصال البطاقة أو النقد أو إثبات الدفع.",
+  "addSaleReceiptTakePhoto": "التقاط صورة",
+  "addSaleReceiptRetake": "إعادة التقاط",
+  "addSaleReceiptRemove": "إزالة",
+  "addSaleReceiptRequiredCard": "صورة الإيصال مطلوبة لمدفوعات البطاقة.",
+  "addSaleReceiptRequiredMixed": "صورة الإيصال مطلوبة لأن البيع يشمل دفعًا بالبطاقة.",
+  "addSaleOptionalCashPhotoHint": "اختياري: صورة للنقد المستلم أو إيصال يدوي.",
+  "addSaleCashCardSplitTitle": "مبالغ النقد والبطاقة",
+  "addSaleCashAmountHint": "نقدي",
+  "addSaleCardAmountHint": "بطاقة",
+  "addSalePaymentSplitInvalid": "يجب أن يساوي مجموع النقد والبطاقة إجمالي البيع.",
+  "ownerAddSaleAutoPrice": "السعر المعبأ تلقائيًا",
+  "authV2WelcomeTitle": "تشغيل أبسط.",
+  "authV2WelcomeSubtitle": "أدر الحجوزات والفريق والرواتب والمال في مساحة عمل واحدة.",
+  "authV2WelcomeContinue": "متابعة",
+  "authV2FieldLanguage": "اللغة",
+  "authV2FieldCountry": "الدولة",
+  "authV2RoleTitle": "كيف تريد استخدام Zurano؟",
+  "authV2RoleOwnerTitle": "أنشئ صالونًا",
+  "authV2RoleOwnerSubtitle": "سجِّل عملك وفريقك وعملياتك.",
+  "authV2RoleCustomerTitle": "المتابعة كمستخدم",
+  "authV2RoleCustomerSubtitle": "اكتشف الصالونات واحجز المواعيد.",
+  "authV2OwnerLoginHeadline": "مرحباً بعودتك",
+  "authV2OwnerLoginSubtitle": "سجّل الدخول لإدارة صالونك.",
+  "authV2UserLoginHeadline": "مرحباً بعودتك",
+  "authV2UserLoginSubtitle": "سجّل الدخول للمتابعة.",
+  "authV2UserLoginIdentifierHelper": "الموظفون يسجّلون باسم المستخدم. العملاء بالبريد الإلكتروني.",
+  "userLoginForgotPasswordNeedEmail": "إعادة تعيين كلمة المرور تعمل مع البريد. أضف «@» إذا كنت تسجّل بالبريد.",
+  "authLoginErrorIncorrect": "اسم المستخدم أو كلمة المرور غير صحيحة.",
+  "authLoginErrorDisabled": "تم تعطيل هذا الحساب.",
+  "authLoginErrorInvalidEmail": "صيغة البريد الإلكتروني غير صحيحة.",
+  "authLoginErrorTooManyRequests": "تم إيقاف المحاولات مؤقتًا بسبب محاولات كثيرة. حاول لاحقًا أو أعد تعيين كلمة المرور.",
+  "authLoginErrorNetwork": "تحقق من اتصال الإنترنت وحاول مرة أخرى.",
+  "authLoginErrorStaffUseUsername": "موظفو الصالون يسجّلون بالبريد أو اسم المستخدم الذي أنشأه مالك الصالون. العملاء يستخدمون هذا الخيار ببريدهم الشخصي.",
+  "authLoginErrorGeneric": "تعذر تسجيل الدخول. حاول مرة أخرى.",
+  "authStaffLoginUserDocMissing": "لم يتم العثور على حساب المستخدم. تواصل مع مالك الصالون.",
+  "authStaffLoginUserInactive": "تم إيقاف هذا الحساب مؤقتًا. تواصل مع مالك الصالون.",
+  "authStaffLoginEmployeeDocMissing": "حساب الموظف غير مرتبط بالصالون. تواصل مع مالك الصالون.",
+  "authStaffLoginEmployeeInactive": "تم إيقاف حسابك من قبل مالك الصالون.",
+  "authStaffLoginWrongPortal": "هذا الدخول مخصص لفريق الصالون. العملاء وملاك الصالون يستخدمون خيار تسجيل الدخول المناسب.",
+  "changeTemporaryPasswordFieldCurrent": "كلمة المرور الحالية",
+  "changeTemporaryPasswordFieldNew": "كلمة المرور الجديدة",
+  "changeTemporaryPasswordFieldConfirm": "تأكيد كلمة المرور الجديدة",
+  "changeTemporaryPasswordTitle": "إنشاء كلمة مرور جديدة",
+  "changeTemporaryPasswordSubtitle": "مالك الصالون عيّن كلمة مرور مؤقتة. اختر كلمة مرور جديدة للمتابعة.",
+  "changeTemporaryPasswordSignOut": "تسجيل الخروج",
+  "changeTemporaryPasswordSubmit": "تحديث كلمة المرور",
+  "changeTemporaryPasswordSuccessSnack": "تم تغيير كلمة المرور بنجاح",
+  "changeTemporaryPasswordErrorCurrentRequired": "أدخل كلمة المرور الحالية.",
+  "changeTemporaryPasswordErrorNewMinLength": "كلمة المرور الجديدة يجب أن تكون 8 أحرف على الأقل.",
+  "changeTemporaryPasswordErrorNewRequiresLetterAndNumber": "يجب أن تتضمن كلمة المرور الجديدة حرفًا ورقمًا على الأقل.",
+  "changeTemporaryPasswordErrorConfirmMismatch": "كلمتا المرور الجديدتان غير متطابقتين.",
+  "changeTemporaryPasswordErrorWrongPassword": "كلمة المرور الحالية غير صحيحة.",
+  "changeTemporaryPasswordErrorWeakPassword": "كلمة المرور ضعيفة. جرّب مزيجًا أطول من الأحرف والأرقام.",
+  "changeTemporaryPasswordErrorRequiresRecentLogin": "يرجى تسجيل الخروج ثم الدخول مرة أخرى ثم أعد المحاولة.",
+  "changeTemporaryPasswordErrorNetwork": "خطأ في الشبكة. تحقق من الاتصال ثم أعد المحاولة.",
+  "changeTemporaryPasswordErrorGeneric": "تعذر تحديث كلمة المرور. حاول مرة أخرى.",
+  "changeTemporaryPasswordFirestorePartialFailure": "تم تغيير كلمة المرور، لكن تعذر تحديث حالة الحساب. تواصل مع مالك الصالون.",
+  "authLoginErrorStaffNotFound": "لا يوجد حساب موظف لهذا الاسم. تحقق من الإملاء أو راجع مالك الصالون.",
+  "authLoginErrorPermission": "ليست لديك صلاحية لإتمام هذا الإجراء.",
+  "authV2LoginHeadline": "تسجيل الدخول",
+  "authV2LoginSubtitle": "استخدم بريدك المهني للوصول إلى مساحة العمل.",
+  "authV2SignupHeadline": "إنشاء حساب",
+  "authV2SignupSubtitle": "إعداد سريع — يمكنك إضافة التفاصيل لاحقًا.",
+  "authV2ForgotPassword": "نسيت كلمة المرور؟",
+  "authV2ForgotPasswordTitle": "إعادة تعيين كلمة المرور",
+  "authV2ForgotPasswordDescription": "أدخل بريدك الإلكتروني وسنرسل لك رابطًا لإعادة تعيين كلمة المرور.",
+  "authV2ForgotPasswordSent": "تحقق من بريدك لتعليمات إعادة التعيين.",
+  "authV2SendResetLink": "إرسال الرابط",
+  "authV2OrDivider": "أو",
+  "authV2ContinueGoogle": "المتابعة مع Google",
+  "authV2ContinueApple": "المتابعة مع Apple",
+  "authV2ContinueFacebook": "المتابعة مع Facebook",
+  "authV2SignUpLink": "إنشاء حساب",
+  "authV2SignInLink": "تسجيل الدخول",
+  "authV2LoginSignupPrompt": "جديد على Zurano؟",
+  "authV2SignupSigninPrompt": "لديك حساب بالفعل؟",
+  "authV2PasswordHintRules": "8 أحرف على الأقل",
+  "authV2CreateSalonTitle": "أضف تفاصيل صالونك",
+  "authV2CreateSalonSubtitle": "اختر اسم الصالون والمدينة لبدء إدارة الحجوزات والفريق.",
+  "authV2CurrencyLabel": "العملة",
+  "authV2OptionalAddressLabel": "العنوان (اختياري)",
+  "authV2CreateSalonCta": "إنشاء الصالون",
+  "createSalonCountryRequired": "أكمل اختيار البلد في الإعداد قبل إنشاء الصالون.",
+  "createSalonCitiesLoading": "جاري تحميل مدن بلدك…",
+  "createSalonNoCitiesForCountry": "لا تتوفر قائمة مدن لهذا البلد. أدخل اسم المدينة يدويًا.",
+  "createSalonEnterCityManually": "إدخال المدينة يدويًا",
+  "createSalonPickFromList": "اختيار من القائمة",
+  "createSalonSelectCityHint": "اضغط للبحث واختيار مدينة",
+  "bentoDashboardScreenTitle": "مركز العمليات",
+  "firstTimeRoleEyebrow": "مرحبًا",
+  "firstTimeRoleTitle": "كيف ستستخدم Zurano؟",
+  "firstTimeRoleDescription": "اختر دورك لإكمال إعداد الملف.",
+  "firstTimeRoleUserTitle": "مستخدم",
+  "firstTimeRoleUserSubtitle": "احجز الخدمات، استكشف الصالونات، وأدر مواعيدك.",
+  "firstTimeRoleOwnerTitle": "صاحب صالون",
+  "firstTimeRoleOwnerSubtitle": "أنشئ صالونك، وأدر الفريق والحجوزات والرواتب والعمليات.",
+  "firstTimeRoleContinue": "متابعة",
+  "firstTimeRoleDifferentAccount": "استخدام حساب آخر",
+  "firstTimeRoleError": "تعذّر إكمال إعداد الملف. حاول مرة أخرى.",
+  "ownerTabCustomers": "العملاء",
+  "ownerTabFinance": "المالية",
+  "ownerShellMore": "المزيد",
+  "ownerServicesWaitingForSalon": "بانتظار ربط صالون بملفك…",
+  "onboardingSalonCreatedTitle": "تم إنشاء الصالون",
+  "onboardingSalonCreatedSubtitle": "جارٍ فتح لوحة التحكم…",
+  "splashBootstrapErrorMessage": "تعذّر بدء التطبيق بسبب شبكة أو مشكلة في قاعدة البيانات. أعد المحاولة.",
+  "splashRetryStartup": "إعادة المحاولة",
+  "customersScreenTitle": "العملاء",
+  "customersHeroGreeting": "{greeting}، {name} 👋",
+  "@customersHeroGreeting": {
+    "placeholders": {
+      "greeting": {"type": "String"},
+      "name": {"type": "String"}
+    }
+  },
+  "customersSalonOnlyBannerTitle": "عملاء {salonName} فقط",
+  "@customersSalonOnlyBannerTitle": {
+    "placeholders": {
+      "salonName": {"type": "String"}
+    }
+  },
+  "customersSalonOnlyBannerSubtitle": "قائمة الصالون للزيارات والحجوزات والإنفاق.",
+  "customersGlobalSearchHint": "ابحث عن الفريق والإيرادات والطلبات",
+  "customersCountBadge": "{count} عميلًا",
+  "@customersCountBadge": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "customersAddCustomerFab": "إضافة عميل",
+  "customersPermissionErrorTitle": "لا يمكنك الوصول إلى هؤلاء العملاء.",
+  "customersPermissionErrorSubtitle": "تحقّق من عضوية الصالون أو الصلاحيات.",
+  "customersGenericLoadError": "تعذّر تحميل العملاء. حاول مرة أخرى.",
+  "customersCategoryNewBadge": "جديد",
+  "customersCategoryRegularBadge": "منتظم",
+  "customersStatusActive": "نشط",
+  "customersStatusInactive": "غير نشط",
+  "customersLastVisitShort": "آخر زيارة: {date}",
+  "@customersLastVisitShort": {
+    "placeholders": {
+      "date": {"type": "String"}
+    }
+  },
+  "customersVisitsShort": "الزيارات: {count}",
+  "@customersVisitsShort": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "customersSpentShort": "الإنفاق: {amount}",
+  "@customersSpentShort": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "customersSearchHint": "ابحث بالاسم أو الهاتف",
+  "customersTagAll": "الكل",
+  "customersTagNew": "جديد",
+  "customersTagRegular": "منتظم",
+  "customersTagVip": "VIP",
+  "customersTagInactive": "غير نشط",
+  "customersEmptyTitle": "لا يوجد عملاء بعد",
+  "customersEmptyMessageCanCreate": "أضف أول عميل لتتبّع الزيارات والإنفاق.",
+  "customersEmptyMessageNoAccess": "لا يوجد عملاء متاحون لهذا الحساب.",
+  "customersAddFirstCta": "إضافة أول عميل",
+  "customersLastVisitNever": "لا زيارة بعد",
+  "customersPreferredBarberNone": "لا يوجد عضو فريق مفضّل",
+  "customersPreferredBarberLine": "{phone} · {barber}",
+  "@customersPreferredBarberLine": {
+    "placeholders": {
+      "phone": {"type": "String"},
+      "barber": {"type": "String"}
+    }
+  },
+  "customersPreferredBarberLabel": "عضو الفريق المفضّل: {name}",
+  "@customersPreferredBarberLabel": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "customersLastVisitLine": "آخر زيارة: {date} ({relative})",
+  "@customersLastVisitLine": {
+    "placeholders": {
+      "date": {"type": "String"},
+      "relative": {"type": "String"}
+    }
+  },
+  "customersVisitsPointsLine": "الزيارات: {visits} · النقاط: {points}",
+  "@customersVisitsPointsLine": {
+    "placeholders": {
+      "visits": {"type": "int"},
+      "points": {"type": "int"}
+    }
+  },
+  "customersTotalSpentLine": "إجمالي الإنفاق: {amount}",
+  "@customersTotalSpentLine": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "customersVipBadge": "VIP",
+  "customersTimeNever": "لا يوجد",
+  "customersTimeJustNow": "الآن",
+  "customersTimeMinutesAgo": "منذ {n} د",
+  "@customersTimeMinutesAgo": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "customersTimeHoursAgo": "منذ {n} س",
+  "@customersTimeHoursAgo": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "customersTimeDaysAgo": "منذ {n} ي",
+  "@customersTimeDaysAgo": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "customersTimeMonthsAgo": "منذ {n} شهرًا",
+  "@customersTimeMonthsAgo": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "customersTimeYearsAgo": "منذ {n} سنة",
+  "@customersTimeYearsAgo": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "customerDetailsTitle": "تفاصيل العميل",
+  "customerNotFound": "لم يُعثر على العميل",
+  "customerNotFoundSubtitle": "ربما حُذف هذا العميل أو لا تملك صلاحية عرضه.",
+  "customerBackToCustomers": "العودة إلى العملاء",
+  "customerDetailsCall": "اتصال",
+  "customerDetailsWhatsApp": "واتساب",
+  "customerDetailsEdit": "تعديل",
+  "customerDetailsBook": "حجز",
+  "customerDetailsAddService": "إضافة عملية بيع",
+  "customerDetailsUpcomingSection": "المواعيد القادمة",
+  "customerDetailsHistorySection": "سجل الزيارات",
+  "customerDetailsBookSameServiceAgain": "إعادة حجز نفس الخدمة",
+  "customerDetailsSpendingSummary": "ملخص الإنفاق: {amount}",
+  "@customerDetailsSpendingSummary": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "customerDetailsNotesWithValue": "ملاحظات: {notes}",
+  "@customerDetailsNotesWithValue": {
+    "placeholders": {
+      "notes": {"type": "String"}
+    }
+  },
+  "customerDetailsNotesEmpty": "لا ملاحظات",
+  "customerDetailsServiceFallback": "خدمة",
+  "customerInsightsTitle": "رؤى العميل",
+  "customerProfileVipSubtitle": "عميل VIP • مفعّل بواسطة المالك",
+  "customerInsightNoVisits": "لا توجد زيارات سابقة",
+  "customerInsightLastVisitDays": "آخر زيارة منذ {days, plural, =0{اليوم} =1{يوم واحد} other{{days} أيام}}",
+  "@customerInsightLastVisitDays": {
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "customerInsightTotalVisitsLine": "إجمالي الزيارات: {count}",
+  "@customerInsightTotalVisitsLine": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "customerInsightTotalSpentLine": "إجمالي الإنفاق: {amount}",
+  "@customerInsightTotalSpentLine": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "customerSuggestedActionVip": "عميل عالي القيمة — يُفضّل عرض مخصص",
+  "customerSuggestedActionNew": "عميل جديد — تابع بعرض ترحيبي",
+  "customerSuggestedActionRegular": "عميل منتظم — حافظ على التواصل",
+  "customerSuggestedActionInactive": "غير نشط — فكّر بعرض عودة",
+  "customerTypeSectionTitle": "نوع العميل",
+  "customerTypeChipsHint": "التصنيف يساعدك على العروض. VIP يحدده المالك فقط.",
+  "customerTypeVip": "VIP",
+  "customerTypeNew": "جديد",
+  "customerTypeRegular": "منتظم",
+  "customerTypeInactive": "غير نشط",
+  "customerDiscountBoxTitle": "خصم العميل",
+  "customerDiscountBoxSubtitle": "يُطبّق تلقائياً عند تسجيل عملية بيع",
+  "customerDiscountEditSheetTitle": "تعديل الخصم",
+  "customerDiscountPercentLabel": "نسبة الخصم %",
+  "customerDiscountInvalid": "أدخل قيمة بين 0 و 100",
+  "customerSalesSectionTitle": "سجل المعاملات",
+  "customerSalesTotalSpentSummary": "إجمالي ما أنفقه: {amount}",
+  "@customerSalesTotalSpentSummary": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "customerSalesLastVisitSummary": "آخر زيارة: {date}",
+  "@customerSalesLastVisitSummary": {
+    "placeholders": {
+      "date": {"type": "String"}
+    }
+  },
+  "customerSalesEmptyTitle": "لا توجد معاملات بعد",
+  "customerSalesEmptySubtitle": "عند إضافة عملية بيع ستظهر هنا.",
+  "customerUpcomingSectionTitle": "المواعيد القادمة",
+  "customerUpcomingEmptyTitle": "لا مواعيد قادمة",
+  "customerNotesSectionTitle": "ملاحظات",
+  "createBookingSearchCustomerLabel": "ابحث عن عميل",
+  "createBookingAddNewCustomer": "إضافة جديد",
+  "createBookingDateWithValue": "التاريخ: {date}",
+  "@createBookingDateWithValue": {
+    "placeholders": {
+      "date": {"type": "String"}
+    }
+  },
+  "createBookingTimeWithValue": "الوقت: {time}",
+  "@createBookingTimeWithValue": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "createBookingPickTime": "اختر الوقت",
+  "createBookingValidationIncomplete": "أكمل اختيار العميل والخدمة وعضو الفريق والتاريخ والوقت.",
+  "createBookingSuccessSnackbar": "تم إنشاء الحجز بنجاح",
+  "createBookingSaveCta": "حفظ الحجز",
+  "addCustomerTitle": "إضافة عميل جديد",
+  "addCustomerSaveCustomer": "حفظ العميل",
+  "addCustomerSaveAndBook": "حفظ وحجز",
+  "addCustomerFieldFullName": "الاسم الكامل",
+  "addCustomerFullNameRequired": "الاسم الكامل مطلوب",
+  "addCustomerFieldPhone": "رقم الهاتف",
+  "addCustomerFieldSource": "المصدر (زائر، إنستغرام، إحالة…)",
+  "addCustomerFieldNotes": "ملاحظات",
+  "addCustomerSavedWithPhone": "تم حفظ العميل بنجاح.",
+  "addCustomerSavedNoPhone": "تم حفظ العميل. لم يُضف رقم هاتف.",
+  "accountProfileRecoveryInlineError": "تم إنشاء الحساب لكن إعداد الملف لم يكتمل. اضغط «إنشاء الملف» لاستكمال الحساب.",
+  "profileFieldFullName": "الاسم الكامل",
+  "profileFieldMobile": "الجوال",
+  "profileFieldCity": "المدينة",
+  "authHintEmailExample": "name@example.com",
+  "customerBookingMoreDays": "مزيد من الأيام",
+  "barberAttendanceInOutLine": "دخول: {checkIn} · خروج: {checkOut}",
+  "@barberAttendanceInOutLine": {
+    "placeholders": {
+      "checkIn": {"type": "String"},
+      "checkOut": {"type": "String"}
+    }
+  },
+  "barberAttendanceStatusPresent": "حاضر",
+  "barberAttendanceStatusAbsent": "غائب",
+  "barberAttendanceStatusLate": "متأخر",
+  "barberAttendanceStatusLeave": "إجازة",
+  "preAuthLanguageEnglishHint": "واجهة بالإنجليزية",
+  "preAuthLanguageArabicHint": "واجهة بالعربية",
+  "semanticIllustrationSalonOwnerSignup": "رسم توضيحي لتسجيل صاحب الصالون",
+  "semanticIllustrationCustomerSignup": "رسم توضيحي لتسجيل العميل",
+  "semanticIllustrationEmptyServices": "رسم توضيحي لعدم وجود خدمات",
+  "semanticIllustrationWelcomeOnboarding": "رسم توضيحي لشاشة الترحيب",
+  "employeePayrollTitle": "الرواتب",
+  "employeePayrollSubtitle": "راتبك وكشف الراتب",
+  "employeePayrollSelectMonth": "اختر الشهر",
+  "employeePayrollNetPay": "صافي الراتب",
+  "employeePayrollEarnings": "الاستحقاقات",
+  "employeePayrollDeductions": "الخصومات",
+  "employeePayrollNetSalary": "صافي الأجر",
+  "employeePayrollStatusPaid": "مدفوع",
+  "employeePayrollStatusApproved": "معتمد",
+  "employeePayrollServicesStat": "الخدمات",
+  "employeePayrollThisMonth": "هذا الشهر",
+  "employeePayrollCommissionStat": "العمولة",
+  "employeePayrollOnServices": "على الخدمات",
+  "employeePayrollAttendanceStat": "الحضور",
+  "employeePayrollDaysPresent": "أيام الحضور",
+  "employeePayrollViewFullPayslip": "عرض كشف الراتب",
+  "employeePayrollDownloadPdf": "تنزيل PDF",
+  "employeePayrollRecentTitle": "كشوف سابقة",
+  "employeePayrollViewAll": "عرض الكل",
+  "employeePayrollEmptyTitle": "لم يتم إصدار كشف الراتب لهذا الشهر بعد",
+  "employeePayrollEmptyBody": "سيظهر كشف الراتب هنا بعد أن يقوم صاحب الصالون بإصدار الرواتب لهذه الفترة.",
+  "employeeWorkspaceNotLinkedTitle": "لم يتم ربط حسابك بملف موظف",
+  "employeeWorkspaceNotLinkedBody": "لم يتم ربط حسابك بملف موظف بعد. اطلب من مالك الصالون إكمال إعداد حساب الموظف.",
+  "employeeStaffWorkspaceUnavailableTitle": "مساحة الموظف غير متاحة",
+  "employeeStaffWorkspaceUnavailableBody": "حسابك أو ملف الموظف غير نشط، أو تعذر تحميل بيانات الموظف. تواصل مع مالك الصالون لاستعادة الوصول.",
+  "employeeMapLocationPermissionRequired": "يلزم إذن الموقع لعرض موقعك على الخريطة.",
+  "employeeMapUnavailableBody": "تعذّر تحميل الخريطة. لا يزال بإمكانك التسجيل عبر GPS عند التفعيل.",
+  "employeePayrollErrorTitle": "تعذر تحميل الرواتب",
+  "employeePayrollSalaryNotesTitle": "ملاحظات الراتب",
+  "employeePayrollNoWorkspace": "لا يوجد مساحة عمل",
+  "employeePayrollHistoryTitle": "سجل كشوف الراتب",
+  "employeePayrollDetailsTitle": "كشف الراتب",
+  "employeePayrollPdfShareSubject": "كشف راتب",
+  "employeePayrollTotalEarnings": "إجمالي الاستحقاقات",
+  "employeePayrollTotalDeductions": "إجمالي الخصومات",
+  "employeePayrollPeriod": "{start} – {end}",
+  "@employeePayrollPeriod": {
+    "placeholders": {
+      "start": {"type": "String"},
+      "end": {"type": "String"}
+    }
+  },
+  "employeeTodayLocationUnknown": "الموقع غير معروف",
+  "employeeTodayNoAddressSet": "لم يُضبط عنوان",
+  "employeeAttendanceZoneNotConfiguredAdmin": "منطقة الحضور غير مُعدّة بعد. يُرجى التواصل مع مسؤول الصالون.",
+  "employeeAttendanceNotRequiredOrDisabled": "الحضور غير مطلوب أو معطّل.",
+  "employeeTodayCheckedOutForToday": "لقد سجّلت خروجك لهذا اليوم.",
+  "employeeTodayCorrectionRequestsDisabled": "طلبات التصحيح معطّلة لصالونك.",
+  "employeeTodayAwaitingApproval": "بانتظار الموافقة",
+  "employeeTodayNoOpenRequests": "لا توجد طلبات مفتوحة",
+  "employeeAttendanceSalonLocationTitle": "موقع الصالون",
+  "employeeAttendanceLocating": "جارٍ تحديد الموقع…",
+  "employeeAttendanceGpsAccuracy": "دقة GPS: {accuracy}",
+  "employeeAttendanceSalonLocationOwnerNote": "لم يُضبط موقع الصالون. يُرجى التواصل مع المالك.",
+  "employeeAttendanceRetryLocation": "إعادة محاولة الموقع",
+  "employeeAttendanceWithinRange": "ضمن النطاق",
+  "employeeAttendanceOutsideRange": "خارج النطاق",
+  "employeeAttendanceScreenTitle": "الحضور",
+  "employeeAttendanceScreenSubtitle": "تابع ساعات عملك والتزم بالمواعيد",
+  "employeeAttendanceGreetingMorning": "صباح الخير،",
+  "employeeAttendanceGreetingAfternoon": "مساء الخير،",
+  "employeeAttendanceGreetingEvening": "مساء الخير،",
+  "employeeAttendanceProductiveDay": "يومًا موفقًا! 👋",
+  "employeePunchNextAction": "الإجراء التالي",
+  "employeePunchMissingDetectedWithCorrection": "تم رصد بصمة ناقصة. أرسل طلبًا للموافقة.",
+  "employeePunchDoneForToday": "أنهيت يومك.",
+  "employeePunchMustBeInZone": "يجب أن تكون داخل نطاق الصالون لتسجيل الدخول.",
+  "employeePunchTapWhenArrive": "اضغط عند وصولك إلى الصالون.",
+  "employeePunchBreakLimitMinutes": "حد الاستراحة اليومي {minutes} دقيقة إجمالًا.",
+  "employeePunchReturnFromBreak": "اضغط عند عودتك من الاستراحة.",
+  "employeePunchEndWorkingDay": "أنهِ يوم العمل.",
+  "employeePunchSubmitCorrection": "إرسال تصحيح",
+  "employeePunchMissingAskAdmin": "تم رصد بصمة ناقصة. اطلب من المالك أو المسؤول تفعيل طلبات التصحيح.",
+  "employeePunchCompletedTodayTitle": "اكتمل اليوم",
+  "employeeTimelineTodayTitle": "الجدول الزمني لليوم",
+  "employeeTimelineBreakOutTitle": "بداية الاستراحة",
+  "employeeTimelineBreakInTitle": "نهاية الاستراحة",
+  "employeeTimelineWorkingHours": "ساعات العمل",
+  "employeeTimelineShiftNotSet": "لم تُضبط أوقات الوردية",
+  "employeeTodayStatusCardTitle": "حالة اليوم",
+  "employeeAttendanceWorkedLabel": "مدة العمل",
+  "employeeAttendanceExpectedCheckoutLabel": "الخروج المتوقع",
+  "employeeAttendanceStatusMissingPunch": "بصمة ناقصة",
+  "employeeAttendanceStatusIncomplete": "غير مكتمل",
+  "employeeAttendanceStatusNotCheckedInTitle": "لم يُسجّل الدخول",
+  "employeeRecentAttendanceTitle": "الحضور الأخير",
+  "employeeAttendanceSeeAll": "عرض الكل",
+  "employeeRecentAttendanceLoadError": "تعذّر تحميل الأيام الأخيرة.",
+  "employeeRecentAttendanceEmpty": "لا سجل حضور بعد.\nاضغط «تسجيل الدخول» عند وصولك إلى الصالون.",
+  "employeeAttendanceStatusOnTime": "في الوقت",
+  "employeeAttendanceOverviewTitle": "نظرة على الحضور (هذا الشهر)",
+  "employeeAttendanceViewCalendar": "عرض التقويم",
+  "employeeAttendanceOverviewFootnote": "يشمل الأيام بلا سجل قبل اليوم كغياب.",
+  "employeeAttendanceSummaryLoadError": "تعذّر تحميل ملخص الحضور.",
+  "employeeAttendanceNoDataYet": "لا بيانات بعد.",
+  "employeeAttendanceOverviewDays": "أيام",
+  "employeeAttendanceLoadError": "تعذّر تحميل الحضور.",
+  "employeeAttendanceCorrectionFlowTitle": "تصحيح الحضور",
+  "employeeAttendanceCorrectionSubtitle": "أرسل طلبًا لبصمة فاتتك لمراجعتها والموافقة.",
+  "employeeCorrectionSelectPunchType": "يُرجى اختيار نوع البصمة.",
+  "employeeCorrectionSelectValidDate": "يُرجى اختيار تاريخ صالح.",
+  "employeeCorrectionSelectValidTime": "يُرجى اختيار وقت صالح.",
+  "employeeCorrectionFutureNotAllowed": "لا يمكن أن يكون تاريخ الطلب في المستقبل.",
+  "employeeCorrectionTooOld": "هذا الطلب أقدم من فترة التصحيح المسموح بها.",
+  "employeeCorrectionReasonRequired": "يُرجى إدخال السبب.",
+  "employeeCorrectionReasonMinLength": "يجب أن يكون السبب 10 أحرف على الأقل.",
+  "employeeCorrectionReasonMaxLength": "لا يمكن أن يتجاوز السبب 250 حرفًا.",
+  "employeeCorrectionSubmittedSnackbar": "تم إرسال الطلب بنجاح",
+  "employeeCorrectionDetailsTitle": "تفاصيل التصحيح",
+  "employeeCorrectionRequestedPunchLabel": "البصمة المطلوبة",
+  "employeeCorrectionSelectPlaceholder": "اختر",
+  "employeeAttendanceReasonLabel": "السبب",
+  "employeeCorrectionAdminReviewNote": "سيراجع المسؤول طلبك.",
+  "employeeCorrectionSubmitCta": "إرسال الطلب",
+  "employeeCorrectionRecentTitle": "الطلبات الأخيرة",
+  "employeePolicyTitle": "سياسة الحضور",
+  "employeePolicySubtitle": "قواعد بسيطة ليوم عملك",
+  "employeePolicySummaryTitle": "ملخص السياسة",
+  "employeePolicyGpsSummary": "يستخدم صالونك حضورًا بالـGPS عند التفعيل. حد البصمات: {maxPunches} يوميًا، حتى {maxBreaks} استراحات.",
+  "employeePolicyRulePunchSession": "«تسجيل الدخول» يبدأ جلسة العمل؛ «تسجيل الخروج» ينهيها.",
+  "employeePolicyRuleBreakPair": "يجب استخدام «بداية الاستراحة» و«نهاية الاستراحة» كزوج.",
+  "employeePolicyRuleGpsZone": "قد يُطلب GPS عند البصمة — ابقَ داخل نطاق الصالون.",
+  "employeePolicyUpdatedSnackbar": "تم تحديث السياسة",
+  "employeePolicyRegenerateCta": "إعادة إنشاء السياسة",
+  "employeePolicyPunchRules": "قواعد البصمات",
+  "employeePolicyLateEarly": "التأخير والخروج المبكر",
+  "employeePolicyCorrectionSection": "طلبات التصحيح",
+  "employeePolicyDefaultTitle": "سياسة الحضور",
+  "employeeCalendarLoadError": "تعذّر تحميل التقويم",
+  "employeeAttendanceDayTitle": "يوم الحضور",
+  "employeeAttendanceDayNoRecord": "لا سجل لهذا اليوم.",
+  "employeeAttendanceDayStatusLine": "الحالة: {status}",
+  "employeeAttendanceDayWorkedBreakLine": "العمل: {worked} د · الاستراحة: {breakMin} د",
+  "employeeAttendanceDayPunchesTitle": "البصمات",
+  "employeeHistoryTitle": "سجل الحضور",
+  "employeeHistoryRequestCta": "طلب",
+  "employeeHistoryEmpty": "لا أيام حضور بعد.",
+  "employeeAttendanceRequestAddReason": "يُرجى إضافة سبب.",
+  "employeeAttendanceRequestFutureTime": "لا يمكن أن يكون الوقت المطلوب في المستقبل.",
+  "employeeAttendanceRequestDuplicatePending": "لديك بالفعل طلب معلّق لهذا.",
+  "employeeAttendanceRequestSubmitted": "تم إرسال الطلب",
+  "employeeRequestFailed": "فشل الطلب",
+  "employeeAttendanceRequestScreenTitle": "تصحيح الحضور",
+  "employeeAttendanceRequestPunchLabel": "البصمة المطلوبة",
+  "employeeAttendanceRequestSubmitCta": "إرسال الطلب",
+  "employeeMapPreviewMobileOnly": "معاينة الخريطة متاحة في تطبيق الجوال.",
+  "employeeMapZoneNotConfigured": "النطاق غير مُعدّ",
+  "employeeMapMarkerSalonZone": "نطاق الصالون",
+  "employeeMapMarkerYourLocation": "موقعك",
+  "employeeTodayStatsTitle": "يومي",
+  "employeeTodayStatsSalesLabel": "المبيعات",
+  "employeeTodayStatsHoursLabel": "الساعات",
+  "employeeTodayDistanceUnknown": "المسافة —",
+  "employeeBottomNavToday": "اليوم",
+  "employeeBottomNavSales": "المبيعات",
+  "employeeBottomNavAttendance": "الحضور",
+  "employeeBottomNavPayroll": "الرواتب",
+  "employeeBottomNavProfile": "الملف",
+  "ownerCustomerBookingTileTitle": "حجز العملاء",
+  "ownerCustomerBookingTileSubtitle": "التحكم بالحجز عبر الإنترنت والتوفر والظهور العام",
+  "ownerCustomerBookingTitle": "حجز العملاء",
+  "ownerCustomerBookingSubtitle": "تحكّم في ظهور صالونك للعملاء والحجز عبر الإنترنت وساعات العمل.",
+  "ownerCustomerBookingSectionPublic": "الظهور العام",
+  "ownerCustomerBookingSectionPublicHint": "القائمة والاستكشاف",
+  "ownerCustomerBookingShowSalon": "إظهار الصالون للعملاء",
+  "ownerCustomerBookingShowSalonHint": "عند الإيقاف، لن يظهر صالونك في استكشاف العملاء.",
+  "ownerCustomerBookingSectionAvailability": "توفر الحجز",
+  "ownerCustomerBookingEnableBooking": "تفعيل حجز العملاء",
+  "ownerCustomerBookingAutoConfirm": "تأكيد الحجوزات تلقائياً",
+  "ownerCustomerBookingAnySpecialist": "السماح بأي أخصائي متاح",
+  "ownerCustomerBookingRequireCode": "طلب رمز الحجز للاستعلام",
+  "ownerCustomerBookingShowPrices": "إظهار الأسعار للعملاء",
+  "ownerCustomerBookingAllowNotes": "السماح بملاحظات العميل",
+  "ownerCustomerBookingAllowFeedback": "السماح بتقييم العميل",
+  "ownerCustomerBookingSectionRules": "قواعد الحجز",
+  "ownerCustomerBookingSlotInterval": "فترة الموعد",
+  "ownerCustomerBookingMaxAdvance": "أقصى أيام مسبقاً للحجز",
+  "ownerCustomerBookingCancelCutoff": "مهلة الإلغاء",
+  "ownerCustomerBookingRescheduleCutoff": "مهلة إعادة الجدولة",
+  "ownerCustomerBookingSectionContact": "بيانات التواصل العامة",
+  "ownerCustomerBookingPublicArea": "المنطقة الظاهرة",
+  "ownerCustomerBookingPublicPhone": "الهاتف العام",
+  "ownerCustomerBookingPublicWhatsapp": "واتساب العام",
+  "ownerCustomerBookingGenderTarget": "الفئة",
+  "ownerCustomerBookingGenderMen": "رجال",
+  "ownerCustomerBookingGenderLadies": "سيدات",
+  "ownerCustomerBookingGenderUnisex": "للجميع",
+  "ownerCustomerBookingWorkingHours": "ساعات العمل",
+  "ownerCustomerBookingCopyMonday": "نسخ الإثنين إلى الثلاثاء–الخميس",
+  "ownerCustomerBookingCloseAll": "إغلاق الكل",
+  "ownerCustomerBookingOpenAll": "فتح الكل",
+  "ownerCustomerBookingSave": "حفظ الإعدادات",
+  "ownerCustomerBookingSaved": "تم حفظ إعدادات حجز العملاء",
+  "ownerCustomerBookingValidationTimeOrder": "يجب أن يكون وقت البداية قبل وقت النهاية في الأيام المفتوحة.",
+  "ownerCustomerBookingValidationWorkingDay": "يُشترط يوم عمل واحد على الأقل عند تفعيل الظهور العام والحجز.",
+  "ownerCustomerBookingPublicAreaRequired": "المنطقة العامة مطلوبة عندما يكون الصالون عاماً والحجز مفعّلاً.",
+  "ownerCustomerBookingValidationSlotInterval": "اختر فترة موعد صالحة (15 أو 20 أو 30 أو 45 أو 60 دقيقة).",
+  "ownerCustomerBookingValidationMaxAdvance": "أقصى أيام مسبقاً يجب أن يكون بين 1 و90.",
+  "ownerCustomerBookingValidationCutoff": "المهلة يجب أن تكون بين 0 و10080 دقيقة.",
+  "ownerCustomerBookingValidationPhone": "أدخل رقم هاتف صالح أو اترك الحقل فارغاً.",
+  "ownerCustomerBookingDayOpen": "مفتوح",
+  "ownerCustomerBookingDayClosed": "مغلق",
+  "ownerCustomerBookingSettingsSubtitle": "تحكّم في كيفية حجز العملاء للمواعيد",
+  "ownerCustomerBookingStatusEnabled": "مفعّل",
+  "ownerCustomerBookingStatusDisabled": "معطّل",
+  "ownerCustomerBookingSameDay": "السماح بالحجز في نفس اليوم",
+  "ownerCustomerBookingRequirePhone": "إلزام رقم هاتف العميل",
+  "ownerCustomerBookingRequireName": "إلزام اسم العميل",
+  "ownerCustomerBookingGuestTitle": "السماح بالحجز بدون تسجيل دخول",
+  "ownerCustomerBookingTimeRulesTitle": "قواعد الوقت",
+  "ownerCustomerBookingMinNotice": "أقل مهلة قبل الحجز",
+  "ownerCustomerBookingMaxDaysAhead": "أقصى عدد أيام للأمام",
+  "ownerCustomerBookingSlotDuration": "مدة الفترة",
+  "ownerCustomerBookingBuffer": "فاصل بين الحجوزات",
+  "ownerCustomerBookingCancellationTitle": "قواعد الإلغاء",
+  "ownerCustomerBookingAllowCancel": "السماح للعميل بإلغاء الحجز",
+  "ownerCustomerBookingCancelNotice": "أقل مهلة قبل الإلغاء",
+  "ownerCustomerBookingPublicMessageTitle": "رسالة الحجز العامة",
+  "ownerCustomerBookingPublicMessageHint": "تظهر للعملاء عندما يكون الحجز مفتوحاً.",
+  "ownerCustomerBookingSaveCta": "حفظ",
+  "ownerCustomerBookingSaveSuccess": "تم تحديث إعدادات الحجز",
+  "ownerCustomerBookingSaveError": "تعذّر حفظ الإعدادات",
+  "ownerCustomerBookingLoadError": "تعذّر تحميل إعدادات الحجز",
+  "ownerCustomerBookingValidationMinNotice": "لا يمكن أن تكون أقل المهلة سالبة.",
+  "ownerCustomerBookingValidationMaxDays": "أقصى عدد أيام للأمام يجب أن يكون أكبر من 0.",
+  "ownerCustomerBookingValidationSlot": "مدة الفترة يجب أن تكون أكبر من 0.",
+  "ownerCustomerBookingValidationBuffer": "لا يمكن أن يكون الفاصل سالباً.",
+  "ownerCustomerBookingValidationCancelHours": "مهلة الإلغاء يجب أن تكون أكبر من 0 عند السماح بالإلغاء.",
+  "ownerCustomerBookingValidationMessage": "لا يمكن أن تتجاوز الرسالة 250 حرفاً.",
+  "ownerCustomerBookingMinutesShort": "{n} د",
+  "@ownerCustomerBookingMinutesShort": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "ownerCustomerBookingHoursShort": "{n} س",
+  "@ownerCustomerBookingHoursShort": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "ownerCustomerBookingMinutesDay": "24 س",
+  "customerBookingClosedTitle": "الحجز عبر الإنترنت مغلق",
+  "customerBookingClosedMessage": "هذا الصالون لا يقبل حجوزات جديدة عبر الإنترنت حالياً.",
+  "addSaleSelectAtLeastOneService": "اختر خدمة واحدة على الأقل للمتابعة.",
+  "addSaleSelectStaffMember": "اختر مقدّم الخدمة لهذا البيع.",
+  "addSaleTotalMustBePositive": "يجب أن يكون الإجمالي أكبر من صفر.",
+  "addSaleMixedPaymentMustEqualTotal": "يجب أن يساوي مجموع النقد والبطاقة الإجمالي.",
+  "addSaleNoActiveServicesYet": "لا توجد خدمات نشطة بعد",
+  "addSaleCreateServicesFirst": "أضف خدمات أولاً لتتمكن من تسجيل المبيعات.",
+  "addSaleUnableToLoadServices": "تعذّر تحميل الخدمات"
+}

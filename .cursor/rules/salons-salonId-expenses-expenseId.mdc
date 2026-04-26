@@ -1,0 +1,34 @@
+---
+alwaysApply: true
+---
+
+Path: `salons/{salonId}/expenses/{expenseId}` — model: `lib/features/expenses/data/models/expense.dart`.
+
+## Fields
+
+id: string
+salonId: string
+title: string
+category: string
+amount: number
+
+incurredAt: timestamp — **not** `date`
+
+createdByUid: string — **not** a single anonymous `createdBy`
+createdByName: string
+
+reportYear: number
+reportMonth: number
+reportPeriodKey: string (YYYY-MM)
+
+vendorName: string (optional)
+notes: string (optional)
+
+createdAt: timestamp
+updatedAt: timestamp
+
+## Implemented vs Planned
+
+**Implemented:** Matches `Expense` / `ExpenseRepository` (use `notes` for long text; no separate `description` field on model).
+
+**Planned:** Optional `description` field split from `title` if UX needs both.

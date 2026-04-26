@@ -1,0 +1,29 @@
+---
+alwaysApply: true
+---
+
+Path: `salons/{salonId}/violations/{violationId}` — model: `lib/features/violations/data/models/violation.dart`.
+
+## Fields
+
+id: string
+salonId: string
+employeeId: string
+employeeName: string
+type: string
+reason: string
+status: string (e.g. open)
+occurredAt: timestamp
+reportYear: number
+reportMonth: number
+reportPeriodKey: string (YYYY-MM)
+penaltyAmount: number
+resolvedAt: timestamp (optional)
+createdAt: timestamp
+updatedAt: timestamp
+
+## Implemented vs Planned
+
+**Implemented:** Matches `Violation` / `ViolationRepository`.
+
+**Planned:** None required unless HR adds appeal workflow fields.

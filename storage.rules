@@ -1,0 +1,48 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Service marketing images: `salons/{salonId}/services/{serviceId}/{fileName}`
+    match /salons/{salonId}/services/{serviceId}/{fileName} {
+      allow read: if true;
+      allow write: if request.auth != null
+        && request.resource.size < 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*')
+        && firestore.exists(/databases/(default)/documents/users/$(request.auth.uid))
+        && firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.salonId == salonId
+        && firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role in ['owner', 'admin', 'barber', 'employee'];
+    }
+
+    match /salons/{salonId}/sales/{saleId}/receipts/{fileName} {
+      function salonStaffUser() {
+        return request.auth != null
+          && firestore.exists(/databases/(default)/documents/users/$(request.auth.uid))
+          && firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.salonId == salonId
+          && firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role in ['owner', 'admin', 'barber', 'employee', 'readonly'];
+      }
+
+      allow read: if salonStaffUser();
+      allow write: if salonStaffUser()
+        && request.resource.size < 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+    }
+
+    match /salons/{salonId}/employees/{employeeId}/profile/{fileName} {
+      function salonStaffUser() {
+        return request.auth != null
+          && firestore.exists(/databases/(default)/documents/users/$(request.auth.uid))
+          && firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.salonId == salonId
+          && firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role in ['owner', 'admin', 'barber', 'employee'];
+      }
+
+      function salonTeamManager() {
+        return salonStaffUser()
+          && firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role in ['owner', 'admin'];
+      }
+
+      allow read: if salonStaffUser();
+      allow write: if salonTeamManager()
+        && request.resource.size < 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+    }
+  }
+}

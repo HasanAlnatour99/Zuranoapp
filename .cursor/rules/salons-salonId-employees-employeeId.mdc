@@ -1,0 +1,26 @@
+---
+alwaysApply: true
+---
+
+Path: `salons/{salonId}/employees/{employeeId}` — model: `lib/features/employees/data/models/employee.dart`.
+
+## Fields
+
+id: string (same as `{employeeId}` in path)
+salonId: string
+uid: string (optional — links to `users/{uid}` when provisioned)
+name: string
+email: string
+phone: string (optional)
+role: string (owner | admin | barber)
+commissionRate: number
+hourlyRate: number
+isActive: boolean
+createdAt: timestamp
+updatedAt: timestamp
+
+## Implemented vs Planned
+
+**Implemented:** Fields above.
+
+**Planned:** `profileImageUrl` — not on `Employee` yet.

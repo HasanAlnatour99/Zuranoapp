@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Barber Shop App — XML Sitemap
+  Updated: 2026-04-18
+
+  INSTRUCTIONS:
+  - Replace https://barber-shop-app-13aa7.web.app with your custom domain once configured.
+  - Add dynamic salon URLs (customer/home/salon/:salonId) programmatically
+    via a Cloud Function or a sitemap generation script once salons are live.
+  - Submit this file to Google Search Console and Bing Webmaster Tools.
+-->
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ─── Homepage / App Entry ─────────────────────────── -->
+  <url>
+    <loc>https://barber-shop-app-13aa7.web.app/</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barber-shop-app-13aa7.web.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://barber-shop-app-13aa7.web.app/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barber-shop-app-13aa7.web.app/"/>
+  </url>
+
+  <!-- ─── Customer Discovery (Browse Salons) ───────────── -->
+  <url>
+    <loc>https://barber-shop-app-13aa7.web.app/customer/home</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!--
+    ─── Dynamic Salon Pages ──────────────────────────────────
+    Add one <url> block per salon. Example:
+
+  <url>
+    <loc>https://barber-shop-app-13aa7.web.app/customer/home/salon/SALON_ID</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+    Automate this using a Firebase Cloud Function that reads
+    all active salons from Firestore and generates sitemap entries.
+  -->
+
+</urlset>

@@ -1,0 +1,623 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isSelf(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function userDoc() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+
+    function userDocExists() {
+      return signedIn() &&
+        exists(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+
+    function isActiveUser() {
+      return userDocExists() && userDoc().data.isActive != false;
+    }
+
+    function currentRole() {
+      return userDoc().data.role;
+    }
+
+    function currentSalonId() {
+      return userDoc().data.salonId;
+    }
+
+    function currentEmployeeId() {
+      return userDoc().data.employeeId;
+    }
+
+    function employeePermissionsMap(salonId) {
+      let empId = currentEmployeeId();
+      return empId is string && empId.size() > 0 &&
+        exists(/databases/$(database)/documents/salons/$(salonId)/employees/$(empId))
+        ? get(/databases/$(database)/documents/salons/$(salonId)/employees/$(empId))
+            .data
+            .get('permissions', {})
+        : {};
+    }
+
+    function canManageSalonAttendance(salonId) {
+      return isOwnerOfSalon(salonId) ||
+        (
+          isStaffOfSalon(salonId) &&
+          currentRole() == 'admin' &&
+          employeePermissionsMap(salonId).get('canManageAttendance', false) == true
+        );
+    }
+
+    function canReadSalonAuditLogs(salonId) {
+      return isOwnerOfSalon(salonId) ||
+        (
+          isStaffOfSalon(salonId) &&
+          currentRole() == 'admin' &&
+          employeePermissionsMap(salonId).get('canViewAuditLogs', false) == true
+        );
+    }
+
+    function isOwner() {
+      return isActiveUser() && currentRole() == 'owner';
+    }
+
+    function isCustomer() {
+      return isActiveUser() && currentRole() == 'customer';
+    }
+
+    function isSalonStaff() {
+      return isActiveUser() &&
+        (currentRole() == 'admin' ||
+          currentRole() == 'barber' ||
+          currentRole() == 'employee' ||
+          currentRole() == 'readonly');
+    }
+
+    function sameSalon(salonId) {
+      return isActiveUser() &&
+        salonId is string &&
+        currentSalonId() == salonId;
+    }
+
+    function isOwnerOfSalon(salonId) {
+      return isOwner() && sameSalon(salonId);
+    }
+
+    function isStaffOfSalon(salonId) {
+      return isSalonStaff() && sameSalon(salonId);
+    }
+
+    /// Attendance doc id format: `{employeeId}_{yyyyMMdd}` — use for `get` when doc may not exist yet.
+    function isOwnAttendanceDocId(attendanceId) {
+      let eid = currentEmployeeId();
+      return eid is string && eid.size() > 0 &&
+        attendanceId is string &&
+        attendanceId.matches('^' + eid + '_[0-9]{8}$');
+    }
+
+    function isOwnerOrStaffOfSalon(salonId) {
+      return isOwnerOfSalon(salonId) || isStaffOfSalon(salonId);
+    }
+
+    function isSalonOwnerOrAdmin(salonId) {
+      return isActiveUser() &&
+        sameSalon(salonId) &&
+        (currentRole() == 'owner' || currentRole() == 'admin');
+    }
+
+    function payslipParentVisibleToStaff(salonId, payslipId) {
+      return exists(/databases/$(database)/documents/salons/$(salonId)/payslips/$(payslipId)) &&
+        get(/databases/$(database)/documents/salons/$(salonId)/payslips/$(payslipId)).data.employeeId == currentEmployeeId() &&
+        get(/databases/$(database)/documents/salons/$(salonId)/payslips/$(payslipId)).data.employeeVisible == true;
+    }
+
+    function onlyChangesAllowedFields(allowed) {
+      return request.resource.data.diff(resource.data).changedKeys().hasOnly(allowed);
+    }
+
+    // Step 14: Guest booking create/cancel/reschedule/feedback moved to Cloud Functions
+    // (`functions/src/customer/`). Admin SDK bypasses these rules.
+
+    /// Self-service after rotating Firebase password (merge only these keys).
+    function userSelfClearsMustChangePasswordOnly() {
+      return onlyChangesAllowedFields(['mustChangePassword', 'updatedAt']) &&
+        request.resource.data.mustChangePassword == false;
+    }
+
+    /// Staff clears provisioning flag on their own `employees/{uid}` row only.
+    function employeeSelfClearsMustChangePasswordOnly(salonId, employeeId) {
+      return signedIn() &&
+        request.auth.uid == employeeId &&
+        resource.data.salonId == salonId &&
+        (resource.data.uid == request.auth.uid || resource.data.id == request.auth.uid) &&
+        onlyChangesAllowedFields(['mustChangePassword', 'updatedAt']) &&
+        request.resource.data.mustChangePassword == false;
+    }
+
+    function ownerUserUpdateAllowed() {
+      return request.resource.data.email == resource.data.email &&
+        request.resource.data.uid == resource.data.uid &&
+        request.resource.data.role == resource.data.role &&
+        request.resource.data.role == 'owner' &&
+        onlyChangesAllowedFields([
+          'displayName', 'fullName', 'name', 'phone', 'address',
+          'notificationPrefs', 'notification_prefs',
+          'updatedAt', 'createdAt',
+          'salonId', 'employeeId',
+          'onboardingStatus', 'salonCreationCompleted',
+          'onboardingCompleted', 'profileCompletedAt',
+          'authProvider', 'photoUrl', 'isActive'
+        ]);
+    }
+
+    function customerUserUpdateAllowed() {
+      return request.resource.data.email == resource.data.email &&
+        request.resource.data.uid == resource.data.uid &&
+        request.resource.data.role == resource.data.role &&
+        request.resource.data.role == 'customer' &&
+        request.resource.data.salonId == resource.data.salonId &&
+        request.resource.data.employeeId == resource.data.employeeId &&
+        request.resource.data.username == resource.data.username &&
+        request.resource.data.usernameLower == resource.data.usernameLower &&
+        onlyChangesAllowedFields([
+          'displayName', 'fullName', 'name', 'phone', 'address',
+          'notificationPrefs', 'notification_prefs',
+          'updatedAt', 'profileCompletedAt', 'onboardingCompleted',
+          'authProvider', 'photoUrl', 'isActive'
+        ]);
+    }
+
+    function staffUserUpdateAllowed() {
+      return request.resource.data.email == resource.data.email &&
+        request.resource.data.uid == resource.data.uid &&
+        request.resource.data.role == resource.data.role &&
+        currentRole() in ['admin', 'barber', 'employee', 'readonly'] &&
+        request.resource.data.salonId == resource.data.salonId &&
+        request.resource.data.employeeId == resource.data.employeeId &&
+        request.resource.data.username == resource.data.username &&
+        request.resource.data.usernameLower == resource.data.usernameLower &&
+        onlyChangesAllowedFields([
+          'displayName', 'fullName', 'name', 'phone', 'address',
+          'notificationPrefs', 'notification_prefs',
+          'updatedAt', 'mustChangePassword', 'onboardingCompleted',
+          'authProvider', 'photoUrl', 'isActive'
+        ]);
+    }
+
+    function userCreateAllowed(uid) {
+      return isSelf(uid) &&
+        request.resource.data.uid == uid &&
+        request.resource.data.role in ['owner', 'customer'];
+    }
+
+    /// Guest-safe: salon is listed in the public browse index.
+    function salonListedForPublicBrowsing(salonId) {
+      return salonId is string && salonId.size() > 0 &&
+        exists(/databases/$(database)/documents/publicSalons/$(salonId)) &&
+        get(/databases/$(database)/documents/publicSalons/$(salonId)).data.isPublic == true &&
+        get(/databases/$(database)/documents/publicSalons/$(salonId)).data.isActive == true;
+    }
+
+    /// Public salon mirror for customer discovery; owner/admin may upsert safe fields.
+    match /publicSalons/{salonId} {
+      allow read: if (resource.data.isPublic == true &&
+          resource.data.isActive == true) ||
+        (isSalonOwnerOrAdmin(salonId) && sameSalon(salonId));
+      allow create, update: if isSalonOwnerOrAdmin(salonId) && sameSalon(salonId);
+      allow delete: if false;
+
+      /// Customer-safe team rows (synced from private employees via Cloud Functions).
+      match /team/{employeeId} {
+        allow read: if salonListedForPublicBrowsing(salonId) &&
+          resource.data.isActive == true &&
+          resource.data.get('allowCustomerBooking', false) == true;
+        allow write: if false;
+      }
+
+      /// Customer-safe service catalog (synced from private services via Cloud Functions).
+      match /services/{serviceId} {
+        allow read: if salonListedForPublicBrowsing(salonId) &&
+          resource.data.isActive == true &&
+          resource.data.get('isCustomerVisible', true) == true;
+        allow write: if false;
+      }
+    }
+
+    match /users/{userId} {
+      allow read: if isSelf(userId);
+
+      allow create: if userCreateAllowed(userId);
+
+      allow update: if isSelf(userId) && isActiveUser() && (
+        ownerUserUpdateAllowed() ||
+        customerUserUpdateAllowed() ||
+        staffUserUpdateAllowed() ||
+        userSelfClearsMustChangePasswordOnly()
+      );
+
+      allow delete: if false;
+
+      match /notifications/{notificationId} {
+        allow read, write: if isSelf(userId);
+      }
+
+      match /devices/{deviceId} {
+        allow read, write: if isSelf(userId);
+      }
+    }
+
+    match /salons/{salonId} {
+      allow read: if isOwnerOrStaffOfSalon(salonId) ||
+        (isCustomer() && resource.data != null && resource.data.isActive == true);
+
+      allow create: if signedIn() &&
+        isOwner() &&
+        request.resource.data.ownerUid == request.auth.uid;
+
+      allow update: if isSalonOwnerOrAdmin(salonId);
+      allow delete: if isOwnerOfSalon(salonId);
+
+      match /employees/{employeeId} {
+        // Private HR: owner/admin and each staff member’s own row only (customers use `publicSalons/.../team`).
+        allow read: if isSalonOwnerOrAdmin(salonId) ||
+          (isStaffOfSalon(salonId) && employeeId == currentEmployeeId());
+
+        allow create, delete: if isSalonOwnerOrAdmin(salonId);
+
+        allow update: if isSalonOwnerOrAdmin(salonId) ||
+          employeeSelfClearsMustChangePasswordOnly(salonId, employeeId);
+
+      }
+
+      // Private catalog: staff only (customers read `publicSalons/{salonId}/services`).
+      match /services/{serviceId} {
+        allow read: if isOwnerOrStaffOfSalon(salonId);
+
+        allow write: if isOwnerOfSalon(salonId);
+      }
+
+      match /reviews/{reviewId} {
+        allow read: if isOwnerOrStaffOfSalon(salonId) ||
+          salonListedForPublicBrowsing(salonId);
+        allow create: if isOwnerOrStaffOfSalon(salonId);
+        allow update, delete: if isOwnerOrStaffOfSalon(salonId);
+      }
+
+      match /sales/{saleId} {
+        allow read: if isSalonOwnerOrAdmin(salonId) ||
+          (
+            isStaffOfSalon(salonId) &&
+            resource.data.employeeId == currentEmployeeId()
+          );
+        allow create: if isSalonOwnerOrAdmin(salonId) ||
+          (
+            isStaffOfSalon(salonId) &&
+            request.resource.data.salonId == salonId &&
+            request.resource.data.employeeId == currentEmployeeId() &&
+            request.resource.data.total is number &&
+            request.resource.data.total > 0 &&
+            request.resource.data.status == 'completed'
+          );
+        allow update: if isSalonOwnerOrAdmin(salonId);
+        allow delete: if isOwnerOfSalon(salonId);
+
+        match /analysis/{docId} {
+          allow read, write: if isSalonOwnerOrAdmin(salonId);
+        }
+
+        match /items/{itemId} {
+          allow read: if isSalonOwnerOrAdmin(salonId) ||
+            (
+              isStaffOfSalon(salonId) &&
+              get(/databases/$(database)/documents/salons/$(salonId)/sales/$(saleId))
+                .data
+                .employeeId == currentEmployeeId()
+            );
+          allow create, update: if isSalonOwnerOrAdmin(salonId) ||
+            (
+              isStaffOfSalon(salonId) &&
+              get(/databases/$(database)/documents/salons/$(salonId)/sales/$(saleId))
+                .data
+                .employeeId == currentEmployeeId()
+            );
+          allow delete: if isOwnerOfSalon(salonId);
+        }
+      }
+
+      match /settings/{settingId} {
+        // Customer booking policy is owner/admin only; staff use public mirror.
+        allow read: if settingId == 'customerBooking'
+          ? isSalonOwnerOrAdmin(salonId)
+          : isOwnerOrStaffOfSalon(salonId);
+        allow write: if isSalonOwnerOrAdmin(salonId);
+      }
+
+      match /attendance/{attendanceId} {
+        // `get` must not rely on `resource.data` (missing doc → no resource).
+        allow get: if isSalonOwnerOrAdmin(salonId) ||
+          (isStaffOfSalon(salonId) && isOwnAttendanceDocId(attendanceId));
+
+        allow list: if isSalonOwnerOrAdmin(salonId) ||
+          (
+            isStaffOfSalon(salonId) &&
+            resource.data.employeeId == currentEmployeeId()
+          );
+
+        allow create: if canManageSalonAttendance(salonId) ||
+          (
+            isStaffOfSalon(salonId) &&
+            request.resource.data.employeeId == currentEmployeeId() &&
+            request.resource.data.employeeUid == request.auth.uid &&
+            request.resource.data.salonId == salonId
+          );
+
+        allow update: if canManageSalonAttendance(salonId) ||
+          (
+            isStaffOfSalon(salonId) &&
+            resource.data.employeeId == currentEmployeeId() &&
+            request.resource.data.employeeId == resource.data.employeeId &&
+            request.resource.data.employeeUid == resource.data.employeeUid &&
+            request.resource.data.salonId == salonId
+          );
+
+        allow delete: if isOwnerOfSalon(salonId);
+
+        match /events/{eventId} {
+          // Do not `get` parent attendance (may not exist); scope by deterministic attendanceId.
+          allow get, list: if isSalonOwnerOrAdmin(salonId) ||
+            (isStaffOfSalon(salonId) && isOwnAttendanceDocId(attendanceId));
+
+          allow create: if canManageSalonAttendance(salonId) ||
+            (
+              isStaffOfSalon(salonId) &&
+              isOwnAttendanceDocId(attendanceId) &&
+              request.resource.data.employeeId == currentEmployeeId() &&
+              request.resource.data.employeeUid == request.auth.uid &&
+              request.resource.data.salonId == salonId &&
+              request.resource.data.attendanceId == attendanceId &&
+              request.resource.data.type in ['punchIn', 'punchOut', 'breakOut', 'breakIn']
+            );
+
+          allow update, delete: if false;
+        }
+      }
+
+      match /attendanceRequests/{requestId} {
+        allow read: if isSalonOwnerOrAdmin(salonId) ||
+          (
+            isStaffOfSalon(salonId) &&
+            resource.data.employeeId == currentEmployeeId()
+          );
+        allow create: if isStaffOfSalon(salonId) &&
+          request.resource.data.salonId == salonId &&
+          request.resource.data.employeeId == currentEmployeeId() &&
+          request.resource.data.employeeUid == request.auth.uid &&
+          request.resource.data.status == 'pending';
+        allow update: if isSalonOwnerOrAdmin(salonId);
+        allow delete: if false;
+      }
+
+      match /attendance_corrections/{requestId} {
+        allow read: if isSalonOwnerOrAdmin(salonId) ||
+          (
+            isStaffOfSalon(salonId) &&
+            resource.data.employeeId == currentEmployeeId()
+          );
+        allow create: if isStaffOfSalon(salonId) &&
+          request.resource.data.employeeId == currentEmployeeId();
+        allow update: if canManageSalonAttendance(salonId);
+        allow delete: if isOwnerOfSalon(salonId);
+      }
+
+      match /attendanceDays/{dayId} {
+        allow get: if isSalonOwnerOrAdmin(salonId) ||
+          (isStaffOfSalon(salonId) && isOwnAttendanceDocId(dayId));
+        allow list: if isSalonOwnerOrAdmin(salonId) ||
+          (isStaffOfSalon(salonId) && resource.data.employeeId == currentEmployeeId());
+        allow create: if isStaffOfSalon(salonId) &&
+          isOwnAttendanceDocId(dayId) &&
+          request.resource.data.employeeId == currentEmployeeId() &&
+          request.resource.data.salonId == salonId;
+        allow update: if isSalonOwnerOrAdmin(salonId) ||
+          (isStaffOfSalon(salonId) &&
+            resource.data.employeeId == currentEmployeeId() &&
+            request.resource.data.employeeId == resource.data.employeeId &&
+            request.resource.data.salonId == salonId);
+        allow delete: if isSalonOwnerOrAdmin(salonId);
+
+        match /punches/{punchId} {
+          allow get, list: if isSalonOwnerOrAdmin(salonId) ||
+            (isStaffOfSalon(salonId) && isOwnAttendanceDocId(dayId));
+          allow create: if isStaffOfSalon(salonId) &&
+            isOwnAttendanceDocId(dayId) &&
+            request.resource.data.employeeId == currentEmployeeId() &&
+            request.resource.data.salonId == salonId &&
+            request.resource.data.type in ['punchIn', 'punchOut', 'breakOut', 'breakIn'];
+          allow update, delete: if isSalonOwnerOrAdmin(salonId);
+        }
+      }
+
+      match /attendanceCorrectionRequests/{requestId} {
+        allow read: if isSalonOwnerOrAdmin(salonId) ||
+          (isStaffOfSalon(salonId) && resource.data.employeeId == currentEmployeeId());
+        allow create: if isStaffOfSalon(salonId) &&
+          request.resource.data.salonId == salonId &&
+          request.resource.data.employeeId == currentEmployeeId() &&
+          request.resource.data.status == 'pending';
+        allow update: if isSalonOwnerOrAdmin(salonId);
+        allow delete: if false;
+      }
+
+      match /audit_logs/{auditLogId} {
+        allow read: if canReadSalonAuditLogs(salonId);
+        allow create: if canManageSalonAttendance(salonId);
+        allow update, delete: if false;
+      }
+
+      match /payroll/{payrollId} {
+        allow read: if isSalonOwnerOrAdmin(salonId) ||
+          (
+            isStaffOfSalon(salonId) &&
+            resource.data.get('employeeId', '') == currentEmployeeId()
+          );
+        allow write: if isSalonOwnerOrAdmin(salonId);
+      }
+
+      match /payroll_elements/{elementId} {
+        allow read: if isOwnerOrStaffOfSalon(salonId);
+        allow write: if isSalonOwnerOrAdmin(salonId);
+      }
+
+      match /payroll_runs/{runId} {
+        allow read: if isSalonOwnerOrAdmin(salonId);
+        allow write: if isSalonOwnerOrAdmin(salonId);
+
+        match /results/{resultId} {
+          allow read: if isSalonOwnerOrAdmin(salonId);
+          allow write: if isSalonOwnerOrAdmin(salonId);
+        }
+      }
+
+      match /employee_element_entries/{entryId} {
+        allow read: if isOwnerOrStaffOfSalon(salonId);
+        allow write: if isSalonOwnerOrAdmin(salonId);
+      }
+
+      match /payslips/{payslipId} {
+        allow read: if isSalonOwnerOrAdmin(salonId) ||
+          (
+            isStaffOfSalon(salonId) &&
+            resource.data.employeeId == currentEmployeeId() &&
+            resource.data.employeeVisible == true
+          );
+        allow create, update, delete: if isSalonOwnerOrAdmin(salonId);
+
+        match /lines/{lineId} {
+          allow read: if isSalonOwnerOrAdmin(salonId) ||
+            (isStaffOfSalon(salonId) && payslipParentVisibleToStaff(salonId, payslipId));
+          allow create, update, delete: if isSalonOwnerOrAdmin(salonId);
+        }
+
+        match /aiAnalysis/{docId} {
+          allow read: if isSalonOwnerOrAdmin(salonId) ||
+            (isStaffOfSalon(salonId) && payslipParentVisibleToStaff(salonId, payslipId));
+          allow create, update, delete: if isSalonOwnerOrAdmin(salonId);
+        }
+      }
+
+      match /payroll_settings/{docId} {
+        allow read: if isOwnerOrStaffOfSalon(salonId);
+        allow write: if isSalonOwnerOrAdmin(salonId);
+      }
+
+      match /payroll_adjustments/{adjustmentId} {
+        allow read: if isSalonOwnerOrAdmin(salonId);
+        allow write: if isSalonOwnerOrAdmin(salonId);
+      }
+
+      match /violation_rules/{ruleId} {
+        allow read: if isOwnerOrStaffOfSalon(salonId);
+        allow write: if isSalonOwnerOrAdmin(salonId);
+      }
+
+      match /expenses/{expenseId} {
+        allow read: if isOwnerOrStaffOfSalon(salonId);
+        allow write: if isOwnerOfSalon(salonId);
+      }
+
+      match /violations/{violationId} {
+        allow read: if isOwnerOrStaffOfSalon(salonId);
+        allow create, update: if isOwnerOfSalon(salonId);
+        allow delete: if isOwnerOfSalon(salonId);
+      }
+
+      match /bookings/{bookingId} {
+        allow read: if isOwnerOfSalon(salonId) ||
+          (isStaffOfSalon(salonId) && currentRole() == 'admin') ||
+          (isStaffOfSalon(salonId) &&
+            currentRole() == 'barber' &&
+            resource.data.barberId == currentEmployeeId()) ||
+          (isCustomer() && resource.data.customerId == request.auth.uid);
+
+        allow create: if isOwnerOrStaffOfSalon(salonId);
+        allow update: if isOwnerOrStaffOfSalon(salonId);
+        allow delete: if isOwnerOrStaffOfSalon(salonId);
+      }
+
+      match /booking_locks/{lockId} {
+        allow read, write: if isOwnerOrStaffOfSalon(salonId);
+      }
+
+      match /customers/{customerId} {
+        allow read: if isOwnerOrStaffOfSalon(salonId);
+
+        allow create: if isOwnerOrStaffOfSalon(salonId) &&
+          request.resource.data.salonId == salonId &&
+          request.resource.data.fullName is string &&
+          request.resource.data.phone is string &&
+          request.resource.data.isActive is bool;
+
+        allow update: if (isSalonOwnerOrAdmin(salonId) &&
+          request.resource.data.salonId == resource.data.salonId) ||
+          (isStaffOfSalon(salonId) &&
+            request.resource.data.salonId == resource.data.salonId &&
+            onlyChangesAllowedFields([
+              'totalVisits',
+              'visitsCount',
+              'visitCount',
+              'totalSpent',
+              'lastVisitAt',
+              'firstVisitAt',
+              'updatedAt',
+            ]));
+
+        allow delete: if isSalonOwnerOrAdmin(salonId);
+      }
+
+      match /customer_notes/{noteId} {
+        allow read, write: if isOwnerOrStaffOfSalon(salonId);
+      }
+
+      match /insights/{insightId} {
+        allow read: if isOwnerOrStaffOfSalon(salonId);
+        allow write: if isOwnerOfSalon(salonId);
+      }
+
+      match /aiInsights/{insightId} {
+        allow read: if isSalonOwnerOrAdmin(salonId);
+        allow create, update: if isSalonOwnerOrAdmin(salonId);
+        allow delete: if false;
+      }
+
+      match /barberMetrics/{metricId} {
+        allow read: if isOwnerOrStaffOfSalon(salonId);
+        allow write: if isOwnerOfSalon(salonId);
+      }
+    }
+
+    match /customers/{customerId} {
+      allow read: if resource.data != null &&
+        isOwnerOrStaffOfSalon(resource.data.salonId);
+
+      allow create: if isOwnerOrStaffOfSalon(request.resource.data.salonId) &&
+        request.resource.data.salonId == currentSalonId();
+
+      allow update: if resource.data != null &&
+        isOwnerOrStaffOfSalon(resource.data.salonId) &&
+        request.resource.data.salonId == resource.data.salonId;
+
+      allow delete: if resource.data != null &&
+        isOwnerOfSalon(resource.data.salonId);
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

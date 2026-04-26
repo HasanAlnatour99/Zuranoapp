@@ -1,0 +1,13 @@
+{
+  "name": "firebase-rules-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "firebase emulators:exec --only firestore \"node --test rules.test.mjs\"",
+    "test:node": "node --test rules.test.mjs"
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "^3.0.3",
+    "firebase": "^10.14.1"
+  }
+}

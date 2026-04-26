@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAvm6KHosyy_vFCo8AfB3S7Nv958g8rqHw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>842751979779</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.zurano.barbershop</string>
+	<key>PROJECT_ID</key>
+	<string>barber-shop-app-13aa7</string>
+	<key>STORAGE_BUCKET</key>
+	<string>barber-shop-app-13aa7.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:842751979779:ios:92e0acb870a5ecacdcf936</string>
+	<key>CLIENT_ID</key>
+	<string>842751979779-i20le06ev7cngjmrifhkoio0jc4jbp50.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.842751979779-i20le06ev7cngjmrifhkoio0jc4jbp50</string>
+</dict>
+</plist>

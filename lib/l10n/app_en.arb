@@ -1,0 +1,3295 @@
+{
+  "@@locale": "en",
+  "appTitle": "Zurano",
+  "splashTitle": "Barber Shop",
+  "splashTagline": "Crafted cuts. Calm bookings.",
+  "genericError": "Something went wrong.",
+  "loadingPlaceholder": "…",
+  "customerDiscoverTitle": "Discover",
+  "customerSignOut": "Sign out",
+  "signOutSubtitle": "You'll need to sign in again to use your account.",
+  "customerSearchHint": "Search salons, areas…",
+  "customerGreeting": "Hello, {name}",
+  "@customerGreeting": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "customerGuestName": "there",
+  "customerNoSalons": "No salons match your search.",
+  "customerSalonDetails": "Salon",
+  "customerBook": "Book appointment",
+  "customerServicesPreview": "Popular services",
+  "customerNoServicesListed": "No services listed yet.",
+  "customerServiceMeta": "{minutes} min · {price}",
+  "@customerServiceMeta": {
+    "placeholders": {
+      "minutes": {"type": "int"},
+      "price": {"type": "String"}
+    }
+  },
+  "customerSalonNotFound": "This salon is no longer available.",
+  "customerBookAppointment": "Book appointment",
+  "customerSelectDate": "Date",
+  "customerSelectService": "Service",
+  "customerSelectBarber": "Team member",
+  "customerSelectTime": "Time",
+  "customerNotes": "Notes (optional)",
+  "customerConfirmBooking": "Confirm booking",
+  "customerBookingSubmitted": "You are booked",
+  "customerBackHome": "Back to home",
+  "bookingConfirmationTitle": "Confirmation",
+  "bookingWhen": "When",
+  "bookingBarber": "Team member",
+  "bookingService": "Service",
+  "bookingSalon": "Salon",
+  "bookingReference": "Reference",
+  "bookingNotFound": "Booking not found.",
+  "customerNoBarbers": "No team members available yet.",
+  "customerNoSlots": "No open slots for this day. Try another date or team member.",
+  "customerBookingIncomplete": "Choose a service, team member, and time.",
+  "customerBookingSignInRequired": "Sign in to complete your booking.",
+  "customerBookingSlotTaken": "That time was just taken. Choose another slot.",
+  "customerBookingSlotInvalid": "That time is not available. Pick a different slot.",
+  "customerBookingNotesTooLong": "Notes cannot exceed {maxChars} characters.",
+  "@customerBookingNotesTooLong": {
+    "placeholders": {
+      "maxChars": {
+        "type": "int"
+      }
+    }
+  },
+  "customerBookingScreenHint": "Pick a date, service, team member, and time. Smart picks below can fill team member and slot for you.",
+  "customerBookingSummaryTitle": "Your visit",
+  "ownerTabOverview": "Overview",
+  "ownerTabTeam": "Team",
+  "ownerTabServices": "Services",
+  "ownerTabBookings": "Bookings",
+  "ownerTabMoney": "Money",
+  "ownerWorkspaceWide": "Today's workspace",
+  "ownerWorkspaceNarrow": "Today's overview",
+  "ownerLoadError": "Could not load your workspace. Please sign in again.",
+  "ownerSalonChip": "Salon · {id}",
+  "@ownerSalonChip": {
+    "placeholders": {
+      "id": {"type": "String"}
+    }
+  },
+  "ownerSalonSetupTitle": "Add your salon details",
+  "ownerSalonSetupMessage": "Choose your salon name and city to start managing bookings and your team.",
+  "ownerSalonSetupCta": "Set up salon",
+  "ownerSales7": "Last 7 days",
+  "ownerSales30": "Last 30 days",
+  "ownerSalesAll": "All",
+  "ownerOverviewTitle": "Today at a glance",
+  "ownerOverviewSubtitle": "Live totals from your salon.",
+  "ownerOverviewQuickService": "Add service",
+  "ownerOverviewQuickBooking": "Add booking",
+  "ownerOverviewQuickBarber": "Add Team Member",
+  "ownerOverviewEmptyRevenueToday": "No sales recorded today.",
+  "ownerOverviewEmptyBookingsToday": "No bookings scheduled for today.",
+  "ownerOverviewEmptyTopBarberMonth": "No team member sales yet this month.",
+  "ownerOverviewEmptyTopServiceMonth": "No service usage yet this month.",
+  "ownerOverviewLoadingMetrics": "Loading your metrics…",
+  "ownerOverviewTotalRevenueLabel": "Total revenue",
+  "ownerOverviewTotalRevenuePeriod": "This month",
+  "ownerOverviewTotalRevenueEmpty": "No completed sales yet this month.",
+  "ownerOverviewServicesPanelCaption": "Prices & durations",
+  "ownerServicesCategoryBanner": "{category} — prices & durations",
+  "@ownerServicesCategoryBanner": {
+    "placeholders": {
+      "category": {"type": "String"}
+    }
+  },
+  "ownerServicesCategoryAll": "All services",
+  "ownerOverviewTeamColumnMember": "Member",
+  "ownerOverviewTeamColumnRole": "Role",
+  "ownerOverviewTeamColumnEmail": "Email",
+  "ownerOverviewServiceUses": "{count, plural, one{1 use} other{{count} uses}}",
+  "@ownerOverviewServiceUses": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerStatTodayBookings": "Today’s bookings",
+  "ownerStatRevenue": "Revenue (window)",
+  "ownerStatUpcoming": "Upcoming",
+  "ownerNoBookingsStat": "0",
+  "ownerBookingsListTitle": "Bookings",
+  "ownerBookingCancel": "Cancel",
+  "ownerBookingCancelled": "Booking cancelled",
+  "ownerFilterStatus": "Status",
+  "ownerFilterAll": "All",
+  "ownerTeamTitle": "Team",
+  "ownerTeamSubtitle": "Manage team members and admins.",
+  "ownerTeamCardRoleLabel": "Role",
+  "ownerTeamCardStatusLabel": "Status",
+  "ownerTeamCardStatusActive": "Active",
+  "ownerTeamCardStatusInactive": "Inactive",
+  "ownerTeamCardManage": "Manage",
+  "ownerAddMember": "Add member",
+  "ownerEmployeeName": "Name",
+  "ownerEmployeeEmail": "Email",
+  "ownerEmployeeRole": "Role",
+  "ownerEmployeePhone": "Phone",
+  "ownerSave": "Save",
+  "ownerEditMember": "Edit member",
+  "ownerDeactivate": "Deactivate",
+  "ownerActivate": "Activate",
+  "ownerServicesTitle": "Services",
+  "ownerServicesSubtitle": "Manage what customers can book and buy",
+  "ownerServicesSearchPlaceholder": "Search services",
+  "ownerServicesStatTotal": "Total",
+  "ownerServicesStatActive": "Active",
+  "ownerServicesStatInactive": "Inactive",
+  "ownerServicesChipAll": "All",
+  "ownerServicesChipHair": "Hair",
+  "ownerServicesChipBeard": "Beard",
+  "ownerServicesChipFacial": "Facial",
+  "ownerServicesChipPackages": "Packages",
+  "ownerServicesChipColoring": "Coloring",
+  "ownerServiceCategoryHair": "Hair",
+  "ownerServiceCategoryBarberBeard": "Barber / Beard",
+  "ownerServiceCategoryNails": "Nails",
+  "ownerServiceCategoryHairRemovalWaxing": "Hair Removal / Waxing",
+  "ownerServiceCategoryOther": "Other",
+  "ownerServiceCategoryBrowsLashes": "Brows & Lashes",
+  "ownerServiceCategoryFacialSkincare": "Facial / Skincare",
+  "ownerServiceCategoryMakeup": "Makeup",
+  "ownerServiceCategoryMassageSpa": "Massage / Spa",
+  "ownerServiceCategoryPackages": "Packages",
+  "ownerServiceCategoryColoring": "Coloring",
+  "ownerServiceCategoryTexturedHair": "Textured Hair",
+  "ownerServiceCategoryBridal": "Bridal",
+  "ownerServiceCategoryTanning": "Tanning",
+  "ownerServiceCategoryMedSpa": "Med Spa",
+  "ownerServiceCategoryMenGrooming": "Men Grooming",
+  "ownerServiceCategoryHaircutStyling": "Haircut & Styling",
+  "ownerServiceCategoryHairTreatments": "Hair Treatments",
+  "ownerServiceCategoryScalpTreatments": "Scalp Treatments",
+  "ownerServiceCategoryKeratinSmoothing": "Keratin / Smoothing",
+  "ownerServiceCategoryHairExtensions": "Hair Extensions",
+  "ownerServiceCategoryKidsServices": "Kids Services",
+  "ownerServiceCategoryManicurePedicure": "Manicure / Pedicure",
+  "ownerServiceCategoryNailArt": "Nail Art",
+  "ownerServiceCategoryThreading": "Threading",
+  "ownerServiceCategoryLashExtensions": "Lash Extensions",
+  "ownerServiceCategoryBodyTreatments": "Body Treatments",
+  "ownerServiceCategoryMakeupPermanent": "Permanent Makeup",
+  "ownerServiceCustomCategoryLabel": "Category name",
+  "ownerServiceValidationCategoryRequired": "Choose a category.",
+  "ownerServiceValidationCustomCategoryRequired": "Enter a category name.",
+  "ownerServiceValidationDuplicateCustomCategory": "You already use this custom category name.",
+  "ownerServiceCategoriesMore": "More",
+  "ownerServiceCategoriesMoreTitle": "More categories",
+  "ownerServiceCategoryAllOther": "All in Other",
+  "ownerServicesEmptyTitle": "No services yet",
+  "ownerServicesEmptyDescription": "Add your first service to let customers discover and book your offerings.",
+  "ownerServicesNoMatches": "No services match your search or filters.",
+  "ownerServicesFabTooltip": "Add service",
+  "ownerServiceSaveCta": "Save Service",
+  "ownerServiceSavedSuccess": "Service saved.",
+  "ownerServiceDeletedSuccess": "Service removed.",
+  "ownerServiceValidationDurationInvalid": "Enter a duration greater than zero.",
+  "ownerServiceValidationPriceInvalid": "Enter a price greater than zero.",
+  "ownerServiceDeleteConfirmTitle": "Delete service?",
+  "ownerServiceDeleteConfirmBody": "This removes the service from your catalog. This cannot be undone.",
+  "ownerServiceActionCancel": "Cancel",
+  "ownerServiceActionDelete": "Delete",
+  "ownerServiceActionEdit": "Edit",
+  "ownerServiceStatusActive": "Active",
+  "ownerServiceStatusInactive": "Inactive",
+  "ownerServiceTimesUsed": "{count, plural, one{Used {count} time} other{Used {count} times}}",
+  "@ownerServiceTimesUsed": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerServiceTotalRevenue": "Revenue {amount}",
+  "@ownerServiceTotalRevenue": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerServiceAnalyticsPlaceholder": "Usage & revenue will appear as you sell.",
+  "ownerServiceFormImageUrlHint": "Image URL (optional)",
+  "ownerServicePhotoSectionLabel": "Service photo",
+  "ownerServiceUploadPhotoAction": "Upload photo",
+  "ownerServicePhotoChooseGallery": "Photo library",
+  "ownerServicePhotoChooseCamera": "Take photo",
+  "ownerServicePhotoRemove": "Remove photo",
+  "ownerServicePhotoUploading": "Uploading…",
+  "ownerServicePhotoTooLarge": "Choose an image under 5 MB.",
+  "ownerServicePhotoUploadError": "Couldn’t upload the image. Try again.",
+  "ownerServiceFormDescriptionHint": "Description (optional)",
+  "ownerServiceCategoryPickerLabel": "Category",
+  "ownerServiceCategoryNone": "None",
+  "ownerAddService": "Add service",
+  "ownerEditService": "Edit service",
+  "ownerServiceName": "Service name",
+  "ownerAddServiceSheetSubtitle": "Create a bookable service for your customers",
+  "ownerServiceSectionDetailsTitle": "Service details",
+  "ownerServiceSectionDetailsSubtitle": "Basic information about your service",
+  "ownerServiceSectionDurationTitle": "Duration & pricing",
+  "ownerServiceSectionDurationSubtitle": "Set how long it takes and how much it costs",
+  "ownerServiceSectionPhotoSubtitle": "Add a photo to showcase your service",
+  "ownerServiceSectionDescriptionSubtitle": "Add more details about this service",
+  "ownerServiceActiveSubtitle": "Show this service to customers",
+  "ownerServiceNamePlaceholder": "e.g. Classic Haircut",
+  "ownerServiceDescriptionPlaceholderLong": "Describe your service, what's included, benefits, etc.",
+  "ownerServicePhotoFormatsHint": "PNG, JPG up to 5MB",
+  "ownerServicePhotoSizeHint": "Recommended size: 1200x800px",
+  "ownerServiceSuffixMin": "min",
+  "ownerServiceDuration": "Duration (minutes)",
+  "ownerServicePrice": "Price",
+  "ownerDeleteService": "Delete",
+  "ownerMoneyTitle": "Money",
+  "ownerMoneySubtitle": "Sales, payroll, and expenses.",
+  "ownerKpiNone": "—",
+  "ownerKpiTodayRevenue": "Today's revenue",
+  "ownerKpiMonthRevenue": "Monthly revenue",
+  "ownerKpiBookingsToday": "Bookings today",
+  "ownerKpiEmployees": "Active employees",
+  "ownerKpiTopBarber": "Top barber (month)",
+  "ownerKpiTopService": "Top service (month)",
+  "ownerKpiCompletedToday": "Completed today",
+  "ownerKpiCancelledToday": "Cancelled today",
+  "ownerKpiRescheduledToday": "Rescheduled today",
+  "ownerKpiCompletionRateMonth": "Completion rate (month)",
+  "ownerKpiCancellationRateMonth": "Cancellation rate (month)",
+  "ownerKpiTopBarberCompletionsMonth": "Top barber · completions (month)",
+  "ownerMoneyRecognitionOperational": "Operational",
+  "ownerMoneyRecognitionCash": "Cash",
+  "ownerMoneySalesMonth": "Sales (this month)",
+  "ownerMoneyPayrollSection": "Payroll",
+  "ownerMoneyExpensesSection": "Expenses",
+  "ownerMoneyEmptyPayroll": "No payroll runs yet.",
+  "ownerMoneyEmptyExpenses": "No expenses recorded yet.",
+  "ownerMoneyPayrollEmptyTitle": "No payroll",
+  "ownerMoneyExpensesEmptyTitle": "No expenses",
+  "ownerDashboardTitle": "Workspace",
+  "ownerAiAssistantTooltip": "Open dashboard assistant",
+  "aiAssistantTitle": "Dashboard assistant",
+  "aiAssistantInputLabel": "Ask the assistant",
+  "aiAssistantInputHint": "Ask for today revenue, monthly revenue, or top barbers.",
+  "aiAssistantSend": "Generate view",
+  "aiAssistantWelcomeTitle": "Ask for an owner snapshot",
+  "aiAssistantWelcomeMessage": "Use natural prompts to generate a focused revenue and team summary for your salon.",
+  "aiAssistantLoadingTitle": "Building your dashboard view",
+  "aiAssistantLoadingMessage": "The assistant is calling approved tools and preparing a compact surface.",
+  "aiAssistantErrorTitle": "Assistant unavailable",
+  "aiAssistantErrorMessage": "The assistant could not build a surface right now. Try again in a moment.",
+  "aiAssistantRetry": "Try again",
+  "aiAssistantSalonRequiredTitle": "Salon required",
+  "aiAssistantSalonRequiredMessage": "This assistant needs a valid salon before it can load owner insights.",
+  "aiAssistantSuggestionTodayRevenue": "show today revenue",
+  "aiAssistantSuggestionMonthRevenue": "show this month revenue",
+  "aiAssistantSuggestionTopBarbers": "show top barbers this month",
+  "smartWorkspaceTitle": "Smart workspace",
+  "smartWorkspaceLoadingTitle": "Preparing your workspace",
+  "smartWorkspaceLoadingMessage": "Loading the right payroll, analytics, or attendance assistant view.",
+  "smartWorkspaceErrorTitle": "Smart workspace unavailable",
+  "smartWorkspaceErrorMessage": "The workspace could not load right now. Try again in a moment.",
+  "smartWorkspaceRetryAction": "Try again",
+  "smartWorkspaceSalonRequiredTitle": "Salon required",
+  "smartWorkspaceSalonRequiredMessage": "This workspace needs a valid salon before it can load assistant tools.",
+  "smartWorkspaceWelcomeTitle": "Ask for a guided workspace",
+  "smartWorkspaceWelcomeMessage": "Use this assistant for payroll setup, payroll explanations, analytics summaries, and attendance corrections while keeping the business logic deterministic.",
+  "smartWorkspaceInputLabel": "Ask smart workspace",
+  "smartWorkspaceInputHint": "Try: set up payroll for Ahmed, explain Sara's payroll, or show payroll and expense summary for this month.",
+  "smartWorkspaceSendAction": "Open workspace",
+  "smartWorkspaceUnknownTitle": "Choose a guided assistant flow",
+  "smartWorkspaceUnknownSummary": "The assistant only supports approved workspace flows.",
+  "smartWorkspaceUnknownMessage": "Ask for payroll setup, payroll explanation, analytics, or attendance correction to continue.",
+  "smartWorkspaceSuggestionPayrollSetup": "set up payroll for this month",
+  "smartWorkspaceSuggestionPayrollExplain": "explain this month's payroll for Ahmed",
+  "smartWorkspaceSuggestionAnalytics": "show payroll, revenue, and expenses this month",
+  "smartWorkspaceSuggestionAttendance": "fix attendance for today's late barber",
+  "smartWorkspacePayrollSetupTitle": "Payroll setup assistant",
+  "smartWorkspacePayrollSetupSummary": "Review who is ready for payroll and jump into the right setup screen.",
+  "smartWorkspacePayrollSetupMissingEmployees": "Missing basic salary setup",
+  "smartWorkspacePayrollSetupActiveElements": "{count, plural, one{1 active payroll element available} other{{count} active payroll elements available}}",
+  "@smartWorkspacePayrollSetupActiveElements": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "smartWorkspacePayrollSetupEntriesCount": "{count, plural, =0{No active payroll entries} one{1 active payroll entry} other{{count} active payroll entries}}",
+  "@smartWorkspacePayrollSetupEntriesCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "smartWorkspacePayrollSetupPickEmployeeTitle": "Pick a team member",
+  "smartWorkspacePayrollSetupPickEmployeeMessage": "Choose an employee to review their payroll entries and salary setup.",
+  "smartWorkspaceEmployeePickerLabel": "Team member",
+  "smartWorkspacePeriodSelectorLabel": "Payroll period",
+  "smartWorkspacePeriodPlaceholder": "Choose a month",
+  "smartWorkspaceDateRangePickerLabel": "Date range",
+  "smartWorkspaceDateRangePlaceholder": "Choose a date range",
+  "smartWorkspaceOpenEmployeeSetup": "Open employee setup",
+  "smartWorkspaceOpenPayrollRunReview": "Open payroll run review",
+  "smartWorkspaceAddElementTitle": "Add payroll element",
+  "smartWorkspaceAddElementSummary": "Confirm the proposed payroll element before saving it to your catalog.",
+  "smartWorkspaceAddElementNeedsDetailsTitle": "Need more payroll element details",
+  "smartWorkspaceAddElementNeedsDetailsMessage": "Include a name and amount, for example: add a recurring transport allowance for 150.",
+  "smartWorkspaceElementClassificationTitle": "Classification",
+  "smartWorkspaceClassificationEarning": "Earning",
+  "smartWorkspaceClassificationDeduction": "Deduction",
+  "smartWorkspaceClassificationInformation": "Information",
+  "smartWorkspaceElementRecurrenceTitle": "Recurrence",
+  "smartWorkspaceRecurrenceRecurring": "Recurring",
+  "smartWorkspaceRecurrenceNonRecurring": "One-time",
+  "smartWorkspaceElementCalculationTitle": "Calculation method",
+  "smartWorkspaceCalculationFixed": "Fixed amount",
+  "smartWorkspaceCalculationPercentage": "Percentage",
+  "smartWorkspaceCalculationDerived": "Derived",
+  "smartWorkspaceConfirmationTitle": "Confirmation",
+  "smartWorkspaceAddElementConfirmMessage": "This will save a new payroll element through the existing payroll repository.",
+  "smartWorkspaceFieldName": "Name",
+  "smartWorkspaceFieldAmount": "Amount",
+  "smartWorkspaceFieldClassification": "Classification",
+  "smartWorkspaceFieldDate": "Date",
+  "smartWorkspaceFieldStatus": "Status",
+  "smartWorkspaceFieldCheckIn": "Check-in",
+  "smartWorkspaceFieldCheckOut": "Check-out",
+  "smartWorkspaceSaveElementAction": "Save payroll element",
+  "smartWorkspacePayrollExplanationTitle": "Payroll explanation",
+  "smartWorkspacePayrollExplanationSummary": "Break down earnings and deductions using the existing payroll calculation service.",
+  "smartWorkspaceNetPayTitle": "Net pay",
+  "smartWorkspacePayrollPreviewStatus": "Preview based on current payroll rules",
+  "smartWorkspaceEarningsBreakdownTitle": "Earnings breakdown",
+  "smartWorkspaceDeductionsBreakdownTitle": "Deductions breakdown",
+  "smartWorkspaceOpenQuickPayAction": "Open quick pay",
+  "smartWorkspaceAnalyticsTitle": "Dynamic analytics assistant",
+  "smartWorkspaceRevenueTitle": "Revenue",
+  "smartWorkspaceTransactionsCount": "{count, plural, one{1 completed transaction} other{{count} completed transactions}}",
+  "@smartWorkspaceTransactionsCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "smartWorkspaceExpensesTitle": "Expenses",
+  "smartWorkspacePayrollTitle": "Payroll",
+  "smartWorkspaceDraftPayrollRuns": "{count, plural, =0{No draft payroll runs} one{1 draft payroll run} other{{count} draft payroll runs}}",
+  "@smartWorkspaceDraftPayrollRuns": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "smartWorkspaceNetResultTitle": "Net result",
+  "smartWorkspaceChartTitle": "Recent monthly trend",
+  "smartWorkspaceChartSubtitle": "Revenue bars are shown with the same period context used by the assistant.",
+  "smartWorkspaceOpenSalesAction": "Open sales",
+  "smartWorkspaceOpenExpensesAction": "Open expenses",
+  "smartWorkspaceOpenPayrollAction": "Open payroll",
+  "smartWorkspaceAttendanceCorrectionTitle": "Attendance correction assistant",
+  "smartWorkspaceAttendanceCorrectionSummary": "Review correction-ready records and confirm approved updates through the existing attendance repository.",
+  "smartWorkspaceAttendancePendingTitle": "Pending attendance requests",
+  "smartWorkspaceAttendanceCorrectionsNeeded": "{count, plural, =0{No records need correction} one{1 record needs correction} other{{count} records need correction}}",
+  "@smartWorkspaceAttendanceCorrectionsNeeded": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "smartWorkspaceAttendanceNoRecordTitle": "No correction-ready record found",
+  "smartWorkspaceAttendanceNoRecordMessage": "Adjust the employee or date range to find the attendance request you want to review.",
+  "smartWorkspaceAttendanceRecordSummary": "Attendance status: {status}",
+  "@smartWorkspaceAttendanceRecordSummary": {
+    "placeholders": {
+      "status": {"type": "String"}
+    }
+  },
+  "smartWorkspaceAttendanceConfirmMessage": "Review the correction details before applying the approved update.",
+  "smartWorkspaceAttendancePromptForDetails": "Add a status or time change in your prompt to prepare a correction.",
+  "smartWorkspaceApplyAttendanceAction": "Apply correction",
+  "smartWorkspaceOpenAttendanceReviewAction": "Open attendance review",
+  "ownerTooltipCycleTheme": "Cycle appearance (system / light / dark)",
+  "ownerTooltipCycleThemeShort": "Cycle appearance",
+  "ownerTooltipLanguage": "Switch language (English / العربية)",
+  "ownerTooltipLanguageShort": "Language",
+  "ownerTooltipSignOut": "Sign out",
+  "customerCategoryAll": "All",
+  "customerMyBookings": "My bookings",
+  "customerMyBookingsSubtitle": "Upcoming and past visits",
+  "customerMyBookingsEmpty": "You have no bookings yet. Discover a salon and book an appointment.",
+  "bookingNotes": "Notes",
+  "bookingDuration": "Duration",
+  "bookingDurationMinutes": "{minutes} min",
+  "@bookingDurationMinutes": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "bookingStatus": "Status",
+  "bookingStatusPending": "Pending",
+  "bookingStatusConfirmed": "Confirmed",
+  "bookingStatusCompleted": "Completed",
+  "bookingStatusCancelled": "Cancelled",
+  "bookingStatusNoShow": "No show",
+  "bookingStatusRescheduled": "Rescheduled",
+  "barberSummaryTitle": "Today",
+  "barberSummaryAppointments": "{count, plural, =0{No appointments} one{1 appointment} other{{count} appointments}}",
+  "@barberSummaryAppointments": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "barberNextAppointment": "Next",
+  "barberNextNone": "No more today",
+  "barberEarningsMonth": "This month",
+  "barberQuickSale": "Quick sale",
+  "barberAttendanceCardTitle": "Attendance",
+  "barberAttendanceIn": "Checked in",
+  "barberAttendanceOut": "Checked out",
+  "barberAttendanceNone": "Not checked in yet",
+  "customerSectionBarbers": "Team",
+  "customerBarberCardCta": "Book +",
+  "customerBarberVerifiedTooltip": "Salon-verified stylist",
+  "customerNoBarbersDetail": "No barbers listed for this salon yet.",
+  "barberTabToday": "Today",
+  "barberTabSale": "Sale",
+  "barberTabAttendance": "Attendance",
+  "barberTodayTitle": "Today’s schedule",
+  "barberTodaySubtitle": "Your assigned appointments.",
+  "barberNoEmployee": "Your profile is missing a team link. Contact the owner.",
+  "barberRecordSaleTitle": "Record sale",
+  "barberSaleService": "Service",
+  "barberSalePayment": "Payment",
+  "barberSaleSubmit": "Save sale",
+  "barberSaleSuccess": "Sale recorded",
+  "barberAttendanceTitle": "Attendance",
+  "barberAttendanceSubtitle": "Today’s punches.",
+  "barberCheckIn": "Check in",
+  "barberCheckOut": "Check out",
+  "barberNoAttendance": "No attendance records today.",
+  "ownerMoneyPeriodToday": "Today",
+  "ownerMoneyPeriodMonth": "This month",
+  "ownerMoneyPeriodCustomSoon": "Custom (soon)",
+  "ownerMoneyTotalSales": "Sales total",
+  "ownerMoneyTotalPayroll": "Payroll total",
+  "ownerMoneyTotalExpenses": "Expenses total",
+  "ownerMoneyNetResult": "Net result",
+  "ownerBookingsLoadMore": "Load more",
+  "ownerBookingsLoadingMore": "Loading…",
+  "ownerBookingDetailsTitle": "Booking details",
+  "ownerBookingSaveNotes": "Save notes",
+  "ownerBookingNotesSaved": "Notes saved",
+  "ownerBookingNewTitle": "New booking",
+  "ownerBookingCustomerUid": "Customer user ID",
+  "ownerBookingCustomerUidHint": "Paste the customer’s Firebase Auth UID (from their profile).",
+  "ownerBookingCustomerUidInvalid": "Customer user ID is required.",
+  "ownerBookingCustomerNameOptional": "Customer name (optional)",
+  "ownerBookingCreate": "Create booking",
+  "ownerBookingCreated": "Booking created",
+  "ownerBookingRescheduled": "Booking rescheduled",
+  "ownerHrSettingsTitle": "HR & violations",
+  "ownerHrSettingsSubtitle": "Manage staff penalties, attendance rules and review requests.",
+  "ownerSettingsHrTileTitle": "HR & violations",
+  "ownerSettingsHrTileSubtitle": "Penalty rules, attendance policies and review queue",
+  "ownerAttendanceRulesTileTitle": "Attendance rules",
+  "ownerAttendanceRulesTileSubtitle": "Punches, breaks, grace, corrections, policy",
+  "salonAttendanceZoneTitle": "Attendance zone",
+  "salonAttendanceZoneSubtitle": "Control where your team can punch in and out.",
+  "salonAttendanceZoneMapSectionTitle": "Map",
+  "salonAttendanceZoneMapTapHint": "Tap the map to move the zone center.",
+  "salonAttendanceZoneMapWebHint": "Use the mobile app to pick the zone on the map.",
+  "salonAttendanceZoneMapCenterMarker": "Zone center",
+  "salonAttendanceZoneCoordinates": "Lat {lat}, Lng {lng}",
+  "@salonAttendanceZoneCoordinates": {
+    "placeholders": {
+      "lat": { "type": "String" },
+      "lng": { "type": "String" }
+    }
+  },
+  "salonAttendanceZonePunchRadiusMeters": "Allowed punch radius: {meters} meters",
+  "@salonAttendanceZonePunchRadiusMeters": {
+    "placeholders": {
+      "meters": { "type": "int" }
+    }
+  },
+  "salonAttendanceZoneMetersShort": "{meters} m",
+  "@salonAttendanceZoneMetersShort": {
+    "placeholders": {
+      "meters": { "type": "int" }
+    }
+  },
+  "salonAttendanceZoneEnable": "Enable attendance",
+  "salonAttendanceZoneRequireInPunchIn": "Require inside zone for punch in",
+  "salonAttendanceZoneRequireInPunchOut": "Require inside zone for punch out",
+  "salonAttendanceZoneAllowBreaks": "Allow breaks",
+  "salonAttendanceZoneAllowCorrections": "Allow attendance correction requests",
+  "salonAttendanceZoneSave": "Save",
+  "salonAttendanceZoneSaved": "Attendance settings saved",
+  "salonAttendanceZoneSaveFailed": "Save failed",
+
+  "ownerAttendanceSettingsTitle": "Attendance settings",
+  "ownerAttendanceSettingsSubtitle": "Manage zone, punches, breaks, corrections and HR rules",
+  "ownerAttendanceSettingsStatusActive": "Active",
+  "ownerAttendanceSettingsStatusLocationMissing": "Location missing",
+
+  "ownerAttendanceSectionZone": "Attendance zone",
+  "ownerAttendanceSectionPunchRules": "Punch rules",
+  "ownerAttendanceSectionGrace": "Grace and working time",
+  "ownerAttendanceSectionCorrection": "Correction requests",
+  "ownerAttendanceSectionViolations": "HR violation rules",
+
+  "ownerAttendanceZoneMapPickAction": "Pick salon location",
+  "ownerAttendanceZoneCoordinatesEmpty": "Tap the map to set the salon location.",
+  "ownerAttendanceZoneRadiusLabel": "Allowed radius",
+  "ownerAttendanceZoneLocationRequired": "Location required to punch",
+  "ownerAttendanceZoneLocationRequiredHint": "Employees must be inside the zone to punch in or out.",
+
+  "ownerAttendanceRulesAttendanceRequired": "Attendance required",
+  "ownerAttendanceRulesAttendanceRequiredHint": "Employees must record their day before working.",
+  "ownerAttendanceRulesPunchInRequired": "Punch in required",
+  "ownerAttendanceRulesPunchOutRequired": "Punch out required",
+  "ownerAttendanceRulesBreaksEnabled": "Breaks enabled",
+  "ownerAttendanceRulesMaxPunchesLabel": "Max punches per day",
+  "ownerAttendanceRulesMaxBreaksLabel": "Max breaks per day",
+
+  "ownerAttendanceGraceLateLabel": "Late grace (minutes)",
+  "ownerAttendanceGraceEarlyExitLabel": "Early exit grace (minutes)",
+  "ownerAttendanceGraceMinShiftLabel": "Minimum shift (minutes)",
+  "ownerAttendanceGraceMaxShiftLabel": "Maximum shift (minutes)",
+
+  "ownerAttendanceCorrectionEnabled": "Enable correction requests",
+  "ownerAttendanceCorrectionRequireReason": "Require correction reason",
+  "ownerAttendanceCorrectionRequireApproval": "Require owner/admin approval",
+  "ownerAttendanceCorrectionMaxPerMonth": "Max correction requests per month",
+
+  "ownerAttendanceViolationsAuto": "Auto-create violations",
+  "ownerAttendanceViolationsAutoHint": "Generate payroll violations automatically when limits are exceeded.",
+  "ownerAttendanceViolationsMissingCheckoutPercent": "Missing checkout deduction (%)",
+  "ownerAttendanceViolationsAbsencePercent": "Absence deduction (%)",
+  "ownerAttendanceViolationsLatePercent": "Late deduction (%)",
+  "ownerAttendanceViolationsEarlyExitPercent": "Early exit deduction (%)",
+  "ownerAttendanceViolationsLateAllowance": "Allowed late count per month",
+  "ownerAttendanceViolationsEarlyExitAllowance": "Allowed early exit count per month",
+  "ownerAttendanceViolationsMissingCheckoutAllowance": "Allowed missing checkout count per month",
+
+  "ownerAttendanceSettingsSave": "Save changes",
+  "ownerAttendanceSettingsSaved": "Attendance settings updated",
+  "ownerAttendanceSettingsSaveFailed": "Could not save attendance settings",
+  "ownerAttendanceSettingsValidationLocationMissing": "Pick a salon location before saving.",
+  "ownerAttendanceSettingsValidationRadius": "Radius must be between 10 and 500 meters.",
+  "ownerAttendanceSettingsValidationMaxPunches": "Max punches must be between 2 and 10.",
+  "ownerAttendanceSettingsValidationMaxBreaks": "Max breaks must be between 0 and 5.",
+  "ownerAttendanceSettingsValidationGraceLate": "Late grace must be between 0 and 120 minutes.",
+  "ownerAttendanceSettingsValidationGraceEarly": "Early exit grace must be between 0 and 120 minutes.",
+  "ownerAttendanceSettingsValidationMinShift": "Minimum shift must be greater than 0.",
+  "ownerAttendanceSettingsValidationMaxShift": "Maximum shift must be greater than minimum shift.",
+  "ownerAttendanceSettingsValidationDeduction": "Deduction percentages must be between 0 and 100.",
+  "ownerAttendanceSettingsValidationAllowance": "Allowed counts must be 0 or more.",
+
+  "ownerMoneySalesSection": "Sales",
+  "ownerMoneySalesEmptyTitle": "No sales",
+  "ownerMoneyEmptySales": "No sales in this period yet.",
+  "ownerAddSaleTitle": "Add sale",
+  "ownerAddSaleSubtitle": "Record a walk-in or counter sale quickly.",
+  "ownerAddSaleServiceField": "Service",
+  "ownerAddSaleBarberField": "Service provider",
+  "ownerAddSalePriceLabel": "Price",
+  "ownerAddSalePriceHint": "Choose a service to see the price.",
+  "ownerAddSaleCustomerHint": "Customer name (optional)",
+  "ownerAddSaleSave": "Save sale",
+  "ownerAddSaleSuccess": "Sale saved",
+  "ownerAddSaleValidation": "Pick at least one service, a service provider, and a payment method.",
+  "ownerAddSaleOpen": "Add sale",
+  "ownerAddSaleNoStaff": "Add team members before recording sales.",
+  "ownerServiceCategory": "Category (optional)",
+  "ownerServiceActiveLabel": "Service is active",
+  "ownerServiceInactiveBadge": "Inactive",
+  "roleOwner": "Owner",
+  "roleAdmin": "Admin",
+  "adminConsoleTitle": "Admin console",
+  "adminWorkspaceSubtitle": "Manage staff, policies, and operations for your salon.",
+  "adminSalonIdLine": "Salon ID: {salonId}",
+  "@adminSalonIdLine": {
+    "placeholders": {
+      "salonId": {"type": "String"}
+    }
+  },
+  "adminSalonNotLinked": "No salon linked",
+  "roleBarber": "Team member",
+  "roleCustomer": "Customer",
+  "paymentMethodCash": "Cash",
+  "paymentMethodCard": "Card",
+  "paymentMethodDigitalWallet": "Digital wallet",
+  "paymentMethodOther": "Other",
+  "payrollStatusDraft": "Draft",
+  "payrollStatusPendingApproval": "Pending approval",
+  "payrollStatusApproved": "Approved",
+  "payrollStatusPaid": "Paid",
+  "payrollStatusVoided": "Voided",
+  "customerBookingsUpcoming": "Upcoming",
+  "customerBookingsPast": "Past",
+  "customerBookingsUpcomingEmpty": "No upcoming visits.",
+  "customerBookingsPastEmpty": "No past visits yet.",
+  "customerBookingCancel": "Cancel",
+  "customerBookingReschedule": "Reschedule",
+  "customerBookingCancelledToast": "Booking cancelled",
+  "customerBookingRescheduledToast": "Booking updated",
+  "customerBookingActionUnavailable": "This action is not available for this booking.",
+  "customerRescheduleTitle": "Reschedule",
+  "customerRescheduleSubmit": "Save new time",
+  "customerMyBookingsLoading": "Loading your bookings…",
+  "listLoadMore": "Load more",
+  "bookingOpMarkArrived": "Customer arrived",
+  "bookingOpStartService": "Start service",
+  "bookingOpComplete": "Complete",
+  "bookingOpNoShowCustomer": "No-show (customer)",
+  "bookingOpNoShowBarber": "No-show (barber)",
+  "ownerViolationsTitle": "Violations & penalties",
+  "ownerViolationsSubtitle": "Approve deductions before payroll applies them.",
+  "ownerViolationsEmpty": "No pending violations.",
+  "ownerViolationBooking": "Booking",
+  "ownerViolationAmount": "Amount",
+  "ownerViolationApprove": "Approve",
+  "ownerViolationReject": "Reject",
+  "ownerViolationReviewSaved": "Violation updated",
+  "ownerPenaltySettingsTitle": "Penalty rules",
+  "ownerPenaltySettingsSaved": "Penalty settings saved",
+  "ownerPenaltyLateEnabled": "Staff late penalties",
+  "ownerPenaltyGraceMinutes": "Grace (minutes)",
+  "ownerPenaltyCalcFlat": "Flat amount",
+  "ownerPenaltyCalcPercent": "Percent of gross",
+  "ownerPenaltyCalcPerMinute": "Per minute after grace",
+  "ownerPenaltyLateValue": "Late penalty value",
+  "ownerPenaltyNoShowEnabled": "Staff no-show penalties",
+  "ownerPenaltyNoShowValue": "No-show penalty value",
+  "ownerViolationsMetricPending": "Pending reviews",
+  "ownerViolationsMetricRulesOn": "Active rules",
+  "ownerPenaltyAppliesWhenLabel": "Penalty applies when",
+  "ownerPenaltyLateWhenBody": "Staff member checks in late after grace",
+  "ownerPenaltyNoShowWhenBody": "Staff member misses the appointment",
+  "ownerPenaltyMetricCalculation": "Calculation",
+  "ownerKpiNoShowToday": "No-shows today",
+  "ownerKpiNoShowRateMonth": "No-show rate (month)",
+  "ownerKpiPenaltyMonth": "Penalties (month)",
+  "ownerKpiTopPenalizedBarber": "Top penalized (month)",
+  "payrollDeductionViolations": "Deductions",
+  "payrollStatusRolledBack": "Rolled back",
+  "payrollBadgeRecurring": "Recurring",
+  "payrollBadgeNonRecurring": "One-time",
+  "payrollLineQuantity": "Qty {value}",
+  "@payrollLineQuantity": {
+    "placeholders": {
+      "value": {"type": "String"}
+    }
+  },
+  "payrollLineRate": "Rate {value}",
+  "@payrollLineRate": {
+    "placeholders": {
+      "value": {"type": "String"}
+    }
+  },
+  "payrollGenericError": "Payroll data could not be loaded right now.",
+  "payrollSummaryEarnings": "Earnings",
+  "payrollSummaryDeductions": "Deductions",
+  "payrollSummaryNetPay": "Net pay",
+  "payrollSectionEarnings": "Earnings lines",
+  "payrollSectionDeductions": "Deduction lines",
+  "payrollSectionInformation": "Information lines",
+  "payrollSectionEmpty": "No lines for this section.",
+  "payrollDashboardTitle": "Payroll",
+  "payrollDashboardSubtitle": "{monthLabel} payroll engine overview.",
+  "@payrollDashboardSubtitle": {
+    "placeholders": {
+      "monthLabel": {"type": "String"}
+    }
+  },
+  "payrollQuickPayTitle": "QuickPay",
+  "payrollQuickPayShortcutSubtitle": "Calculate and process one employee quickly.",
+  "payrollRunReviewTitle": "Payroll run review",
+  "payrollRunShortcutSubtitle": "Review a monthly payroll run for multiple employees.",
+  "payrollStatusBreakdownTitle": "Status breakdown",
+  "payrollRecentRunsTitle": "Recent payroll runs",
+  "payrollRecentRunsEmpty": "Recent payroll activity will appear here.",
+  "payrollRunGroupLabel": "{count} employees",
+  "@payrollRunGroupLabel": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "payrollMissingSetupTitle": "Missing payroll setup",
+  "payrollMissingSetupEmpty": "All active employees have a recurring payroll setup.",
+  "payrollActionSetUp": "Set up",
+  "payrollElementsTitle": "Payroll elements",
+  "payrollElementsSeedDefaults": "Seed defaults",
+  "payrollElementsAdd": "Add element",
+  "payrollElementsEmptyTitle": "No payroll elements yet",
+  "payrollElementsEmptySubtitle": "Seed the default earning, deduction, and information elements to start building payroll.",
+  "payrollElementsSystemTag": "System",
+  "payrollFieldCode": "Code",
+  "payrollFieldName": "Name",
+  "payrollFieldClassification": "Classification",
+  "payrollFieldRecurrence": "Recurrence",
+  "payrollFieldCalculationMethod": "Calculation method",
+  "payrollFieldDefaultAmount": "Default amount",
+  "payrollFieldVisibleOnPayslip": "Visible on payslip",
+  "payrollFieldAffectsNetPay": "Affects net pay",
+  "payrollFieldElement": "Element",
+  "payrollFieldAmount": "Amount",
+  "payrollFieldPercentageOptional": "Percentage (optional)",
+  "payrollFieldNote": "Note",
+  "payrollFieldEmployee": "Employee",
+  "payrollFieldPayrollPeriod": "Payroll period",
+  "payrollClassificationEarning": "Earning",
+  "payrollClassificationDeduction": "Deduction",
+  "payrollClassificationInformation": "Information",
+  "payrollCalculationFixed": "Fixed",
+  "payrollCalculationPercentage": "Percentage",
+  "payrollCalculationDerived": "Derived",
+  "payrollActionSave": "Save",
+  "payrollActionCalculate": "Calculate",
+  "payrollActionSaveDraft": "Save draft",
+  "payrollActionApprove": "Approve",
+  "payrollActionPay": "Pay",
+  "payrollActionRollback": "Rollback",
+  "payrollEmployeeSetupTitle": "Employee payroll setup",
+  "payrollEmployeeAddEntry": "Add entry",
+  "payrollEmployeeSetupSubtitle": "Manage recurring and one-time payroll entries for this employee.",
+  "payrollEmployeeEntriesEmptyTitle": "No payroll entries yet",
+  "payrollEmployeeEntriesEmptySubtitle": "Add recurring salary items and one-time adjustments for this employee.",
+  "payrollQuickPayValidation": "Select an employee and payroll period first.",
+  "payrollQuickPayStatementEmptyTitle": "No quick pay statement yet",
+  "payrollQuickPayStatementEmptySubtitle": "Choose an employee and period to calculate earnings and deductions.",
+  "payrollPayslipTitle": "Payslip",
+  "payrollPayslipEmptyTitle": "No payslip lines found",
+  "payrollPayslipEmptySubtitle": "This payroll run does not have visible lines for the selected employee.",
+  "payrollRunEmployeesLabel": "Employees",
+  "payrollRunAllEmployees": "All active employees",
+  "payrollRunValidation": "Choose a payroll period before calculating.",
+  "payrollRunReviewEmptyTitle": "No payroll run draft yet",
+  "payrollRunReviewEmptySubtitle": "Pick a period and calculate the run to review grouped payroll totals.",
+  "payrollRunEmployeeSummary": "{lineCount} lines · net {netPay}",
+  "@payrollRunEmployeeSummary": {
+    "placeholders": {
+      "lineCount": {"type": "int"},
+      "netPay": {"type": "String"}
+    }
+  },
+  "violationTypeBarberLate": "Late",
+  "violationTypeBarberNoShow": "Barber no-show",
+  "customerRecommendationsTitle": "Suggestions",
+  "customerRecommendationBest": "Best choice",
+  "customerRecommendationFastest": "Fastest available",
+  "customerRecommendationPreferred": "Your barber",
+  "customerRecommendationAlternatives": "Alternatives",
+  "customerRecommendationUseSlot": "Use {time} · {barber}",
+  "@customerRecommendationUseSlot": {
+    "placeholders": {
+      "time": {"type": "String"},
+      "barber": {"type": "String"}
+    }
+  },
+  "recommendationReasonExperiencedWithService": "Experienced with this service",
+  "recommendationReasonNoServiceHistoryFallback": "Limited recent history for this service",
+  "recommendationReasonStrongTrackRecord": "Strong completion record",
+  "recommendationReasonSoonestTime": "Soonest open time",
+  "recommendationReasonPreferredBarber": "Your preferred barber",
+  "recommendationReasonBalancedSchedule": "Balanced upcoming load",
+  "recommendationReasonMoreAvailabilityToday": "Earlier slot today",
+  "notificationsCenterTitle": "Notifications",
+  "notificationsEmpty": "No notifications yet.",
+  "notificationsPreferencesTitle": "Notification settings",
+  "notificationsPreferencesTooltip": "Notification settings",
+  "notificationsPrefPushMaster": "Push notifications",
+  "notificationsPrefBookingReminders": "Booking reminders",
+  "notificationsPrefBookingChanges": "Booking updates",
+  "notificationsPrefPayroll": "Payroll alerts",
+  "notificationsPrefViolations": "Violations and no-shows",
+  "notificationsPrefMarketing": "Tips and offers",
+  "notificationsPrefMarketingHint": "Occasional updates from your salon or the app.",
+  "notificationsInboxTooltip": "Notifications",
+  "customerNotificationsTooltip": "Notifications",
+  "customerDiscoveryGoodMorning": "Good morning",
+  "customerDiscoveryGoodAfternoon": "Good afternoon",
+  "customerDiscoveryGoodEvening": "Good evening",
+  "customerDiscoveryNameWave": "{name} 👋",
+  "@customerDiscoveryNameWave": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "customerPromoSalonEyebrow": "{count, plural, =0{No salons to show yet} one{1 salon live} other{{count} salons live}}",
+  "@customerPromoSalonEyebrow": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "customerPromoServicesTitle": "{count, plural, =0{Services appear as soon as salons publish them.} one{1 active service to browse} other{{count} active services to browse}}",
+  "@customerPromoServicesTitle": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "customerPromoCta": "Browse salons",
+  "customerSectionQuickServices": "Services from salons",
+  "customerSectionNearbySalons": "Salons for you",
+  "customerSeeAll": "See all",
+  "customerSalonDiscoveryTitle": "Find your salon",
+  "customerSalonDiscoverySubtitle": "Book your next appointment",
+  "customerSalonDiscoverySearchHint": "Search salon, service, area…",
+  "customerSalonDiscoveryNearYou": "Near you",
+  "customerSalonDiscoveryEmpty": "No salons match yet. Try adjusting filters or search.",
+  "customerSalonDiscoveryRetry": "Retry",
+  "customerSalonDiscoveryErrorPermission": "Salon list is unavailable. Check Firestore rules and indexes.",
+  "customerSalonDiscoveryBookingsSignIn": "Sign in to view your bookings.",
+  "customerSalonDiscoveryNavDiscover": "Discover",
+  "customerSalonDiscoveryNavBookings": "Bookings",
+  "customerSalonDiscoveryNavAccount": "Account",
+  "customerSalonBookmarkTooltip": "Save salon",
+  "customerSalonStartingFrom": "From {price}",
+  "@customerSalonStartingFrom": {
+    "placeholders": {
+      "price": {"type": "String"}
+    }
+  },
+  "customerSalonOpenNowBadge": "Open now",
+  "customerSalonClosedBadge": "Closed",
+  "customerSalonFilterNearby": "Nearby",
+  "customerSalonFilterOpenNow": "Open now",
+  "customerSalonFilterTopRated": "Top rated",
+  "customerSalonFilterOffers": "Offers",
+  "customerSalonFilterLadies": "Ladies",
+  "customerSalonFilterMen": "Men",
+  "customerSalonFilterUnisex": "Unisex",
+  "customerProfileTabServices": "Services",
+  "customerProfileTabTeam": "Team",
+  "customerProfileTabReviews": "Reviews",
+  "customerProfileTabAbout": "About",
+  "customerProfileBookAppointment": "Book appointment",
+  "customerProfileActionCall": "Call",
+  "customerProfileActionWhatsApp": "WhatsApp",
+  "customerProfileActionMap": "Map",
+  "customerProfileActionShare": "Share",
+  "customerProfileEmptyServices": "No services available yet.",
+  "customerProfileEmptyTeam": "No specialists available yet.",
+  "customerProfileEmptyReviews": "No reviews yet.",
+  "customerProfileSalonNotFound": "This salon is not available.",
+  "customerProfileWorkingHoursPlaceholder": "Opening hours will appear here soon.",
+  "customerProfileMapPreviewPlaceholder": "Map preview",
+  "customerProfileAboutArea": "Area",
+  "customerProfileAboutPhone": "Phone",
+  "customerProfileAboutGender": "Gender",
+  "customerProfileGenderValue": "{gender}",
+  "@customerProfileGenderValue": {
+    "placeholders": {
+      "gender": {"type": "String"}
+    }
+  },
+  "customerProfileMinutesShort": "{minutes} min",
+  "@customerProfileMinutesShort": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "customerServiceSelectionTitle": "Choose your services",
+  "customerServiceSelectionSubtitle": "Select one or more services",
+  "customerServiceSelectionStepLabel": "Step 1 of 5",
+  "customerServiceSelectionProgressTitle": "Services",
+  "customerServiceSelectionEmpty": "No services available yet.",
+  "customerServiceSelectionSelectedCount": "{count} selected",
+  "@customerServiceSelectionSelectedCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "customerServiceSelectionSummary": "Duration: {minutes} min · Total: {total}",
+  "@customerServiceSelectionSummary": {
+    "placeholders": {
+      "minutes": {"type": "int"},
+      "total": {"type": "String"}
+    }
+  },
+  "customerServiceSelectionContinue": "Continue",
+  "customerServiceSelectionClear": "Clear",
+  "customerServiceSelectionRequiredSnack": "Select at least one service to continue.",
+  "customerServiceSelectionComingNext": "Service selection is coming next.\n\nSalon id:\n{salonId}",
+  "@customerServiceSelectionComingNext": {
+    "placeholders": {
+      "salonId": {"type": "String"}
+    }
+  },
+  "customerTeamSelectionComingNext": "Team selection is coming next.\n\nSalon id:\n{salonId}",
+  "@customerTeamSelectionComingNext": {
+    "placeholders": {
+      "salonId": {"type": "String"}
+    }
+  },
+  "customerTeamSelectionTitle": "Choose your specialist",
+  "customerTeamSelectionSubtitle": "Select a team member or any available",
+  "customerTeamSelectionStepLabel": "Step 2 of 5",
+  "customerTeamSelectionProgressTitle": "Specialist",
+  "customerTeamSelectionAnyTitle": "Any Available Specialist",
+  "customerTeamSelectionAnySubtitle": "We will assign the best available specialist for your selected time.",
+  "customerTeamSelectionEmpty": "No specialists available yet.",
+  "customerTeamSelectionRequiredSnack": "Choose a specialist to continue.",
+  "customerTeamSelectionServicesRequiredSnack": "Choose at least one service first.",
+  "customerTeamSelectionNoStaffHint": "Add bookable team members to continue.",
+  "customerTeamSelectionRating": "Rating {rating} ({count})",
+  "@customerTeamSelectionRating": {
+    "placeholders": {
+      "rating": {"type": "String"},
+      "count": {"type": "int"}
+    }
+  },
+  "customerDateTimeSelectionComingNext": "Date & time selection is coming next.\n\nSalon id:\n{salonId}",
+  "@customerDateTimeSelectionComingNext": {
+    "placeholders": {
+      "salonId": {"type": "String"}
+    }
+  },
+  "customerDateTimeTitle": "Choose date & time",
+  "customerDateTimeSubtitle": "Select an available appointment slot",
+  "customerDateTimeStepLabel": "Step 3 of 5",
+  "customerDateTimeProgressTitle": "Date & Time",
+  "customerDateTimeToday": "Today",
+  "customerDateTimeTomorrow": "Tomorrow",
+  "customerDateTimeMorning": "Morning",
+  "customerDateTimeAfternoon": "Afternoon",
+  "customerDateTimeEvening": "Evening",
+  "customerDateTimeEmpty": "No available slots",
+  "customerDateTimeChooseAnotherDate": "Please choose another date",
+  "customerDateTimeRequiredSnack": "Select an available time to continue.",
+  "customerDateTimeSummaryTitle": "{count} services · {specialist}",
+  "@customerDateTimeSummaryTitle": {
+    "placeholders": {
+      "count": {"type": "int"},
+      "specialist": {"type": "String"}
+    }
+  },
+  "customerDateTimeSummarySubtitle": "Duration: {minutes} min · Total: {total}",
+  "@customerDateTimeSummarySubtitle": {
+    "placeholders": {
+      "minutes": {"type": "int"},
+      "total": {"type": "String"}
+    }
+  },
+  "customerDetailsComingNext": "Customer details coming next.\n\nSalon id:\n{salonId}",
+  "@customerDetailsComingNext": {
+    "placeholders": {
+      "salonId": {"type": "String"}
+    }
+  },
+  "customerDetailsTitle": "Your details",
+  "customerDetailsSubtitle": "Add contact details for your appointment",
+  "customerDetailsStepLabel": "Step 4 of 5",
+  "customerDetailsProgressTitle": "Details",
+  "customerDetailsFullName": "Full name",
+  "customerDetailsPhoneNumber": "Phone number",
+  "customerDetailsGender": "Gender",
+  "customerDetailsGenderMale": "Male",
+  "customerDetailsGenderFemale": "Female",
+  "customerDetailsGenderPreferNotToSay": "Prefer not to say",
+  "customerDetailsNotes": "Notes",
+  "customerDetailsNotesHint": "Any notes for the salon?",
+  "customerDetailsPhoneInfo": "We will use your phone number only to confirm and find your booking.",
+  "customerDetailsRequiredField": "Required field",
+  "customerDetailsInvalidPhone": "Enter a valid phone number",
+  "customerDetailsNameTooShort": "Name must be at least 2 characters",
+  "customerDetailsNotesTooLong": "Notes cannot exceed 300 characters",
+  "customerDetailsSummaryTitle": "{count} services · {specialist}",
+  "@customerDetailsSummaryTitle": {
+    "placeholders": {
+      "count": {"type": "int"},
+      "specialist": {"type": "String"}
+    }
+  },
+  "customerDetailsSummarySubtitle": "{dateTime} · {total}",
+  "@customerDetailsSummarySubtitle": {
+    "placeholders": {
+      "dateTime": {"type": "String"},
+      "total": {"type": "String"}
+    }
+  },
+  "customerBookingReviewComingNext": "Booking review coming next.\n\nSalon id:\n{salonId}",
+  "@customerBookingReviewComingNext": {
+    "placeholders": {
+      "salonId": {"type": "String"}
+    }
+  },
+  "customerBookingReviewTitle": "Review booking",
+  "customerBookingReviewSubtitle": "Check your appointment details before confirming",
+  "customerBookingReviewStepLabel": "Step 5 of 5",
+  "customerBookingReviewProgressTitle": "Review",
+  "customerBookingReviewSalon": "Salon",
+  "customerBookingReviewServices": "Services",
+  "customerBookingReviewSpecialist": "Specialist",
+  "customerBookingReviewDateTime": "Date & Time",
+  "customerBookingReviewCustomer": "Customer",
+  "customerBookingReviewPaymentSummary": "Payment summary",
+  "customerBookingReviewSubtotal": "Subtotal",
+  "customerBookingReviewDiscount": "Discount",
+  "customerBookingReviewTotal": "Total",
+  "customerBookingReviewConfirm": "Confirm Booking",
+  "customerBookingReviewSlotUnavailable": "This time slot is no longer available. Please choose another time.",
+  "customerBookingReviewChooseSpecialistAgain": "Please choose a specialist again.",
+  "customerBookingReviewGenericError": "Something went wrong. Please try again.",
+  "customerBookingSuccessPlaceholder": "Booking confirmed\n\nBooking code:\n{bookingCode}",
+  "@customerBookingSuccessPlaceholder": {
+    "placeholders": {
+      "bookingCode": {"type": "String"}
+    }
+  },
+  "customerBookingSuccessTitle": "Booking confirmed",
+  "customerBookingSuccessSubtitle": "Your appointment has been saved successfully.",
+  "customerBookingSuccessCode": "Booking code",
+  "customerBookingSuccessStatus": "Status",
+  "customerBookingSuccessDate": "Date",
+  "customerBookingSuccessTime": "Time",
+  "customerBookingSuccessStatusFallback": "Saved",
+  "customerBookingSuccessFallback": "Available in booking details",
+  "customerBookingSuccessSaveCodeInfo": "Save your booking code. You can use it later to find your appointment.",
+  "customerBookingSuccessViewBooking": "View booking",
+  "customerBookingSuccessBookAnother": "Book another appointment",
+  "customerBookingSuccessBackToSalon": "Back to salon",
+  "customerBookingSuccessCodeCopied": "Booking code copied.",
+  "customerBookingLookupTitle": "Find your booking",
+  "customerBookingLookupSubtitle": "Enter your phone number to view your appointment",
+  "customerBookingLookupPhoneNumber": "Phone number",
+  "customerBookingLookupBookingCode": "Booking code",
+  "customerBookingLookupBookingCodeOptional": "Booking code optional",
+  "customerBookingLookupSearch": "Search",
+  "customerBookingLookupPhoneHint": "Use the same phone number you used when booking.",
+  "customerBookingLookupNoBookings": "No bookings found",
+  "customerBookingLookupViewDetails": "View details",
+  "customerBookingStatusPending": "Pending",
+  "customerBookingStatusConfirmed": "Confirmed",
+  "customerBookingStatusCheckedIn": "Checked in",
+  "customerBookingStatusCompleted": "Completed",
+  "customerBookingStatusCancelled": "Cancelled",
+  "customerBookingStatusNoShow": "No show",
+  "customerBookingLookupInvalidPhone": "Enter a valid phone number",
+  "customerBookingLookupGenericError": "Something went wrong. Please try again.",
+  "customerBookingLookupAnySpecialist": "Any available specialist",
+  "customerBookingDetailsTitle": "Booking details",
+  "customerBookingDetailsSubtitle": "View your appointment information",
+  "customerBookingDetailsCopied": "Copied",
+  "customerBookingDetailsDurationPrice": "{minutes} min · {price}",
+  "@customerBookingDetailsDurationPrice": {
+    "placeholders": {
+      "minutes": {"type": "int"},
+      "price": {"type": "String"}
+    }
+  },
+  "customerBookingDetailsTimelineTitle": "Timeline",
+  "customerBookingDetailsTimelineCreated": "Created",
+  "customerBookingDetailsTimelineUpcoming": "Upcoming",
+  "customerBookingDetailsTimelineConfirmed": "Confirmed",
+  "customerBookingDetailsPendingConfirmation": "Pending confirmation",
+  "customerBookingDetailsSpecialist": "Specialist",
+  "customerBookingDetailsCall": "Call",
+  "customerBookingDetailsWhatsApp": "WhatsApp",
+  "customerBookingDetailsWhatsAppMessage": "Hello — I have a question about my booking.",
+  "customerBookingDetailsPhoneUnavailable": "Phone number is not available",
+  "customerBookingDetailsReschedule": "Reschedule",
+  "customerBookingDetailsCancelBooking": "Cancel booking",
+  "customerBookingDetailsLeaveFeedback": "Leave feedback",
+  "customerBookingDetailsBookAgain": "Book again",
+  "customerBookingDetailsComingSoon": "Coming soon",
+  "customerBookingDetailsActionsTitle": "What's next?",
+  "customerBookingDetailsArea": "Area",
+  "customerCancelBookingTitle": "Cancel booking",
+  "customerCancelBookingConfirmMessage": "Are you sure you want to cancel this booking?",
+  "customerCancelBookingReasonLabel": "Reason",
+  "customerCancelBookingReasonHint": "Reason optional",
+  "customerCancelBookingKeep": "Keep booking",
+  "customerCancelBookingConfirm": "Confirm cancellation",
+  "customerCancelBookingSuccess": "Booking cancelled successfully",
+  "customerCancelBookingCannotCancelOnline": "This booking cannot be cancelled online.",
+  "customerCancelBookingTooCloseToStart": "This booking is too close to the appointment time to cancel online. Please contact the salon.",
+  "customerCancelBookingReasonTooLong": "Reason cannot exceed 200 characters",
+  "customerRescheduleTitle": "Reschedule booking",
+  "customerRescheduleSubtitle": "Choose a new appointment time",
+  "customerRescheduleCurrentAppointment": "Current appointment",
+  "customerRescheduleNewAppointment": "New appointment",
+  "customerRescheduleConfirmTime": "Confirm new time",
+  "customerRescheduleSuccess": "Booking rescheduled successfully",
+  "customerRescheduleCannotOnline": "This booking cannot be rescheduled online.",
+  "customerRescheduleTooCloseToStart": "This booking is too close to the appointment time to reschedule online. Please contact the salon.",
+  "customerRescheduleNoSlots": "No available slots",
+  "customerRescheduleChooseAnotherDate": "Please choose another date",
+  "customerRescheduleStepLabel": "Reschedule",
+  "customerRescheduleProgressTitle": "New time",
+  "customerFeedbackTitle": "Leave feedback",
+  "customerFeedbackSubtitle": "Tell us about your appointment",
+  "customerFeedbackCommentHint": "Share your experience",
+  "customerFeedbackCommentLabel": "Comment",
+  "customerFeedbackRatingSection": "Your rating",
+  "customerFeedbackWouldComeAgain": "Would you come again?",
+  "customerFeedbackYes": "Yes",
+  "customerFeedbackNo": "No",
+  "customerFeedbackSubmit": "Submit feedback",
+  "customerFeedbackThankYouTitle": "Thank you for your feedback",
+  "customerFeedbackThankYouSubtitle": "We appreciate you taking the time.",
+  "customerFeedbackAlreadySubmittedTitle": "Feedback already submitted",
+  "customerFeedbackAlreadySubmittedSubtitle": "You can view this booking anytime from booking lookup.",
+  "customerFeedbackSubmittedBadge": "Feedback submitted",
+  "customerFeedbackBackToDetails": "Back to booking details",
+  "customerFeedbackRatingPoor": "Poor",
+  "customerFeedbackRatingFair": "Fair",
+  "customerFeedbackRatingGood": "Good",
+  "customerFeedbackRatingVeryGood": "Very good",
+  "customerFeedbackRatingExcellent": "Excellent",
+  "customerFeedbackRatingRequired": "Rating is required",
+  "customerFeedbackCommentTooLong": "Comment cannot exceed 500 characters",
+  "customerFeedbackOnlyCompleted": "Feedback can only be submitted for completed bookings.",
+  "customerFeedbackGenericError": "Something went wrong. Please try again.",
+  "customerSalonBadgeOpen": "Open",
+  "customerStatBookings": "Bookings",
+  "customerStatSalonsVisited": "Salons visited",
+  "customerStatUpcoming": "Upcoming",
+  "customerProfileEdit": "Edit",
+  "customerSettingsTileNotificationsSubtitle": "Booking alerts & reminders",
+  "customerSettingsTileBookingsSubtitle": "Upcoming and past visits",
+  "customerAppFooterVersion": "{appName} v{version}",
+  "@customerAppFooterVersion": {
+    "placeholders": {
+      "appName": {"type": "String"},
+      "version": {"type": "String"}
+    }
+  },
+  "customerProfileTitle": "Profile",
+  "ownerInsightsTitle": "Smart insights",
+  "ownerInsightsSubtitle": "Weekly highlights from sales and bookings (updates every Monday).",
+  "ownerInsightsEmpty": "Insights will appear after the weekly summary runs.",
+  "ownerInsightsError": "Could not load insights.",
+  "ownerRetentionTitle": "Customer retention",
+  "ownerRetentionSubtitle": "Based on completed visits and no-shows (salon timezone when set).",
+  "ownerRetentionEmpty": "Retention metrics will appear after the weekly job runs.",
+  "ownerRetentionMonthLabel": "{year}-{month}",
+  "@ownerRetentionMonthLabel": {
+    "placeholders": {
+      "year": {"type": "int"},
+      "month": {"type": "String"}
+    }
+  },
+  "ownerRetentionTimeZoneUsed": "Timezone: {tz}",
+  "@ownerRetentionTimeZoneUsed": {
+    "placeholders": {
+      "tz": {"type": "String"}
+    }
+  },
+  "ownerRetentionRepeatCustomers": "Repeat customers this month",
+  "ownerRetentionFirstTimeCustomers": "First-time customers this month",
+  "ownerRetentionDistinctThisMonth": "Customers with a completed visit (MTD)",
+  "ownerRetentionReturningThisMonth": "Returning customers (had a prior visit)",
+  "ownerRetentionRate": "Retention rate",
+  "ownerRetentionInactive30Days": "Customers with no visit in 30 days",
+  "ownerRetentionNoShowTrend": "No-show trend (local weeks)",
+  "ownerRetentionNoShowLastLocalWeek": "Last completed local week",
+  "ownerRetentionNoShowPreviousLocalWeek": "Previous local week",
+  "ownerRetentionNoShowDelta": "Change vs previous week",
+  "ownerRetentionDeltaFlat": "No change",
+  "ownerRetentionDeltaUp": "+{n}",
+  "@ownerRetentionDeltaUp": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "ownerRetentionDeltaDown": "−{n}",
+  "@ownerRetentionDeltaDown": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "onboardingLanguageTitle": "Language",
+  "onboardingLanguageSubtitle": "Choose your preferred language for the app.",
+  "onboardingLanguageEnglish": "English",
+  "onboardingLanguageArabic": "Arabic",
+  "onboardingContinue": "Continue",
+  "onboardingCountryTitle": "Country / region",
+  "onboardingCountrySubtitle": "Used for formats and future regional options.",
+  "preAuthLanguageTitle": "Choose your language",
+  "preAuthLanguageSubtitle": "Select the language you want to use in the app",
+  "preAuthLanguageEnglish": "English",
+  "preAuthLanguageArabic": "Arabic",
+  "preAuthContinue": "Continue",
+  "preAuthCountryTitle": "Choose your country",
+  "preAuthCountrySubtitle": "This helps us tailor the app experience",
+  "preAuthRoleTitle": "How would you like to use the app?",
+  "preAuthRoleSubtitle": "Choose the experience that fits you best",
+  "preAuthRoleCustomerTitle": "User",
+  "preAuthRoleCustomerSubtitle": "Customers sign in with email. Salon staff sign in with username.",
+  "preAuthRoleOwnerTitle": "Salon Owner",
+  "preAuthRoleOwnerSubtitle": "Manage your salon, team, bookings, and business",
+  "startupEntryTitle": "Welcome",
+  "startupEntrySubtitle": "Choose how you want to get started",
+  "startupBookOrAccessTitle": "Book or Access Services",
+  "startupBookOrAccessSubtitle": "Find salons, book visits, or continue with your team access",
+  "startupManageSalonTitle": "Manage My Salon",
+  "startupManageSalonSubtitle": "Owners sign in to run the business, team, and revenue",
+  "startupContinueAsUserTitle": "Continue as User",
+  "startupContinueAsUserSubtitle": "Book visits, explore salons, or sign in as staff",
+  "startupOwnSalonTitle": "I Own a Salon",
+  "startupOwnSalonSubtitle": "Manage your business, team, bookings, and revenue",
+  "userSelectionContinueTitle": "Choose how you want to continue",
+  "userSelectionContinueSubtitle": "Pick the path that matches you",
+  "userSelectionTitle": "How will you use the app?",
+  "userSelectionSubtitle": "Customers and salon staff use different sign-in methods",
+  "userSelectionCustomerTitle": "Continue as Customer",
+  "userSelectionCustomerSubtitle": "Browse salons and book appointments with email",
+  "userSelectionStaffTitle": "Continue as Staff",
+  "userSelectionStaffSubtitle": "Use the username your salon shared with you",
+  "customerProfileSetupTitle": "Your profile",
+  "customerProfileSetupSubtitle": "A quick step before you create your account",
+  "customerProfileSetupContinue": "Continue",
+  "customerProfileSetupNameLabel": "Full name",
+  "customerProfileSetupNameError": "Enter your name",
+  "customerProfileSetupPhoneLabel": "Phone (optional)",
+  "staffLoginHeadline": "Staff sign in",
+  "staffLoginSubtitle": "Sign in with the email and password your salon owner created for you, or your staff username.",
+  "staffLoginNoSignupHint": "Team accounts are created by your salon. Contact the owner if you need access.",
+  "preAuthSlideSalonTitle": "Discover Salons Near You",
+  "preAuthSlideSalonSubtitle": "Find top-rated salons and beauty experts near you — anytime, anywhere.",
+  "preAuthSlideBarberTitle": "Book in Seconds",
+  "preAuthSlideBarberSubtitle": "Choose your barber, pick a time, and confirm instantly.",
+  "preAuthSlideBookingTitle": "Stay in Control",
+  "preAuthSlideBookingSubtitle": "Manage bookings, save favorites, and enjoy a seamless experience.",
+  "preAuthNext": "Next",
+  "preAuthGetStarted": "Get Started",
+  "preAuthSkip": "Skip",
+  "authGateTitle": "Welcome",
+  "authGateSubtitle": "Sign in, create a customer account to book visits, or register a new salon.",
+  "authGateSignIn": "Sign in",
+  "authGateCreateAccount": "Create customer account",
+  "authGateCreateAccountSubtitle": "For booking appointments only. Salon owners use “Create salon” below.",
+  "authGateRegionSettings": "Language & region settings",
+  "appSettingsTitle": "App settings",
+  "appSettingsIntroBody": "Customize preferences and manage settings for your salon workflow.",
+  "appSettingsLanguageSubtitle": "Choose your preferred language",
+  "appSettingsCountrySubtitle": "Set your current operating region",
+  "appSettingsChangeAnytimeBanner": "You can change these anytime.",
+  "appSettingsMoreActionSubtitle": "App information, privacy and other options",
+  "signOutDialogTitle": "Sign out?",
+  "hrViolationsSummaryAwaitingApproval": "Awaiting approval",
+  "hrViolationsSummaryActiveRulesSubtitle": "Penalty rules enabled",
+  "hrViolationsSummaryStaffFlaggedTitle": "Staff flagged",
+  "hrViolationsEnabledChip": "Enabled",
+  "hrViolationsDisabledChip": "Disabled",
+  "hrViolationsLateRuleTitle": "Late arrival rule",
+  "hrViolationsNoShowRuleTitle": "No-show rule",
+  "hrViolationsGraceTimeLabel": "Grace time",
+  "hrViolationsPendingEmptyTitle": "No pending violation requests",
+  "hrViolationsPendingEmptyBody": "You're all caught up. Any violation requests will appear here.",
+  "hrViolationsAddRule": "Add rule",
+  "hrViolationsAddRuleComingSoon": "More rule types are coming soon.",
+  "hrViolationsToggleConfirmTitle": "Update penalty rule?",
+  "hrViolationsToggleConfirmBody": "This affects payroll and deductions for your team.",
+  "hrViolationsToggleConfirmAction": "Update",
+  "hrViolationsSummaryLoadError": "Unable to load HR summary.",
+  "appSettingsLanguageSection": "Language",
+  "appSettingsCountrySection": "Country / region",
+  "appSettingsCountryLabel": "Country",
+  "appSettingsCountryHint": "You can change these anytime here.",
+  "appSettingsAppearanceSection": "Appearance",
+  "appSettingsThemeLight": "Light",
+  "appSettingsThemeDark": "Dark",
+  "appSettingsThemeSystem": "System default",
+  "appSettingsMoreSectionTitle": "More",
+  "appSettingsMoreSectionBody": "Notification preferences and other options will expand here over time.",
+  "validationEmailRequired": "We need your email so we can sign you in securely.",
+  "validationEmailInvalid": "Use a valid email format, like name@salon.com.",
+  "validationPasswordRequired": "Choose a password to protect your account.",
+  "validationPasswordShort": "Use at least 8 characters.",
+  "validationPasswordMinSixChars": "Use at least 6 characters.",
+  "authSignupTitleCreateAccount": "Create Account",
+  "authSignupSubtitleGetStarted": "Sign up to get started",
+  "authSignupPrimaryCta": "Sign Up",
+  "authSignupPasswordHintMinSix": "At least 6 characters",
+  "registerHintPhone": "Your mobile number",
+  "registerHintCity": "Doha",
+  "validationPhoneRequired": "Add a phone number your team and clients can reach.",
+  "validationPhoneShort": "That number looks too short—include the full local or mobile number.",
+  "validationPhoneOptionalInvalid": "Enter a valid phone number or leave this field empty.",
+  "validationFieldRequired": "{fieldName} is required.",
+  "@validationFieldRequired": {
+    "placeholders": {
+      "fieldName": {"type": "String"}
+    }
+  },
+  "validationConfirmPasswordEmpty": "Re-enter your password so we know it was typed correctly.",
+  "validationConfirmPasswordMismatch": "Those passwords do not match. Try again.",
+  "validationUserLoginIdentifierRequired": "Enter your email or username.",
+  "validationStaffUsernameRequired": "Username is required.",
+  "validationStaffUsernameInvalid": "Use 4–20 characters: lowercase letters, numbers, underscore, or dot only.",
+  "fieldLabelName": "Name",
+  "fieldLabelFullName": "Full name",
+  "fieldLabelEmail": "Email",
+  "fieldLabelEmailOrUsername": "Email or username",
+  "fieldLabelPassword": "Password",
+  "fieldLabelConfirmPassword": "Confirm password",
+  "fieldLabelSalonName": "Salon name",
+  "fieldLabelPhone": "Phone",
+  "fieldLabelAddress": "Address",
+  "authCommonBack": "Back",
+  "authCommonSettings": "Settings",
+  "authGateCreateSalon": "Create salon",
+  "authGateCreateSalonSubtitle": "Register as a salon owner, then set up your workspace. If you already have an account, sign in.",
+  "loginEyebrow": "Sign in",
+  "loginTitle": "Welcome back.",
+  "loginDescription": "Book appointments as a customer or run your business as a salon owner. Team accounts sign in here too.",
+  "loginSectionEmailPassword": "Email & password",
+  "loginSectionSubtitle": "Owners and customers use the same login. Your dashboard depends on your role.",
+  "loginHintIdentifier": "you@example.com or salon.username",
+  "loginSignInButton": "Sign in",
+  "loginFooterCreateAccount": "New here? Create an account",
+  "loginTeamHint": "Barber and admin accounts are created by your salon owner. Sign in with the username they gave you.",
+  "registerEyebrow": "Create account",
+  "registerTitle": "Join the platform.",
+  "registerDescription": "After you register, you will choose customer or salon owner. Barber and admin accounts are created by the salon owner—use sign in instead.",
+  "registerCustomerTitle": "Create your customer account.",
+  "registerCustomerDescription": "Book visits, see your history, and manage your profile. Barber and admin accounts are created by the salon owner—use sign in instead.",
+  "registerSalonOwnerTitle": "Register as a salon owner.",
+  "registerSalonOwnerDescription": "Next, you will add your salon details. If you already have an account, go back and sign in.",
+  "registerSalonOwnerStepLabel": "Account — step 1 of 2",
+  "registerStepLabel": "Account — step 1 of 3",
+  "registerSectionYourDetails": "Your details",
+  "registerSectionProfileHint": "We store your profile in Firestore under your Firebase Auth account.",
+  "registerContinueButton": "Continue",
+  "registerFooterSignIn": "Already have an account? Sign in",
+  "registerOwnerIntentBanner": "Next, choose “Salon owner” to create your salon.",
+  "registerHintFullName": "Alex Rivera",
+  "registerHintEmail": "you@example.com",
+  "registerHintPassword": "Minimum 8 characters",
+  "registerHintConfirmPassword": "Repeat your password",
+  "createSalonEyebrow": "Salon setup",
+  "createSalonTitle": "Create the salon your team will work inside.",
+  "createSalonDescription": "Add the core business details now. This salon record becomes the foundation for staff, attendance, payroll, and bookings later.",
+  "createSalonStepLabel": "Salon setup — step 2 of 2",
+  "createSalonFooterDifferentAccount": "Use a different account",
+  "createSalonSectionTitle": "Salon details",
+  "createSalonSectionSubtitle": "Finish your salon profile to open the owner dashboard and invite your team.",
+  "createSalonOwnerFallback": "Owner account",
+  "createSalonButton": "Create salon",
+  "createSalonPhoneTip": "Spaces, dashes, and parentheses are fine—we normalize the number when you save.",
+  "createSalonHintSalonName": "Golden Chair Barber Studio",
+  "createSalonHintPhone": "+962 7X XXX XXXX",
+  "createSalonHintAddress": "Amman, Abdoun, Main Street 12",
+  "roleEyebrow": "Choose path",
+  "roleTitle": "How will you use the app?",
+  "roleDescription": "Customers book and manage visits. Owners set up their salon workspace. Barber and admin accounts are issued by the salon owner.",
+  "roleStepLabel": "Role — step 2 of 2",
+  "roleSectionPrompt": "I am…",
+  "roleCustomerTitle": "A customer",
+  "roleCustomerSubtitle": "Book services, see history, manage your profile.",
+  "roleOwnerTitle": "A salon owner",
+  "roleOwnerSubtitle": "Create your salon, invite staff, run operations.",
+  "roleSignOut": "Sign out",
+  "socialAuthOr": "OR",
+  "socialAuthContinueTitle": "Continue with",
+  "socialAuthGoogle": "Google",
+  "socialAuthApple": "Apple",
+  "socialAuthFacebook": "Facebook",
+  "passwordStrengthHintWeak": "Add length and mix letters or numbers.",
+  "passwordStrengthHintOk": "Good start—consider a longer phrase.",
+  "passwordStrengthHintStrong": "Strong for this app’s minimum.",
+  "passwordStrengthHintExcellent": "Excellent—hard to guess.",
+  "passwordStrengthSemanticLabel": "Password strength: {level}",
+  "@passwordStrengthSemanticLabel": {
+    "placeholders": {
+      "level": {"type": "String"}
+    }
+  },
+  "accessibilityShowPassword": "Show password",
+  "accessibilityHidePassword": "Hide password",
+  "loginHintEmail": "you@example.com",
+  "loginHintPassword": "Your password",
+  "validationCountryRequired": "Choose your country so we can format your phone number correctly.",
+  "validationBusinessTypeRequired": "Select what kind of salon you run.",
+  "fieldLabelCountry": "Country",
+  "fieldLabelCity": "City",
+  "fieldLabelStreet": "Street",
+  "fieldLabelBuildingUnit": "Building / unit number",
+  "fieldLabelPostalCode": "Postal code (optional)",
+  "fieldLabelSalonPhoneOptional": "Salon phone (optional)",
+  "fieldLabelBusinessType": "Business type",
+  "businessTypeBarber": "Barber shop",
+  "businessTypeWomenSalon": "Women’s salon",
+  "businessTypeUnisex": "Unisex",
+  "onboardingSearchCountryHint": "Search country or code",
+  "onboardingCountryPopularSection": "Popular countries",
+  "onboardingCountryAllSection": "All countries",
+  "customerSignupEyebrow": "Customer",
+  "customerSignupTitle": "Create your customer account",
+  "customerSignupDescription": "We’ll save your profile securely so you can book and manage visits.",
+  "customerSignupAddressHint": "Helps salons recognize you and send booking updates.",
+  "customerSignupSubmit": "Create account",
+  "salonOwnerSignupEyebrow": "Salon owner",
+  "salonOwnerSignupTitle": "Owner account — step 1 of 2",
+  "salonOwnerSignupDescription": "Next you’ll add your salon’s location and business type.",
+  "salonOwnerSignupSubmit": "Continue to salon details",
+  "onboardingMobileNationalHint": "Local number without country code",
+  "createSalonBusinessTypeSection": "Business type",
+  "createSalonLocationSection": "Location",
+  "createSalonContactSection": "Contact (optional)",
+  "createSalonProfileSyncTimeout": "Your salon was saved but we could not confirm your profile yet. Check your connection, then pull to refresh or sign out and back in.",
+  "accountProfileBootstrapEyebrow": "Account recovery",
+  "accountProfileBootstrapTitleMissing": "Finish setting up your profile",
+  "accountProfileBootstrapDescriptionMissing": "We could not load your saved profile. Choose how you use the app to create your user record, or sign in with a different account if this one is new.",
+  "accountProfileBootstrapTitleStaff": "Team profile incomplete",
+  "accountProfileBootstrapDescriptionStaff": "Your account is missing salon linkage (salon or staff ID). This usually means the profile was not finished or data was removed. Sign out and ask your salon owner to re-send your team invite, or use a different account.",
+  "accountProfileBootstrapContinueCustomer": "I book appointments as a customer",
+  "accountProfileBootstrapContinueOwner": "I run a salon (owner)",
+  "accountProfileBootstrapCreateProfile": "Create my profile",
+  "accountProfileBootstrapChoosePath": "Choose one to continue:",
+  "accountProfileBootstrapFooterDifferentAccount": "Use a different account",
+  "accountProfileBootstrapErrorNoAuthUser": "No signed-in user. Please sign in again.",
+  "accountProfileBootstrapErrorGeneric": "Could not save your profile. Try again.",
+  "ownerStaffInviteSuccessTitle": "Team member added",
+  "ownerStaffInviteSuccessBody": "{name} can sign in with this email and a temporary password. Ask them to change their password after logging in.\n\nEmail:\n{email}\n\nTemporary password:\n{password}",
+  "@ownerStaffInviteSuccessBody": {
+    "placeholders": {
+      "name": {"type": "String"},
+      "email": {"type": "String"},
+      "password": {"type": "String"}
+    }
+  },
+  "ownerStaffInviteOk": "Done",
+  "staffInviteErrorEmailTaken": "This username is already taken or the account already exists",
+  "staffInviteErrorPermission": "Only owners and admins can create staff accounts",
+  "staffInviteErrorNetwork": "Network error. Check your connection and try again.",
+  "staffInviteErrorInvalidArgs": "Some information looks invalid. Check the form and try again.",
+  "staffInviteErrorGeneric": "Unable to create barber account. Please try again.",
+  "ownerHeaderGreeting": "Hi, {name}",
+  "@ownerHeaderGreeting": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "ownerOverviewGreetingMorning": "Good morning",
+  "ownerOverviewGreetingAfternoon": "Good afternoon",
+  "ownerOverviewGreetingEvening": "Good evening",
+  "ownerOverviewHeroSearchHint": "Search team, revenue, and requests",
+  "ownerOverviewRevenueMonthLabel": "Revenue this month",
+  "ownerOverviewRevenueMonthHintEmpty": "No sales recorded yet.",
+  "ownerOverviewRevenueThisWeekTitle": "Revenue this week",
+  "ownerOverviewRevenueThisWeekSubtitle": "Revenue trend for the current week",
+  "ownerOverviewRevenueThisWeekEmpty": "No revenue yet this week",
+  "ownerOverviewRevenueThisWeekTotal": "Week total: {amount}",
+  "@ownerOverviewRevenueThisWeekTotal": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerOverviewKpiPendingRequests": "Pending requests",
+  "ownerOverviewDashboardTagline": "Track revenue, team, and bookings in one place.",
+  "ownerOverviewTodayInsightTitle": "Today’s insight",
+  "ownerOverviewTodayInsightNoActivity": "No activity yet today. Start by adding a sale or booking.",
+  "ownerOverviewTodayInsightRevenue": "You’re doing well today. Revenue is {amount}.",
+  "@ownerOverviewTodayInsightRevenue": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerOverviewTodayInsightBookings": "{count, plural, one{You have 1 booking today. Turn it into a smooth visit.} other{You have {count} bookings today. Keep the calendar moving.}}",
+  "@ownerOverviewTodayInsightBookings": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewTodayInsightPendingRequests": "{count, plural, one{1 request needs review.} other{{count} requests need review.}}",
+  "@ownerOverviewTodayInsightPendingRequests": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewRecentServicesTitle": "Recent services",
+  "ownerOverviewRecentServicesEmpty": "No active services yet.",
+  "ownerOverviewPerformanceNoData": "No data yet",
+  "ownerOverviewBestServiceSubtitle": "{count, plural, one{Best service this week · 1 sale} other{Best service this week · {count} sales}}",
+  "@ownerOverviewBestServiceSubtitle": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewBestBarberSubtitle": "Best barber today · {amount}",
+  "@ownerOverviewBestBarberSubtitle": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerOverviewRecentActivityTitle": "Recent activity",
+  "ownerOverviewRecentActivityEmpty": "No recent activity yet",
+  "ownerOverviewLatestSaleSubtitle": "Last sale: {service} · {amount}",
+  "@ownerOverviewLatestSaleSubtitle": {
+    "placeholders": {
+      "service": {"type": "String"},
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerOverviewLatestSaleFallbackService": "Sale",
+  "ownerOverviewViewTeam": "View team",
+  "ownerOverviewSmartCardServiceTitle": "Add your first service",
+  "ownerOverviewSmartCardServiceSubtitle": "Customers need a menu to book.",
+  "ownerOverviewSmartCardBarberTitle": "Add your first barber",
+  "ownerOverviewSmartCardBarberSubtitle": "Staff appear on the floor and in payroll.",
+  "ownerOverviewSmartCardBookingTitle": "Create your first booking",
+  "ownerOverviewSmartCardBookingSubtitle": "Fill the calendar and track revenue.",
+  "ownerOverviewRevenueTodayLine": "Today: {amount}",
+  "@ownerOverviewRevenueTodayLine": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerOverviewRevenueDeltaUp": "{percent} vs last month",
+  "@ownerOverviewRevenueDeltaUp": {
+    "placeholders": {
+      "percent": {"type": "String"}
+    }
+  },
+  "ownerOverviewRevenueDeltaDown": "{percent} vs last month",
+  "@ownerOverviewRevenueDeltaDown": {
+    "placeholders": {
+      "percent": {"type": "String"}
+    }
+  },
+  "ownerOverviewStatRevenueToday": "Revenue today",
+  "ownerOverviewStatBookingsToday": "Bookings today",
+  "ownerOverviewStatCompletedToday": "Completed today",
+  "ownerOverviewStatCheckedIn": "Checked in",
+  "ownerOverviewQuickActionsTitle": "Quick actions",
+  "ownerOverviewQuickAddSale": "Add sale",
+  "ownerOverviewQuickAddExpense": "Add expense",
+  "ownerOverviewNeedsAttentionTitle": "Needs review",
+  "ownerOverviewNeedsAttentionNone": "All clear. Nothing urgent right now.",
+  "ownerOverviewFabLabel": "Quick add",
+  "ownerOverviewRunPayroll": "Run payroll",
+  "ownerOverviewSmartSuggestionsTitle": "Smart suggestions",
+  "ownerOverviewSmartSuggestionsSubtitle": "Start with the essentials so bookings and payouts stay accurate.",
+  "ownerOverviewSmartAddBarber": "Add Team Member",
+  "ownerOverviewSmartAddService": "Add service",
+  "ownerOverviewSmartCreateBooking": "Create booking",
+  "ownerOverviewStatDeltaSameAsYesterday": "Same as yesterday",
+  "ownerOverviewStatDeltaVsYesterday": "{amount} vs yesterday",
+  "@ownerOverviewStatDeltaVsYesterday": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerOverviewKpiBadgeLive": "Live",
+  "ownerOverviewKpiBadgeQuiet": "Quiet",
+  "ownerOverviewKpiBadgeBusy": "Busy",
+  "ownerOverviewKpiBadgeDone": "Done",
+  "ownerOverviewKpiBadgeNone": "None",
+  "ownerOverviewKpiBadgeOnFloor": "On floor",
+  "ownerOverviewRevenueLastMonthTotal": "Last month: {amount}",
+  "@ownerOverviewRevenueLastMonthTotal": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerOverviewRevenueNoPriorMonthCompare": "No completed sales last month to compare",
+  "ownerOverviewRevenueDeltaFlatVsLastMonth": "Flat vs last month",
+  "ownerOverviewAttentionPendingBookings": "{count, plural, one{1 booking awaiting confirmation} other{{count} bookings awaiting confirmation}}",
+  "@ownerOverviewAttentionPendingBookings": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewAttentionPendingApprovals": "{count, plural, one{1 attendance request to review} other{{count} attendance requests to review}}",
+  "@ownerOverviewAttentionPendingApprovals": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewAttentionPayrollPending": "Payroll hasn't been run for this month yet.",
+  "ownerOverviewAttentionNoServices": "Add at least one service so customers can book.",
+  "ownerOverviewReview": "Review",
+  "ownerOverviewSeeAll": "See all",
+  "ownerOverviewTeamCardTitle": "Team",
+  "ownerOverviewTeamCardSubtitle": "{active} active · {checkedIn} checked in today",
+  "@ownerOverviewTeamCardSubtitle": {
+    "placeholders": {
+      "active": {"type": "int"},
+      "checkedIn": {"type": "int"}
+    }
+  },
+  "ownerOverviewTeamCardTopBarber": "Top team member today: {name}",
+  "@ownerOverviewTeamCardTopBarber": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "ownerOverviewTeamCardInactive": "{count, plural, one{1 inactive member} other{{count} inactive members}}",
+  "@ownerOverviewTeamCardInactive": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewServicesCardTitle": "Services",
+  "ownerOverviewServicesCardSubtitle": "{count, plural, =0{No active services yet} one{1 active service} other{{count} active services}}",
+  "@ownerOverviewServicesCardSubtitle": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewServicesAveragePrice": "Average price: {amount}",
+  "@ownerOverviewServicesAveragePrice": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerOverviewServicesTopToday": "Top today: {name}",
+  "@ownerOverviewServicesTopToday": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "ownerOverviewServicesTopMonth": "Most booked this month: {name}",
+  "@ownerOverviewServicesTopMonth": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "commonCancel": "Cancel",
+  "commonRetry": "Retry",
+  "ownerOverviewAttentionInactiveEmployees": "{count, plural, one{1 inactive team member to review} other{{count} inactive team members to review}}",
+  "@ownerOverviewAttentionInactiveEmployees": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewInsightsTitle": "Insights",
+  "ownerOverviewInsightRevenueUp": "Revenue is up {percent} vs last month.",
+  "@ownerOverviewInsightRevenueUp": {
+    "placeholders": {
+      "percent": {"type": "String"}
+    }
+  },
+  "ownerOverviewInsightRevenueDown": "Revenue is down {percent} vs last month.",
+  "@ownerOverviewInsightRevenueDown": {
+    "placeholders": {
+      "percent": {"type": "String"}
+    }
+  },
+  "ownerOverviewInsightRevenueFlat": "Revenue is flat vs last month.",
+  "ownerOverviewInsightRevenueFresh": "New revenue this month — nothing to compare yet.",
+  "ownerOverviewInsightTopBarberContribution": "{name} generated {percent} of today's revenue.",
+  "@ownerOverviewInsightTopBarberContribution": {
+    "placeholders": {
+      "name": {"type": "String"},
+      "percent": {"type": "String"}
+    }
+  },
+  "ownerOverviewInsightTopBarberEmpty": "No team member activity yet today.",
+  "ownerOverviewInsightPopularService": "{name} is the most popular service this month.",
+  "@ownerOverviewInsightPopularService": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "ownerOverviewAddExpenseTitle": "Add expense",
+  "ownerOverviewAddExpenseSubtitle": "Record a salon expense in seconds.",
+  "ownerOverviewAddExpenseTitleField": "Title",
+  "ownerOverviewAddExpenseCategoryField": "Category",
+  "ownerOverviewAddExpenseAmountField": "Amount",
+  "ownerOverviewAddExpenseVendorField": "Vendor (optional)",
+  "ownerOverviewAddExpenseNotesField": "Notes (optional)",
+  "ownerOverviewAddExpenseSubmit": "Save expense",
+  "ownerOverviewAddExpenseDateField": "Date",
+  "ownerOverviewAddExpenseSuggestedCategories": "Suggested categories",
+  "ownerOverviewAddExpenseValidationError": "Please fill title, category, and a positive amount.",
+  "ownerOverviewExpenseCreated": "Expense recorded",
+  "ownerOverviewSummaryEarnedFromSales": "Today you earned {amount} from {count, plural, one{1 completed sale} other{{count} completed sales}}.",
+  "@ownerOverviewSummaryEarnedFromSales": {
+    "placeholders": {
+      "amount": {"type": "String"},
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewSummaryEarnedOnly": "Today you earned {amount}.",
+  "@ownerOverviewSummaryEarnedOnly": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "ownerOverviewSummaryNoSalesToday": "No completed sales yet today.",
+  "ownerOverviewSummaryPendingSegment": "{count, plural, =0{No bookings pending} one{1 booking pending} other{{count} bookings pending}}",
+  "@ownerOverviewSummaryPendingSegment": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewSummaryBarbersCheckedInSegment": "{count, plural, =0{No team members checked in} one{1 team member checked in} other{{count} team members checked in}}",
+  "@ownerOverviewSummaryBarbersCheckedInSegment": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewSummaryPayrollPendingSegment": "Payroll pending",
+  "ownerOverviewEmptyBookingsTodayTitle": "No bookings today.",
+  "ownerOverviewEmptyCompletedTodayTitle": "No services completed yet today.",
+  "ownerOverviewEmptyCheckedInTitle": "No one has checked in yet.",
+  "ownerOverviewTeamMarkAttendance": "Mark attendance",
+  "ownerOverviewTeamActiveBarbersLabel": "{count, plural, =0{No team members yet} one{1 active team member} other{{count} active team members}}",
+  "@ownerOverviewTeamActiveBarbersLabel": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewTeamCheckedInShort": "{count} checked in",
+  "@ownerOverviewTeamCheckedInShort": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewTeamEmptyTitle": "No team members added yet.",
+  "ownerOverviewTeamEmptyBody": "Add your first team member to start tracking attendance and sales.",
+  "ownerOverviewTeamStatusCheckedIn": "Checked in",
+  "ownerOverviewTeamStatusNotCheckedIn": "Not checked in",
+  "ownerOverviewTeamStatusOnService": "On service",
+  "ownerOverviewTeamStatusLate": "Late",
+  "ownerOverviewInsightTopServiceWeek": "{name} is the top service this week.",
+  "@ownerOverviewInsightTopServiceWeek": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "ownerOverviewInsightBookingsUp": "Bookings are up {percent} compared with yesterday.",
+  "@ownerOverviewInsightBookingsUp": {
+    "placeholders": {
+      "percent": {"type": "String"}
+    }
+  },
+  "ownerOverviewInsightBookingsDown": "Bookings are down {percent} compared with yesterday.",
+  "@ownerOverviewInsightBookingsDown": {
+    "placeholders": {
+      "percent": {"type": "String"}
+    }
+  },
+  "ownerOverviewInsightNoBookingsToday": "No bookings today — quieter than yesterday.",
+  "ownerOverviewInsightsGrowing": "Insights will appear as your salon activity grows.",
+  "ownerOverviewAttentionBarbersNotCheckedIn": "{count, plural, one{1 team member has not checked in} other{{count} team members have not checked in}}",
+  "@ownerOverviewAttentionBarbersNotCheckedIn": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "ownerOverviewFabSheetTitle": "Quick actions",
+  "attendanceReviewTitle": "Attendance requests",
+  "attendanceReviewEmptyTitle": "No pending attendance requests",
+  "attendanceReviewEmptyMessage": "Everything is up to date.",
+  "attendanceReviewErrorTitle": "Could not load requests",
+  "attendanceReviewStatusPending": "Pending",
+  "attendanceReviewApprove": "Approve",
+  "attendanceReviewReject": "Reject",
+  "attendanceReviewRejectDialogTitle": "Add a rejection note",
+  "attendanceReviewRejectDialogHint": "Optional — helps the employee understand.",
+  "attendanceReviewRejectConfirm": "Reject",
+  "attendanceReviewCheckInAt": "Checked in at {time}",
+  "@attendanceReviewCheckInAt": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "attendanceReviewCheckOutAt": "Checked out at {time}",
+  "@attendanceReviewCheckOutAt": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "attendanceReviewSubmittedAt": "Submitted at {time}",
+  "@attendanceReviewSubmittedAt": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "attendanceReviewUnknownEmployee": "Unknown team member",
+  "attendanceReviewTypePresent": "Attendance correction",
+  "attendanceReviewTypeAbsent": "Absence request",
+  "attendanceReviewTypeLeave": "Leave request",
+  "attendanceReviewTypeGeneric": "Attendance request",
+  "attendanceReviewApprovedSnackbar": "Attendance approved",
+  "attendanceReviewRejectedSnackbar": "Attendance rejected",
+  "attendanceReviewErrorSnackbar": "Could not update: {message}",
+  "@attendanceReviewErrorSnackbar": {
+    "placeholders": {
+      "message": {"type": "String"}
+    }
+  },
+  "teamManagementTitle": "Team",
+  "teamManagementSubtitle": "Manage your team members and admins",
+  "teamSummaryTotalBarbers": "Total team members",
+  "teamSummaryCheckedInToday": "Checked in today",
+  "teamSummarySalesToday": "Sales today",
+  "teamSummaryCommissionToday": "Commission today",
+  "teamSummaryTotalMembers": "Total Members",
+  "teamSummaryTotalMembersHelper": "Team roster",
+  "teamSummaryWorkingNow": "Working Now",
+  "teamSummaryWorkingNowHelper": "{count, plural, =0{No members yet} one{of 1 member} other{of {count} members}}",
+  "@teamSummaryWorkingNowHelper": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "teamSummaryAbsentToday": "Absent Today",
+  "teamSummaryAbsentTodayHelper": "Needs follow-up",
+  "teamSummaryRevenueToday": "Revenue Today",
+  "teamSummaryRevenueTodayHelper": "Live sales",
+  "teamAnalyticsAction": "Team analytics",
+  "teamAnalyticsComingSoon": "Team analytics will be available soon.",
+  "teamAnalyticsActiveInactiveLabel": "Active / Inactive",
+  "teamAnalyticsTopPerformerLabel": "Top performer",
+  "teamGuideDescription": "Team members help you run attendance, services, sales, commissions, and payroll in one place.",
+  "teamFilterAll": "All",
+  "teamFilterActive": "Active",
+  "teamFilterCheckedIn": "Checked in",
+  "teamFilterWorking": "Working",
+  "teamFilterInactive": "Inactive",
+  "teamFilterTopSellers": "Top sellers",
+  "teamFilterTopPerformers": "Top Performers",
+  "teamFilterNeedsAttention": "Needs attention",
+  "teamAddBarberAction": "Add Team Member",
+  "teamSearchHint": "Search by name, phone or username...",
+  "teamFilterAction": "Filter team",
+  "teamEmptyTitle": "No team members yet",
+  "teamEmptySubtitle": "Add your first team member to start tracking attendance, sales, and payroll.",
+  "teamEmptyBuildTitle": "Build your team",
+  "teamEmptyBuildSubtitle": "Add your first team member or admin to start tracking attendance, sales, commissions, and payroll.",
+  "teamEmptyNoMatchTitle": "No matching team member",
+  "teamEmptyNoMatchSubtitle": "We couldn't find anyone matching \"{query}\". Try another name, phone, employee number, or role.",
+  "@teamEmptyNoMatchSubtitle": {
+    "placeholders": {
+      "query": {"type": "String"}
+    }
+  },
+  "teamEmptyNoFilterResultTitle": "No {filter} team members found",
+  "@teamEmptyNoFilterResultTitle": {
+    "placeholders": {
+      "filter": {"type": "String"}
+    }
+  },
+  "teamEmptyNoFilterResultSubtitle": "No team members are currently in {filter}. Clear filters or choose a different status.",
+  "@teamEmptyNoFilterResultSubtitle": {
+    "placeholders": {
+      "filter": {"type": "String"}
+    }
+  },
+  "teamEmptyPrimaryClearSearch": "Clear Search",
+  "teamEmptyPrimaryAddMember": "Add Team Member",
+  "teamEmptySecondaryAddMember": "Add Team Member",
+  "teamEmptySecondaryLearnHow": "Learn how team works",
+  "teamLoadErrorTitle": "Could not load team",
+  "teamStatusActive": "Active",
+  "teamStatusCheckedIn": "Checked in",
+  "teamStatusLate": "Late",
+  "teamStatusInactive": "Inactive",
+  "teamMemberMoreActions": "More actions",
+  "teamMemberViewProfileAction": "View profile",
+  "teamMemberEditAction": "Edit member",
+  "teamMemberAttendanceAction": "Attendance",
+  "teamMemberPayrollAction": "Payroll",
+  "teamMemberDeactivateAction": "Deactivate",
+  "teamMemberActivateAction": "Activate",
+  "teamMemberResetPasswordPlaceholder": "Reset password later",
+  "teamMemberSalesToday": "Sales today",
+  "teamMemberServicesToday": "Services today",
+  "teamMemberServicesShort": "Services",
+  "teamMemberRevenueToday": "Revenue",
+  "teamMemberPerformance": "Performance",
+  "teamMemberPerformancePercent": "{percent}%",
+  "@teamMemberPerformancePercent": {
+    "placeholders": {
+      "percent": {"type": "int"}
+    }
+  },
+  "teamMemberCommissionToday": "Commission today",
+  "employeeDashboardFirestorePermissionBanner": "Unable to load your attendance. Please ask your admin to deploy the latest permissions.",
+  "employeeDashboardAttendanceNotStartedYet": "Not started yet",
+  "teamMemberNoAttendanceToday": "No attendance yet today",
+  "teamMemberNotCheckedIn": "Not checked in",
+  "teamMemberInactiveStatus": "Inactive",
+  "teamMemberLateAt": "Late · {time}",
+  "@teamMemberLateAt": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "teamMemberCheckedOutAt": "Checked out at {time}",
+  "@teamMemberCheckedOutAt": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "teamMemberCheckedInAt": "Checked in at {time}",
+  "@teamMemberCheckedInAt": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "teamMemberAddSaleAction": "Add sale",
+  "teamMemberMarkAttendanceAction": "Mark attendance",
+  "teamMemberViewDetailsAction": "View details",
+  "teamFieldFullName": "Full name",
+  "teamFieldEmail": "Email",
+  "teamFieldUsername": "Username",
+  "teamFieldPhone": "Phone",
+  "teamFieldRole": "Role",
+  "teamRoleRequired": "Choose a role.",
+  "teamCommissionValueRequired": "Enter a commission value.",
+  "teamCommissionValueInvalid": "Enter a valid commission value.",
+  "teamCommissionValueNegative": "Commission cannot be negative.",
+  "teamSaveErrorGeneric": "Could not save team member details.",
+  "teamAddBarberSuccess": "{name} was added to the team.",
+  "@teamAddBarberSuccess": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "teamEditBarberSuccess": "{name} was updated.",
+  "@teamEditBarberSuccess": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "teamAddBarberSheetTitle": "Add Team Member",
+  "teamEditBarberSheetTitle": "Edit team member",
+  "teamAddBarberSheetSubtitle": "Set the basics now and keep the profile ready for attendance, sales, payroll, and future booking.",
+  "teamPhotoPickerTitle": "Profile Photo",
+  "teamPhotoActionTake": "Take photo",
+  "teamPhotoActionGallery": "Choose from gallery",
+  "teamPhotoActionRemove": "Remove photo",
+  "teamPhotoActionCancel": "Cancel",
+  "teamRolePickerTitle": "Choose role",
+  "teamRolePickerSubtitle": "Select what this team member can access in the salon.",
+  "teamRolePickerBarberTitle": "Team member",
+  "teamRolePickerBarberSubtitle": "Can record services, view own attendance, sales, and payslips.",
+  "teamRolePickerBarberBadge": "Service staff",
+  "teamRolePickerAdminTitle": "Admin",
+  "teamRolePickerAdminSubtitle": "Can manage daily operations based on permissions set by the owner.",
+  "teamRolePickerAdminBadge": "Management",
+  "teamCommissionPickerTitle": "Commission type",
+  "teamCommissionPickerSubtitle": "Choose how this team member earns commission.",
+  "teamCommissionPickerPercentageTitle": "Percentage only",
+  "teamCommissionPickerPercentageSubtitle": "Commission is calculated as a percentage of sales.",
+  "teamCommissionPickerFixedTitle": "Fixed amount only",
+  "teamCommissionPickerFixedSubtitle": "Team member earns a fixed amount per service or period.",
+  "teamCommissionPickerMixedTitle": "Percentage + fixed amount",
+  "teamCommissionPickerMixedSubtitle": "Combine percentage commission with a fixed amount.",
+  "addBarberSheetHeroSubtitle": "Create a new team member account and set up their basic details.",
+  "addBarberSectionLoginPassword": "Login & password",
+  "addBarberSectionCommissionWork": "Commission & work settings",
+  "addBarberProfilePhotoTitle": "Profile photo",
+  "addBarberProfilePhotoCaption": "Add a clear team member photo",
+  "addBarberProfilePhotoButton": "Add photo",
+  "addBarberProfilePhotoAfterCreateSnack": "You can add a profile photo after the account is created from the team member profile.",
+  "addBarberMainTitle": "Team member account details",
+  "addBarberMainSubtitle": "Create a login for the team member and set a temporary starting password",
+  "addBarberSectionPersonalDetails": "Personal details",
+  "addBarberSectionAccountAccess": "Account access",
+  "addBarberFieldFullName": "Full name",
+  "addBarberFieldEmailAddress": "Email address",
+  "addBarberFieldUsername": "Username",
+  "addBarberFieldPhoneNumber": "Phone number",
+  "addBarberFieldRole": "Role",
+  "addBarberFieldPassword": "Password",
+  "addBarberFieldConfirmPassword": "Confirm password",
+  "addBarberPlaceholderFullName": "Enter full name",
+  "addBarberPlaceholderEmail": "Enter email address",
+  "addBarberHelperEmailLogin": "This email is used to sign in with their password. They can also use their username on the User login screen.",
+  "addBarberPlaceholderUsername": "e.g. jane.doe",
+  "addBarberPlaceholderPhone": "Enter phone number",
+  "addBarberPlaceholderPassword": "Enter password",
+  "addBarberPlaceholderConfirmPassword": "Re-enter password",
+  "addBarberHelperPasswordShared": "Password will be shared with the team member by the salon owner",
+  "addBarberHelperMustChangePassword": "Team member will be asked to change the password on first login",
+  "addBarberPasswordRulesHint": "Use at least 8 characters, including upper and lower case letters and a number",
+  "addBarberValidationFullNameRequired": "Full name is required",
+  "addBarberValidationEmailRequired": "Email address is required",
+  "addBarberValidationEmailInvalid": "Enter a valid email address",
+  "addBarberValidationEmailInternalNotAllowed": "Use the team member's own email address, not an internal staff address.",
+  "addBarberValidationPasswordRequired": "Password is required",
+  "addBarberValidationConfirmPasswordRequired": "Confirm password is required",
+  "addBarberValidationPasswordMinLength": "Password must be at least 8 characters",
+  "addBarberValidationPasswordComplexity": "Password must include uppercase, lowercase, and a number",
+  "addBarberValidationPasswordsMismatch": "Passwords do not match",
+  "addBarberButtonCreate": "Create Team Member",
+  "addBarberButtonCreating": "Creating team member...",
+  "addBarberSuccessMessage": "Team member has been created successfully",
+  "addBarberSuccessSubtext": "Ask them to sign in on the User screen with this email or their username and the password you set, then change it on first login if required",
+  "addBarberRequirePasswordChangeOnFirstLogin": "Require password change on first login",
+  "addBarberChecklistMinLength": "At least 8 characters",
+  "addBarberChecklistUppercase": "Contains uppercase letter",
+  "addBarberChecklistLowercase": "Contains lowercase letter",
+  "addBarberChecklistDigit": "Contains a number",
+  "addBarberChecklistPasswordsMatch": "Passwords match",
+  "teamFieldCommissionType": "Commission type",
+  "teamCommissionTypePercentage": "Percentage only",
+  "teamCommissionTypeFixed": "Fixed amount only",
+  "teamCommissionTypePercentagePlusFixed": "Percentage + fixed amount",
+  "teamFieldCommissionPercentagePercent": "Commission rate (%)",
+  "teamFieldCommissionFixedSar": "Fixed amount (SAR)",
+  "teamCommissionPercentInputHint": "Enter a rate like 2, 10, or 25",
+  "teamCommissionHelperPercentage": "The rate applies to total sales and services.",
+  "teamCommissionHelperFixed": "A fixed amount is added to the team member's commission.",
+  "teamCommissionHelperPercentagePlusFixed": "Combines a sales-based rate with a fixed amount.",
+  "teamCommissionPreviewLabel": "Estimated commission",
+  "teamCommissionPreviewDisclaimer": "This value is for preview only",
+  "teamCommissionPreviewSampleNote": "Illustrative example only — not saved payroll",
+  "teamCommissionPreviewEquationPercent": "{sales} × {percent} = {result}",
+  "@teamCommissionPreviewEquationPercent": {
+    "placeholders": {
+      "sales": {"type": "String"},
+      "percent": {"type": "String"},
+      "result": {"type": "String"}
+    }
+  },
+  "teamCommissionPreviewEquationFixed": "{result}",
+  "@teamCommissionPreviewEquationFixed": {
+    "placeholders": {
+      "result": {"type": "String"}
+    }
+  },
+  "teamCommissionPreviewEquationMixed": "{fixed} + ({sales} × {percent}) = {result}",
+  "@teamCommissionPreviewEquationMixed": {
+    "placeholders": {
+      "fixed": {"type": "String"},
+      "sales": {"type": "String"},
+      "percent": {"type": "String"},
+      "result": {"type": "String"}
+    }
+  },
+  "teamCommissionPercentRequired": "Enter a commission rate greater than 0.",
+  "teamCommissionPercentInvalidRange": "Rate must be between 0 and 100.",
+  "teamCommissionFixedInvalid": "Enter a valid fixed amount (0 or more).",
+  "teamCommissionCombinedInvalid": "Enter a valid rate and/or fixed amount.",
+  "teamCommissionSummaryFixed": "{amount} SAR",
+  "@teamCommissionSummaryFixed": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "teamCommissionSummaryMixed": "{percent}% + {amount} SAR",
+  "@teamCommissionSummaryMixed": {
+    "placeholders": {
+      "percent": {"type": "String"},
+      "amount": {"type": "String"}
+    }
+  },
+  "teamFieldCommissionValue": "Commission value",
+  "teamCommissionValueHelper": "Percentage value used for sales and payroll calculations.",
+  "teamFieldAttendanceRequired": "Attendance required",
+  "teamFieldAttendanceRequiredHint": "Attendance tracking can be adjusted manually when needed.",
+  "teamFieldBookable": "Bookable later",
+  "teamFieldBookableHint": "Prepare this profile for a future customer booking flow.",
+  "teamFieldActiveStatus": "Active status",
+  "teamFieldActiveStatusHint": "Inactive team members stay hidden from operational actions.",
+  "teamSaveBarberAction": "Save team member",
+  "teamSaveChangesAction": "Save changes",
+  "teamResetPasswordPlaceholderNotice": "Password reset will be added in a later update.",
+  "teamMemberDeactivated": "{name} was deactivated.",
+  "@teamMemberDeactivated": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "teamMemberActivated": "{name} was activated.",
+  "@teamMemberActivated": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "teamAttendanceMarkedSuccess": "Attendance marked.",
+  "teamAttendanceCheckoutSuccess": "Check-out recorded.",
+  "teamAttendanceAlreadyCompleted": "Today's attendance is already complete.",
+  "teamAttendanceMarkError": "Could not update attendance.",
+  "teamMemberAttendanceAdminNoRecordTitle": "No attendance today",
+  "teamMemberAttendanceAdminNoRecordSubtitle": "{name} has not checked in yet.",
+  "@teamMemberAttendanceAdminNoRecordSubtitle": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "teamMemberAttendanceAdminCheckedInTitle": "Currently checked in",
+  "teamMemberAttendanceAdminCheckedInSubtitle": "Check-in recorded; check-out is still pending.",
+  "teamMemberAttendanceAdminCompletedTitle": "Attendance completed",
+  "teamMemberAttendanceAdminCompletedSubtitle": "Check-in and check-out are recorded for today.",
+  "teamMemberAttendanceStatusNone": "No record",
+  "teamMemberAttendanceCheckInLabel": "Check-in",
+  "teamMemberAttendanceCheckOutLabel": "Check-out",
+  "teamMemberAttendanceAddManual": "Add attendance manually",
+  "teamMemberAttendanceEditManual": "Edit attendance record",
+  "teamMemberAttendanceSummaryWeek": "Attendance this week",
+  "teamMemberAttendanceSummaryLateMonth": "Late count",
+  "teamMemberAttendanceSummaryLateMonthHint": "This month",
+  "teamMemberAttendanceSummaryMissingCheckout": "Missing check-outs",
+  "teamMemberAttendanceSummaryMissingCheckoutHint": "times",
+  "teamMemberAttendanceSummaryPendingRequests": "Pending requests",
+  "teamMemberAttendanceSummaryPendingRequestsHint": "corrections",
+  "teamMemberAttendanceSummaryDaysUnit": "days",
+  "teamMemberAttendanceCorrectionsTitle": "Attendance correction requests",
+  "teamMemberAttendanceCorrectionEmptyTitle": "No correction requests",
+  "teamMemberAttendanceCorrectionEmptySubtitle": "This team member’s requests will appear here.",
+  "teamMemberAttendanceApprove": "Approve",
+  "teamMemberAttendanceReject": "Reject",
+  "teamMemberAttendanceRequestTypeMissingCheckIn": "Missing check-in",
+  "teamMemberAttendanceRequestTypeMissingCheckout": "Missing check-out",
+  "teamMemberAttendanceRequestTypeWrongCheckIn": "Wrong check-in time",
+  "teamMemberAttendanceRequestTypeWrongCheckOut": "Wrong check-out time",
+  "teamMemberAttendanceRequestTypeAbsence": "Absence correction",
+  "teamMemberAttendanceRequestTypeGeneric": "Attendance correction",
+  "teamMemberAttendanceStatusPending": "Pending",
+  "teamMemberAttendanceStatusApproved": "Approved",
+  "teamMemberAttendanceStatusRejected": "Rejected",
+  "teamMemberAttendanceNoReason": "No reason provided",
+  "teamMemberAttendanceHistoryTitle": "Recent attendance",
+  "teamMemberAttendanceViewAll": "View all",
+  "teamMemberAttendanceHistoryEmpty": "No attendance records yet",
+  "teamMemberAttendanceRecordStatusPresent": "Completed",
+  "teamMemberAttendanceRecordStatusLate": "Late",
+  "teamMemberAttendanceRecordStatusIncomplete": "Incomplete",
+  "teamMemberAttendanceRecordStatusManual": "Manual",
+  "teamMemberAttendanceRecordStatusAbsent": "Absent",
+  "teamMemberAttendanceManualSaved": "Attendance record saved.",
+  "teamMemberAttendanceCorrectionApproved": "Correction request approved.",
+  "teamMemberAttendanceCorrectionRejected": "Correction request rejected.",
+  "teamMemberAttendanceManualSheetTitle": "Manual attendance",
+  "teamMemberAttendanceSave": "Save",
+  "teamMemberAttendanceDateLabel": "Date",
+  "teamMemberAttendanceStatusFieldLabel": "Status",
+  "teamMemberAttendanceLateMinutes": "Late minutes",
+  "teamMemberAttendanceEarlyExitMinutes": "Early exit minutes",
+  "teamMemberAttendanceMissingCheckoutSwitch": "Missing check-out",
+  "teamMemberAttendanceNotes": "Notes",
+  "teamMemberAttendanceReviewApproveTitle": "Approve correction",
+  "teamMemberAttendanceReviewRejectTitle": "Reject correction",
+  "teamMemberAttendanceReviewNoteLabel": "Review note",
+  "teamMemberAttendanceReviewConfirmApprove": "Approve",
+  "teamMemberAttendanceReviewConfirmReject": "Reject",
+  "teamDetailsLoadErrorTitle": "Could not load team member details",
+  "teamDetailsTabOverview": "Overview",
+  "teamDetailsTabSales": "Sales",
+  "teamDetailsTabAttendance": "Attendance",
+  "teamDetailsTabPayroll": "Payroll",
+  "teamDetailsTabServices": "Services",
+  "teamDetailsTabBookingPrep": "Booking Prep",
+  "teamDetailsStatusLabel": "Status",
+  "teamDetailsJoinDate": "Join date",
+  "teamDetailsCommissionRate": "Commission %",
+  "teamDetailsBookableLater": "Bookable later",
+  "teamProfileStatusFrozen": "Frozen",
+  "teamProfileJoinDateMissing": "Join date not available",
+  "teamProfileSectionContact": "Contact",
+  "teamProfileSectionWorkSettings": "Work settings",
+  "teamProfileTodaySalesLabel": "Today sales",
+  "teamProfileServicesLabel": "Services",
+  "teamProfileAttendanceLabel": "Attendance",
+  "teamProfileActionCall": "Call",
+  "teamProfileActionAddBooking": "Add booking",
+  "teamProfilePhoneMissingSnack": "Phone number is not available",
+  "teamProfileDialerErrorSnack": "Could not open phone dialer",
+  "teamProfileWhatsAppUnavailableSnack": "WhatsApp is not available on this device",
+  "teamProfileBookingUnavailableSnack": "This team member is not available for booking",
+  "teamProfileAttendanceNotRequiredSummary": "Not required",
+  "teamProfilePermissionDenied": "You do not have permission to view this team member.",
+  "teamProfileLoadGenericError": "Something went wrong while loading this team member.",
+  "teamProfileNotFound": "Team member was not found.",
+  "teamValueNotAvailable": "Not available",
+  "teamValueYes": "Yes",
+  "teamValueNo": "No",
+  "teamValueEnabled": "Enabled",
+  "teamValueDisabled": "Disabled",
+  "teamCommissionPercentValue": "{value}%",
+  "@teamCommissionPercentValue": {
+    "placeholders": {
+      "value": {"type": "String"}
+    }
+  },
+  "teamNoSalesTodayTitle": "No sales recorded today",
+  "teamNoSalesTodaySubtitle": "Record the first sale for this team member.",
+  "teamSalesRecentSalesTitle": "Recent sales",
+  "teamSalesTopServicesTitle": "Top sold services",
+  "teamTopServicesEmpty": "No service performance yet.",
+  "teamSalesTopServiceCount": "{count} sold",
+  "@teamSalesTopServiceCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "teamSalesAverageTicketTitle": "Average ticket value",
+  "teamPlaceholderLaterReady": "Later-ready placeholder",
+  "teamSalesRevenueToday": "Revenue today",
+  "teamSalesRevenueWeek": "Revenue this week",
+  "teamSalesRevenueMonth": "Revenue this month",
+  "teamSalesServicesToday": "Services today",
+  "teamSalesServicesMonth": "Services this month",
+  "teamSalesCommissionLabel": "Commission {value}",
+  "@teamSalesCommissionLabel": {
+    "placeholders": {
+      "value": {"type": "String"}
+    }
+  },
+  "teamMemberSalesHistoryTitle": "Sales history",
+  "teamMemberSalesFilterThisMonth": "This month",
+  "teamMemberSalesFilterToday": "Today",
+  "teamMemberSalesFilterThisWeek": "This week",
+  "teamMemberSalesFilterCustom": "Custom",
+  "teamMemberSalesShowing": "Showing: {filter}",
+  "@teamMemberSalesShowing": {
+    "placeholders": {
+      "filter": {"type": "String"}
+    }
+  },
+  "teamMemberSalesHistoryTotal": "Total: {amount}",
+  "@teamMemberSalesHistoryTotal": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "teamMemberSalesLoadError": "Unable to load sales. Please try again.",
+  "teamMemberSalesPermissionDenied": "You do not have permission to view these sales.",
+  "teamMemberSalesEmptyHistoryTitle": "No sales in this period",
+  "teamMemberSalesEmptyHistorySubtitle": "Try another date range or record a new sale.",
+  "teamMemberSalesWalkInCustomer": "Walk-in customer",
+  "teamMemberSalesServiceSummaryFallback": "Services",
+  "teamMemberSalesSmartSummaryTitle": "Smart summary",
+  "teamMemberSalesNotAvailableShort": "—",
+  "teamNoAttendanceTodayTitle": "No attendance yet today",
+  "teamNoAttendanceTodaySubtitle": "Mark attendance to start the day.",
+  "teamAttendanceTodayStatusTitle": "Today's attendance",
+  "teamAttendanceCheckedInLabel": "Check-in time",
+  "teamAttendanceCheckedOutLabel": "Check-out time",
+  "teamAttendanceStatusLabel": "Attendance status",
+  "teamAttendanceWeeklySummary": "Weekly attendance",
+  "teamAttendanceLateCount": "Late count",
+  "teamAttendanceMissingCheckoutCount": "Missing checkout",
+  "teamAttendanceCorrectionRequestsTitle": "Attendance correction requests",
+  "teamPayrollCommissionPercentage": "Commission percentage",
+  "teamPayrollCommissionToday": "Commission today",
+  "teamPayrollCommissionMonth": "Commission this month",
+  "teamPayrollBonusesTotal": "Bonuses total",
+  "teamPayrollDeductionsTotal": "Deductions total",
+  "teamPayrollEstimatedPayout": "Estimated payout",
+  "teamPayrollHistoryEmptyTitle": "No payroll history yet",
+  "teamPayrollHistoryEmptySubtitle": "Monthly payroll history will appear here as records are generated.",
+  "teamPayrollHistoryTitle": "Payroll history",
+  "teamServicesEditAssignmentsAction": "Edit service assignment",
+  "teamServicesEmptyTitle": "No services assigned yet",
+  "teamServicesEmptySubtitle": "Assign services to prepare this team member for operations and future booking.",
+  "teamServicesAssignedTitle": "Assigned services",
+  "teamServicesServiceActive": "Active",
+  "teamServicesServiceInactive": "Inactive",
+  "teamBookingPrepPublicDisplayName": "Public display name",
+  "teamBookingPrepPublicBio": "Public bio",
+  "teamBookingPrepWorkingHoursProfile": "Working hours profile",
+  "teamBookingPrepSlotDuration": "Booking slot duration",
+  "teamBookingPrepDisplayOrder": "Display order",
+  "teamBookingPrepProfileImage": "Profile image",
+  "teamBookingPrepVisibleServicesTitle": "Visible services for customers",
+  "teamBookingPrepVisibleServicesEmpty": "No customer-visible services yet.",
+  "moneyDashboardTitle": "Money",
+  "moneyDashboardSubtitle": "Monthly finance signals, trends, and operational insights.",
+  "moneyDashboardErrorTitle": "Could not load money dashboard",
+  "moneyDashboardErrorMessage": "Try again in a moment.",
+  "moneyDashboardRetry": "Retry",
+  "moneyDashboardTrendTitle": "Sales vs expenses",
+  "moneyDashboardTrendSubtitle": "Track how revenue and costs moved across the selected month.",
+  "moneyDashboardSalesLegend": "Sales",
+  "moneyDashboardExpensesLegend": "Expenses",
+  "moneyDashboardInsightsTitle": "Insights",
+  "moneyDashboardInsightsEmpty": "More insights will appear as sales, payroll, and expenses build up.",
+  "moneyDashboardSalesNavSubtitle": "Open the transaction engine and record sales.",
+  "moneyDashboardExpensesNavSubtitle": "Review costs, categories, and recent expenses.",
+  "moneyDashboardSummaryHeadline": "Financial snapshot",
+  "moneyDashboardSalesTotal": "Sales total",
+  "moneyDashboardExpensesTotal": "Expenses total",
+  "moneyDashboardPayrollTotal": "Payroll total",
+  "moneyDashboardNetProfit": "Net profit",
+  "moneyDashboardInsightTopBarber": "{name} leads this month with {amount} in sales.",
+  "@moneyDashboardInsightTopBarber": {
+    "placeholders": {
+      "name": {},
+      "amount": {}
+    }
+  },
+  "moneyDashboardInsightTopService": "{service} is the top earning service at {amount}.",
+  "@moneyDashboardInsightTopService": {
+    "placeholders": {
+      "service": {},
+      "amount": {}
+    }
+  },
+  "moneyDashboardInsightExpenseCategory": "{category} accounts for the largest expense share at {share}.",
+  "@moneyDashboardInsightExpenseCategory": {
+    "placeholders": {
+      "category": {},
+      "share": {}
+    }
+  },
+  "moneyDashboardUncategorized": "Uncategorized",
+  "moneyDashboardNetLossWarning": "Net profit is negative after payroll. Trim discretionary expenses, revisit pricing, and review payroll timing for this month.",
+  "moneyDashboardTrendPeakSalesSummary": "Peak sales day {day} · {amount}",
+  "@moneyDashboardTrendPeakSalesSummary": {
+    "placeholders": {
+      "day": {},
+      "amount": {}
+    }
+  },
+  "moneyDashboardInsightActionTopBarber": "Double down on {name} ({amount} sales) — protect their chair time, clone what works in consultations, and rebalance quieter books.",
+  "@moneyDashboardInsightActionTopBarber": {
+    "placeholders": {
+      "name": {},
+      "amount": {}
+    }
+  },
+  "moneyDashboardInsightActionTopService": "Feature {service} in bundles and upsells — it earned {amount} this month.",
+  "@moneyDashboardInsightActionTopService": {
+    "placeholders": {
+      "service": {},
+      "amount": {}
+    }
+  },
+  "moneyDashboardInsightActionExpenseCategory": "Spend clusters in {category} ({share}) — audit vendors, subscriptions, and category rules before they compound.",
+  "@moneyDashboardInsightActionExpenseCategory": {
+    "placeholders": {
+      "category": {},
+      "share": {}
+    }
+  },
+  "moneyDashboardSearchHint": "Search team, revenue, and requests",
+  "moneyDashboardChartGranularityDaily": "Daily",
+  "moneyDashboardKpiTrendNoData": "—",
+  "moneyDashboardKpiTrendNew": "New",
+  "moneyDashboardKpiTrendUpVsMonth": "↗ {percent}% vs {month}",
+  "@moneyDashboardKpiTrendUpVsMonth": {
+    "placeholders": {
+      "percent": {},
+      "month": {}
+    }
+  },
+  "moneyDashboardKpiTrendDownVsMonth": "↘ {percent}% vs {month}",
+  "@moneyDashboardKpiTrendDownVsMonth": {
+    "placeholders": {
+      "percent": {},
+      "month": {}
+    }
+  },
+  "moneyDashboardKpiTrendFlatVsMonth": "→ {percent}% vs {month}",
+  "@moneyDashboardKpiTrendFlatVsMonth": {
+    "placeholders": {
+      "percent": {},
+      "month": {}
+    }
+  },
+  "moneyDashboardQuickPayrollSubtitle": "Review monthly payroll runs and payslips.",
+  "moneyDashboardQuickSalesBody": "Record transactions and monitor service revenue.",
+  "moneyDashboardQuickExpensesBody": "Track costs, categories, and recent spending.",
+  "salesScreenTitle": "Sales",
+  "salesScreenSubtitle": "Track revenue, services and performance.",
+  "salesScreenAddSale": "Add sale",
+  "salesScreenErrorTitle": "Could not load sales",
+  "salesScreenErrorMessage": "The transaction feed is unavailable right now.",
+  "salesScreenSummaryTitle": "Smart summary",
+  "salesScreenTransactionCount": "Transactions",
+  "salesScreenAverageTicket": "Average ticket",
+  "salesScreenTopBarber": "Top team member",
+  "salesScreenTopService": "Top service",
+  "salesScreenValuePending": "—",
+  "salesScreenCustomRange": "Custom range: {start} - {end}",
+  "@salesScreenCustomRange": {
+    "placeholders": {
+      "start": {},
+      "end": {}
+    }
+  },
+  "salesScreenBarberFilter": "Team member",
+  "salesScreenAllBarbers": "All team members",
+  "salesScreenEmptyTitle": "No sales yet",
+  "salesScreenEmptyMessage": "Record the first sale to start tracking revenue here.",
+  "salesScreenDayTotal": "Day total {amount}",
+  "@salesScreenDayTotal": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "salesScreenUnknownService": "Service",
+  "salesScreenAllPayments": "All payments",
+  "salesScreenFiltersButton": "Filters",
+  "salesScreenFiltersSheetTitle": "Refine sales",
+  "salesScreenTopServicesTitle": "Top services by revenue",
+  "salesScreenBarberRankingTitle": "Team performance",
+  "salesScreenTopServicesEmpty": "Service mix will show once sales include line items.",
+  "salesScreenPaymentSingleMethod": "All sales used {method}. Consider promoting card or wallet to reduce cash handling.",
+  "@salesScreenPaymentSingleMethod": {
+    "placeholders": {
+      "method": {}
+    }
+  },
+  "salesDetailsTitle": "Sale details",
+  "salesDetailsNotFoundTitle": "Sale not found",
+  "salesDetailsNotFoundMessage": "This sale is no longer available for your salon.",
+  "salesDetailsOverviewTitle": "Overview",
+  "salesDetailsLineItemsTitle": "Line items",
+  "salesDetailsCustomerLabel": "Customer",
+  "salesDetailsRecordedByLabel": "Recorded by",
+  "salesDetailsStatusLabel": "Status",
+  "salesDetailsPaymentLabel": "Payment",
+  "salesDetailsSoldAtLabel": "Sold at",
+  "salesDetailsSubtotalLabel": "Subtotal",
+  "salesDetailsTaxLabel": "Tax",
+  "salesDetailsDiscountLabel": "Discount",
+  "salesDetailsCommissionLabel": "Commission",
+  "salesStatusCompleted": "Completed",
+  "salesStatusPending": "Pending",
+  "salesStatusRefunded": "Refunded",
+  "salesStatusVoided": "Voided",
+  "salesDateToday": "Today",
+  "salesDateThisWeek": "This week",
+  "salesDateThisMonth": "This month",
+  "salesDateCustom": "Custom",
+  "salesHeroTotalSalesLabel": "Total sales",
+  "salesChartSalesVsExpenses": "Sales vs Expenses",
+  "salesChartLegendSales": "Sales",
+  "salesChartLegendExpenses": "Expenses",
+  "salesInsightTopServicesSubtitle": "By revenue",
+  "salesInsightBarberSubtitle": "By revenue",
+  "salesInsightPaymentMixTitle": "Payment method mix",
+  "salesInsightPaymentSubtitle": "By method",
+  "salesInsightHelperTopServices": "Record sales to see your top performing services.",
+  "salesInsightHelperBarber": "Record sales to see your team members' performance.",
+  "salesInsightHelperPayment": "Record sales to see your payment mix.",
+  "salesInsightActionAddServices": "Add services",
+  "salesInsightActionAddSales": "Add sales",
+  "salesRecentCardTitle": "Recent sales",
+  "salesRecentEmptyTitle": "No sales yet",
+  "salesRecentEmptyBody": "Start adding sales to see your recent transactions here.",
+  "paymentMethodMixed": "Mixed",
+  "addSaleSelectServicesTitle": "Select services",
+  "addSaleManageServices": "Manage services",
+  "addSaleSearchServicesHint": "Search services",
+  "addSaleSelectedServicesTitle": "Selected services ({count})",
+  "@addSaleSelectedServicesTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "addSaleAddAnotherService": "Add another service",
+  "addSaleBarberLabel": "Service provider",
+  "addSaleWalkInCustomer": "Walk-in customer",
+  "addSaleAddNameLink": "Add name",
+  "addSaleOrderSummaryTitle": "Order summary",
+  "addSaleSubtotal": "Subtotal",
+  "addSaleDiscountLink": "Add discount",
+  "addSaleDiscountTitle": "Discount",
+  "addSaleDiscountHint": "Amount to subtract from subtotal",
+  "addSaleTotal": "Total",
+  "addSaleRecordSale": "Record sale",
+  "addSaleDiscountInvalid": "Discount cannot exceed the subtotal.",
+  "expensesScreenTitle": "Expenses",
+  "expensesScreenSubtitle": "Track and manage your salon's spending in one place.",
+  "expensesScreenSalonMissing": "Salon profile not found.",
+  "expensesScreenRetry": "Retry",
+  "expensesScreenTotalExpensesLabel": "Total expenses",
+  "expensesScreenTransactionsLabel": "Transactions",
+  "expensesScreenTransactionsCount": "{count, plural, one{1 transaction} other{{count} transactions}}",
+  "@expensesScreenTransactionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "expensesScreenViewAll": "View all",
+  "expensesScreenNoCategoriesTitle": "No categories yet",
+  "expensesScreenNoCategoriesMessage": "Add your first expense to see category insights.",
+  "expensesScreenRecentTitle": "Recent expenses",
+  "expensesScreenReportComingSoon": "Reports are coming soon.",
+  "expensesScreenRecordedByLabel": "Recorded by",
+  "expensesScreenAllCreators": "Everyone",
+  "expensesScreenClearFilters": "Clear filters",
+  "expensesScreenApplyFilters": "Apply",
+  "expensesScreenAddExpense": "Add expense",
+  "expensesScreenErrorTitle": "Could not load expenses",
+  "expensesScreenErrorMessage": "The expense feed is unavailable right now.",
+  "expensesScreenSummaryTitle": "Smart summary",
+  "expensesScreenCount": "Expenses",
+  "expensesScreenTopCategory": "Top category",
+  "expensesScreenValuePending": "Not enough data",
+  "expensesScreenAllCategories": "All categories",
+  "expensesScreenBreakdownTitle": "Category breakdown",
+  "expensesScreenBreakdownEmpty": "Breakdown will appear after you log expenses.",
+  "expensesScreenEmptyTitle": "No expenses yet",
+  "expensesScreenEmptyMessage": "Add the first expense to start tracking costs here.",
+  "expensesScreenDayTotal": "Day total {amount}",
+  "@expensesScreenDayTotal": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "expensesScreenUnknownExpense": "Expense",
+  "expensesScreenFiltersButton": "Filters",
+  "expensesScreenFiltersSheetTitle": "Refine expenses",
+  "expensesScreenAverageExpense": "Avg / expense",
+  "expensesScreenHighestExpense": "Largest",
+  "expensesScreenTrend": "Trend",
+  "expensesScreenTrendVsPrior": "{percent} vs prior window",
+  "@expensesScreenTrendVsPrior": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+  "expenseScreenLinkedBarber": "Related team member",
+  "addSalePaymentMethodField": "Payment method",
+  "employeeAddSaleFab": "Add Sale",
+  "employeeSectionPermissionDenied": "You do not have permission to view this section.",
+  "employeeTodayWorkspaceSubtitle": "Your workspace today",
+  "employeeTodayAttendanceTitle": "Today attendance",
+  "employeeTodayAttendanceTagline": "Stay on time, stay awesome.",
+  "employeeTodayStatusNotCheckedIn": "Not checked in",
+  "employeeTodayStatusCheckedIn": "Checked in",
+  "employeeTodayStatusOnBreak": "On break",
+  "employeeTodayStatusCheckedOut": "Checked out",
+  "employeeTodayZoneInside": "Inside salon zone",
+  "employeeTodayZoneOutside": "Outside salon zone",
+  "employeeTodaySalonLabel": "Salon",
+  "employeeTodayAddressOnFile": "Address on file",
+  "employeeTodayDistanceMeters": "About {meters} m from center",
+  "@employeeTodayDistanceMeters": {
+    "placeholders": {
+      "meters": {
+        "type": "int"
+      }
+    }
+  },
+  "employeeTodayAttendanceRequestTitle": "Attendance request",
+  "employeeTodayAttendanceRequestSubtitle": "Forgot a punch? Submit a request for admin approval.",
+  "employeeTodayRequestCorrection": "Request correction",
+  "employeeTodayPendingCount": "Pending: {count}",
+  "@employeeTodayPendingCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "employeeTodayNoActivity": "No activity yet today.",
+  "employeeTodayPrivacyNote": "You can only view your own attendance, sales, and requests.",
+  "employeeTodayViewPolicy": "View policy",
+  "employeeTodaySalonLocationMissing": "Salon attendance location is not configured. Please contact the owner.",
+  "employeeTodayPunchIn": "Punch in",
+  "employeeTodayPunchOut": "Punch out",
+  "employeeTodayBreakOut": "Break out",
+  "employeeTodayBreakIn": "Break in",
+  "employeeTodayCompletedForToday": "Completed for today",
+  "employeeTodayHoursLabel": "{hours} h",
+  "@employeeTodayHoursLabel": {
+    "placeholders": {
+      "hours": {}
+    }
+  },
+  "employeeTodaySalesAmount": "{amount} sales",
+  "@employeeTodaySalesAmount": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "employeeTodayServicesCount": "{count} services",
+  "@employeeTodayServicesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "employeeTodayTeamMemberFallback": "Team member",
+  "employeeTodayPunchRecorded": "{action} recorded",
+  "@employeeTodayPunchRecorded": {
+    "placeholders": {
+      "action": {}
+    }
+  },
+  "employeeTodayOfflinePunch": "You need an internet connection to punch.",
+  "employeeActivityTimelineTitle": "Today activity",
+  "employeeActivityTimelineLive": "Live",
+  "employeeActivityTimelineEmpty": "No punches yet today.",
+  "employeeSalesTitle": "My Sales",
+  "employeeSalesSubtitle": "Track your revenue and commission",
+  "employeeSalesNotAllowedAdd": "You are not allowed to add sales. Please contact the salon owner.",
+  "employeeSaleRecordedSuccess": "Sale recorded successfully.",
+  "employeeSalesEmptyPeriod": "No sales recorded for this period yet.",
+  "employeeSalesEmptyCta": "Tap Add Sale to record your first sale today.",
+  "employeeSalesRecentTitle": "Recent sales",
+  "employeeSalesViewReceipts": "View receipts",
+  "employeeSalesViewReceiptsHint": "Receipt review for owners is coming soon.",
+  "employeeSalesTotalLabel": "Total Sales",
+  "employeeSalesHeroNoSales": "No sales recorded for this period yet.",
+  "employeeSalesKpiTotal": "Total Sales",
+  "employeeSalesKpiServices": "Services",
+  "employeeSalesKpiCommission": "Est. Commission",
+  "employeeSalesKpiAvgService": "Avg. Service",
+  "employeeSalesCommissionRate": "Commission rate",
+  "employeeSalesCommissionHint": "Your commission percentage",
+  "employeeSalesEstimatedCommission": "Estimated commission",
+  "employeeSalesFromSales": "From {amount} sales",
+  "@employeeSalesFromSales": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "employeeSalesCustomersLabel": "Customers",
+  "employeeSalesServicesCustomersRow": "{services} services · {customers} customers",
+  "@employeeSalesServicesCustomersRow": {
+    "placeholders": {
+      "services": {},
+      "customers": {}
+    }
+  },
+  "employeeSalesShowingLatest": "Showing latest {count} sales",
+  "@employeeSalesShowingLatest": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "addSaleReceiptSectionTitle": "Receipt photo",
+  "addSaleReceiptSectionBody": "Take a photo of the card receipt, cash receipt, or payment proof.",
+  "addSaleReceiptTakePhoto": "Take photo",
+  "addSaleReceiptRetake": "Retake photo",
+  "addSaleReceiptRemove": "Remove",
+  "addSaleReceiptRequiredCard": "Receipt photo is required for card payments.",
+  "addSaleReceiptRequiredMixed": "Receipt photo is required because this sale includes card payment.",
+  "addSaleOptionalCashPhotoHint": "Optional: take a photo of cash received or a handwritten receipt.",
+  "addSaleCashCardSplitTitle": "Cash & card amounts",
+  "addSaleCashAmountHint": "Cash",
+  "addSaleCardAmountHint": "Card",
+  "addSalePaymentSplitInvalid": "Cash plus card must equal the total sale amount.",
+  "ownerAddSaleAutoPrice": "Auto-filled price",
+  "authV2WelcomeTitle": "Operations, simplified.",
+  "authV2WelcomeSubtitle": "Run bookings, team, payroll, and money in one premium workspace.",
+  "authV2WelcomeContinue": "Continue",
+  "authV2FieldLanguage": "Language",
+  "authV2FieldCountry": "Country",
+  "authV2RoleTitle": "How do you want to use Zurano?",
+  "authV2RoleOwnerTitle": "Create a salon",
+  "authV2RoleOwnerSubtitle": "Register your business, team, and operations.",
+  "authV2RoleCustomerTitle": "Continue as User",
+  "authV2RoleCustomerSubtitle": "Discover salons and book appointments.",
+  "authV2OwnerLoginHeadline": "Welcome back",
+  "authV2OwnerLoginSubtitle": "Sign in to manage your salon.",
+  "authV2UserLoginHeadline": "Welcome back",
+  "authV2UserLoginSubtitle": "Sign in to continue.",
+  "authV2UserLoginIdentifierHelper": "Employees sign in with username. Customers sign in with email.",
+  "userLoginForgotPasswordNeedEmail": "Password reset works with email. Add “@” if you are signing in with email.",
+  "authLoginErrorIncorrect": "Incorrect email, username, or password.",
+  "authLoginErrorDisabled": "This account has been disabled.",
+  "authLoginErrorInvalidEmail": "Enter a valid email address.",
+  "authLoginErrorTooManyRequests": "Too many attempts. Wait and try again, or reset your password.",
+  "authLoginErrorNetwork": "Network error. Check your connection and try again.",
+  "authLoginErrorStaffUseUsername": "Salon staff sign in with the email or username from the salon owner. Customers use their own email here.",
+  "authLoginErrorGeneric": "Could not sign in. Please try again.",
+  "authStaffLoginUserDocMissing": "User profile not found. Contact your salon owner.",
+  "authStaffLoginUserInactive": "This account is paused. Contact your salon owner.",
+  "authStaffLoginEmployeeDocMissing": "Your staff profile is not linked to the salon. Contact your salon owner.",
+  "authStaffLoginEmployeeInactive": "Your access has been turned off by the salon owner.",
+  "authStaffLoginWrongPortal": "This entrance is for salon team only. Customers and owners should use the matching sign-in option.",
+  "changeTemporaryPasswordFieldCurrent": "Current password",
+  "changeTemporaryPasswordFieldNew": "New password",
+  "changeTemporaryPasswordFieldConfirm": "Confirm new password",
+  "changeTemporaryPasswordTitle": "Create a new password",
+  "changeTemporaryPasswordSubtitle": "Your salon owner set a temporary password. Choose a new one to continue.",
+  "changeTemporaryPasswordSignOut": "Sign out",
+  "changeTemporaryPasswordSubmit": "Update password",
+  "changeTemporaryPasswordSuccessSnack": "Password changed successfully",
+  "changeTemporaryPasswordErrorCurrentRequired": "Enter your current password.",
+  "changeTemporaryPasswordErrorNewMinLength": "New password must be at least 8 characters.",
+  "changeTemporaryPasswordErrorNewRequiresLetterAndNumber": "New password must include at least one letter and one number.",
+  "changeTemporaryPasswordErrorConfirmMismatch": "New passwords do not match.",
+  "changeTemporaryPasswordErrorWrongPassword": "Current password is incorrect.",
+  "changeTemporaryPasswordErrorWeakPassword": "Password is too weak. Try a longer mix of letters and numbers.",
+  "changeTemporaryPasswordErrorRequiresRecentLogin": "Please sign out and sign in again, then retry.",
+  "changeTemporaryPasswordErrorNetwork": "Network error. Check your connection and try again.",
+  "changeTemporaryPasswordErrorGeneric": "Could not update password. Please try again.",
+  "changeTemporaryPasswordFirestorePartialFailure": "Password changed, but account status could not be updated. Please contact the salon owner.",
+  "authLoginErrorStaffNotFound": "No staff account found for this username. Check spelling or ask your salon owner.",
+  "authLoginErrorPermission": "You do not have permission to complete this action.",
+  "authV2LoginHeadline": "Sign in",
+  "authV2LoginSubtitle": "Use your work email to access your workspace.",
+  "authV2SignupHeadline": "Create account",
+  "authV2SignupSubtitle": "Quick setup — you can add details later.",
+  "authV2ForgotPassword": "Forgot password?",
+  "authV2ForgotPasswordTitle": "Reset Password",
+  "authV2ForgotPasswordDescription": "Enter your email address and we'll send you a link to reset your password.",
+  "authV2ForgotPasswordSent": "Check your email for reset instructions.",
+  "authV2SendResetLink": "Send link",
+  "authV2OrDivider": "OR",
+  "authV2ContinueGoogle": "Continue with Google",
+  "authV2ContinueApple": "Continue with Apple",
+  "authV2ContinueFacebook": "Continue with Facebook",
+  "authV2SignUpLink": "Create an account",
+  "authV2SignInLink": "Sign in",
+  "authV2LoginSignupPrompt": "New to Zurano?",
+  "authV2SignupSigninPrompt": "Already have an account?",
+  "authV2PasswordHintRules": "At least 8 characters",
+  "authV2CreateSalonTitle": "Add your salon details",
+  "authV2CreateSalonSubtitle": "Choose your salon name and city to start managing bookings and your team.",
+  "authV2CurrencyLabel": "Currency",
+  "authV2OptionalAddressLabel": "Address (optional)",
+  "authV2CreateSalonCta": "Create salon",
+  "createSalonCountryRequired": "Finish country selection in onboarding before creating your salon.",
+  "createSalonCitiesLoading": "Loading cities for your country…",
+  "createSalonNoCitiesForCountry": "No city list is available for this country. Enter your city manually.",
+  "createSalonEnterCityManually": "Enter city manually",
+  "createSalonPickFromList": "Pick from list",
+  "createSalonSelectCityHint": "Tap to search and select a city",
+  "bentoDashboardScreenTitle": "Operations hub",
+  "firstTimeRoleEyebrow": "Welcome",
+  "firstTimeRoleTitle": "How will you use Zurano?",
+  "firstTimeRoleDescription": "Choose your role to finish setting up your profile.",
+  "firstTimeRoleUserTitle": "User",
+  "firstTimeRoleUserSubtitle": "Book services, explore salons, and manage appointments.",
+  "firstTimeRoleOwnerTitle": "Salon Owner",
+  "firstTimeRoleOwnerSubtitle": "Create your salon, manage staff, bookings, payroll, and operations.",
+  "firstTimeRoleContinue": "Continue",
+  "firstTimeRoleDifferentAccount": "Use a different account",
+  "firstTimeRoleError": "We couldn’t finish setting up your profile. Please try again.",
+  "ownerTabCustomers": "Customers",
+  "ownerTabFinance": "Finance",
+  "ownerShellMore": "More",
+  "ownerServicesWaitingForSalon": "Waiting for salon on your profile…",
+  "onboardingSalonCreatedTitle": "Salon created",
+  "onboardingSalonCreatedSubtitle": "Opening your dashboard…",
+  "splashBootstrapErrorMessage": "Startup failed due to a network or Firestore issue. Please retry.",
+  "splashRetryStartup": "Retry startup",
+  "customersScreenTitle": "Customers",
+  "customersHeroGreeting": "{greeting}, {name} 👋",
+  "@customersHeroGreeting": {
+    "placeholders": {
+      "greeting": {"type": "String"},
+      "name": {"type": "String"}
+    }
+  },
+  "customersSalonOnlyBannerTitle": "{salonName} customers only",
+  "@customersSalonOnlyBannerTitle": {
+    "placeholders": {
+      "salonName": {"type": "String"}
+    }
+  },
+  "customersSalonOnlyBannerSubtitle": "Salon-owned list for visits, bookings, and spending.",
+  "customersGlobalSearchHint": "Search team, revenue, and requests",
+  "customersCountBadge": "{count} customers",
+  "@customersCountBadge": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "customersAddCustomerFab": "Add customer",
+  "customersPermissionErrorTitle": "You do not have access to these customers.",
+  "customersPermissionErrorSubtitle": "Please check salon membership or permissions.",
+  "customersGenericLoadError": "We couldn’t load customers. Please try again.",
+  "customersCategoryNewBadge": "New",
+  "customersCategoryRegularBadge": "Regular",
+  "customersStatusActive": "Active",
+  "customersStatusInactive": "Inactive",
+  "customersLastVisitShort": "Last visit: {date}",
+  "@customersLastVisitShort": {
+    "placeholders": {
+      "date": {"type": "String"}
+    }
+  },
+  "customersVisitsShort": "Visits: {count}",
+  "@customersVisitsShort": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "customersSpentShort": "Spent: {amount}",
+  "@customersSpentShort": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "customersSearchHint": "Search name or phone",
+  "customersTagAll": "All",
+  "customersTagNew": "New",
+  "customersTagRegular": "Regular",
+  "customersTagVip": "VIP",
+  "customersTagInactive": "Inactive",
+  "customersEmptyTitle": "No customers yet",
+  "customersEmptyMessageCanCreate": "Add your first customer to start tracking visits and spending.",
+  "customersEmptyMessageNoAccess": "No customers are available for your account.",
+  "customersAddFirstCta": "Add first customer",
+  "customersLastVisitNever": "No visit yet",
+  "customersPreferredBarberNone": "No preferred team member",
+  "customersPreferredBarberLine": "{phone} · {barber}",
+  "@customersPreferredBarberLine": {
+    "placeholders": {
+      "phone": {"type": "String"},
+      "barber": {"type": "String"}
+    }
+  },
+  "customersPreferredBarberLabel": "Preferred team member: {name}",
+  "@customersPreferredBarberLabel": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "customersLastVisitLine": "Last visit: {date} ({relative})",
+  "@customersLastVisitLine": {
+    "placeholders": {
+      "date": {"type": "String"},
+      "relative": {"type": "String"}
+    }
+  },
+  "customersVisitsPointsLine": "Visits: {visits} · Points: {points}",
+  "@customersVisitsPointsLine": {
+    "placeholders": {
+      "visits": {"type": "int"},
+      "points": {"type": "int"}
+    }
+  },
+  "customersTotalSpentLine": "Total spent: {amount}",
+  "@customersTotalSpentLine": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "customersVipBadge": "VIP",
+  "customersTimeNever": "never",
+  "customersTimeJustNow": "just now",
+  "customersTimeMinutesAgo": "{n}m ago",
+  "@customersTimeMinutesAgo": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "customersTimeHoursAgo": "{n}h ago",
+  "@customersTimeHoursAgo": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "customersTimeDaysAgo": "{n}d ago",
+  "@customersTimeDaysAgo": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "customersTimeMonthsAgo": "{n}mo ago",
+  "@customersTimeMonthsAgo": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "customersTimeYearsAgo": "{n}y ago",
+  "@customersTimeYearsAgo": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "customerDetailsTitle": "Customer details",
+  "customerNotFound": "Customer not found",
+  "customerNotFoundSubtitle": "This customer may have been deleted or you do not have permission to view it.",
+  "customerBackToCustomers": "Back to customers",
+  "customerDetailsCall": "Call",
+  "customerDetailsWhatsApp": "WhatsApp",
+  "customerDetailsEdit": "Edit",
+  "customerDetailsBook": "Book",
+  "customerDetailsAddService": "Add sale",
+  "customerDetailsUpcomingSection": "Upcoming appointments",
+  "customerDetailsHistorySection": "Visit history",
+  "customerDetailsBookSameServiceAgain": "Book same service again",
+  "customerDetailsSpendingSummary": "Spending summary: {amount}",
+  "@customerDetailsSpendingSummary": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "customerDetailsNotesWithValue": "Notes: {notes}",
+  "@customerDetailsNotesWithValue": {
+    "placeholders": {
+      "notes": {"type": "String"}
+    }
+  },
+  "customerDetailsNotesEmpty": "No notes",
+  "customerDetailsServiceFallback": "Service",
+  "customerInsightsTitle": "Customer insights",
+  "customerProfileVipSubtitle": "VIP customer · enabled by owner",
+  "customerInsightNoVisits": "No previous visits yet",
+  "customerInsightLastVisitDays": "Last visit {days, plural, =0{today} =1{1 day ago} other{{days} days ago}}",
+  "@customerInsightLastVisitDays": {
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "customerInsightTotalVisitsLine": "Total visits: {count}",
+  "@customerInsightTotalVisitsLine": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "customerInsightTotalSpentLine": "Total spend: {amount}",
+  "@customerInsightTotalSpentLine": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "customerSuggestedActionVip": "High-value customer — consider a tailored offer",
+  "customerSuggestedActionNew": "New customer — follow up with a welcome offer",
+  "customerSuggestedActionRegular": "Regular customer — keep the relationship warm",
+  "customerSuggestedActionInactive": "Inactive — consider a win-back offer",
+  "customerTypeSectionTitle": "Customer type",
+  "customerTypeChipsHint": "Types help you tailor offers. VIP is set by the owner.",
+  "customerTypeVip": "VIP",
+  "customerTypeNew": "New",
+  "customerTypeRegular": "Regular",
+  "customerTypeInactive": "Inactive",
+  "customerDiscountBoxTitle": "Customer discount",
+  "customerDiscountBoxSubtitle": "Applied automatically when recording a sale",
+  "customerDiscountEditSheetTitle": "Edit discount",
+  "customerDiscountPercentLabel": "Discount %",
+  "customerDiscountInvalid": "Enter a value between 0 and 100",
+  "customerSalesSectionTitle": "Transaction history",
+  "customerSalesTotalSpentSummary": "Total spent: {amount}",
+  "@customerSalesTotalSpentSummary": {
+    "placeholders": {
+      "amount": {"type": "String"}
+    }
+  },
+  "customerSalesLastVisitSummary": "Last visit: {date}",
+  "@customerSalesLastVisitSummary": {
+    "placeholders": {
+      "date": {"type": "String"}
+    }
+  },
+  "customerSalesEmptyTitle": "No transactions yet",
+  "customerSalesEmptySubtitle": "Sales for this customer will appear here.",
+  "customerUpcomingSectionTitle": "Upcoming appointments",
+  "customerUpcomingEmptyTitle": "No upcoming appointments",
+  "customerNotesSectionTitle": "Notes",
+  "createBookingSearchCustomerLabel": "Search customer",
+  "createBookingAddNewCustomer": "Add new",
+  "createBookingDateWithValue": "Date: {date}",
+  "@createBookingDateWithValue": {
+    "placeholders": {
+      "date": {"type": "String"}
+    }
+  },
+  "createBookingTimeWithValue": "Time: {time}",
+  "@createBookingTimeWithValue": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "createBookingPickTime": "Pick time",
+  "createBookingValidationIncomplete": "Please complete customer, service, team member, date and time.",
+  "createBookingSuccessSnackbar": "Booking created successfully",
+  "createBookingSaveCta": "Save booking",
+  "addCustomerTitle": "Add new customer",
+  "addCustomerSaveCustomer": "Save customer",
+  "addCustomerSaveAndBook": "Save and book",
+  "addCustomerFieldFullName": "Full name",
+  "addCustomerFullNameRequired": "Full name is required",
+  "addCustomerFieldPhone": "Phone number",
+  "addCustomerFieldSource": "Source (walk-in, Instagram, referral…)",
+  "addCustomerFieldNotes": "Notes",
+  "addCustomerSavedWithPhone": "Customer saved successfully.",
+  "addCustomerSavedNoPhone": "Customer saved. No phone number added.",
+  "accountProfileRecoveryInlineError": "Account created, but profile setup did not finish. Tap “Create profile” to recover your account.",
+  "profileFieldFullName": "Full name",
+  "profileFieldMobile": "Mobile",
+  "profileFieldCity": "City",
+  "authHintEmailExample": "name@example.com",
+  "customerBookingMoreDays": "More days",
+  "barberAttendanceInOutLine": "In: {checkIn} · Out: {checkOut}",
+  "@barberAttendanceInOutLine": {
+    "placeholders": {
+      "checkIn": {"type": "String"},
+      "checkOut": {"type": "String"}
+    }
+  },
+  "barberAttendanceStatusPresent": "Present",
+  "barberAttendanceStatusAbsent": "Absent",
+  "barberAttendanceStatusLate": "Late",
+  "barberAttendanceStatusLeave": "Leave",
+  "preAuthLanguageEnglishHint": "English interface",
+  "preAuthLanguageArabicHint": "Arabic interface",
+  "semanticIllustrationSalonOwnerSignup": "Salon owner signup illustration",
+  "semanticIllustrationCustomerSignup": "Customer signup illustration",
+  "semanticIllustrationEmptyServices": "Empty services illustration",
+  "semanticIllustrationWelcomeOnboarding": "Welcome onboarding illustration",
+  "employeePayrollTitle": "Payroll",
+  "employeePayrollSubtitle": "Your salary and payslip",
+  "employeePayrollSelectMonth": "Select month",
+  "employeePayrollNetPay": "Net pay",
+  "employeePayrollEarnings": "Earnings",
+  "employeePayrollDeductions": "Deductions",
+  "employeePayrollNetSalary": "Net salary",
+  "employeePayrollStatusPaid": "Paid",
+  "employeePayrollStatusApproved": "Approved",
+  "employeePayrollServicesStat": "Services",
+  "employeePayrollThisMonth": "This month",
+  "employeePayrollCommissionStat": "Commission",
+  "employeePayrollOnServices": "On services",
+  "employeePayrollAttendanceStat": "Attendance",
+  "employeePayrollDaysPresent": "Days present",
+  "employeePayrollViewFullPayslip": "View full payslip",
+  "employeePayrollDownloadPdf": "Download PDF",
+  "employeePayrollRecentTitle": "Recent payslips",
+  "employeePayrollViewAll": "View all",
+  "employeePayrollEmptyTitle": "Payslip is not generated yet for this month",
+  "employeePayrollEmptyBody": "Your payslip will appear here once the salon owner generates payroll for this period.",
+  "employeeWorkspaceNotLinkedTitle": "Employee profile not linked",
+  "employeeWorkspaceNotLinkedBody": "Your account is not linked to an employee profile yet. Ask your salon owner to complete staff provisioning.",
+  "employeeStaffWorkspaceUnavailableTitle": "Staff workspace unavailable",
+  "employeeStaffWorkspaceUnavailableBody": "Your user account or staff profile is inactive, or your employee record could not be loaded. Ask your salon owner if this should be restored.",
+  "employeeMapLocationPermissionRequired": "Location permission is required to show your position on the map.",
+  "employeeMapUnavailableBody": "Map could not be loaded. You can still punch using GPS when enabled.",
+  "employeePayrollErrorTitle": "Could not load payroll",
+  "employeePayrollSalaryNotesTitle": "Salary notes",
+  "employeePayrollNoWorkspace": "No workspace",
+  "employeePayrollHistoryTitle": "Payslip history",
+  "employeePayrollDetailsTitle": "Payslip",
+  "employeePayrollPdfShareSubject": "Payslip",
+  "employeePayrollTotalEarnings": "Total earnings",
+  "employeePayrollTotalDeductions": "Total deductions",
+  "employeePayrollPeriod": "{start} – {end}",
+  "@employeePayrollPeriod": {
+    "placeholders": {
+      "start": {"type": "String"},
+      "end": {"type": "String"}
+    }
+  },
+  "employeeTodayLocationUnknown": "Location unknown",
+  "employeeTodayNoAddressSet": "No address set",
+  "employeeAttendanceZoneNotConfiguredAdmin": "Attendance zone is not configured yet. Please contact your salon admin.",
+  "employeeAttendanceNotRequiredOrDisabled": "Attendance is not required or disabled.",
+  "employeeTodayCheckedOutForToday": "You are checked out for today.",
+  "employeeTodayCorrectionRequestsDisabled": "Correction requests are disabled for your salon.",
+  "employeeTodayAwaitingApproval": "Awaiting approval",
+  "employeeTodayNoOpenRequests": "No open requests",
+  "employeeAttendanceSalonLocationTitle": "Salon location",
+  "employeeAttendanceLocating": "Locating…",
+  "employeeAttendanceGpsAccuracy": "GPS accuracy: {accuracy}",
+  "@employeeAttendanceGpsAccuracy": {
+    "placeholders": {
+      "accuracy": {"type": "String"}
+    }
+  },
+  "employeeAttendanceSalonLocationOwnerNote": "Salon location is not configured. Please contact the owner.",
+  "employeeAttendanceRetryLocation": "Retry location",
+  "employeeAttendanceWithinRange": "Within range",
+  "employeeAttendanceOutsideRange": "Outside range",
+  "employeeAttendanceScreenTitle": "Attendance",
+  "employeeAttendanceScreenSubtitle": "Track your work hours and stay punctual",
+  "employeeAttendanceGreetingMorning": "Good morning,",
+  "employeeAttendanceGreetingAfternoon": "Good afternoon,",
+  "employeeAttendanceGreetingEvening": "Good evening,",
+  "employeeAttendanceProductiveDay": "Have a productive day! 👋",
+  "employeePunchNextAction": "Next action",
+  "employeePunchMissingDetectedWithCorrection": "Missing punch detected. Submit a request for approval.",
+  "employeePunchDoneForToday": "You are done for today.",
+  "employeePunchMustBeInZone": "You must be within the salon zone to punch in.",
+  "employeePunchTapWhenArrive": "Tap when you arrive at the salon.",
+  "employeePunchBreakLimitMinutes": "Your daily break limit is {minutes} minutes total.",
+  "@employeePunchBreakLimitMinutes": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "employeePunchReturnFromBreak": "Tap when you return from break.",
+  "employeePunchEndWorkingDay": "End your working day.",
+  "employeePunchSubmitCorrection": "Submit correction",
+  "employeePunchMissingAskAdmin": "Missing punch detected. Ask your owner or admin to enable correction requests.",
+  "employeePunchCompletedTodayTitle": "Completed today",
+  "employeeTimelineTodayTitle": "Today's timeline",
+  "employeeTimelineBreakOutTitle": "Break out",
+  "employeeTimelineBreakInTitle": "Break in",
+  "employeeTimelineWorkingHours": "Working hours",
+  "employeeTimelineShiftNotSet": "Shift times not set",
+  "employeeTodayStatusCardTitle": "Today's status",
+  "employeeAttendanceWorkedLabel": "Worked",
+  "employeeAttendanceExpectedCheckoutLabel": "Expected checkout",
+  "employeeAttendanceStatusMissingPunch": "Missing punch",
+  "employeeAttendanceStatusIncomplete": "Incomplete",
+  "employeeAttendanceStatusNotCheckedInTitle": "Not checked in",
+  "employeeRecentAttendanceTitle": "Recent attendance",
+  "employeeAttendanceSeeAll": "See all",
+  "employeeRecentAttendanceLoadError": "Could not load recent days.",
+  "employeeRecentAttendanceEmpty": "No attendance record yet.\nTap Punch In when you arrive at the salon.",
+  "employeeAttendanceStatusOnTime": "On time",
+  "employeeAttendanceOverviewTitle": "Attendance overview (this month)",
+  "employeeAttendanceViewCalendar": "View calendar",
+  "employeeAttendanceOverviewFootnote": "Includes days without a record before today as absent.",
+  "employeeAttendanceSummaryLoadError": "Could not load attendance summary.",
+  "employeeAttendanceNoDataYet": "No data yet.",
+  "employeeAttendanceOverviewDays": "Days",
+  "employeeAttendanceLoadError": "Could not load attendance.",
+  "employeeAttendanceCorrectionFlowTitle": "Attendance correction",
+  "employeeAttendanceCorrectionSubtitle": "Submit a missed punch request for approval.",
+  "employeeCorrectionSelectPunchType": "Please select a punch type.",
+  "employeeCorrectionSelectValidDate": "Please select a valid date.",
+  "employeeCorrectionSelectValidTime": "Please select a valid time.",
+  "employeeCorrectionFutureNotAllowed": "The request date cannot be in the future.",
+  "employeeCorrectionTooOld": "This request is older than the allowed correction period.",
+  "employeeCorrectionReasonRequired": "Please enter a reason.",
+  "employeeCorrectionReasonMinLength": "Reason must be at least 10 characters.",
+  "employeeCorrectionReasonMaxLength": "Reason cannot exceed 250 characters.",
+  "employeeCorrectionSubmittedSnackbar": "Request submitted successfully",
+  "employeeCorrectionDetailsTitle": "Correction details",
+  "employeeCorrectionRequestedPunchLabel": "Requested punch",
+  "employeeCorrectionSelectPlaceholder": "Select",
+  "employeeAttendanceReasonLabel": "Reason",
+  "employeeCorrectionAdminReviewNote": "Your request will be reviewed by an admin.",
+  "employeeCorrectionSubmitCta": "Submit request",
+  "employeeCorrectionRecentTitle": "Recent requests",
+  "employeePolicyTitle": "Attendance policy",
+  "employeePolicySubtitle": "Simple rules for your workday",
+  "employeePolicySummaryTitle": "Policy summary",
+  "employeePolicyGpsSummary": "Your salon uses GPS attendance when enabled. Punch limits: {maxPunches} per day, up to {maxBreaks} breaks.",
+  "@employeePolicyGpsSummary": {
+    "placeholders": {
+      "maxPunches": {"type": "int"},
+      "maxBreaks": {"type": "int"}
+    }
+  },
+  "employeePolicyRulePunchSession": "Punch In starts your work session; Punch Out ends it.",
+  "employeePolicyRuleBreakPair": "Break Out / Break In must be used as a pair.",
+  "employeePolicyRuleGpsZone": "GPS may be required when you punch — stay inside the salon zone.",
+  "employeePolicyUpdatedSnackbar": "Policy updated",
+  "employeePolicyRegenerateCta": "Regenerate policy",
+  "employeePolicyPunchRules": "Punch rules",
+  "employeePolicyLateEarly": "Late & early exit",
+  "employeePolicyCorrectionSection": "Correction requests",
+  "employeePolicyDefaultTitle": "Attendance policy",
+  "employeeCalendarLoadError": "Could not load calendar",
+  "employeeAttendanceDayTitle": "Attendance day",
+  "employeeAttendanceDayNoRecord": "No record for this day.",
+  "employeeAttendanceDayStatusLine": "Status: {status}",
+  "@employeeAttendanceDayStatusLine": {
+    "placeholders": {
+      "status": {"type": "String"}
+    }
+  },
+  "employeeAttendanceDayWorkedBreakLine": "Worked: {worked} min · Break: {breakMin} min",
+  "@employeeAttendanceDayWorkedBreakLine": {
+    "placeholders": {
+      "worked": {"type": "int"},
+      "breakMin": {"type": "int"}
+    }
+  },
+  "employeeAttendanceDayPunchesTitle": "Punches",
+  "employeeHistoryTitle": "Attendance history",
+  "employeeHistoryRequestCta": "Request",
+  "employeeHistoryEmpty": "No attendance days yet.",
+  "employeeAttendanceRequestAddReason": "Please add a reason.",
+  "employeeAttendanceRequestFutureTime": "Requested time cannot be in the future.",
+  "employeeAttendanceRequestDuplicatePending": "You already have a pending request for this.",
+  "employeeAttendanceRequestSubmitted": "Request submitted",
+  "employeeRequestFailed": "Request failed",
+  "employeeAttendanceRequestScreenTitle": "Attendance correction",
+  "employeeAttendanceRequestPunchLabel": "Requested punch",
+  "employeeAttendanceRequestSubmitCta": "Submit request",
+  "employeeMapPreviewMobileOnly": "Map preview is available on the mobile app.",
+  "employeeMapZoneNotConfigured": "Zone not configured",
+  "employeeMapMarkerSalonZone": "Salon zone",
+  "employeeMapMarkerYourLocation": "Your location",
+  "employeeTodayStatsTitle": "My today",
+  "employeeTodayStatsSalesLabel": "Sales",
+  "employeeTodayStatsHoursLabel": "Hours",
+  "employeeTodayDistanceUnknown": "Distance —",
+  "employeeBottomNavToday": "Today",
+  "employeeBottomNavSales": "Sales",
+  "employeeBottomNavAttendance": "Attendance",
+  "employeeBottomNavPayroll": "Payroll",
+  "employeeBottomNavProfile": "Profile",
+  "ownerCustomerBookingTileTitle": "Customer booking",
+  "ownerCustomerBookingTileSubtitle": "Control online booking, availability, and public visibility",
+  "ownerCustomerBookingTitle": "Customer booking",
+  "ownerCustomerBookingSubtitle": "Control how customers discover your salon, book online, and see availability.",
+  "ownerCustomerBookingSectionPublic": "Public visibility",
+  "ownerCustomerBookingSectionPublicHint": "Listing and discovery",
+  "ownerCustomerBookingShowSalon": "Show salon to customers",
+  "ownerCustomerBookingShowSalonHint": "If off, your salon will not appear in customer discovery.",
+  "ownerCustomerBookingSectionAvailability": "Booking availability",
+  "ownerCustomerBookingEnableBooking": "Enable customer booking",
+  "ownerCustomerBookingAutoConfirm": "Auto-confirm bookings",
+  "ownerCustomerBookingAnySpecialist": "Allow any available specialist",
+  "ownerCustomerBookingRequireCode": "Require booking code for lookup",
+  "ownerCustomerBookingShowPrices": "Show prices to customers",
+  "ownerCustomerBookingAllowNotes": "Allow customer notes",
+  "ownerCustomerBookingAllowFeedback": "Allow customer feedback",
+  "ownerCustomerBookingSectionRules": "Booking rules",
+  "ownerCustomerBookingSlotInterval": "Slot interval",
+  "ownerCustomerBookingMaxAdvance": "Max advance booking days",
+  "ownerCustomerBookingCancelCutoff": "Cancellation cutoff",
+  "ownerCustomerBookingRescheduleCutoff": "Reschedule cutoff",
+  "ownerCustomerBookingSectionContact": "Public contact info",
+  "ownerCustomerBookingPublicArea": "Public area",
+  "ownerCustomerBookingPublicPhone": "Public phone",
+  "ownerCustomerBookingPublicWhatsapp": "Public WhatsApp",
+  "ownerCustomerBookingGenderTarget": "Gender target",
+  "ownerCustomerBookingGenderMen": "Men",
+  "ownerCustomerBookingGenderLadies": "Ladies",
+  "ownerCustomerBookingGenderUnisex": "Unisex",
+  "ownerCustomerBookingWorkingHours": "Working hours",
+  "ownerCustomerBookingCopyMonday": "Copy Monday to Tue–Thu",
+  "ownerCustomerBookingCloseAll": "Close all",
+  "ownerCustomerBookingOpenAll": "Open all",
+  "ownerCustomerBookingSave": "Save settings",
+  "ownerCustomerBookingSaved": "Customer booking settings saved",
+  "ownerCustomerBookingValidationTimeOrder": "Start time must be before end time on open days.",
+  "ownerCustomerBookingValidationWorkingDay": "At least one working day is required when booking is public.",
+  "ownerCustomerBookingPublicAreaRequired": "Public area is required when the salon is public and booking is on.",
+  "ownerCustomerBookingValidationSlotInterval": "Choose a valid slot interval (15, 20, 30, 45, or 60 minutes).",
+  "ownerCustomerBookingValidationMaxAdvance": "Max advance days must be between 1 and 90.",
+  "ownerCustomerBookingValidationCutoff": "Cutoff must be between 0 and 10080 minutes.",
+  "ownerCustomerBookingValidationPhone": "Enter a valid phone number or leave the field empty.",
+  "ownerCustomerBookingDayOpen": "Open",
+  "ownerCustomerBookingDayClosed": "Closed",
+  "ownerCustomerBookingSettingsSubtitle": "Control how customers can book appointments",
+  "ownerCustomerBookingStatusEnabled": "Enabled",
+  "ownerCustomerBookingStatusDisabled": "Disabled",
+  "ownerCustomerBookingSameDay": "Allow same-day booking",
+  "ownerCustomerBookingRequirePhone": "Require customer phone",
+  "ownerCustomerBookingRequireName": "Require customer name",
+  "ownerCustomerBookingGuestTitle": "Allow booking without login",
+  "ownerCustomerBookingTimeRulesTitle": "Time rules",
+  "ownerCustomerBookingMinNotice": "Minimum notice before booking",
+  "ownerCustomerBookingMaxDaysAhead": "Maximum days ahead",
+  "ownerCustomerBookingSlotDuration": "Slot duration",
+  "ownerCustomerBookingBuffer": "Buffer between bookings",
+  "ownerCustomerBookingCancellationTitle": "Cancellation rules",
+  "ownerCustomerBookingAllowCancel": "Allow customer cancellation",
+  "ownerCustomerBookingCancelNotice": "Cancellation minimum notice",
+  "ownerCustomerBookingPublicMessageTitle": "Public booking message",
+  "ownerCustomerBookingPublicMessageHint": "Shown to customers when booking is open.",
+  "ownerCustomerBookingSaveCta": "Save",
+  "ownerCustomerBookingSaveSuccess": "Booking settings updated",
+  "ownerCustomerBookingSaveError": "Could not save settings",
+  "ownerCustomerBookingLoadError": "Could not load booking settings",
+  "ownerCustomerBookingValidationMinNotice": "Minimum notice cannot be negative.",
+  "ownerCustomerBookingValidationMaxDays": "Maximum days ahead must be greater than 0.",
+  "ownerCustomerBookingValidationSlot": "Slot duration must be greater than 0.",
+  "ownerCustomerBookingValidationBuffer": "Buffer cannot be negative.",
+  "ownerCustomerBookingValidationCancelHours": "Cancellation notice must be greater than 0 when cancellation is allowed.",
+  "ownerCustomerBookingValidationMessage": "Message cannot exceed 250 characters.",
+  "ownerCustomerBookingMinutesShort": "{n} min",
+  "@ownerCustomerBookingMinutesShort": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "ownerCustomerBookingHoursShort": "{n} h",
+  "@ownerCustomerBookingHoursShort": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "ownerCustomerBookingMinutesDay": "24 h",
+  "customerBookingClosedTitle": "Online booking is closed",
+  "customerBookingClosedMessage": "This salon is not accepting new online bookings right now.",
+  "addSaleSelectAtLeastOneService": "Select at least one service to continue.",
+  "addSaleSelectStaffMember": "Pick the staff member who delivered this service.",
+  "addSaleTotalMustBePositive": "Total must be greater than zero.",
+  "addSaleMixedPaymentMustEqualTotal": "Cash + card must equal the total.",
+  "addSaleNoActiveServicesYet": "No active services yet",
+  "addSaleCreateServicesFirst": "Create services first to record sales.",
+  "addSaleUnableToLoadServices": "Unable to load services"
+}

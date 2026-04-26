@@ -1,0 +1,26 @@
+---
+alwaysApply: true
+---
+
+Path: `salons/{salonId}/services/{serviceId}` — model: `lib/features/services/data/models/service.dart`.
+
+## Fields
+
+id: string
+salonId: string
+name: string
+serviceName: string (denormalized; mirrors name when omitted)
+description: string (optional)
+price: number
+durationMinutes: number
+category: string (optional)
+imageUrl: string (optional) — HTTPS URL; owner can upload to Storage (`salons/{salonId}/services/{serviceId}/`) or paste a URL
+isActive: boolean
+createdAt: timestamp
+updatedAt: timestamp
+
+## Implemented vs Planned
+
+**Implemented:** Matches `SalonService` / `ServiceRepository`; `imageUrl` supported in UI and owner upload.
+
+**Planned:** e.g. SKU — not in model.

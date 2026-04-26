@@ -1,0 +1,33 @@
+---
+alwaysApply: true
+---
+
+Path: **`salons/{salonId}/bookings/{bookingId}`** — model: `lib/features/bookings/data/models/booking.dart`.
+
+Bookings are **only** under a salon subcollection (**not** `bookings/{bookingId}` at root).
+
+## Fields
+
+id: string
+salonId: string (must match path)
+barberId: string (`employees/{employeeId}` doc id)
+barberName: string (optional, denormalized)
+customerId: string (`users/{uid}`)
+customerName: string (optional, denormalized)
+serviceId: string (optional)
+serviceName: string (optional, denormalized)
+startAt: timestamp
+endAt: timestamp
+status: string — `BookingStatuses`: scheduled | confirmed | completed | cancelled | no_show
+notes: string (optional)
+reportYear: number
+reportMonth: number
+reportPeriodKey: string (YYYY-MM)
+createdAt: timestamp
+updatedAt: timestamp
+
+## Implemented vs Planned
+
+**Implemented:** Path and fields match `Booking` / `BookingRepository`.
+
+**Planned:** e.g. `price` / deposit on the booking document if product adds payments per booking.

@@ -1,0 +1,22 @@
+---
+alwaysApply: true
+---
+
+Use Flutter templates from Code Market as UI inspiration only.
+
+Do NOT copy architecture or logic.
+
+Rebuild screens with:
+- Clean architecture
+- Riverpod
+- Firebase
+
+Follow design:
+- luxury black + gold
+- minimal UI
+- clean spacing
+
+Use templates for:
+- layout inspiration
+- components design
+- UX structure

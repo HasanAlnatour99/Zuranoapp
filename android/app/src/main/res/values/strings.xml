@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Replace with values from Meta Developer Console (App settings > Basic). -->
+    <!-- Also add the Android package name and key hashes under Facebook Login settings. -->
+    <string name="facebook_app_id">1269393198116298</string>
+    <string name="facebook_client_token">e096923ffa72b52d7272e00d608e117b</string>
+</resources>

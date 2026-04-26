@@ -1,0 +1,40 @@
+---
+alwaysApply: true
+---
+
+The app must support full localization (English + Arabic) from the beginning.
+
+Rules:
+
+1. No hardcoded text is allowed anywhere in UI.
+2. All strings must come from localization files (ARB).
+3. Use flutter_localizations and intl package.
+4. Support two languages:
+   - English (LTR)
+   - Arabic (RTL)
+
+5. RTL Support:
+   - UI must adapt automatically for Arabic
+   - Do not hardcode text direction
+   - Use Directionality-aware widgets
+   - Use start/end instead of left/right
+
+6. Localization structure:
+   - lib/l10n/app_en.arb
+   - lib/l10n/app_ar.arb
+
+7. UI Requirements:
+   - Layout must work in both LTR and RTL
+   - No broken alignment in Arabic
+   - Text must fit in both languages
+
+8. Language switching:
+   - Allow switching between English and Arabic
+   - Save user preference
+
+9. Fonts:
+   - Support Arabic fonts (e.g. Cairo, Noto Sans Arabic)
+   - Use fallback fonts when needed
+
+10. Testing:
+   - Every screen must be tested in both languages

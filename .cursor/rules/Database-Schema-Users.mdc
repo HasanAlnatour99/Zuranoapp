@@ -1,0 +1,32 @@
+---
+description:
+alwaysApply: true
+---
+
+Path: `users/{uid}` — model: `lib/features/users/data/models/app_user.dart`.
+
+## Customers
+
+Use **`users/{uid}`** with **`role: customer`**.  
+**No** global `customers` collection. **No** `salons/{salonId}/customers` cache in the current app.
+
+## Fields
+
+Document id = **`uid`**. Store **`uid`** in the document payload; do **not** introduce a separate **`id`** field for users.
+
+uid: string
+name: string
+email: string
+role: string (owner | admin | barber | customer | empty pending role selection)
+salonId: string (nullable)
+employeeId: string (nullable)
+phone: string (optional)
+isActive: boolean
+createdAt: timestamp
+updatedAt: timestamp
+
+## Implemented vs Planned
+
+**Implemented:** Fields above match `AppUser` / `UserRepository`.
+
+**Planned:** `profileImageUrl`, `favoriteSalonIds` — not in `AppUser` yet.

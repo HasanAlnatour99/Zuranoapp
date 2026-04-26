@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 88" fill="none" aria-hidden="true">
+  <g transform="translate(0 10)">
+    <path fill="#D4AF37" d="M10 15H90V25H35L90 75V85H10V75H65L10 25Z"/>
+    <path fill="#F2D98A" d="M82 15L90 15L90 24Z"/>
+  </g>
+  <text x="98" y="38" fill="#E8C96A" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="28" font-weight="800" letter-spacing="0.22em">ZURANO</text>
+  <text x="98" y="62" fill="#E8C96A" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" font-weight="600" letter-spacing="0.28em" opacity="0.78">BARBER &amp; SALON</text>
+</svg>

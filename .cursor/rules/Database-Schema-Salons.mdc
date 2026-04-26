@@ -1,0 +1,26 @@
+---
+alwaysApply: true
+---
+
+Path: `salons/{salonId}` — model: `lib/features/salon/data/models/salon.dart`.
+
+## Fields
+
+id: string (document id)
+salonId: string (equals document id; redundant for rules/queries)
+name: string
+phone: string
+address: string
+ownerUid: string (**not** ownerId — Firebase Auth uid)
+ownerName: string
+ownerEmail: string
+currencyCode: string (default USD)
+isActive: boolean
+createdAt: timestamp
+updatedAt: timestamp
+
+## Implemented vs Planned
+
+**Implemented:** All fields above exist on `Salon` / `SalonRepository` writes.
+
+**Planned:** `location` (lat/lng map), `logoUrl` — not in the current model.

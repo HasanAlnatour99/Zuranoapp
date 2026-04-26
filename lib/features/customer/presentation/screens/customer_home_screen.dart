@@ -1,0 +1,454 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../core/constants/app_routes.dart';
+import '../../../../core/formatting/app_money_format.dart';
+import '../../../../core/theme/app_radius.dart';
+import '../../../../core/theme/app_spacing.dart';
+import '../../../../core/widgets/app_bar_leading_back.dart';
+import '../../../../core/widgets/app_empty_state.dart';
+import '../../../../core/widgets/app_fade_in.dart';
+import '../../../../core/widgets/app_loading_indicator.dart';
+import '../../../../core/widgets/app_notification_badge.dart';
+import '../../../../core/widgets/customer_discovery_header.dart';
+import '../../../../core/widgets/customer_home_skeleton.dart';
+import '../../../../core/widgets/customer_promo_banner_card.dart';
+import '../../../../core/widgets/customer_quick_service_tile.dart';
+import '../../../../core/widgets/customer_salon_highlight_card.dart';
+import '../../../../core/widgets/customer_section_row_header.dart';
+import '../../../../l10n/app_localizations.dart';
+import '../../../../providers/customer_salon_streams_provider.dart';
+import '../../../../providers/notification_providers.dart';
+import '../../../../providers/auth_session_actions.dart';
+import '../../../../providers/session_provider.dart';
+import '../../../salon/data/models/salon.dart';
+import '../../../services/data/models/service.dart';
+import 'package:barber_shop_app/core/ui/app_icons.dart';
+
+String _customerTimeGreeting(AppLocalizations l10n) {
+  final h = DateTime.now().hour;
+  if (h < 12) {
+    return l10n.customerDiscoveryGoodMorning;
+  }
+  if (h < 17) {
+    return l10n.customerDiscoveryGoodAfternoon;
+  }
+  return l10n.customerDiscoveryGoodEvening;
+}
+
+bool _isPermissionDeniedError(Object error) {
+  return error is FirebaseException && error.code == 'permission-denied';
+}
+
+class CustomerHomeScreen extends ConsumerStatefulWidget {
+  const CustomerHomeScreen({super.key});
+
+  @override
+  ConsumerState<CustomerHomeScreen> createState() => _CustomerHomeScreenState();
+}
+
+class _CustomerHomeScreenState extends ConsumerState<CustomerHomeScreen> {
+  final _searchController = TextEditingController();
+  String? _categoryFilter;
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  List<String> _distinctCategories(List<Salon> salons) {
+    final set = <String>{};
+    for (final s in salons) {
+      final c = s.category?.trim();
+      if (c != null && c.isNotEmpty) {
+        set.add(c);
+      }
+    }
+    final out = set.toList()..sort();
+    return out;
+  }
+
+  List<Widget> _quickServiceSlivers(
+    AppLocalizations l10n,
+    List<Salon> salonsForCurrency,
+  ) {
+    final servicesAsync = ref.watch(customerDiscoveryServicesProvider);
+    final locale = Localizations.localeOf(context);
+    final currencyBySalon = {
+      for (final s in salonsForCurrency) s.id: s.currencyCode,
+    };
+
+    return servicesAsync.when(
+      data: (services) {
+        if (services.isEmpty) {
+          return const <Widget>[];
+        }
+        return [
+          SliverToBoxAdapter(
+            child: CustomerSectionRowHeader(
+              title: l10n.customerSectionQuickServices,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 212,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppSpacing.large,
+                ),
+                children: _interleaveQuickTiles(
+                  services,
+                  l10n,
+                  locale,
+                  currencyBySalon,
+                ),
+              ),
+            ),
+          ),
+        ];
+      },
+      loading: () => [
+        SliverToBoxAdapter(
+          child: CustomerSectionRowHeader(
+            title: l10n.customerSectionQuickServices,
+          ),
+        ),
+        const SliverToBoxAdapter(
+          child: SizedBox(
+            height: 120,
+            child: Center(child: AppLoadingIndicator(size: 36)),
+          ),
+        ),
+      ],
+      error: (_, _) => const <Widget>[],
+    );
+  }
+
+  List<Widget> _interleaveQuickTiles(
+    List<SalonService> services,
+    AppLocalizations l10n,
+    Locale locale,
+    Map<String, String> currencyBySalon,
+  ) {
+    final out = <Widget>[];
+    for (var i = 0; i < services.length; i++) {
+      if (i > 0) {
+        out.add(const SizedBox(width: AppSpacing.medium));
+      }
+      final s = services[i];
+      final code = currencyBySalon[s.salonId] ?? 'USD';
+      out.add(
+        CustomerQuickServiceTile(
+          title: s.serviceName,
+          priceLabel: formatAppMoney(s.price, code, locale),
+          durationLabel: l10n.bookingDurationMinutes(s.durationMinutes),
+          icon: AppIcons.spa_outlined,
+          onTap: () => context.push(AppRoutes.customerSalon(s.salonId)),
+        ),
+      );
+    }
+    return out;
+  }
+
+  List<Salon> _filteredSalons(List<Salon> salons, String qLower) {
+    var filtered = qLower.isEmpty
+        ? salons
+        : salons
+              .where(
+                (s) =>
+                    s.name.toLowerCase().contains(qLower) ||
+                    s.address.toLowerCase().contains(qLower),
+              )
+              .toList(growable: false);
+    if (_categoryFilter != null) {
+      filtered = filtered
+          .where((s) => (s.category ?? '').trim() == _categoryFilter)
+          .toList(growable: false);
+    }
+    return filtered;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final sessionAsync = ref.watch(sessionUserProvider);
+    final salonsAsync = ref.watch(activeSalonsStreamProvider);
+    final servicesAsync = ref.watch(customerDiscoveryServicesProvider);
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final l10n = AppLocalizations.of(context)!;
+    final q = _searchController.text.trim().toLowerCase();
+
+    return sessionAsync.when(
+      loading: () =>
+          const Scaffold(body: Center(child: AppLoadingIndicator(size: 40))),
+      error: (_, _) => Scaffold(body: Center(child: Text(l10n.genericError))),
+      data: (user) {
+        if (user == null) {
+          return const Scaffold(body: SizedBox.shrink());
+        }
+
+        final displayName = user.name.trim().isEmpty
+            ? l10n.customerGuestName
+            : user.name.trim();
+        final salonsForPromo = salonsAsync.asData?.value ?? const <Salon>[];
+        final salonCount = salonsForPromo.length;
+
+        return Scaffold(
+          appBar: AppBar(
+            leading: const AppBarLeadingBack(),
+            automaticallyImplyLeading: false,
+            title: Text(l10n.customerDiscoverTitle),
+            actions: [
+              IconButton(
+                tooltip: l10n.appSettingsTitle,
+                onPressed: () => context.push(AppRoutes.settings),
+                icon: const Icon(AppIcons.settings_outlined),
+              ),
+              IconButton(
+                tooltip: l10n.customerMyBookings,
+                onPressed: () => context.push(AppRoutes.customerMyBookings),
+                icon: const Icon(AppIcons.event_note_outlined),
+              ),
+              TextButton(
+                onPressed: () => performAppSignOut(context),
+                child: Text(
+                  l10n.customerSignOut,
+                  style: theme.textTheme.labelLarge?.copyWith(
+                    color: scheme.primary,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          body: AppFadeIn(
+            child: CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(
+                  child: CustomerDiscoveryHeader(
+                    timeGreeting: _customerTimeGreeting(l10n),
+                    headline: l10n.customerDiscoveryNameWave(displayName),
+                    trailing: Material(
+                      color: scheme.surfaceContainer,
+                      borderRadius: BorderRadius.circular(AppRadius.large),
+                      child: IconButton(
+                        tooltip: l10n.customerNotificationsTooltip,
+                        onPressed: () => context.push(AppRoutes.notifications),
+                        icon: Builder(
+                          builder: (context) {
+                            final n = ref.watch(
+                              unreadNotificationCountProvider,
+                            );
+                            return AppNotificationBadge(
+                              count: n,
+                              child: const Icon(
+                                AppIcons.notifications_outlined,
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(
+                      AppSpacing.large,
+                      AppSpacing.small,
+                      AppSpacing.large,
+                      AppSpacing.small,
+                    ),
+                    child: TextField(
+                      controller: _searchController,
+                      onChanged: (_) => setState(() {}),
+                      decoration: InputDecoration(
+                        hintText: l10n.customerSearchHint,
+                        prefixIcon: const Icon(AppIcons.search_rounded),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(AppRadius.medium),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SliverToBoxAdapter(
+                  child: salonsAsync.maybeWhen(
+                    data: (salons) {
+                      final filtered = _filteredSalons(salons, q);
+                      return CustomerPromoBannerCard(
+                        eyebrow: l10n.customerPromoSalonEyebrow(salonCount),
+                        title: servicesAsync.when(
+                          data: (list) =>
+                              l10n.customerPromoServicesTitle(list.length),
+                          loading: () => l10n.loadingPlaceholder,
+                          error: (_, _) => l10n.genericError,
+                        ),
+                        ctaLabel: l10n.customerPromoCta,
+                        onCtaPressed: filtered.isNotEmpty
+                            ? () => context.push(
+                                AppRoutes.customerSalon(filtered.first.id),
+                              )
+                            : null,
+                      );
+                    },
+                    orElse: () => CustomerPromoBannerCard(
+                      eyebrow: l10n.customerPromoSalonEyebrow(salonCount),
+                      title: servicesAsync.when(
+                        data: (list) =>
+                            l10n.customerPromoServicesTitle(list.length),
+                        loading: () => l10n.loadingPlaceholder,
+                        error: (_, _) => l10n.genericError,
+                      ),
+                      ctaLabel: l10n.customerPromoCta,
+                      onCtaPressed: null,
+                    ),
+                  ),
+                ),
+                const SliverToBoxAdapter(
+                  child: SizedBox(height: AppSpacing.medium),
+                ),
+                ..._quickServiceSlivers(l10n, salonsForPromo),
+                SliverToBoxAdapter(
+                  child: salonsAsync.maybeWhen(
+                    data: (salons) {
+                      final cats = _distinctCategories(salons);
+                      if (cats.isEmpty) {
+                        return const SizedBox.shrink();
+                      }
+                      return Padding(
+                        padding: const EdgeInsets.fromLTRB(
+                          AppSpacing.large,
+                          AppSpacing.medium,
+                          AppSpacing.large,
+                          AppSpacing.small,
+                        ),
+                        child: SizedBox(
+                          height: 40,
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.only(
+                                  end: AppSpacing.small,
+                                ),
+                                child: FilterChip(
+                                  label: Text(l10n.customerCategoryAll),
+                                  selected: _categoryFilter == null,
+                                  onSelected: (_) => setState(() {
+                                    _categoryFilter = null;
+                                  }),
+                                ),
+                              ),
+                              ...cats.map(
+                                (c) => Padding(
+                                  padding: const EdgeInsetsDirectional.only(
+                                    end: AppSpacing.small,
+                                  ),
+                                  child: FilterChip(
+                                    label: Text(c),
+                                    selected: _categoryFilter == c,
+                                    onSelected: (_) => setState(() {
+                                      _categoryFilter = c;
+                                    }),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                    orElse: () => const SizedBox.shrink(),
+                  ),
+                ),
+                SliverToBoxAdapter(
+                  child: CustomerSectionRowHeader(
+                    title: l10n.customerSectionNearbySalons,
+                  ),
+                ),
+                ...salonsAsync.when<List<Widget>>(
+                  data: (salons) {
+                    final filtered = _filteredSalons(salons, q);
+                    if (filtered.isEmpty) {
+                      return [
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: Padding(
+                            padding: const EdgeInsets.all(AppSpacing.large),
+                            child: AppEmptyState(
+                              title: l10n.customerDiscoverTitle,
+                              message: l10n.customerNoSalons,
+                              icon: AppIcons.storefront_outlined,
+                            ),
+                          ),
+                        ),
+                      ];
+                    }
+                    return [
+                      SliverPadding(
+                        padding: const EdgeInsets.fromLTRB(
+                          AppSpacing.large,
+                          AppSpacing.small,
+                          AppSpacing.large,
+                          AppSpacing.large,
+                        ),
+                        sliver: SliverList(
+                          delegate: SliverChildBuilderDelegate((context, i) {
+                            final s = filtered[i];
+                            final isLast = i == filtered.length - 1;
+                            return Padding(
+                              padding: EdgeInsets.only(
+                                bottom: isLast ? 0 : AppSpacing.medium,
+                              ),
+                              child: CustomerSalonHighlightCard(
+                                salon: s,
+                                badgeLabel: s.isActive
+                                    ? l10n.customerSalonBadgeOpen
+                                    : null,
+                                metadataLine: s.phone.trim().isNotEmpty
+                                    ? s.phone.trim()
+                                    : null,
+                                onTap: () =>
+                                    context.push(AppRoutes.customerSalon(s.id)),
+                              ),
+                            );
+                          }, childCount: filtered.length),
+                        ),
+                      ),
+                    ];
+                  },
+                  loading: () => [
+                    const SliverFillRemaining(child: CustomerHomeSkeleton()),
+                  ],
+                  error: (error, _) => [
+                    SliverToBoxAdapter(
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(
+                          AppSpacing.large,
+                          AppSpacing.small,
+                          AppSpacing.large,
+                          AppSpacing.large,
+                        ),
+                        child: AppEmptyState(
+                          title: l10n.customerDiscoverTitle,
+                          message: _isPermissionDeniedError(error)
+                              ? l10n.customerNoSalons
+                              : l10n.genericError,
+                          icon: AppIcons.storefront_outlined,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+}

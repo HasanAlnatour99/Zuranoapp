@@ -1,0 +1,43 @@
+{
+  "plugins": {
+    "linear": {
+      "enabled": true
+    },
+    "figma": {
+      "enabled": true
+    },
+    "notion-workspace": {
+      "enabled": true
+    },
+    "datadog": {
+      "enabled": true
+    },
+    "workos": {
+      "enabled": true
+    },
+    "firebase": {
+      "enabled": true
+    },
+    "cli-for-agent": {
+      "enabled": true
+    },
+    "1password": {
+      "enabled": true
+    },
+    "huggingface-skills": {
+      "enabled": true
+    },
+    "paper-desktop": {
+      "enabled": true
+    },
+    "redis-development": {
+      "enabled": true
+    },
+    "neon-postgres": {
+      "enabled": true
+    },
+    "supabase": {
+      "enabled": true
+    }
+  }
+}

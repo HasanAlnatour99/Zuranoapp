@@ -1,0 +1,46 @@
+{
+    "name": "Barber Shop Management",
+    "short_name": "BarberShop",
+    "description": "Book appointments, manage employees, track sales and attendance — the all-in-one barber shop management platform.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1A1A1A",
+    "theme_color": "#C9A96E",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "lang": "en",
+    "dir": "auto",
+    "categories": ["business", "productivity", "lifestyle"],
+    "screenshots": [
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "form_factor": "narrow"
+        }
+    ],
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}

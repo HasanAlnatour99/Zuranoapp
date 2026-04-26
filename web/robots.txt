@@ -1,0 +1,28 @@
+# Barber Shop App — robots.txt
+# Updated: 2026-04-18
+
+User-agent: *
+Allow: /
+
+# Block auth and private dashboard routes from crawlers
+Disallow: /login
+Disallow: /register
+Disallow: /create-salon
+Disallow: /owner-dashboard
+Disallow: /barber-dashboard
+Disallow: /admin-dashboard
+Disallow: /customer/home/booking/
+
+# Allow customer-facing salon detail pages (important for SEO)
+Allow: /customer/home/
+Allow: /customer/home/salon/
+# Legacy paths redirect to /customer/home; keep crawl hints for old bookmarks
+Allow: /customer-home/
+Allow: /customer-home/salon/
+
+# Block Flutter internal files
+Disallow: /flutter_bootstrap.js
+Disallow: /*.json$
+Disallow: /flutter_service_worker.js
+
+Sitemap: https://barber-shop-app-13aa7.web.app/sitemap.xml

@@ -1,0 +1,22 @@
+---
+alwaysApply: true
+---
+
+## Required fields
+
+**Salon-scoped documents** (`salons/{salonId}/...`) MUST include:
+
+- `salonId` (must match path)
+- `createdAt` / `updatedAt` (use server timestamps on write)
+
+They also include an `id` field when the Dart model defines it (same as document id).
+
+**`users/{uid}`** documents MUST include:
+
+- `uid` (same value as document id — do **not** use `id` as the user’s primary field name)
+- `createdAt` / `updatedAt` (server timestamps on write)
+- `salonId` is **optional** (nullable) for customers and pending onboarding
+
+There is **no** separate global **`customers`** collection — use **`users`** with **`role: customer`**.
+
+**Bookings** are **only** under **`salons/{salonId}/bookings/{bookingId}`**, never a root-level `bookings` collection.

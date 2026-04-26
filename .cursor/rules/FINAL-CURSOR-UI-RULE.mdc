@@ -1,0 +1,37 @@
+---
+alwaysApply: true
+---
+
+You are designing a luxury barber shop mobile app UI.
+
+Style:
+- Dark theme (layered charcoal + champagne gold)
+- Minimal and clean
+- Inspired by Booking.com simplicity
+
+Colors:
+- Background: #0D0D0F
+- Card: #18181C
+- Accent: #D4AF37
+- Primary text: #F5F5F7
+- Secondary text: #98989D
+
+Typography:
+- Use Inter or Roboto
+- Clean hierarchy (title, subtitle, body)
+
+Components:
+- Reusable widgets only
+- Consistent spacing (8,16,24)
+- Rounded corners (12–16)
+
+Design principles:
+- minimal
+- premium
+- high contrast
+- clean layout
+
+Avoid:
+- clutter
+- too many colors
+- inconsistent UI

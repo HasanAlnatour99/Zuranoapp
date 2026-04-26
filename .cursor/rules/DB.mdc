@@ -1,0 +1,49 @@
+---
+alwaysApply: true
+---
+
+# Firestore schema rules (implementation-aligned)
+
+**Source of truth:** Dart models under `lib/features/**/data/models/` and paths in `lib/core/firestore/firestore_paths.dart`.
+
+Per-entity field lists: `Database-Schema-*.mdc` and `salons-salonId-*.mdc`.
+
+When coding, use:
+- strict typing and null safety
+- `FieldValue.serverTimestamp()` for `createdAt` / `updatedAt` on writes (see `FirestoreWritePayload`)
+- centralized paths — never hardcode collection strings in repositories
+
+## Collection layout
+
+- **`users/{uid}`** — all personas. **Customers = `role: customer` here.** There is **no** global `customers` collection and no `salons/{salonId}/customers` subcollection in the current app.
+- **`salons/{salonId}`** — salon root document.
+- **Bookings** live only under **`salons/{salonId}/bookings/{bookingId}`** (not a top-level `bookings` collection).
+
+Subcollections under each salon: `employees`, `services`, `sales`, `attendance`, `payroll`, `expenses`, `bookings`, and `violations` (optional feature).
+
+## Field naming (match code, not legacy docs)
+
+| Use | Do not use |
+|-----|------------|
+| `ownerUid` (salon) | `ownerId` |
+| `uid` + document id `users/{uid}` | `id` as the user profile key |
+| `incurredAt` (expense) | `date` |
+| `checkInAt` / `checkOutAt` (attendance) | `checkIn` / `checkOut` as names in new writes |
+| `createdByUid` / `createdByName` (expense) | single opaque `createdBy` |
+
+Salon-scoped documents still store an **`id`** field equal to the document id where the model defines `id` (`Employee`, `Sale`, etc.).
+
+## Implemented vs Planned
+
+| Entity | Implemented (in code) | Planned / not in models yet |
+|--------|------------------------|-----------------------------|
+| `users/{uid}` | `uid`, name, email, role, optional salonId/employeeId, phone, isActive, timestamps | `profileImageUrl`, `favoriteSalonIds` |
+| `salons/{salonId}` | id, salonId, name, phone, address, ownerUid, ownerName, ownerEmail, currencyCode, isActive, timestamps | `location` (lat/lng), `logoUrl` |
+| Employees | id, salonId, optional uid, name, email, phone, role, rates, isActive, timestamps | `profileImageUrl` |
+| Services | id, salonId, name, serviceName, description, price, durationMinutes, category, isActive, timestamps | — |
+| Sales | lineItems[], serviceNames, subtotal/tax/discount/total, employeeId/barberId, paymentMethod, status, soldAt, customerId, report fields, timestamps | — |
+| Bookings | salonId, barberId, customerId, startAt/endAt, status, optional service fields, report fields, timestamps | `price` on booking doc if product requires it |
+| Attendance | workDate, checkInAt/checkOutAt, presence status, approval workflow fields, timestamps | GPS `location` map |
+| Payroll | periodStart/End, amounts, status (PayrollStatuses), month/year, reportPeriodKey, paidAt, timestamps | — |
+| Expenses | title, category, amount, incurredAt, createdByUid/Name, vendorName, report fields, timestamps | separate `description` field (use `notes` today) |
+| Violations | type, reason, status, occurredAt, penalty, report fields, timestamps | — |

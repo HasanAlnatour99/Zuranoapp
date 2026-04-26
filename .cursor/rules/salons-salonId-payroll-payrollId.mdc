@@ -1,0 +1,38 @@
+---
+alwaysApply: true
+---
+
+Path: `salons/{salonId}/payroll/{payrollId}` — model: `lib/features/payroll/data/models/payroll_record.dart`.
+
+## Fields
+
+id: string
+salonId: string
+employeeId: string
+employeeName: string
+
+periodStart: timestamp
+periodEnd: timestamp
+
+baseAmount: number
+commissionAmount: number
+bonusAmount: number
+deductionAmount: number
+netAmount: number
+
+status: string — `PayrollStatuses`: draft | pending_approval | approved | paid | voided
+
+month: number (1–12; derived from periodStart if omitted in old data)
+year: number (derived from periodStart if omitted)
+reportPeriodKey: string (YYYY-MM)
+
+notes: string (optional)
+paidAt: timestamp (optional)
+createdAt: timestamp
+updatedAt: timestamp
+
+## Implemented vs Planned
+
+**Implemented:** Period bounds, amount breakdown, workflow statuses, reporting month/year.
+
+**Planned:** Extra analytics fields only if finance product requires (e.g. currency, export ids).

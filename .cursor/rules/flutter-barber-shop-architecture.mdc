@@ -1,0 +1,68 @@
+---
+description: Flutter + Firebase architecture rules for the barber shop app
+alwaysApply: true
+---
+
+# Barber Shop App Standards
+
+- Build a production-ready Flutter barber shop management app using clean architecture with simple boundaries between `presentation`, `logic`, and `data`.
+- Keep every feature isolated inside `lib/features/`; do not mix UI with business logic.
+
+## Firebase
+
+- Use Firebase Auth for authentication.
+- Store user and salon data in Firestore only.
+- Follow this Firestore structure exactly (see `lib/core/firestore/firestore_paths.dart`):
+
+```
+users/
+  └── {uid}
+
+salons/
+  └── {salonId}
+      ├── employees/
+      ├── services/
+      ├── sales/
+      ├── attendance/
+      ├── payroll/
+      ├── expenses/
+      └── bookings/
+```
+
+  - `users/{uid}` — all personas including customers (`role: customer`); **no** separate `customers` collection or `salons/.../customers` subcollection unless added deliberately later.
+  - `salons/{salonId}` — root salon document (`salonId` field equals document id).
+  - Subcollections: `employees/{employeeId}`, `services/{serviceId}`, `sales/{saleId}`, `attendance/{attendanceId}`, `payroll/{payrollId}`, `expenses/{expenseId}`, `bookings/{bookingId}`.
+  - Also implemented: `violations/{violationId}` under the same salon (optional feature).
+- Use batch writes when creating a salon and its first employee.
+- Prefer denormalized display fields where useful (`employeeName`, `serviceName` on transactional docs); avoid duplicating large or frequently changing blobs.
+- For analytics, prefer denormalized `reportYear`, `reportMonth`, and `reportPeriodKey` (`YYYY-MM`) on sales, bookings, payroll, expenses, and violations where applicable.
+
+## Implemented vs Planned
+
+Master table and naming rules: **`DB.mdc`**.  
+Per-entity **Implemented vs Planned** sections: `Database-Schema-*.mdc` and `salons-salonId-*.mdc`.
+
+## Business Rules
+
+- The owner creates the salon first.
+- Staff (`owner`, `admin`, `barber`) use salon-scoped data; `customer` may omit `salonId` until booking flows link them.
+- Supported roles are `owner`, `admin`, `barber`, and `customer`.
+- Never allow protected actions without a valid `salonId`.
+- Validate role permissions before performing actions.
+
+## Flutter App Rules
+
+- Use Riverpod only for state management; never use `setState` for business logic.
+- Provide auth state, loading state, and current user through providers.
+- Use `go_router` only, with routes for `/`, `/login`, `/register`, `/create-salon`, and `/dashboard`.
+- Add redirect logic based on auth state and `salonId`.
+- Keep UI clean and simple, reuse shared widgets like `AppTextField` and `AppButton`, and avoid hardcoded spacing, colors, or sizing values.
+
+## Quality And Delivery
+
+- Follow the existing project structure; do not invent patterns or assume missing requirements.
+- Prefer readable, modular, reusable code with clear names and minimal comments.
+- Build features step by step, focus on MVP first, and keep each feature testable.
+- Use `const` where possible and avoid heavy logic inside widgets.
+- Validate inputs, avoid exposing sensitive data, and prepare code for Firestore security rules.
+- Make design decisions that can scale to payroll, attendance, commissions, and analytics.

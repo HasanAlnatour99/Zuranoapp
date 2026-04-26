@@ -1,0 +1,41 @@
+---
+alwaysApply: true
+---
+
+## Brand: teal + calm neutrals (2026)
+
+The app uses a **single teal accent** on **tinted near-white** backgrounds (light) and **deep teal-gray** (dark). Do not introduce alternate brand palettes or legacy gold/charcoal accents.
+
+### Light mode (canonical hex)
+
+- **Background / scaffold:** `#E2F3EF` (cool mint — clearly distinct from white cards)
+- **Card / elevated surface:** `#FFFFFF` mapped to `ColorScheme.surfaceContainer`
+- **Input / low surface:** `#D8EEE9` → `surfaceContainerLow`
+- **Tonal steps:** `#C5E8DF` → `#A8DCD0` (`surfaceContainerHigh` / `surfaceContainerHighest`)
+- **Primary accent:** `#00A896` — buttons, links, selected nav, focus borders
+- **On primary (text/icons on accent):** `#04221C`
+- **Primary container / onPrimaryContainer:** `#B8EBE0` / `#044038`
+- **Secondary / onSecondary:** `#F0F4E8` / `#1A2C29`
+- **Secondary container:** `#E0E8C8` / `#1A2C29`
+- **Text primary / secondary:** `#1A2C29` / `#4A6B66`
+- **Outline / outlineVariant:** teal-black at **~15%** and **~8%** alpha on `#1A4540` base
+- **Error / onError:** `#B3261E` / `#FFFFFF`
+- **Error container:** `#F9DEDC` / `#410E0B`
+
+### Dark mode
+
+- **Background:** `#0C1312`
+- **Card / surface:** `#151D1C` → `surfaceContainer`
+- **Input / low:** `#101816` → `surfaceContainerLow`
+- **Tonal steps:** `#1F2A28` → `#283633`
+- **Primary (brighter on dark):** `#5ED4C0` with **onPrimary** `#04221C`
+- **Primary container / onPrimaryContainer:** `#1A3D36` / `#B8EDE4`
+- **Text primary / secondary:** `#E8F4F1` / `#9CB3AE`
+- **Error:** `#FFB4AB` / `#690005` (container tones as in `AppColorsDark`)
+
+### Rules
+
+- **Never** use legacy **gold** `#D4AF37` or **charcoal** `#0D0D0F` as brand colors.
+- **Primary** only for: primary buttons, key links, selected states, focus rings, strong highlights — not full-screen fills except hero metrics where contrast is verified.
+- **No random hex** in feature UI: use `Theme.of(context).colorScheme` or tokens in [lib/core/theme/app_colors.dart](lib/core/theme/app_colors.dart).
+- **Contrast:** maintain at least **WCAG AA** for text and controls on their surfaces (validate when changing primaries).
