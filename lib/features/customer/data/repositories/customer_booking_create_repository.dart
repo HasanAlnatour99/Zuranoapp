@@ -111,7 +111,9 @@ class FirestoreCustomerBookingCreateRepository
           'salonId': salonId,
           'fullName': displayName,
           'phone': displayPhone,
-          'phoneNormalized': phoneNorm.isNotEmpty ? phoneNorm : 'guest_$bookingRef.id',
+          'phoneNormalized': phoneNorm.isNotEmpty
+              ? phoneNorm
+              : 'guest_$bookingRef.id',
           'gender': draft.customerGender,
           'notes': draft.customerNote,
           'type': 'new',
@@ -151,8 +153,9 @@ class FirestoreCustomerBookingCreateRepository
           'customerId': stableCustomerRef.id,
           'customerName': displayName,
           'customerPhone': displayPhone,
-          'customerPhoneNormalized':
-              phoneNorm.isNotEmpty ? phoneNorm : 'guest_${bookingRef.id}',
+          'customerPhoneNormalized': phoneNorm.isNotEmpty
+              ? phoneNorm
+              : 'guest_${bookingRef.id}',
           'employeeId': employeeId,
           'employeeName': employeeName,
           'barberId': employeeId,
@@ -245,7 +248,8 @@ class FirestoreCustomerBookingCreateRepository
     }
     final buffer = Duration(minutes: bufferMinutes.clamp(0, 240));
     final existingEndBuffered = existingEnd.add(buffer);
-    return existingStart.isBefore(endAt) && existingEndBuffered.isAfter(startAt);
+    return existingStart.isBefore(endAt) &&
+        existingEndBuffered.isAfter(startAt);
   }
 
   static DateTime? _dateTime(Object? value) {

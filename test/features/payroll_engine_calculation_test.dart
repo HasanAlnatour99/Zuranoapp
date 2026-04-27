@@ -75,68 +75,71 @@ void main() {
     });
   });
 
-  test('commission calculation uses snapshots first and employee fallback last', () {
-    final sales = [
-      Sale(
-        id: 'sale-1',
-        salonId: 'salon-1',
-        employeeId: 'employee-1',
-        employeeName: 'Barber',
-        lineItems: const <SaleLineItem>[],
-        serviceNames: const <String>[],
-        subtotal: 100,
-        tax: 0,
-        discount: 0,
-        total: 100,
-        paymentMethod: 'cash',
-        status: 'completed',
-        soldAt: DateTime(2026, 5, 1),
-        commissionRateUsed: 30,
-        commissionAmount: 30,
-      ),
-      Sale(
-        id: 'sale-2',
-        salonId: 'salon-1',
-        employeeId: 'employee-1',
-        employeeName: 'Barber',
-        lineItems: const <SaleLineItem>[],
-        serviceNames: const <String>[],
-        subtotal: 200,
-        tax: 0,
-        discount: 0,
-        total: 200,
-        paymentMethod: 'cash',
-        status: 'completed',
-        soldAt: DateTime(2026, 5, 2),
-        commissionRateUsed: 25,
-      ),
-      Sale(
-        id: 'sale-3',
-        salonId: 'salon-1',
-        employeeId: 'employee-1',
-        employeeName: 'Barber',
-        lineItems: const <SaleLineItem>[],
-        serviceNames: const <String>[],
-        subtotal: 100,
-        tax: 0,
-        discount: 0,
-        total: 100,
-        paymentMethod: 'cash',
-        status: 'completed',
-        soldAt: DateTime(2026, 5, 3),
-      ),
-    ];
+  test(
+    'commission calculation uses snapshots first and employee fallback last',
+    () {
+      final sales = [
+        Sale(
+          id: 'sale-1',
+          salonId: 'salon-1',
+          employeeId: 'employee-1',
+          employeeName: 'Barber',
+          lineItems: const <SaleLineItem>[],
+          serviceNames: const <String>[],
+          subtotal: 100,
+          tax: 0,
+          discount: 0,
+          total: 100,
+          paymentMethod: 'cash',
+          status: 'completed',
+          soldAt: DateTime(2026, 5, 1),
+          commissionRateUsed: 30,
+          commissionAmount: 30,
+        ),
+        Sale(
+          id: 'sale-2',
+          salonId: 'salon-1',
+          employeeId: 'employee-1',
+          employeeName: 'Barber',
+          lineItems: const <SaleLineItem>[],
+          serviceNames: const <String>[],
+          subtotal: 200,
+          tax: 0,
+          discount: 0,
+          total: 200,
+          paymentMethod: 'cash',
+          status: 'completed',
+          soldAt: DateTime(2026, 5, 2),
+          commissionRateUsed: 25,
+        ),
+        Sale(
+          id: 'sale-3',
+          salonId: 'salon-1',
+          employeeId: 'employee-1',
+          employeeName: 'Barber',
+          lineItems: const <SaleLineItem>[],
+          serviceNames: const <String>[],
+          subtotal: 100,
+          tax: 0,
+          discount: 0,
+          total: 100,
+          paymentMethod: 'cash',
+          status: 'completed',
+          soldAt: DateTime(2026, 5, 3),
+        ),
+      ];
 
-    final result = PayrollCalculationService.calculateCommissionFromSales(
-      sales: sales,
-      fallbackRate: 20,
-    );
+      final result = PayrollCalculationService.calculateCommissionFromSales(
+        sales: sales,
+        fallbackRate: 20,
+      );
 
-    expect(result.amount, 100);
-    expect(result.calculationSource, PayrollCalculationSources.fallback);
-    expect(result.sourceRefIds, ['sale-1', 'sale-2', 'sale-3']);
-    expect(result.quantity, 3);
-  });
+      expect(result.amount, 100);
+      expect(result.calculationSource, PayrollCalculationSources.fallback);
+      expect(result.sourceRefIds, ['sale-1', 'sale-2', 'sale-3']);
+      expect(result.quantity, 3);
+    },
+  );
 
   test('rollback rules allow draft and approved only', () {
     expect(PayrollRunStatuses.canRollback(PayrollRunStatuses.draft), isTrue);

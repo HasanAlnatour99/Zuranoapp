@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../theme/app_radius.dart';
 import '../theme/app_spacing.dart';
 
-/// Section title with an optional trailing text action (e.g. “See all”).
+/// Section title with optional trailing text action (e.g. “See all”).
 class CustomerSectionRowHeader extends StatelessWidget {
   const CustomerSectionRowHeader({
     super.key,
@@ -23,18 +24,29 @@ class CustomerSectionRowHeader extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(
         AppSpacing.large,
-        AppSpacing.small,
+        AppSpacing.medium,
         AppSpacing.large,
         AppSpacing.small,
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          Container(
+            width: 4,
+            height: 22,
+            decoration: BoxDecoration(
+              color: scheme.primary,
+              borderRadius: BorderRadius.circular(AppRadius.small),
+            ),
+          ),
+          const SizedBox(width: AppSpacing.small),
           Expanded(
             child: Text(
               title,
               style: theme.textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.w800,
                 color: scheme.onSurface,
+                letterSpacing: -0.15,
               ),
             ),
           ),

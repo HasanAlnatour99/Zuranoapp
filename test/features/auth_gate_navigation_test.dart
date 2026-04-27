@@ -25,15 +25,11 @@ void main() {
         ),
         GoRoute(
           path: AppRoutes.register,
-          builder: (_, _) => const Scaffold(
-            body: Text('register-placeholder'),
-          ),
+          builder: (_, _) => const Scaffold(body: Text('register-placeholder')),
         ),
         GoRoute(
           path: AppRoutes.signup,
-          builder: (_, _) => const Scaffold(
-            body: Text('signup-placeholder'),
-          ),
+          builder: (_, _) => const Scaffold(body: Text('signup-placeholder')),
         ),
       ],
     );
@@ -56,10 +52,7 @@ void main() {
 
     await tester.pumpAndSettle();
 
-    expect(
-      find.text('سجّل الدخول لإدارة صالونك.'),
-      findsOneWidget,
-    );
+    expect(find.text('سجّل الدخول لإدارة صالونك.'), findsOneWidget);
 
     final signupLink = find.text('إنشاء حساب');
     await tester.ensureVisible(signupLink);

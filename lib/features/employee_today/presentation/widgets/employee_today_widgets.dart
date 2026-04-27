@@ -35,45 +35,6 @@ class EtPremiumCard extends StatelessWidget {
   }
 }
 
-class EtStatusChip extends StatelessWidget {
-  const EtStatusChip({
-    super.key,
-    required this.icon,
-    required this.label,
-    required this.color,
-  });
-
-  final IconData icon;
-  final String label;
-  final Color color;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 9),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.10),
-        borderRadius: BorderRadius.circular(999),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(icon, size: 17, color: color),
-          const SizedBox(width: 7),
-          Text(
-            label,
-            style: TextStyle(
-              color: color,
-              fontWeight: FontWeight.w700,
-              fontSize: 13,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 class EtPrimaryGradientButton extends StatelessWidget {
   const EtPrimaryGradientButton({
     super.key,
@@ -81,6 +42,7 @@ class EtPrimaryGradientButton extends StatelessWidget {
     this.icon,
     this.onPressed,
     this.loading = false,
+    this.expandWidth = false,
   });
 
   final String label;
@@ -88,61 +50,83 @@ class EtPrimaryGradientButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final bool loading;
 
+  /// When true, the gradient fills the horizontal space (e.g. stacked punch CTAs).
+  final bool expandWidth;
+
   @override
   Widget build(BuildContext context) {
     final enabled = onPressed != null && !loading;
+    final radius = BorderRadius.circular(20);
 
-    return Opacity(
-      opacity: enabled ? 1 : 0.55,
-      child: GestureDetector(
-        onTap: enabled ? onPressed : null,
-        child: Container(
-          height: 58,
-          decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              colors: [
-                EmployeeTodayColors.heroGradientStart,
-                EmployeeTodayColors.heroGradientEnd,
-              ],
-            ),
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(
-                color: EmployeeTodayColors.primaryPurple.withValues(
-                  alpha: 0.25,
-                ),
-                blurRadius: 18,
-                offset: const Offset(0, 8),
-              ),
-            ],
-          ),
-          child: Center(
-            child: loading
-                ? const SizedBox(
-                    height: 22,
-                    width: 22,
-                    child: CircularProgressIndicator(
-                      strokeWidth: 2,
-                      color: Colors.white,
-                    ),
-                  )
-                : Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        label,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w800,
-                          fontSize: 16,
-                        ),
-                      ),
-                      if (icon != null) ...[
-                        const SizedBox(width: 10),
-                        Icon(icon, color: Colors.white),
+    return Semantics(
+      button: true,
+      enabled: enabled,
+      label: label,
+      child: ExcludeSemantics(
+        child: Opacity(
+          opacity: enabled ? 1 : 0.55,
+          child: ClipRRect(
+            borderRadius: radius,
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: enabled ? onPressed : null,
+                borderRadius: radius,
+                splashColor: Colors.white.withValues(alpha: 0.18),
+                highlightColor: Colors.white.withValues(alpha: 0.08),
+                child: Ink(
+                  width: expandWidth ? double.infinity : null,
+                  height: 58,
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [
+                        EmployeeTodayColors.heroGradientStart,
+                        EmployeeTodayColors.heroGradientEnd,
                       ],
+                    ),
+                    borderRadius: radius,
+                    boxShadow: [
+                      BoxShadow(
+                        color: EmployeeTodayColors.primaryPurple.withValues(
+                          alpha: 0.25,
+                        ),
+                        blurRadius: 18,
+                        offset: const Offset(0, 8),
+                      ),
                     ],
                   ),
+                  child: Center(
+                    child: loading
+                        ? const SizedBox(
+                            height: 22,
+                            width: 22,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: Colors.white,
+                            ),
+                          )
+                        : Row(
+                            mainAxisSize: MainAxisSize.min,
+                            textDirection: Directionality.of(context),
+                            children: [
+                              if (icon != null) ...[
+                                Icon(icon, color: Colors.white),
+                                const SizedBox(width: 10),
+                              ],
+                              Text(
+                                label,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w800,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ],
+                          ),
+                  ),
+                ),
+              ),
+            ),
           ),
         ),
       ),

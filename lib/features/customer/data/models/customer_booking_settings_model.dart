@@ -140,7 +140,8 @@ class CustomerBookingSettingsModel {
   }) {
     return CustomerBookingSettingsModel(
       salonId: salonId ?? this.salonId,
-      customerBookingEnabled: customerBookingEnabled ?? this.customerBookingEnabled,
+      customerBookingEnabled:
+          customerBookingEnabled ?? this.customerBookingEnabled,
       allowSameDayBooking: allowSameDayBooking ?? this.allowSameDayBooking,
       requireCustomerPhone: requireCustomerPhone ?? this.requireCustomerPhone,
       requireCustomerName: requireCustomerName ?? this.requireCustomerName,

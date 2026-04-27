@@ -111,7 +111,8 @@ class _ServiceSelectionScreenState
           ),
           trailing: CustomerActionButton(
             label: l10n.customerServiceSelectionContinue,
-            onPressed: bookingPolicyAsync.maybeWhen(
+            onPressed:
+                bookingPolicyAsync.maybeWhen(
                   data: (p) => p.enabled && draft.hasServices,
                   orElse: () => false,
                 )
@@ -251,83 +252,85 @@ class _ServiceSelectionScreenState
                   );
                 }
                 return servicesAsync.when(
-              loading: () => SliverPadding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: AppSpacing.large,
-                ),
-                sliver: SliverList.separated(
-                  itemCount: 5,
-                  separatorBuilder: (_, _) =>
-                      const SizedBox(height: AppSpacing.small),
-                  itemBuilder: (_, _) => const _ServiceSkeletonCard(),
-                ),
-              ),
-              error: (_, _) => SliverFillRemaining(
-                hasScrollBody: false,
-                child: _ServiceSelectionError(
-                  message: l10n.genericError,
-                  retryLabel: l10n.customerSalonDiscoveryRetry,
-                  onRetry: () => ref.invalidate(
-                    customerVisibleServicesProvider(widget.salonId),
+                  loading: () => SliverPadding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.large,
+                    ),
+                    sliver: SliverList.separated(
+                      itemCount: 5,
+                      separatorBuilder: (_, _) =>
+                          const SizedBox(height: AppSpacing.small),
+                      itemBuilder: (_, _) => const _ServiceSkeletonCard(),
+                    ),
                   ),
-                ),
-              ),
-              data: (services) {
-                if (services.isEmpty) {
-                  return SliverFillRemaining(
+                  error: (_, _) => SliverFillRemaining(
                     hasScrollBody: false,
-                    child: Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(AppSpacing.large),
-                        child: Text(
-                          l10n.customerServiceSelectionEmpty,
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.bodyLarge
-                              ?.copyWith(color: AppColorsLight.textSecondary),
-                        ),
+                    child: _ServiceSelectionError(
+                      message: l10n.genericError,
+                      retryLabel: l10n.customerSalonDiscoveryRetry,
+                      onRetry: () => ref.invalidate(
+                        customerVisibleServicesProvider(widget.salonId),
                       ),
                     ),
-                  );
-                }
-                final grouped = _groupServices(services);
-                return SliverPadding(
-                  padding: const EdgeInsets.fromLTRB(
-                    AppSpacing.large,
-                    0,
-                    AppSpacing.large,
-                    140,
                   ),
-                  sliver: SliverList(
-                    delegate: SliverChildListDelegate([
-                      for (final entry in grouped.entries) ...[
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            bottom: AppSpacing.small,
-                          ),
-                          child: Text(
-                            entry.key,
-                            style: Theme.of(context).textTheme.titleMedium
-                                ?.copyWith(
-                                  fontWeight: FontWeight.w800,
-                                  color: AppColorsLight.textPrimary,
-                                ),
+                  data: (services) {
+                    if (services.isEmpty) {
+                      return SliverFillRemaining(
+                        hasScrollBody: false,
+                        child: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(AppSpacing.large),
+                            child: Text(
+                              l10n.customerServiceSelectionEmpty,
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context).textTheme.bodyLarge
+                                  ?.copyWith(
+                                    color: AppColorsLight.textSecondary,
+                                  ),
+                            ),
                           ),
                         ),
-                        for (final service in entry.value)
-                          SelectableCustomerServiceCard(
-                            service: service,
-                            selected: selectedIds.contains(service.id),
-                            onTap: () => ref
-                                .read(customerBookingDraftProvider.notifier)
-                                .toggleService(service),
-                          ),
-                        const SizedBox(height: AppSpacing.medium),
-                      ],
-                    ]),
-                  ),
+                      );
+                    }
+                    final grouped = _groupServices(services);
+                    return SliverPadding(
+                      padding: const EdgeInsets.fromLTRB(
+                        AppSpacing.large,
+                        0,
+                        AppSpacing.large,
+                        140,
+                      ),
+                      sliver: SliverList(
+                        delegate: SliverChildListDelegate([
+                          for (final entry in grouped.entries) ...[
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                bottom: AppSpacing.small,
+                              ),
+                              child: Text(
+                                entry.key,
+                                style: Theme.of(context).textTheme.titleMedium
+                                    ?.copyWith(
+                                      fontWeight: FontWeight.w800,
+                                      color: AppColorsLight.textPrimary,
+                                    ),
+                              ),
+                            ),
+                            for (final service in entry.value)
+                              SelectableCustomerServiceCard(
+                                service: service,
+                                selected: selectedIds.contains(service.id),
+                                onTap: () => ref
+                                    .read(customerBookingDraftProvider.notifier)
+                                    .toggleService(service),
+                              ),
+                            const SizedBox(height: AppSpacing.medium),
+                          ],
+                        ]),
+                      ),
+                    );
+                  },
                 );
-              },
-            );
               },
             ),
           ],

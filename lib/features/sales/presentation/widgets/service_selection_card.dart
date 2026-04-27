@@ -24,6 +24,7 @@ class ServiceSelectionCard extends StatelessWidget {
     required this.onServiceTap,
     required this.onRemoveLine,
     this.serviceStripScrollController,
+    this.showManageServicesLink = true,
   });
 
   final AppLocalizations l10n;
@@ -36,6 +37,9 @@ class ServiceSelectionCard extends StatelessWidget {
   final ValueChanged<SalonService> onServiceTap;
   final ValueChanged<String> onRemoveLine;
   final ScrollController? serviceStripScrollController;
+
+  /// When false, the link to salon service management is hidden (e.g. employee role).
+  final bool showManageServicesLink;
 
   @override
   Widget build(BuildContext context) {
@@ -90,14 +94,15 @@ class ServiceSelectionCard extends StatelessWidget {
                   ),
                 ),
               ),
-              TextButton(
-                onPressed: () => context.push(AppRoutes.ownerServices),
-                style: TextButton.styleFrom(
-                  foregroundColor: FinanceDashboardColors.deepPurple,
-                  textStyle: const TextStyle(fontWeight: FontWeight.w800),
+              if (showManageServicesLink)
+                TextButton(
+                  onPressed: () => context.push(AppRoutes.ownerServices),
+                  style: TextButton.styleFrom(
+                    foregroundColor: FinanceDashboardColors.deepPurple,
+                    textStyle: const TextStyle(fontWeight: FontWeight.w800),
+                  ),
+                  child: Text(l10n.addSaleManageServices),
                 ),
-                child: Text(l10n.addSaleManageServices),
-              ),
             ],
           ),
           const SizedBox(height: 16),

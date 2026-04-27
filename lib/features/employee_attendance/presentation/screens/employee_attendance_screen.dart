@@ -12,7 +12,8 @@ import '../../../employee_today/data/models/et_attendance_day.dart';
 import '../../../employee_today/data/models/et_attendance_punch.dart';
 import '../../../employee_today/providers/employee_today_providers.dart';
 import '../../../../providers/salon_streams_provider.dart';
-import '../../../employee_today/presentation/widgets/employee_today_bottom_nav.dart';
+import '../../../employee_dashboard/presentation/widgets/employee_bottom_nav_bar.dart';
+import '../../../employee_dashboard/presentation/widgets/employee_quick_action_fab.dart';
 import '../providers/employee_attendance_providers.dart';
 import '../widgets/employee_attendance_greeting_card.dart';
 import '../widgets/employee_attendance_header.dart';
@@ -121,6 +122,8 @@ class _EmployeeAttendanceScreenState
 
     return Scaffold(
       extendBody: true,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: const EmployeeQuickActionFab(),
       body: Container(
         decoration: BoxDecoration(gradient: zuranoAttendanceScreenGradient()),
         child: SafeArea(
@@ -145,20 +148,22 @@ class _EmployeeAttendanceScreenState
                           emp.when(
                             data: (e) => EmployeeAttendanceHeader(
                               employeeName:
-                                  e?.name ?? l10n.employeeTodayTeamMemberFallback,
+                                  e?.name ??
+                                  l10n.employeeTodayTeamMemberFallback,
                             ),
                             loading: () => const LinearProgressIndicator(),
-                            error: (_, __) => const SizedBox.shrink(),
+                            error: (_, _) => const SizedBox.shrink(),
                           ),
                           const SizedBox(height: 12),
                           emp.when(
                             data: (e) => EmployeeAttendanceGreetingCard(
                               employeeName:
-                                  e?.name ?? l10n.employeeTodayTeamMemberFallback,
+                                  e?.name ??
+                                  l10n.employeeTodayTeamMemberFallback,
                               now: now,
                             ),
                             loading: () => const SizedBox.shrink(),
-                            error: (_, __) => const SizedBox.shrink(),
+                            error: (_, _) => const SizedBox.shrink(),
                           ),
                           const SizedBox(height: 16),
                           settings.when(
@@ -172,13 +177,13 @@ class _EmployeeAttendanceScreenState
                                   liveWorkedMinutes: live,
                                 ),
                                 loading: () => const _LoadCard(),
-                                error: (_, __) => const _ErrCard(),
+                                error: (_, _) => const _ErrCard(),
                               ),
                               loading: () => const _LoadCard(),
-                              error: (_, __) => const _ErrCard(),
+                              error: (_, _) => const _ErrCard(),
                             ),
                             loading: () => const _LoadCard(),
-                            error: (_, __) => const _ErrCard(),
+                            error: (_, _) => const _ErrCard(),
                           ),
                           const SizedBox(height: 14),
                           settings.when(
@@ -199,16 +204,17 @@ class _EmployeeAttendanceScreenState
                                 ),
                               ),
                               loading: () => const _LoadCard(),
-                              error: (_, __) => const _ErrCard(),
+                              error: (_, _) => const _ErrCard(),
                             ),
                             loading: () => const _LoadCard(),
-                            error: (_, __) => const _ErrCard(),
+                            error: (_, _) => const _ErrCard(),
                           ),
                           const SizedBox(height: 14),
                           settings.when(
                             data: (s) => EmployeeSalonLocationCard(
                               settings: s,
-                              salonName: salon.asData?.value?.name ??
+                              salonName:
+                                  salon.asData?.value?.name ??
                                   l10n.employeeTodaySalonLabel,
                               locationAsync: loc,
                               insideZone: zoneInside,
@@ -220,7 +226,7 @@ class _EmployeeAttendanceScreenState
                               },
                             ),
                             loading: () => const _LoadCard(),
-                            error: (_, __) => const _ErrCard(),
+                            error: (_, _) => const _ErrCard(),
                           ),
                           const SizedBox(height: 14),
                           settings.when(
@@ -238,13 +244,13 @@ class _EmployeeAttendanceScreenState
                                   ),
                                 ),
                                 loading: () => const _LoadCard(),
-                                error: (_, __) => const _ErrCard(),
+                                error: (_, _) => const _ErrCard(),
                               ),
                               loading: () => const _LoadCard(),
-                              error: (_, __) => const _ErrCard(),
+                              error: (_, _) => const _ErrCard(),
                             ),
                             loading: () => const _LoadCard(),
-                            error: (_, __) => const _ErrCard(),
+                            error: (_, _) => const _ErrCard(),
                           ),
                           const SizedBox(height: 14),
                           EmployeeAttendanceOverviewCard(
@@ -283,7 +289,7 @@ class _EmployeeAttendanceScreenState
           ),
         ),
       ),
-      bottomNavigationBar: EmployeeTodayBottomNav(currentPath: path),
+      bottomNavigationBar: EmployeeBottomNavBar(currentPath: path),
     );
   }
 }

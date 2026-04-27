@@ -19,8 +19,7 @@ class EmployeeTodayStats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final code =
-        currencyCode.trim().isEmpty ? 'USD' : currencyCode.trim();
+    final code = currencyCode.trim().isEmpty ? 'USD' : currencyCode.trim();
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
       child: Column(

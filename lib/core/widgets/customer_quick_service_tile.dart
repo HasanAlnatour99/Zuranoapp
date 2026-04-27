@@ -5,7 +5,7 @@ import '../theme/app_spacing.dart';
 import 'app_surface_card.dart';
 import 'package:barber_shop_app/core/ui/app_icons.dart';
 
-/// Compact vertical tile for horizontal “quick services” carousels.
+/// Vertical tile for horizontal “quick services” carousel.
 class CustomerQuickServiceTile extends StatelessWidget {
   const CustomerQuickServiceTile({
     super.key,
@@ -31,21 +31,34 @@ class CustomerQuickServiceTile extends StatelessWidget {
       margin: EdgeInsets.zero,
       onTap: onTap,
       borderRadius: AppRadius.xlarge,
+      color: scheme.surface,
+      showBorder: true,
+      outlineOpacity: 0.12,
+      shadowOpacity: 0.06,
+      shadowBlurRadius: 18,
+      shadowYOffset: 8,
       padding: const EdgeInsets.symmetric(
         horizontal: AppSpacing.medium,
         vertical: AppSpacing.large,
       ),
       child: SizedBox(
-        width: 128,
+        width: 150,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              width: 44,
-              height: 44,
+              width: 48,
+              height: 48,
               decoration: BoxDecoration(
-                color: scheme.primary.withValues(alpha: 0.12),
-                borderRadius: BorderRadius.circular(AppRadius.medium),
+                gradient: LinearGradient(
+                  begin: AlignmentDirectional.topStart,
+                  end: AlignmentDirectional.bottomEnd,
+                  colors: [
+                    scheme.primary.withValues(alpha: 0.14),
+                    scheme.primaryContainer.withValues(alpha: 0.9),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(AppRadius.large),
               ),
               child: Icon(icon, color: scheme.primary, size: 24),
             ),

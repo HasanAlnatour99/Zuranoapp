@@ -105,11 +105,7 @@ class _OwnerCustomerBookingSettingsScreenState
     }
     await ref
         .read(customerBookingSettingsControllerProvider.notifier)
-        .save(
-          salonId: salonId,
-          settings: merged,
-          updatedByUid: uid,
-        );
+        .save(salonId: salonId, settings: merged, updatedByUid: uid);
     if (!mounted) {
       return;
     }
@@ -123,9 +119,9 @@ class _OwnerCustomerBookingSettingsScreenState
       ref.read(customerBookingSettingsControllerProvider.notifier).reset();
       return;
     }
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text(l10n.ownerCustomerBookingSaveSuccess)));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(l10n.ownerCustomerBookingSaveSuccess)),
+    );
     setState(() {
       _baseline = merged;
       _draft = merged;
@@ -177,16 +173,17 @@ class _OwnerCustomerBookingSettingsScreenState
           ),
           Expanded(
             child: settingsAsync.when(
-              loading: () => const Center(
-                child: CircularProgressIndicator.adaptive(),
-              ),
+              loading: () =>
+                  const Center(child: CircularProgressIndicator.adaptive()),
               error: (_, _) => Center(
                 child: Padding(
                   padding: const EdgeInsets.all(AppSpacing.large),
                   child: Text(
                     l10n.ownerCustomerBookingLoadError,
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: ZuranoPremiumUiColors.textSecondary),
+                    style: TextStyle(
+                      color: ZuranoPremiumUiColors.textSecondary,
+                    ),
                   ),
                 ),
               ),
@@ -200,10 +197,7 @@ class _OwnerCustomerBookingSettingsScreenState
                 return ListView(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 120),
                   children: [
-                    _HeaderCard(
-                      enabled: d.customerBookingEnabled,
-                      l10n: l10n,
-                    ),
+                    _HeaderCard(enabled: d.customerBookingEnabled, l10n: l10n),
                     const SizedBox(height: 14),
                     SettingsSectionCard(
                       icon: Icons.toggle_on_rounded,
@@ -227,28 +221,36 @@ class _OwnerCustomerBookingSettingsScreenState
                             l10n.ownerCustomerBookingAutoConfirm,
                             d.autoConfirmBookings,
                             (v) => setState(
-                              () => _draft = _draft!.copyWith(autoConfirmBookings: v),
+                              () => _draft = _draft!.copyWith(
+                                autoConfirmBookings: v,
+                              ),
                             ),
                           ),
                           _switch(
                             l10n.ownerCustomerBookingSameDay,
                             d.allowSameDayBooking,
                             (v) => setState(
-                              () => _draft = _draft!.copyWith(allowSameDayBooking: v),
+                              () => _draft = _draft!.copyWith(
+                                allowSameDayBooking: v,
+                              ),
                             ),
                           ),
                           _switch(
                             l10n.ownerCustomerBookingRequirePhone,
                             d.requireCustomerPhone,
                             (v) => setState(
-                              () => _draft = _draft!.copyWith(requireCustomerPhone: v),
+                              () => _draft = _draft!.copyWith(
+                                requireCustomerPhone: v,
+                              ),
                             ),
                           ),
                           _switch(
                             l10n.ownerCustomerBookingRequireName,
                             d.requireCustomerName,
                             (v) => setState(
-                              () => _draft = _draft!.copyWith(requireCustomerName: v),
+                              () => _draft = _draft!.copyWith(
+                                requireCustomerName: v,
+                              ),
                             ),
                           ),
                         ],
@@ -268,7 +270,9 @@ class _OwnerCustomerBookingSettingsScreenState
                                 ? l10n.ownerCustomerBookingMinutesDay
                                 : l10n.ownerCustomerBookingMinutesShort(n),
                             onChanged: (v) => setState(
-                              () => _draft = _draft!.copyWith(minimumNoticeMinutes: v),
+                              () => _draft = _draft!.copyWith(
+                                minimumNoticeMinutes: v,
+                              ),
                             ),
                           ),
                           _dropdownInt(
@@ -277,7 +281,9 @@ class _OwnerCustomerBookingSettingsScreenState
                             options: _maxDaysOptions,
                             display: (n) => '$n',
                             onChanged: (v) => setState(
-                              () => _draft = _draft!.copyWith(maxBookingDaysAhead: v),
+                              () => _draft = _draft!.copyWith(
+                                maxBookingDaysAhead: v,
+                              ),
                             ),
                           ),
                           _dropdownInt(
@@ -287,7 +293,9 @@ class _OwnerCustomerBookingSettingsScreenState
                             display: (n) =>
                                 l10n.ownerCustomerBookingMinutesShort(n),
                             onChanged: (v) => setState(
-                              () => _draft = _draft!.copyWith(slotDurationMinutes: v),
+                              () => _draft = _draft!.copyWith(
+                                slotDurationMinutes: v,
+                              ),
                             ),
                           ),
                           _dropdownInt(
@@ -322,9 +330,12 @@ class _OwnerCustomerBookingSettingsScreenState
                             label: l10n.ownerCustomerBookingCancelNotice,
                             value: d.cancellationNoticeHours,
                             options: _cancelHoursOptions,
-                            display: (n) => l10n.ownerCustomerBookingHoursShort(n),
+                            display: (n) =>
+                                l10n.ownerCustomerBookingHoursShort(n),
                             onChanged: (v) => setState(
-                              () => _draft = _draft!.copyWith(cancellationNoticeHours: v),
+                              () => _draft = _draft!.copyWith(
+                                cancellationNoticeHours: v,
+                              ),
                             ),
                           ),
                         ],
@@ -368,7 +379,8 @@ class _OwnerCustomerBookingSettingsScreenState
               width: double.infinity,
               height: 52,
               child: FilledButton(
-                onPressed: !_dirty ||
+                onPressed:
+                    !_dirty ||
                         saveAsync.isLoading ||
                         user == null ||
                         user.uid.isEmpty
@@ -437,10 +449,7 @@ class _OwnerCustomerBookingSettingsScreenState
             value: safe,
             items: [
               for (final o in options)
-                DropdownMenuItem(
-                  value: o,
-                  child: Text(display(o)),
-                ),
+                DropdownMenuItem(value: o, child: Text(display(o))),
             ],
             onChanged: (v) {
               if (v != null) {

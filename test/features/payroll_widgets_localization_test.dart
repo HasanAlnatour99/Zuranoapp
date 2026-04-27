@@ -7,11 +7,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  Future<void> pumpLocalized(
-    WidgetTester tester,
-    Locale locale,
-    Widget child,
-  ) {
+  Future<void> pumpLocalized(WidgetTester tester, Locale locale, Widget child) {
     return tester.pumpWidget(
       MaterialApp(
         locale: locale,

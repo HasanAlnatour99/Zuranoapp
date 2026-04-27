@@ -59,12 +59,12 @@ class CustomerBookingSettings {
     );
     final cancelHours = _int(map['cancellationNoticeHours'], 4);
     return CustomerBookingSettings(
-      enabled: _bool(map['customerBookingEnabled'], _bool(map['enabled'], true)),
-      autoConfirmBookings: _bool(map['autoConfirmBookings'], false),
-      allowAnyAvailableEmployee: _bool(
-        map['allowAnyAvailableEmployee'],
-        true,
+      enabled: _bool(
+        map['customerBookingEnabled'],
+        _bool(map['enabled'], true),
       ),
+      autoConfirmBookings: _bool(map['autoConfirmBookings'], false),
+      allowAnyAvailableEmployee: _bool(map['allowAnyAvailableEmployee'], true),
       cancellationCutoffMinutes: _int(
         map['cancellationCutoffMinutes'],
         cancelHours * 60,
@@ -79,7 +79,10 @@ class CustomerBookingSettings {
       showPricesToCustomers: _bool(map['showPricesToCustomers'], true),
       allowCustomerNotes: _bool(map['allowCustomerNotes'], true),
       allowCustomerFeedback: _bool(map['allowCustomerFeedback'], true),
-      minimumNoticeMinutes: _int(map['minimumNoticeMinutes'], 60).clamp(0, 10080),
+      minimumNoticeMinutes: _int(
+        map['minimumNoticeMinutes'],
+        60,
+      ).clamp(0, 10080),
       allowSameDayBooking: _bool(map['allowSameDayBooking'], true),
       bufferMinutes: _int(map['bufferMinutes'], 10).clamp(0, 240),
       requireCustomerPhone: _bool(map['requireCustomerPhone'], true),
@@ -87,10 +90,7 @@ class CustomerBookingSettings {
       publicBookingMessage: map['publicBookingMessage'] is String
           ? (map['publicBookingMessage'] as String)
           : '',
-      allowCustomerCancellation: _bool(
-        map['allowCustomerCancellation'],
-        true,
-      ),
+      allowCustomerCancellation: _bool(map['allowCustomerCancellation'], true),
       cancellationNoticeHours: cancelHours <= 0 ? 4 : cancelHours,
     );
   }

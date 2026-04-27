@@ -28,6 +28,7 @@ import 'package:mocktail/mocktail.dart';
 
 class _MockCreateBookingController extends Mock
     implements CreateBookingController {}
+
 class _FakeCreateBookingInput extends Fake implements CreateBookingInput {}
 
 AppUser _user({required String role}) => AppUser(
@@ -63,7 +64,9 @@ void main() {
   ) async {
     final out = resolveRedirect(
       location: AppRoutes.splash,
-      sessionState: const AppSessionState(status: AppSessionStatus.unauthenticated),
+      sessionState: const AppSessionState(
+        status: AppSessionStatus.unauthenticated,
+      ),
       onboarding: _readyOnboarding(),
     );
     expect(out, AppRoutes.ownerLogin);
@@ -118,7 +121,9 @@ void main() {
     expect(find.text('add-customer-screen'), findsOneWidget);
   });
 
-  testWidgets('create booking from customer details CTA routes', (tester) async {
+  testWidgets('create booking from customer details CTA routes', (
+    tester,
+  ) async {
     final router = GoRouter(
       initialLocation: '/details',
       routes: [
@@ -128,7 +133,8 @@ void main() {
         ),
         GoRoute(
           path: AppRoutes.bookingsNew,
-          builder: (_, _) => const Scaffold(body: Text('create-booking-screen')),
+          builder: (_, _) =>
+              const Scaffold(body: Text('create-booking-screen')),
         ),
       ],
     );
@@ -203,26 +209,30 @@ void main() {
     expect(ok, isFalse);
   }, tags: ['critical']);
 
-  testWidgets('permission denied UI behavior hides add-customer CTA for barber', (tester) async {
-    await tester.pumpWidget(
-      ProviderScope(
-        overrides: [
-          sessionUserProvider.overrideWith(
-            (ref) => Stream.value(_user(role: 'barber')),
-          ),
-          customersListProvider.overrideWith(
-            (ref, tag) => Stream.value(const <Customer>[]),
-          ),
-          customerSearchProvider.overrideWith(
-            (ref, query) => Future.value(const <Customer>[]),
-          ),
-        ],
-        child: const MaterialApp(home: CustomersScreen()),
-      ),
-    );
-    await tester.pumpAndSettle();
-    expect(find.text('Add customer'), findsNothing);
-  }, tags: ['critical']);
+  testWidgets(
+    'permission denied UI behavior hides add-customer CTA for barber',
+    (tester) async {
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            sessionUserProvider.overrideWith(
+              (ref) => Stream.value(_user(role: 'barber')),
+            ),
+            customersListProvider.overrideWith(
+              (ref, tag) => Stream.value(const <Customer>[]),
+            ),
+            customerSearchProvider.overrideWith(
+              (ref, query) => Future.value(const <Customer>[]),
+            ),
+          ],
+          child: const MaterialApp(home: CustomersScreen()),
+        ),
+      );
+      await tester.pumpAndSettle();
+      expect(find.text('Add customer'), findsNothing);
+    },
+    tags: ['critical'],
+  );
 
   testWidgets('booking failure handling shows error snackbar', (tester) async {
     final controller = _MockCreateBookingController();
@@ -281,32 +291,34 @@ void main() {
     // Select customer
     await tester.tap(find.text('Ali'));
     await tester.pump();
-    
+
     // Select service
     await tester.tap(find.text('Service'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Haircut').last);
     await tester.pumpAndSettle();
-    
+
     // Select barber
     await tester.tap(find.text('Barber'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Barber 1').last);
     await tester.pumpAndSettle();
-    
+
     // Select time
     await tester.tap(find.textContaining('Pick time'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('OK'));
     await tester.pumpAndSettle();
-    
+
     // Save
     await tester.tap(find.text('Save booking'));
     await tester.pumpAndSettle();
     expect(find.textContaining('booking failed'), findsOneWidget);
   }, tags: ['critical']);
 
-  testWidgets('network failure handling surfaces retry-safe error', (tester) async {
+  testWidgets('network failure handling surfaces retry-safe error', (
+    tester,
+  ) async {
     final controller = _MockCreateBookingController();
     when(
       () => controller.createBooking(any()),
@@ -359,29 +371,29 @@ void main() {
       ),
     );
     await tester.pumpAndSettle();
-    
+
     // Select customer
     await tester.tap(find.text('Ali'));
     await tester.pump();
-    
+
     // Select service
     await tester.tap(find.text('Service'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Haircut').last);
     await tester.pumpAndSettle();
-    
+
     // Select barber
     await tester.tap(find.text('Barber'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Barber 1').last);
     await tester.pumpAndSettle();
-    
+
     // Select time
     await tester.tap(find.textContaining('Pick time'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('OK'));
     await tester.pumpAndSettle();
-    
+
     // Save
     await tester.tap(find.text('Save booking'));
     await tester.pumpAndSettle();

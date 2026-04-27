@@ -35,8 +35,10 @@ void main() {
     );
 
     await tester.pump();
-    expect(find.image(const AssetImage('assets/images/branding/zurano_lang.png')),
-        findsOneWidget);
+    expect(
+      find.image(const AssetImage('assets/images/branding/zurano_lang.png')),
+      findsOneWidget,
+    );
     expect(find.byType(CircularProgressIndicator), findsOneWidget);
   });
 }

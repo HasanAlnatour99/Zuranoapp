@@ -68,7 +68,10 @@ void main() {
         state.salonNameErrorFor(l10n),
         l10n.validationFieldRequired(l10n.fieldLabelSalonName),
       );
-      expect(state.businessTypeErrorFor(l10n), l10n.validationBusinessTypeRequired);
+      expect(
+        state.businessTypeErrorFor(l10n),
+        l10n.validationBusinessTypeRequired,
+      );
       expect(state.countryErrorFor(l10n), l10n.validationCountryRequired);
       expect(
         state.cityErrorFor(l10n),

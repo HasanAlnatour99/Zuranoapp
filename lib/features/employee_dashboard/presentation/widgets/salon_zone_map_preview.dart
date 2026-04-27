@@ -121,7 +121,9 @@ class SalonZoneMapPreview extends StatelessWidget {
               Marker(
                 markerId: const MarkerId('employee'),
                 position: employeePosition,
-                infoWindow: InfoWindow(title: l10n.employeeMapMarkerYourLocation),
+                infoWindow: InfoWindow(
+                  title: l10n.employeeMapMarkerYourLocation,
+                ),
               ),
           },
           circles: {

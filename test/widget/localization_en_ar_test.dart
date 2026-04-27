@@ -36,18 +36,12 @@ void main() {
   testWidgets('localization renders Arabic login copy', (tester) async {
     await tester.pumpWidget(_appWithLocale(const Locale('ar')));
     await tester.pumpAndSettle();
-    expect(
-      find.text('سجّل الدخول للمتابعة.'),
-      findsOneWidget,
-    );
+    expect(find.text('سجّل الدخول للمتابعة.'), findsOneWidget);
   }, tags: ['critical', 'localization']);
 
   testWidgets('localization renders English login copy', (tester) async {
     await tester.pumpWidget(_appWithLocale(const Locale('en')));
     await tester.pumpAndSettle();
-    expect(
-      find.text('Sign in to continue.'),
-      findsOneWidget,
-    );
+    expect(find.text('Sign in to continue.'), findsOneWidget);
   }, tags: ['critical', 'localization']);
 }

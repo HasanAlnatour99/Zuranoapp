@@ -68,6 +68,7 @@ class AdaptiveAppShell extends StatelessWidget {
     this.extendedRailThreshold = 960,
     this.floatingActionButton,
     this.floatingActionButtonLocation,
+    this.bottomNavigationBar,
   }) : assert(destinations.length >= 2);
 
   final List<AdaptiveShellDestination> destinations;
@@ -96,6 +97,7 @@ class AdaptiveAppShell extends StatelessWidget {
   final double extendedRailThreshold;
   final Widget? floatingActionButton;
   final FloatingActionButtonLocation? floatingActionButtonLocation;
+  final Widget? bottomNavigationBar;
 
   @override
   Widget build(BuildContext context) {
@@ -121,6 +123,7 @@ class AdaptiveAppShell extends StatelessWidget {
           appBarActions: appBarActions,
           floatingActionButton: floatingActionButton,
           floatingActionButtonLocation: floatingActionButtonLocation,
+          bottomNavigationBar: bottomNavigationBar,
           child: body,
         );
       },
@@ -138,6 +141,7 @@ class _NarrowShell extends StatelessWidget {
     required this.appBarActions,
     this.floatingActionButton,
     this.floatingActionButtonLocation,
+    this.bottomNavigationBar,
   });
 
   final List<AdaptiveShellDestination> destinations;
@@ -148,11 +152,13 @@ class _NarrowShell extends StatelessWidget {
   final List<Widget> appBarActions;
   final Widget? floatingActionButton;
   final FloatingActionButtonLocation? floatingActionButtonLocation;
+  final Widget? bottomNavigationBar;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: scheme.surface,
       appBar: appBarTitle == null
           ? null
@@ -163,19 +169,21 @@ class _NarrowShell extends StatelessWidget {
               actions: appBarActions,
             ),
       body: SafeArea(top: false, bottom: false, child: child),
-      bottomNavigationBar: AppGlowNavigationBar(
-        selectedIndex: selectedIndex,
-        onDestinationSelected: onDestinationSelected,
-        destinations: [
-          for (final d in destinations)
-            NavigationDestination(
-              icon: d.icon,
-              selectedIcon: d.selectedIcon,
-              label: d.label,
-              tooltip: d.tooltip,
-            ),
-        ],
-      ),
+      bottomNavigationBar:
+          bottomNavigationBar ??
+          AppGlowNavigationBar(
+            selectedIndex: selectedIndex,
+            onDestinationSelected: onDestinationSelected,
+            destinations: [
+              for (final d in destinations)
+                NavigationDestination(
+                  icon: d.icon,
+                  selectedIcon: d.selectedIcon,
+                  label: d.label,
+                  tooltip: d.tooltip,
+                ),
+            ],
+          ),
       floatingActionButton: floatingActionButton,
       floatingActionButtonLocation:
           floatingActionButtonLocation ?? FloatingActionButtonLocation.endFloat,
@@ -206,6 +214,7 @@ class _WideShell extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: scheme.surface,
       body: SafeArea(
         child: Row(

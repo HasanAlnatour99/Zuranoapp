@@ -2,14 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/constants/app_routes.dart';
-import '../../../../core/constants/user_roles.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../../providers/salon_streams_provider.dart';
 import '../../../../providers/session_provider.dart';
-import '../../../../shared/widgets/zurano_add_sale_fab.dart';
 import '../../../sales/presentation/providers/employee_sales_providers.dart';
-import '../../../sales/presentation/providers/salon_sales_settings_provider.dart';
 import '../../../sales/presentation/widgets/employee_commission_card.dart';
 import '../../../sales/presentation/widgets/employee_recent_sales_list.dart';
 import '../../../sales/presentation/widgets/employee_sales_header.dart';
@@ -17,7 +13,8 @@ import '../../../sales/presentation/widgets/employee_sales_hero_card.dart';
 import '../../../sales/presentation/widgets/employee_sales_kpi_grid.dart';
 import '../../../sales/presentation/widgets/employee_sales_period_selector.dart';
 import '../../application/employee_dashboard_providers.dart';
-import '../../../employee_today/presentation/widgets/employee_today_bottom_nav.dart';
+import '../widgets/employee_bottom_nav_bar.dart';
+import '../widgets/employee_quick_action_fab.dart';
 
 class EmployeeSalesScreen extends ConsumerWidget {
   const EmployeeSalesScreen({super.key});
@@ -27,7 +24,6 @@ class EmployeeSalesScreen extends ConsumerWidget {
     final path = GoRouterState.of(context).uri.path;
     final scope = ref.watch(employeeWorkspaceScopeProvider);
     final session = ref.watch(sessionUserProvider).asData?.value;
-    final settings = ref.watch(salonSalesSettingsStreamProvider).asData?.value;
     final employeeAsync = ref.watch(workspaceEmployeeProvider);
     final salesAsync = ref.watch(employeeSalesStreamProvider);
     final summary = ref.watch(employeeSalesSummaryProvider);
@@ -48,19 +44,18 @@ class EmployeeSalesScreen extends ConsumerWidget {
       orElse: () => 0.0,
     );
 
-    final showFab =
-        (settings?.allowEmployeeAddSale ?? true) &&
-        session.role.trim() != UserRoles.readonly;
-
-    void onAddSale() {
-      context.pushNamed(
-        AppRouteNames.addSale,
-        queryParameters: const {'source': 'employee'},
-      );
-    }
+    final media = MediaQuery.of(context);
+    final bottomInset = media.padding.bottom;
+    const bottomNavBarApprox = 88.0;
+    const fabDockClearance = 88.0;
+    final scrollBottomSpacer =
+        bottomInset + bottomNavBarApprox + fabDockClearance + 24;
 
     return Scaffold(
       backgroundColor: const Color(0xFFF8F9FE),
+      extendBody: true,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: const EmployeeQuickActionFab(),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -71,6 +66,7 @@ class EmployeeSalesScreen extends ConsumerWidget {
           ),
         ),
         child: SafeArea(
+          bottom: false,
           child: RefreshIndicator(
             onRefresh: () async {
               ref.invalidate(employeeSalesStreamProvider);
@@ -139,23 +135,13 @@ class EmployeeSalesScreen extends ConsumerWidget {
                     ),
                   ),
                 ),
-                const SliverToBoxAdapter(child: SizedBox(height: 120)),
+                SliverToBoxAdapter(child: SizedBox(height: scrollBottomSpacer)),
               ],
             ),
           ),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: showFab
-          ? Padding(
-              padding: const EdgeInsets.only(bottom: 82),
-              child: ZuranoAddSaleFab(
-                heroTag: 'employee_add_sale_fab_sales',
-                onPressed: onAddSale,
-              ),
-            )
-          : null,
-      bottomNavigationBar: EmployeeTodayBottomNav(currentPath: path),
+      bottomNavigationBar: EmployeeBottomNavBar(currentPath: path),
     );
   }
 }

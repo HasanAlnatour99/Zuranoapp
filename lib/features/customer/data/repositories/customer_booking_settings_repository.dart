@@ -47,7 +47,11 @@ class CustomerBookingSettingsRepository {
       throw ArgumentError.value(salonId, 'salonId', 'Salon id is required.');
     }
     if (updatedByUid.trim().isEmpty) {
-      throw ArgumentError.value(updatedByUid, 'updatedByUid', 'User id is required.');
+      throw ArgumentError.value(
+        updatedByUid,
+        'updatedByUid',
+        'User id is required.',
+      );
     }
     final err = settings.validationErrorKey();
     if (err != null) {
@@ -66,13 +70,11 @@ class CustomerBookingSettingsRepository {
 
     final batch = _firestore.batch();
     batch.set(_doc(id), payload, SetOptions(merge: true));
-    batch.set(
-      _firestore.doc(FirestorePaths.publicSalon(id)),
-      <String, dynamic>{
-        'customerBookingSettings': settings.copyWith(salonId: id).toPublicSalonSettingsMap(),
-      },
-      SetOptions(merge: true),
-    );
+    batch.set(_firestore.doc(FirestorePaths.publicSalon(id)), <String, dynamic>{
+      'customerBookingSettings': settings
+          .copyWith(salonId: id)
+          .toPublicSalonSettingsMap(),
+    }, SetOptions(merge: true));
     await batch.commit();
   }
 }

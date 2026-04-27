@@ -15,12 +15,26 @@ void main() {
 
     when(() => connectivity.isOnline()).thenAnswer((_) async => true);
     when(
-      () => logger.error(any(), error: any(named: 'error'), stackTrace: any(named: 'stackTrace')),
+      () => logger.error(
+        any(),
+        error: any(named: 'error'),
+        stackTrace: any(named: 'stackTrace'),
+      ),
     ).thenReturn(null);
-    when(() => logger.debug(any(), error: any(named: 'error'), stackTrace: any(named: 'stackTrace')))
-        .thenReturn(null);
-    when(() => logger.warn(any(), error: any(named: 'error'), stackTrace: any(named: 'stackTrace')))
-        .thenReturn(null);
+    when(
+      () => logger.debug(
+        any(),
+        error: any(named: 'error'),
+        stackTrace: any(named: 'stackTrace'),
+      ),
+    ).thenReturn(null);
+    when(
+      () => logger.warn(
+        any(),
+        error: any(named: 'error'),
+        stackTrace: any(named: 'stackTrace'),
+      ),
+    ).thenReturn(null);
 
     await guardResult<void>(
       connectivityService: connectivity,

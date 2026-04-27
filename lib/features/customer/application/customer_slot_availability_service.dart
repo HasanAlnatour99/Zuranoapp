@@ -99,13 +99,7 @@ class CustomerSlotAvailabilityService {
       if (employeeId == null || employeeId.trim().isEmpty) {
         continue;
       }
-      final available = !_hasOverlap(
-        bookings,
-        buffer,
-        employeeId,
-        start,
-        end,
-      );
+      final available = !_hasOverlap(bookings, buffer, employeeId, start, end);
       slots.add(
         CustomerBookingSlot(
           startAt: start,

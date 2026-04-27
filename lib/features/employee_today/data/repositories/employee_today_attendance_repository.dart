@@ -12,20 +12,18 @@ import '../models/et_attendance_punch.dart';
 import '../models/et_attendance_settings.dart';
 import '../models/et_correction_request.dart';
 import '../../domain/attendance_analysis_service.dart';
-import '../../domain/attendance_rule_engine.dart';
+import '../../domain/attendance_state_resolver.dart';
 
 class EmployeeTodayAttendanceRepository {
   EmployeeTodayAttendanceRepository({
     required FirebaseFirestore firestore,
-    AttendanceRuleEngine? ruleEngine,
     AttendanceAnalysisService? analysis,
   }) : _firestore = firestore,
-       _rules = ruleEngine ?? const AttendanceRuleEngine(),
        _analysis = analysis ?? const AttendanceAnalysisService();
 
   final FirebaseFirestore _firestore;
-  final AttendanceRuleEngine _rules;
   final AttendanceAnalysisService _analysis;
+  static const _resolver = AttendanceStateResolver();
   static const _uuid = Uuid();
 
   static String compactDateKey(DateTime d) {
@@ -36,7 +34,7 @@ class EmployeeTodayAttendanceRepository {
   }
 
   static String attendanceDayId(String employeeId, String dateKey) =>
-      '${employeeId}_$dateKey';
+      '${dateKey}_$employeeId';
 
   DocumentReference<Map<String, dynamic>> _settingsRef(String salonId) =>
       _firestore.doc(FirestorePaths.salonAttendanceSettingsDoc(salonId));
@@ -211,7 +209,13 @@ class EmployeeTodayAttendanceRepository {
 
     double? distance;
     var inside = false;
-    if (attendanceRequired && settings.gpsRequired) {
+    final zoneMandatory =
+        attendanceRequired &&
+        settings.gpsRequired &&
+        (type == AttendancePunchType.punchIn ||
+            type == AttendancePunchType.punchOut);
+
+    if (zoneMandatory) {
       if (!settings.hasSalonLocationConfigured) {
         throw AttendanceException(
           'Salon attendance location is not configured. Please contact the owner.',
@@ -247,50 +251,18 @@ class EmployeeTodayAttendanceRepository {
     final punchRef = punchesCol.doc();
     final punchTime = now;
 
-    if (type == AttendancePunchType.breakIn) {
-      final snaps = await punchesCol
-          .orderBy('punchTime', descending: false)
-          .get();
-      final sorted = snaps.docs.map(EtAttendancePunch.fromFirestore).toList();
-      var breakMs = 0;
-      DateTime? breakOpen;
-      for (final p in sorted) {
-        switch (p.type) {
-          case AttendancePunchType.breakOut:
-            breakOpen = p.punchTime;
-          case AttendancePunchType.breakIn:
-            if (breakOpen != null) {
-              breakMs += p.punchTime.difference(breakOpen).inMilliseconds;
-              breakOpen = null;
-            }
-          default:
-            break;
-        }
-      }
-      if (breakOpen != null) {
-        breakMs += punchTime.difference(breakOpen).inMilliseconds;
-      }
-      final breakMin = (breakMs / 60000).ceil();
-      if (breakMin > settings.maxBreakMinutesPerDay) {
-        throw AttendanceException(
-          'Your break time exceeded the allowed daily limit.',
-        );
-      }
-    }
-
-    final recent = await punchesCol
-        .orderBy('punchTime', descending: true)
-        .limit(1)
+    // Transaction.get() only accepts DocumentReference; read punch list first.
+    final punchesSnapBeforeTx = await punchesCol
+        .orderBy('punchTime', descending: false)
+        .limit(AttendanceStateResolver.maxPunchesPerDayHardLimit)
         .get();
-    if (recent.docs.isNotEmpty) {
-      final last = EtAttendancePunch.fromFirestore(recent.docs.first);
-      if (last.type == type && _sameMinute(last.punchTime, punchTime)) {
-        throw AttendanceException('This punch sequence is not valid.');
-      }
-    }
+    final sortedPunchesBeforeTx = punchesSnapBeforeTx.docs
+        .map(EtAttendancePunch.fromFirestore)
+        .toList(growable: false);
 
     await _firestore.runTransaction((tx) async {
       final daySnap = await tx.get(dayRef);
+      final sortedPunches = sortedPunchesBeforeTx;
       final seq = List<String>.from(
         daySnap.data()?['punchSequence'] as List? ?? const [],
       );
@@ -298,7 +270,7 @@ class EmployeeTodayAttendanceRepository {
         daySnap.data()?['punchIds'] as List? ?? const [],
       );
 
-      final v = _rules.validateNextPunch(
+      final v = _resolver.validateRequestedPunch(
         settings: settings,
         punchSequence: seq,
         requestedType: type,
@@ -309,6 +281,38 @@ class EmployeeTodayAttendanceRepository {
         throw AttendanceException(
           v.message ?? 'This punch sequence is not valid.',
         );
+      }
+
+      if (sortedPunches.isNotEmpty) {
+        final last = sortedPunches.last;
+        if (last.type == type && _sameMinute(last.punchTime, punchTime)) {
+          throw AttendanceException('This punch sequence is not valid.');
+        }
+      }
+
+      if (type == AttendancePunchType.breakIn) {
+        int breakMs = 0;
+        DateTime? breakOpen;
+        for (final p in sortedPunches) {
+          if (p.type == AttendancePunchType.breakOut) {
+            breakOpen = p.punchTime;
+          } else if (p.type == AttendancePunchType.breakIn) {
+            final open = breakOpen;
+            if (open != null) {
+              breakMs += p.punchTime.difference(open).inMilliseconds;
+              breakOpen = null;
+            }
+          }
+        }
+        if (breakOpen != null) {
+          breakMs += punchTime.difference(breakOpen).inMilliseconds;
+        }
+        final breakMin = (breakMs / 60000).ceil();
+        if (breakMin > settings.maxBreakMinutesPerDay) {
+          throw AttendanceException(
+            'Your break time exceeded the allowed daily limit.',
+          );
+        }
       }
 
       final newSeq = [...seq, type.name];
