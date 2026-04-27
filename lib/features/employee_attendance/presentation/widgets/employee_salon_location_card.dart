@@ -123,7 +123,7 @@ class EmployeeSalonLocationCard extends StatelessWidget {
               ],
             ),
             loading: () => const SizedBox.shrink(),
-            error: (_, __) => const SizedBox.shrink(),
+            error: (_, _) => const SizedBox.shrink(),
           ),
           const SizedBox(height: 14),
           if (!configured)
@@ -179,7 +179,7 @@ class EmployeeSalonLocationCard extends StatelessWidget {
                 );
               },
               loading: () => const _MapSkeleton(height: 248),
-              error: (_, __) => Column(
+              error: (_, _) => Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(

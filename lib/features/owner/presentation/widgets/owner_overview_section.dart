@@ -68,16 +68,16 @@ Widget _buildTodayInsightCard({
               Row(
                 children: [
                   Container(
-                    width: 38,
-                    height: 38,
+                    width: 34,
+                    height: 34,
                     decoration: BoxDecoration(
                       color: OwnerOverviewTokens.purple,
-                      borderRadius: BorderRadius.circular(14),
+                      borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Icon(
                       Icons.auto_awesome_rounded,
                       color: Colors.white,
-                      size: 20,
+                      size: OwnerOverviewTypography.insightIcon,
                     ),
                   ),
                   const Gap(12),
@@ -87,7 +87,7 @@ Widget _buildTodayInsightCard({
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                        fontSize: 20,
+                        fontSize: OwnerOverviewTypography.insightTitle,
                         fontWeight: FontWeight.w900,
                         color: Color(0xFF0F172A),
                       ),
@@ -101,7 +101,7 @@ Widget _buildTodayInsightCard({
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
-                  fontSize: 16,
+                  fontSize: OwnerOverviewTypography.insightBody,
                   fontWeight: FontWeight.w600,
                   height: 1.25,
                   color: Color(0xFF374151),
@@ -143,16 +143,16 @@ Widget _buildTodayInsightCard({
         ),
         const Gap(12),
         Container(
-          width: 72,
-          height: 72,
+          width: 64,
+          height: 64,
           decoration: BoxDecoration(
             color: OwnerOverviewTokens.purple.withValues(alpha: 0.08),
-            borderRadius: BorderRadius.circular(22),
+            borderRadius: BorderRadius.circular(20),
           ),
           child: Icon(
             Icons.insert_chart_outlined_rounded,
             color: OwnerOverviewTokens.purple.withValues(alpha: 0.55),
-            size: 36,
+            size: 30,
           ),
         ),
       ],
@@ -228,7 +228,7 @@ Widget _buildBody({
       physics: const BouncingScrollPhysics(
         parent: AlwaysScrollableScrollPhysics(),
       ),
-      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, scrollBottomPad),
+      padding: EdgeInsetsDirectional.fromSTEB(18, 24, 18, scrollBottomPad),
       children: children,
     ),
   );
@@ -280,18 +280,15 @@ class OwnerOverviewSection extends ConsumerWidget {
         children: [
           OwnerDashboardHeroHeader(user: user),
           Expanded(
-            child: Transform.translate(
-              offset: const Offset(0, -18),
-              child: _buildBody(
-                context: context,
-                ref: ref,
-                state: state,
-                l10n: l10n,
-                locale: locale,
-                navClearance: navClearance,
-                fabClearance: fabClearance,
-                bottomInset: bottomInset,
-              ),
+            child: _buildBody(
+              context: context,
+              ref: ref,
+              state: state,
+              l10n: l10n,
+              locale: locale,
+              navClearance: navClearance,
+              fabClearance: fabClearance,
+              bottomInset: bottomInset,
             ),
           ),
         ],

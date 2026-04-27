@@ -76,14 +76,6 @@ class _CustomersScreenState extends ConsumerState<CustomersScreen> {
         user != null && (user.role == 'owner' || user.role == 'admin');
     final embedded = widget.ownerShellHeroEmbedded;
 
-    final showAddFab =
-        salonId.isNotEmpty &&
-        canCreate &&
-        rawAsync.maybeWhen(
-          data: (list) => list.isNotEmpty,
-          orElse: () => false,
-        );
-
     final bottomInset = MediaQuery.paddingOf(context).bottom;
     final clearanceBelowContent = embedded
         ? bottomInset + 16
@@ -121,7 +113,7 @@ class _CustomersScreenState extends ConsumerState<CustomersScreen> {
             slivers: [
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.fromLTRB(20, embedded ? 8 : 0, 20, 0),
+                  padding: EdgeInsets.fromLTRB(20, embedded ? 24 : 0, 20, 0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -197,8 +189,7 @@ class _CustomersScreenState extends ConsumerState<CustomersScreen> {
                     20,
                     0,
                     20,
-                    clearanceBelowContent +
-                        (showAddFab ? (embedded ? 56 : 72) : 8),
+                    clearanceBelowContent + (embedded ? 120 : 8),
                   ),
                   sliver: SliverList.separated(
                     itemCount: filtered.length,
@@ -226,46 +217,16 @@ class _CustomersScreenState extends ConsumerState<CustomersScreen> {
         ? content(const AsyncData<List<Customer>>(<Customer>[]))
         : content(rawAsync);
 
-    final fab = showAddFab
-        ? FloatingActionButton(
-            backgroundColor: const Color(0xFF7C3AED),
-            foregroundColor: Colors.white,
-            elevation: 10,
-            shape: const CircleBorder(),
-            onPressed: () => context.push(AppRoutes.customerNew),
-            child: const Icon(Icons.person_add_alt_1_rounded, size: 28),
-          )
-        : null;
-
     if (embedded) {
-      return Stack(
-        clipBehavior: Clip.none,
-        children: [
-          ColoredBox(
-            color: FinanceDashboardColors.background,
-            child: bodyChild,
-          ),
-          if (fab != null)
-            Align(
-              alignment: AlignmentDirectional.bottomCenter,
-              child: Padding(
-                padding: EdgeInsets.only(
-                  bottom: MediaQuery.paddingOf(context).bottom + 12,
-                ),
-                child: fab,
-              ),
-            ),
-        ],
+      return ColoredBox(
+        color: FinanceDashboardColors.background,
+        child: bodyChild,
       );
     }
 
     return Scaffold(
       backgroundColor: FinanceDashboardColors.background,
       appBar: const AppPageHeader(),
-      floatingActionButton: fab == null
-          ? null
-          : Padding(padding: const EdgeInsets.only(bottom: 10), child: fab),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

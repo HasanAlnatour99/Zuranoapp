@@ -48,9 +48,10 @@ class OverviewKpiGridSection extends StatelessWidget {
       padding: EdgeInsets.zero,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        mainAxisSpacing: 16,
-        crossAxisSpacing: 16,
-        childAspectRatio: 0.88,
+        mainAxisSpacing: 14,
+        crossAxisSpacing: 14,
+        // width/height; ~1.05–1.08 keeps cards ~150–160px tall with current type.
+        childAspectRatio: 1.06,
       ),
       children: [
         OverviewMetricCard(

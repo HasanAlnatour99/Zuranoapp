@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'overview_design_tokens.dart';
+
 /// Compact primary/secondary action used on the owner overview insight card.
 class OverviewActionButton extends StatelessWidget {
   const OverviewActionButton({
@@ -19,10 +21,10 @@ class OverviewActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: SizedBox(
-        height: 48,
+        height: 44,
         child: ElevatedButton.icon(
           onPressed: onTap,
-          icon: Icon(icon, size: 20),
+          icon: Icon(icon, size: OwnerOverviewTypography.actionIcon),
           label: FittedBox(
             fit: BoxFit.scaleDown,
             alignment: Alignment.center,
@@ -30,7 +32,10 @@ class OverviewActionButton extends StatelessWidget {
               label,
               maxLines: 1,
               textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800),
+              style: const TextStyle(
+                fontSize: OwnerOverviewTypography.actionLabel,
+                fontWeight: FontWeight.w800,
+              ),
             ),
           ),
           style: ElevatedButton.styleFrom(

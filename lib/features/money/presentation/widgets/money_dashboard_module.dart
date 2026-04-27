@@ -53,7 +53,7 @@ class MoneyDashboardModule extends ConsumerWidget {
     final scroll = ListView(
       padding: EdgeInsets.fromLTRB(
         20,
-        ownerShellHeroEmbedded ? 2 : 20,
+        ownerShellHeroEmbedded ? 24 : 20,
         20,
         118,
       ),

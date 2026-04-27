@@ -17,6 +17,3 @@ final GlobalKey<NavigatorState> ownerShellBranchCustomersNavigatorKey =
 
 final GlobalKey<NavigatorState> ownerShellBranchMoneyNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'owner_shell_money');
-
-final GlobalKey<NavigatorState> ownerShellBranchSettingsNavigatorKey =
-    GlobalKey<NavigatorState>(debugLabel: 'owner_shell_settings');

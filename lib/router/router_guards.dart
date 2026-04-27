@@ -52,6 +52,7 @@ String? redirectAuthenticatedOwner(
     AppRoutes.ownerServices,
     AppRoutes.ownerTeam,
     AppRoutes.ownerTeamStack,
+    AppRoutes.ownerAddTeamMember,
     AppRoutes.ownerCustomers,
     AppRoutes.ownerMoney,
     AppRoutes.ownerSettings,
