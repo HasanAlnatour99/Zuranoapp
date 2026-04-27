@@ -4,11 +4,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:intl/intl.dart';
-
 import '../../../../core/constants/app_routes.dart';
+import '../../../../core/utils/contact_launcher.dart';
 import '../../../../core/formatting/app_money_format.dart';
-import '../../../../core/formatting/staff_role_localized.dart';
 import '../../../../core/motion/app_motion_widgets.dart';
 import '../../../../core/theme/app_spacing.dart';
 import '../../../../core/widgets/app_empty_state.dart';
@@ -18,11 +16,11 @@ import '../../../../providers/repository_providers.dart';
 import '../../../../providers/salon_streams_provider.dart';
 import '../../logic/team_management_providers.dart';
 import '../screens/barber_details_screen.dart';
-import 'add_barber_fab.dart';
 import 'add_barber_sheet.dart';
 import '../../../attendance/data/models/attendance_record.dart';
 import '../../../team/presentation/widgets/team_empty_state_card.dart';
 import 'package:barber_shop_app/core/ui/app_icons.dart';
+import 'team_member_card.dart';
 
 class TeamOperationsModule extends ConsumerStatefulWidget {
   const TeamOperationsModule({super.key, required this.salonId});
@@ -80,18 +78,11 @@ class _TeamOperationsModuleState extends ConsumerState<TeamOperationsModule> {
         : _filterLabel(l10n, selectedFilter);
     final trimmedSearchQuery = searchQuery.trim();
 
-    final safeBottom = MediaQuery.paddingOf(context).bottom;
-
     return Stack(
       children: [
         AppMotionPlayback(
           child: ListView(
-            padding: const EdgeInsets.fromLTRB(
-              AppSpacing.large,
-              AppSpacing.large,
-              AppSpacing.large,
-              136,
-            ),
+            padding: const EdgeInsets.fromLTRB(16, 16, 16, 150),
             children: [
               _TeamTitleRow(
                 onAnalyticsPressed: () =>
@@ -184,7 +175,6 @@ class _TeamOperationsModuleState extends ConsumerState<TeamOperationsModule> {
                             'team-list-${selectedFilter.name}',
                           ),
                           cards: cardsAsync.requireValue,
-                          currencyCode: currencyCode,
                           salonId: widget.salonId,
                           onMarkAttendance: (data) =>
                               _markAttendance(context, ref, data),
@@ -196,18 +186,6 @@ class _TeamOperationsModuleState extends ConsumerState<TeamOperationsModule> {
             ],
           ),
         ),
-        if (hasTeamMembers && !hasNoFilteredResults && !hasNoEmployees)
-          Positioned(
-            left: 0,
-            right: 0,
-            bottom: 10 + safeBottom,
-            child: Center(
-              child: AddBarberFab(
-                onPressed: () =>
-                    showAddBarberSheet(context, salonId: widget.salonId),
-              ),
-            ),
-          ),
       ],
     );
   }
@@ -236,10 +214,11 @@ class _TeamOperationsModuleState extends ConsumerState<TeamOperationsModule> {
     required ValueChanged<TeamFilter> onSelected,
   }) {
     final l10n = AppLocalizations.of(context)!;
+    final scheme = Theme.of(context).colorScheme;
     showModalBottomSheet<void>(
       context: context,
       showDragHandle: true,
-      builder: (context) => SafeArea(
+      builder: (sheetContext) => SafeArea(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(
             AppSpacing.large,
@@ -252,13 +231,20 @@ class _TeamOperationsModuleState extends ConsumerState<TeamOperationsModule> {
             runSpacing: AppSpacing.small,
             children: [
               for (final filter in _visibleTeamFilters)
-                ChoiceChip(
-                  label: Text(_filterLabel(l10n, filter)),
+                _TeamModernFilterChip(
+                  label: _filterLabel(l10n, filter),
                   selected: selectedFilter == filter,
-                  onSelected: (_) {
+                  onTap: () {
                     onSelected(filter);
-                    Navigator.of(context).pop();
+                    Navigator.of(sheetContext).pop();
                   },
+                  leading: filter == TeamFilter.topSellers
+                      ? Icon(
+                          AppIcons.workspace_premium_outlined,
+                          size: 14,
+                          color: scheme.onSurface,
+                        )
+                      : null,
                 ),
             ],
           ),
@@ -277,57 +263,119 @@ class _TeamOperationsModuleState extends ConsumerState<TeamOperationsModule> {
     showModalBottomSheet<void>(
       context: context,
       showDragHandle: true,
-      builder: (_) {
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (sheetContext) {
+        final theme = Theme.of(sheetContext);
+        final scheme = theme.colorScheme;
         return SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(AppSpacing.large),
             child: analyticsAsync.when(
               loading: () => const Center(child: CircularProgressIndicator()),
               error: (_, _) => Text(l10n.genericError),
-              data: (data) => Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    l10n.teamAnalyticsAction,
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.w800,
+              data: (data) => DecoratedBox(
+                decoration: BoxDecoration(
+                  color: scheme.surface,
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: scheme.outlineVariant.withValues(alpha: 0.65),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: scheme.shadow.withValues(alpha: 0.06),
+                      blurRadius: 18,
+                      offset: const Offset(0, 8),
                     ),
+                  ],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(AppSpacing.medium),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFF1ECFF),
+                              borderRadius: BorderRadius.circular(14),
+                            ),
+                            child: const Icon(
+                              AppIcons.insights_outlined,
+                              color: Color(0xFF7C3AED),
+                              size: 22,
+                            ),
+                          ),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: Text(
+                              l10n.teamAnalyticsAction,
+                              textAlign: TextAlign.start,
+                              style: theme.textTheme.titleMedium?.copyWith(
+                                fontWeight: FontWeight.w800,
+                                color: const Color(0xFF5B2BE0),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Divider(height: 28, color: scheme.outlineVariant),
+                      _analyticsSheetListTile(
+                        sheetContext,
+                        icon: AppIcons.groups_2_outlined,
+                        label: l10n.teamSummaryTotalMembers,
+                        value: '${data.totalMembers}',
+                      ),
+                      _analyticsSheetListTile(
+                        sheetContext,
+                        icon: AppIcons.how_to_reg_outlined,
+                        label: l10n.teamAnalyticsActiveInactiveLabel,
+                        value:
+                            '${data.activeMembers} / ${data.inactiveMembers}',
+                      ),
+                      _analyticsSheetListTile(
+                        sheetContext,
+                        icon: AppIcons.schedule_outlined,
+                        label: l10n.teamSummaryWorkingNow,
+                        value: '${data.workingNow}',
+                      ),
+                      _analyticsSheetListTile(
+                        sheetContext,
+                        icon: AppIcons.event_busy_outlined,
+                        label: l10n.teamSummaryAbsentToday,
+                        value: '${data.absentToday}',
+                      ),
+                      _analyticsSheetListTile(
+                        sheetContext,
+                        icon: AppIcons.payments_outlined,
+                        label: l10n.teamSalesRevenueMonth,
+                        value: formatAppMoney(
+                          data.totalRevenueThisMonth,
+                          currencyCode,
+                          locale,
+                        ),
+                      ),
+                      _analyticsSheetListTile(
+                        sheetContext,
+                        icon: AppIcons.design_services_outlined,
+                        label: l10n.teamSalesServicesMonth,
+                        value: '${data.servicesThisMonth}',
+                      ),
+                      _analyticsSheetListTile(
+                        sheetContext,
+                        icon: AppIcons.workspace_premium_outlined,
+                        label: l10n.teamAnalyticsTopPerformerLabel,
+                        value: data.topPerformerName,
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: AppSpacing.medium),
-                  _sheetMetric(
-                    l10n.teamSummaryTotalMembers,
-                    '${data.totalMembers}',
-                  ),
-                  _sheetMetric(
-                    l10n.teamAnalyticsActiveInactiveLabel,
-                    '${data.activeMembers} / ${data.inactiveMembers}',
-                  ),
-                  _sheetMetric(
-                    l10n.teamSummaryWorkingNow,
-                    '${data.workingNow}',
-                  ),
-                  _sheetMetric(
-                    l10n.teamSummaryAbsentToday,
-                    '${data.absentToday}',
-                  ),
-                  _sheetMetric(
-                    l10n.teamSalesRevenueMonth,
-                    formatAppMoney(
-                      data.totalRevenueThisMonth,
-                      currencyCode,
-                      locale,
-                    ),
-                  ),
-                  _sheetMetric(
-                    l10n.teamSalesServicesMonth,
-                    '${data.servicesThisMonth}',
-                  ),
-                  _sheetMetric(
-                    l10n.teamAnalyticsTopPerformerLabel,
-                    data.topPerformerName,
-                  ),
-                ],
+                ),
               ),
             ),
           ),
@@ -432,10 +480,59 @@ class _TeamOperationsModuleState extends ConsumerState<TeamOperationsModule> {
   }
 }
 
+Widget _analyticsSheetListTile(
+  BuildContext context, {
+  required IconData icon,
+  required String label,
+  required String value,
+}) {
+  final scheme = Theme.of(context).colorScheme;
+  return ListTile(
+    contentPadding: EdgeInsets.zero,
+    horizontalTitleGap: 10,
+    minVerticalPadding: 2,
+    leading: Container(
+      width: 40,
+      height: 40,
+      decoration: BoxDecoration(
+        color: const Color(0xFFF1ECFF),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      alignment: Alignment.center,
+      child: Icon(icon, color: const Color(0xFF7C3AED), size: 20),
+    ),
+    title: Text(
+      label,
+      textAlign: TextAlign.start,
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
+      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+        fontWeight: FontWeight.w600,
+        color: scheme.onSurface,
+      ),
+    ),
+    trailing: ConstrainedBox(
+      constraints: const BoxConstraints(maxWidth: 128),
+      child: Text(
+        value,
+        textAlign: TextAlign.end,
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
+        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+          fontWeight: FontWeight.w800,
+          color: scheme.onSurface,
+        ),
+      ),
+    ),
+  );
+}
+
 class _TeamTitleRow extends StatelessWidget {
   const _TeamTitleRow({required this.onAnalyticsPressed});
 
   final VoidCallback onAnalyticsPressed;
+
+  static const Color _purpleAccent = Color(0xFF7C3AED);
 
   @override
   Widget build(BuildContext context) {
@@ -444,10 +541,11 @@ class _TeamTitleRow extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
 
     final titleBlock = Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
           l10n.teamManagementTitle,
+          textAlign: TextAlign.start,
           style: theme.textTheme.headlineSmall?.copyWith(
             fontWeight: FontWeight.w900,
             letterSpacing: -0.5,
@@ -456,6 +554,7 @@ class _TeamTitleRow extends StatelessWidget {
         const SizedBox(height: 4),
         Text(
           l10n.teamManagementSubtitle,
+          textAlign: TextAlign.start,
           style: theme.textTheme.bodyMedium?.copyWith(
             color: scheme.onSurfaceVariant,
             fontWeight: FontWeight.w500,
@@ -464,18 +563,45 @@ class _TeamTitleRow extends StatelessWidget {
       ],
     );
 
-    final analyticsButton = FilledButton.tonalIcon(
-      onPressed: onAnalyticsPressed,
-      icon: const Icon(AppIcons.query_stats_rounded, size: 16),
-      label: Text(
-        l10n.teamAnalyticsAction,
-        maxLines: 1,
-        overflow: TextOverflow.ellipsis,
-      ),
-      style: FilledButton.styleFrom(
-        visualDensity: VisualDensity.compact,
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-        shape: const StadiumBorder(),
+    final analyticsControl = Material(
+      color: scheme.surface,
+      borderRadius: BorderRadius.circular(20),
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: onAnalyticsPressed,
+        borderRadius: BorderRadius.circular(20),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              color: scheme.outlineVariant.withValues(alpha: 0.75),
+            ),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Icon(
+                AppIcons.insights_outlined,
+                size: 20,
+                color: _purpleAccent,
+              ),
+              const SizedBox(width: 8),
+              Flexible(
+                child: Text(
+                  l10n.teamAnalyticsAction,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.start,
+                  style: theme.textTheme.labelLarge?.copyWith(
+                    color: scheme.onSurface,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
 
@@ -483,13 +609,13 @@ class _TeamTitleRow extends StatelessWidget {
       builder: (context, constraints) {
         if (constraints.maxWidth < 390) {
           return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               titleBlock,
               const SizedBox(height: AppSpacing.medium),
               ConstrainedBox(
                 constraints: BoxConstraints(maxWidth: constraints.maxWidth),
-                child: analyticsButton,
+                child: analyticsControl,
               ),
             ],
           );
@@ -500,7 +626,7 @@ class _TeamTitleRow extends StatelessWidget {
           children: [
             Expanded(child: titleBlock),
             const SizedBox(width: AppSpacing.medium),
-            Flexible(flex: 0, child: analyticsButton),
+            Flexible(flex: 0, child: analyticsControl),
           ],
         );
       },
@@ -675,25 +801,117 @@ class _TeamFilterChips extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final scheme = Theme.of(context).colorScheme;
 
     return SizedBox(
-      height: 44,
+      height: 40,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: 2),
         itemCount: _visibleTeamFilters.length,
-        separatorBuilder: (_, index) => const SizedBox(width: AppSpacing.small),
+        separatorBuilder: (context, index) => const SizedBox(width: 8),
         itemBuilder: (context, index) {
           final filter = _visibleTeamFilters[index];
-          return ChoiceChip(
-            label: Text(_filterLabel(l10n, filter)),
+          return _TeamModernFilterChip(
+            label: _filterLabel(l10n, filter),
             selected: selectedFilter == filter,
-            onSelected: (_) => onSelected(filter),
-            avatar: filter == TeamFilter.topSellers
-                ? const Icon(AppIcons.workspace_premium_outlined, size: 16)
+            onTap: () => onSelected(filter),
+            leading: filter == TeamFilter.topSellers
+                ? Icon(
+                    AppIcons.workspace_premium_outlined,
+                    size: 14,
+                    color: scheme.onSurface,
+                  )
                 : null,
           );
         },
+      ),
+    );
+  }
+}
+
+class _TeamModernFilterChip extends StatelessWidget {
+  const _TeamModernFilterChip({
+    required this.label,
+    required this.selected,
+    required this.onTap,
+    this.leading,
+  });
+
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+  final Widget? leading;
+
+  static const Color _purpleA = Color(0xFF7B61FF);
+  static const Color _purpleB = Color(0xFF9F7BFF);
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+
+    if (selected) {
+      return Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(20),
+          onTap: onTap,
+          child: Ink(
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+              gradient: LinearGradient(
+                colors: [_purpleA, _purpleB],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(Icons.check_rounded, size: 16, color: Colors.white),
+                const SizedBox(width: 6),
+                Text(
+                  label,
+                  style: theme.textTheme.labelLarge?.copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+
+    return Material(
+      color: scheme.surface,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+        side: BorderSide(color: scheme.outlineVariant.withValues(alpha: 0.95)),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(20),
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (leading != null) ...[leading!, const SizedBox(width: 6)],
+              Text(
+                label,
+                style: theme.textTheme.labelLarge?.copyWith(
+                  color: scheme.onSurface,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -710,60 +928,78 @@ class _TeamSearchRow extends StatelessWidget {
   final ValueChanged<String> onChanged;
   final VoidCallback onFilterPressed;
 
+  static const double _fieldHeight = 56;
+  static const double _radius = 19;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final l10n = AppLocalizations.of(context)!;
+    final borderSide = BorderSide(
+      color: scheme.outlineVariant.withValues(alpha: 0.55),
+    );
+    final shape = RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(_radius),
+      side: borderSide,
+    );
 
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Expanded(
-          child: TextField(
-            controller: controller,
-            onChanged: onChanged,
-            textInputAction: TextInputAction.search,
-            decoration: InputDecoration(
-              hintText: l10n.teamSearchHint,
-              prefixIcon: const Icon(AppIcons.search_rounded),
-              filled: true,
-              fillColor: scheme.surface,
-              contentPadding: const EdgeInsets.symmetric(
-                horizontal: AppSpacing.medium,
-                vertical: 16,
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(18),
-                borderSide: BorderSide(
-                  color: scheme.outlineVariant.withValues(alpha: 0.55),
+          child: SizedBox(
+            height: _fieldHeight,
+            child: TextField(
+              controller: controller,
+              onChanged: onChanged,
+              textAlignVertical: TextAlignVertical.center,
+              textInputAction: TextInputAction.search,
+              style: theme.textTheme.bodyLarge,
+              decoration: InputDecoration(
+                hintText: l10n.teamSearchHint,
+                isDense: true,
+                prefixIcon: const Icon(AppIcons.search_rounded, size: 22),
+                filled: true,
+                fillColor: scheme.surface,
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: AppSpacing.medium,
+                  vertical: 0,
                 ),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(18),
-                borderSide: BorderSide(
-                  color: scheme.outlineVariant.withValues(alpha: 0.55),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(_radius),
+                  borderSide: borderSide,
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(_radius),
+                  borderSide: borderSide,
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(_radius),
+                  borderSide: BorderSide(color: scheme.primary, width: 1.5),
                 ),
               ),
             ),
           ),
         ),
         const SizedBox(width: AppSpacing.small),
-        Material(
-          color: scheme.surface,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(18),
-            side: BorderSide(
-              color: scheme.outlineVariant.withValues(alpha: 0.55),
-            ),
-          ),
-          child: IconButton(
-            tooltip: l10n.teamFilterAction,
-            onPressed: onFilterPressed,
-            icon: const Icon(AppIcons.tune_rounded),
-            style: IconButton.styleFrom(
-              fixedSize: const Size(56, 56),
-              iconSize: 24,
-              foregroundColor: theme.colorScheme.onSurface,
+        SizedBox(
+          width: _fieldHeight,
+          height: _fieldHeight,
+          child: Material(
+            color: scheme.surface,
+            shape: shape,
+            clipBehavior: Clip.antiAlias,
+            child: IconButton(
+              tooltip: l10n.teamFilterAction,
+              onPressed: onFilterPressed,
+              icon: const Icon(AppIcons.tune_rounded),
+              style: IconButton.styleFrom(
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                padding: EdgeInsets.zero,
+                iconSize: 24,
+                foregroundColor: scheme.onSurface,
+              ),
             ),
           ),
         ),
@@ -776,14 +1012,12 @@ class _TeamCardCollection extends StatelessWidget {
   const _TeamCardCollection({
     super.key,
     required this.cards,
-    required this.currencyCode,
     required this.salonId,
     required this.onMarkAttendance,
     required this.onToggleActive,
   });
 
   final List<TeamBarberCardData> cards;
-  final String currencyCode;
   final String salonId;
   final ValueChanged<TeamBarberCardData> onMarkAttendance;
   final ValueChanged<TeamBarberCardData> onToggleActive;
@@ -802,11 +1036,10 @@ class _TeamCardCollection extends StatelessWidget {
           return Column(
             children: [
               for (var index = 0; index < cards.length; index++) ...[
-                if (index > 0) const SizedBox(height: AppSpacing.medium),
+                if (index > 0) const SizedBox(height: 14),
                 _TeamCardEntry(
                   index: index,
                   data: cards[index],
-                  currencyCode: currencyCode,
                   salonId: salonId,
                   onMarkAttendance: () => onMarkAttendance(cards[index]),
                   onToggleActive: () => onToggleActive(cards[index]),
@@ -817,17 +1050,15 @@ class _TeamCardCollection extends StatelessWidget {
         }
 
         return Wrap(
-          spacing: AppSpacing.medium,
-          runSpacing: AppSpacing.medium,
+          spacing: 14,
+          runSpacing: 14,
           children: [
             for (var index = 0; index < cards.length; index++)
               SizedBox(
-                width:
-                    (constraints.maxWidth - AppSpacing.medium) / crossAxisCount,
+                width: (constraints.maxWidth - 14) / crossAxisCount,
                 child: _TeamCardEntry(
                   index: index,
                   data: cards[index],
-                  currencyCode: currencyCode,
                   salonId: salonId,
                   onMarkAttendance: () => onMarkAttendance(cards[index]),
                   onToggleActive: () => onToggleActive(cards[index]),
@@ -844,7 +1075,6 @@ class _TeamCardEntry extends StatelessWidget {
   const _TeamCardEntry({
     required this.index,
     required this.data,
-    required this.currencyCode,
     required this.salonId,
     required this.onMarkAttendance,
     required this.onToggleActive,
@@ -852,7 +1082,6 @@ class _TeamCardEntry extends StatelessWidget {
 
   final int index;
   final TeamBarberCardData data;
-  final String currencyCode;
   final String salonId;
   final VoidCallback onMarkAttendance;
   final VoidCallback onToggleActive;
@@ -864,454 +1093,50 @@ class _TeamCardEntry extends StatelessWidget {
       index: index,
       slideOffset: 10,
       child: AppOpenContainerRoute(
-        closedBuilder: (context, openContainer) => _EmployeeCard(
-          data: data,
-          currencyCode: currencyCode,
-          onViewProfile: openContainer,
-          onEditMember: () => showAddBarberSheet(
-            context,
-            salonId: salonId,
-            existing: data.employee,
-          ),
-          onAttendance: onMarkAttendance,
-          onPayroll: () => context.push(
-            AppRoutes.ownerEmployeePayrollSetup(data.employee.id),
-          ),
-          onToggleActive: onToggleActive,
-        ),
+        closedBuilder: (context, openContainer) {
+          final l10n = AppLocalizations.of(context)!;
+          return TeamMemberCard(
+            data: data,
+            onTap: openContainer,
+            onWhatsAppTap: () => ContactLauncher.openWhatsApp(
+              context,
+              data.employee.phone,
+              message: '',
+              unavailableMessage: l10n.teamMemberWhatsAppNoPhone,
+              unavailableAppMessage: l10n.teamProfileWhatsAppUnavailableSnack,
+            ),
+            onMenuSelected: (action) {
+              switch (action) {
+                case TeamMemberCardMenuAction.viewProfile:
+                  openContainer();
+                  break;
+                case TeamMemberCardMenuAction.edit:
+                  showAddBarberSheet(
+                    context,
+                    salonId: salonId,
+                    existing: data.employee,
+                  );
+                  break;
+                case TeamMemberCardMenuAction.attendance:
+                  onMarkAttendance();
+                  break;
+                case TeamMemberCardMenuAction.payroll:
+                  context.push(
+                    AppRoutes.ownerEmployeePayrollSetup(data.employee.id),
+                  );
+                  break;
+                case TeamMemberCardMenuAction.toggleActive:
+                  onToggleActive();
+                  break;
+              }
+            },
+          );
+        },
         openBuilder: (context, _) =>
             BarberDetailsScreen(employeeId: data.employee.id),
       ),
     );
   }
-}
-
-class _EmployeeCard extends StatelessWidget {
-  const _EmployeeCard({
-    required this.data,
-    required this.currencyCode,
-    required this.onViewProfile,
-    required this.onEditMember,
-    required this.onAttendance,
-    required this.onPayroll,
-    required this.onToggleActive,
-  });
-
-  final TeamBarberCardData data;
-  final String currencyCode;
-  final VoidCallback onViewProfile;
-  final VoidCallback onEditMember;
-  final VoidCallback onAttendance;
-  final VoidCallback onPayroll;
-  final VoidCallback onToggleActive;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
-    final l10n = AppLocalizations.of(context)!;
-    final locale = Localizations.localeOf(context);
-    final timeFormat = DateFormat.jm(locale.toString());
-    final performance = _performancePercent(data);
-    final statusTone = _statusTone(context, data.status);
-
-    Widget buildIdentity() {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            data.employee.name,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: theme.textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w900,
-              letterSpacing: -0.2,
-            ),
-          ),
-          const SizedBox(height: 3),
-          Text(
-            localizedStaffRole(l10n, data.employee.role),
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: theme.textTheme.labelMedium?.copyWith(
-              color: scheme.primary,
-              fontWeight: FontWeight.w800,
-            ),
-          ),
-          const SizedBox(height: 7),
-          Row(
-            children: [
-              Icon(
-                _attendanceIcon(data),
-                size: 14,
-                color: statusTone.foreground,
-              ),
-              const SizedBox(width: 5),
-              Expanded(
-                child: Text(
-                  _attendanceLabel(l10n, timeFormat, data),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: theme.textTheme.labelSmall?.copyWith(
-                    color: statusTone.foreground,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
-      );
-    }
-
-    Widget buildMetricRow() {
-      return Row(
-        children: [
-          Expanded(
-            child: _EmployeeMetric(
-              icon: AppIcons.scissors,
-              value: '${data.todayMetrics.servicesToday}',
-              label: l10n.teamMemberServicesShort,
-            ),
-          ),
-          const SizedBox(width: AppSpacing.small),
-          Expanded(
-            child: _EmployeeMetric(
-              icon: AppIcons.payments_outlined,
-              value: formatAppMoney(
-                data.todayMetrics.salesToday,
-                currencyCode,
-                locale,
-              ),
-              label: l10n.teamMemberRevenueToday,
-              iconBackground: const Color(0xFFEAF8ED),
-              iconColor: const Color(0xFF2E9D45),
-            ),
-          ),
-        ],
-      );
-    }
-
-    Widget buildPerformance() {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _StatusChip(status: data.status),
-          const SizedBox(height: 8),
-          Text(
-            l10n.teamMemberPerformance,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: theme.textTheme.labelSmall?.copyWith(
-              color: scheme.onSurfaceVariant,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-          const SizedBox(height: 3),
-          Text(
-            l10n.teamMemberPerformancePercent(performance),
-            style: theme.textTheme.labelMedium?.copyWith(
-              color: statusTone.foreground,
-              fontWeight: FontWeight.w900,
-            ),
-          ),
-          const SizedBox(height: 5),
-          _PerformanceBar(value: performance, color: statusTone.foreground),
-        ],
-      );
-    }
-
-    Widget buildMoreMenu() {
-      return PopupMenuButton<_TeamMemberAction>(
-        tooltip: l10n.teamMemberMoreActions,
-        onSelected: (value) {
-          switch (value) {
-            case _TeamMemberAction.viewProfile:
-              onViewProfile();
-              return;
-            case _TeamMemberAction.edit:
-              onEditMember();
-              return;
-            case _TeamMemberAction.attendance:
-              onAttendance();
-              return;
-            case _TeamMemberAction.payroll:
-              onPayroll();
-              return;
-            case _TeamMemberAction.toggleActive:
-              onToggleActive();
-              return;
-          }
-        },
-        itemBuilder: (context) => [
-          PopupMenuItem(
-            value: _TeamMemberAction.viewProfile,
-            child: Text(l10n.teamMemberViewProfileAction),
-          ),
-          PopupMenuItem(
-            value: _TeamMemberAction.edit,
-            child: Text(l10n.teamMemberEditAction),
-          ),
-          PopupMenuItem(
-            value: _TeamMemberAction.attendance,
-            child: Text(l10n.teamMemberAttendanceAction),
-          ),
-          PopupMenuItem(
-            value: _TeamMemberAction.payroll,
-            child: Text(l10n.teamMemberPayrollAction),
-          ),
-          PopupMenuItem(
-            value: _TeamMemberAction.toggleActive,
-            child: Text(
-              data.employee.isActive
-                  ? l10n.teamMemberDeactivateAction
-                  : l10n.teamMemberActivateAction,
-            ),
-          ),
-        ],
-        icon: const Icon(AppIcons.more_horiz_rounded),
-      );
-    }
-
-    return Card(
-      elevation: 0,
-      color: scheme.surface,
-      shadowColor: scheme.shadow.withValues(alpha: 0.08),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(22),
-        side: BorderSide(color: scheme.outlineVariant.withValues(alpha: 0.5)),
-      ),
-      child: InkWell(
-        onTap: onViewProfile,
-        borderRadius: BorderRadius.circular(22),
-        child: Padding(
-          padding: const EdgeInsets.all(AppSpacing.medium),
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              if (constraints.maxWidth < 430) {
-                return Column(
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        _EmployeeAvatar(data: data, statusTone: statusTone),
-                        const SizedBox(width: AppSpacing.medium),
-                        Expanded(child: buildIdentity()),
-                        buildMoreMenu(),
-                      ],
-                    ),
-                    const SizedBox(height: AppSpacing.medium),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(child: buildMetricRow()),
-                        const SizedBox(width: AppSpacing.medium),
-                        SizedBox(width: 102, child: buildPerformance()),
-                      ],
-                    ),
-                  ],
-                );
-              }
-
-              return Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  _EmployeeAvatar(data: data, statusTone: statusTone),
-                  const SizedBox(width: AppSpacing.medium),
-                  Expanded(flex: 7, child: buildIdentity()),
-                  const SizedBox(width: AppSpacing.small),
-                  Expanded(flex: 4, child: buildMetricRow()),
-                  const SizedBox(width: AppSpacing.small),
-                  SizedBox(width: 96, child: buildPerformance()),
-                  buildMoreMenu(),
-                ],
-              );
-            },
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _EmployeeAvatar extends StatelessWidget {
-  const _EmployeeAvatar({required this.data, required this.statusTone});
-
-  final TeamBarberCardData data;
-  final _StatusTone statusTone;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final initials = _initials(data.employee.name);
-    final avatarUrl = data.employee.avatarUrl?.trim();
-
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        CircleAvatar(
-          radius: 27,
-          backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-          foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
-          backgroundImage: avatarUrl == null || avatarUrl.isEmpty
-              ? null
-              : NetworkImage(avatarUrl),
-          child: avatarUrl == null || avatarUrl.isEmpty
-              ? Text(
-                  initials,
-                  style: theme.textTheme.titleSmall?.copyWith(
-                    fontWeight: FontWeight.w900,
-                  ),
-                )
-              : null,
-        ),
-        PositionedDirectional(
-          end: 0,
-          bottom: 1,
-          child: Container(
-            width: 12,
-            height: 12,
-            decoration: BoxDecoration(
-              color: statusTone.foreground,
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: Theme.of(context).colorScheme.surface,
-                width: 2,
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class _EmployeeMetric extends StatelessWidget {
-  const _EmployeeMetric({
-    required this.icon,
-    required this.value,
-    required this.label,
-    this.iconBackground = const Color(0xFFF1ECFF),
-    this.iconColor = const Color(0xFF7C3AED),
-  });
-
-  final IconData icon;
-  final String value;
-  final String label;
-  final Color iconBackground;
-  final Color iconColor;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              width: 24,
-              height: 24,
-              decoration: BoxDecoration(
-                color: iconBackground,
-                shape: BoxShape.circle,
-              ),
-              child: Icon(icon, color: iconColor, size: 14),
-            ),
-            const SizedBox(width: 6),
-            Flexible(
-              child: Text(
-                value,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.labelLarge?.copyWith(
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 3),
-        Text(
-          label,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          style: theme.textTheme.labelSmall?.copyWith(
-            color: scheme.onSurfaceVariant,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class _StatusChip extends StatelessWidget {
-  const _StatusChip({required this.status});
-
-  final TeamMemberStatus status;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final l10n = AppLocalizations.of(context)!;
-    final tone = _statusTone(context, status);
-
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 6),
-      decoration: BoxDecoration(
-        color: tone.background,
-        borderRadius: BorderRadius.circular(999),
-      ),
-      child: Text(
-        _statusLabel(l10n, status),
-        maxLines: 1,
-        overflow: TextOverflow.ellipsis,
-        style: theme.textTheme.labelSmall?.copyWith(
-          color: tone.foreground,
-          fontWeight: FontWeight.w900,
-        ),
-      ),
-    );
-  }
-}
-
-class _PerformanceBar extends StatelessWidget {
-  const _PerformanceBar({required this.value, required this.color});
-
-  final int value;
-  final Color color;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final progress = (value.clamp(0, 100)) / 100;
-
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(999),
-      child: LinearProgressIndicator(
-        minHeight: 5,
-        value: progress,
-        backgroundColor: scheme.surfaceContainerHighest.withValues(alpha: 0.55),
-        valueColor: AlwaysStoppedAnimation<Color>(color),
-      ),
-    );
-  }
-}
-
-Widget _sheetMetric(String label, String value) {
-  return Padding(
-    padding: const EdgeInsets.only(bottom: AppSpacing.small),
-    child: Row(
-      children: [
-        Expanded(child: Text(label)),
-        Text(value, style: const TextStyle(fontWeight: FontWeight.w700)),
-      ],
-    ),
-  );
 }
 
 class _TeamModuleLoadingState extends StatelessWidget {
@@ -1337,15 +1162,6 @@ class _TeamModuleLoadingState extends StatelessWidget {
   }
 }
 
-enum _TeamMemberAction { viewProfile, edit, attendance, payroll, toggleActive }
-
-class _StatusTone {
-  const _StatusTone({required this.foreground, required this.background});
-
-  final Color foreground;
-  final Color background;
-}
-
 const _visibleTeamFilters = <TeamFilter>[
   TeamFilter.all,
   TeamFilter.active,
@@ -1365,93 +1181,3 @@ String _filterLabel(AppLocalizations l10n, TeamFilter filter) {
   };
 }
 
-String _statusLabel(AppLocalizations l10n, TeamMemberStatus status) {
-  return switch (status) {
-    TeamMemberStatus.active => l10n.teamStatusActive,
-    TeamMemberStatus.checkedIn => l10n.teamStatusActive,
-    TeamMemberStatus.late => l10n.teamStatusLate,
-    TeamMemberStatus.inactive => l10n.teamStatusInactive,
-  };
-}
-
-String _attendanceLabel(
-  AppLocalizations l10n,
-  DateFormat timeFormat,
-  TeamBarberCardData data,
-) {
-  final attendance = data.todayAttendance;
-  if (data.status == TeamMemberStatus.inactive) {
-    return l10n.teamMemberInactiveStatus;
-  }
-  if (attendance == null || attendance.checkInAt == null) {
-    return l10n.teamMemberNotCheckedIn;
-  }
-  if (data.status == TeamMemberStatus.late) {
-    return l10n.teamMemberLateAt(
-      timeFormat.format(attendance.checkInAt!.toLocal()),
-    );
-  }
-  return l10n.teamMemberCheckedInAt(
-    timeFormat.format(attendance.checkInAt!.toLocal()),
-  );
-}
-
-IconData _attendanceIcon(TeamBarberCardData data) {
-  return switch (data.status) {
-    TeamMemberStatus.active => AppIcons.schedule_outlined,
-    TeamMemberStatus.checkedIn => AppIcons.check_circle_outline,
-    TeamMemberStatus.late => AppIcons.timelapse_outlined,
-    TeamMemberStatus.inactive => AppIcons.circle_outlined,
-  };
-}
-
-_StatusTone _statusTone(BuildContext context, TeamMemberStatus status) {
-  final scheme = Theme.of(context).colorScheme;
-  return switch (status) {
-    TeamMemberStatus.active => const _StatusTone(
-      foreground: Color(0xFF2E9D45),
-      background: Color(0xFFEAF8ED),
-    ),
-    TeamMemberStatus.checkedIn => const _StatusTone(
-      foreground: Color(0xFF2E9D45),
-      background: Color(0xFFEAF8ED),
-    ),
-    TeamMemberStatus.late => const _StatusTone(
-      foreground: Color(0xFFC8752D),
-      background: Color(0xFFFFF2E5),
-    ),
-    TeamMemberStatus.inactive => _StatusTone(
-      foreground: scheme.onSurfaceVariant,
-      background: scheme.surfaceContainerHigh,
-    ),
-  };
-}
-
-int _performancePercent(TeamBarberCardData data) {
-  if (!data.employee.isActive || data.todayMetrics.servicesToday == 0) {
-    return 0;
-  }
-  final salesWeight = (data.todayMetrics.salesToday / 1000 * 65).clamp(0, 65);
-  final servicesWeight = (data.todayMetrics.servicesToday / 10 * 35).clamp(
-    0,
-    35,
-  );
-  return (salesWeight + servicesWeight).round().clamp(0, 100);
-}
-
-String _initials(String name) {
-  final parts = name
-      .trim()
-      .split(RegExp(r'\s+'))
-      .where((part) => part.isNotEmpty)
-      .toList(growable: false);
-  if (parts.isEmpty) {
-    return '?';
-  }
-  if (parts.length == 1) {
-    final value = parts.first;
-    return value.substring(0, value.length > 1 ? 2 : 1).toUpperCase();
-  }
-  return (parts.first.substring(0, 1) + parts.last.substring(0, 1))
-      .toUpperCase();
-}

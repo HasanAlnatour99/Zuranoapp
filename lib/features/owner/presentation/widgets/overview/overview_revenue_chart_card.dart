@@ -55,7 +55,7 @@ class OverviewRevenueChartCard extends StatelessWidget {
                       l10n.ownerOverviewRevenueThisWeekTitle,
                       textAlign: TextAlign.start,
                       style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                        fontSize: 17,
+                        fontSize: OwnerOverviewTypography.chartTitle,
                         fontWeight: FontWeight.w900,
                         color: OwnerOverviewTokens.textPrimary,
                       ),
@@ -69,6 +69,7 @@ class OverviewRevenueChartCard extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: const Color(0xFF6B7280),
                         fontWeight: FontWeight.w500,
+                        fontSize: OwnerOverviewTypography.chartSubtitle,
                       ),
                     ),
                   ],
@@ -79,7 +80,7 @@ class OverviewRevenueChartCard extends StatelessWidget {
                 l10n.ownerOverviewRevenueThisWeekTotal(totalLabel),
                 textAlign: TextAlign.end,
                 style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                  fontSize: 12,
+                  fontSize: OwnerOverviewTypography.chartBadge,
                   fontWeight: FontWeight.w800,
                   color: OwnerOverviewTokens.purple,
                 ),
@@ -133,7 +134,8 @@ class OverviewRevenueChartCard extends StatelessWidget {
                                   t,
                                   style: Theme.of(context).textTheme.labelSmall
                                       ?.copyWith(
-                                        fontSize: 10,
+                                        fontSize: OwnerOverviewTypography
+                                            .chartAxis,
                                         color: const Color(0xFF9CA3AF),
                                       ),
                                 ),
@@ -158,7 +160,7 @@ class OverviewRevenueChartCard extends StatelessWidget {
                                 TextStyle(
                                   color: scheme.onInverseSurface,
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 12,
+                                  fontSize: OwnerOverviewTypography.chartTooltip,
                                 ),
                               );
                             }).toList();
@@ -218,6 +220,7 @@ class OverviewRevenueChartCard extends StatelessWidget {
                               ?.copyWith(
                                 color: const Color(0xFF6B7280),
                                 fontWeight: FontWeight.w600,
+                                fontSize: OwnerOverviewTypography.chartSubtitle,
                               ),
                         ),
                       ],

@@ -93,12 +93,17 @@ service cloud.firestore {
       return isSalonStaff() && sameSalon(salonId);
     }
 
-    /// Attendance doc id format: `{employeeId}_{yyyyMMdd}` — use for `get` when doc may not exist yet.
+    /// Own attendance day id — supports both:
+    /// - Current: `{yyyyMMdd}_{employeeId}` (e.g. `20260427_abc123`)
+    /// - Legacy: `{employeeId}_{yyyyMMdd}` (older clients / data)
     function isOwnAttendanceDocId(attendanceId) {
       let eid = currentEmployeeId();
       return eid is string && eid.size() > 0 &&
         attendanceId is string &&
-        attendanceId.matches('^' + eid + '_[0-9]{8}$');
+        (
+          attendanceId.matches('^[0-9]{8}_' + eid + '$') ||
+          attendanceId.matches('^' + eid + '_[0-9]{8}$')
+        );
     }
 
     function isOwnerOrStaffOfSalon(salonId) {
@@ -439,7 +444,7 @@ service cloud.firestore {
             request.resource.data.employeeId == currentEmployeeId() &&
             request.resource.data.salonId == salonId &&
             request.resource.data.type in ['punchIn', 'punchOut', 'breakOut', 'breakIn'];
-          allow update, delete: if isSalonOwnerOrAdmin(salonId);
+          allow update, delete: if false;
         }
       }
 

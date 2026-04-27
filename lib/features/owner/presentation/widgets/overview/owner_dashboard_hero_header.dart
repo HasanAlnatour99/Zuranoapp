@@ -4,13 +4,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/constants/app_routes.dart';
+import '../../../../../core/constants/user_roles.dart';
 import '../../../../../core/text/personalized_greeting.dart';
 import '../../../../../core/widgets/app_notification_badge.dart';
 import '../../../../../l10n/app_localizations.dart';
 import '../../../../../providers/notification_providers.dart';
+import '../../../../../shared/widgets/zurano_header_icon_button.dart';
 import '../../../../users/data/models/app_user.dart';
 import '../../../logic/owner_overview_controller.dart';
 import '../../../logic/owner_overview_state.dart';
+import 'overview_design_tokens.dart';
 
 /// Matches overview body canvas (light purple-gray).
 const Color kOwnerDashboardHeroCanvas = Color(0xFFF7F4FF);
@@ -33,14 +36,16 @@ String _resolveDisplayName(AppUser user, OwnerOverviewState state) {
 }
 
 Widget _buildAiHeroButton(BuildContext context, AppLocalizations l10n) {
+  const size = 46.0;
+  const iconSize = 21.0;
   return Tooltip(
     message: l10n.ownerAiAssistantTooltip,
     child: InkWell(
       onTap: () => context.push(AppRoutes.ownerDashboardAssistant),
-      borderRadius: BorderRadius.circular(26),
+      borderRadius: BorderRadius.circular(size / 2),
       child: Container(
-        width: 52,
-        height: 52,
+        width: size,
+        height: size,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: Colors.white,
@@ -52,100 +57,29 @@ Widget _buildAiHeroButton(BuildContext context, AppLocalizations l10n) {
             ),
           ],
         ),
-        child: const Icon(
+        child: Icon(
           Icons.auto_awesome_rounded,
-          color: Color(0xFF7B3FF2),
-          size: 24,
+          color: const Color(0xFF7B3FF2),
+          size: iconSize,
         ),
       ),
     ),
   );
 }
 
-Widget _buildHeroNotificationButton({
-  required BuildContext context,
-  required WidgetRef ref,
-  required AppLocalizations l10n,
-}) {
-  final unread = ref.watch(unreadNotificationCountProvider);
-  return Tooltip(
-    message: l10n.notificationsInboxTooltip,
-    child: InkWell(
-      onTap: () => context.push(AppRoutes.notifications),
-      borderRadius: BorderRadius.circular(26),
-      child: Container(
-        width: 52,
-        height: 52,
-        decoration: BoxDecoration(
-          color: Colors.white.withValues(alpha: 0.18),
-          shape: BoxShape.circle,
-          border: Border.all(color: Colors.white.withValues(alpha: 0.25)),
-        ),
-        child: Center(
-          child: AppNotificationBadge(
-            count: unread,
-            child: const Icon(
-              Icons.notifications_none_rounded,
-              color: Colors.white,
-              size: 24,
-            ),
-          ),
-        ),
-      ),
-    ),
-  );
-}
-
-Widget _buildOwnerQuickActionBar(BuildContext context, AppLocalizations l10n) {
-  final isRtl = Directionality.of(context) == TextDirection.rtl;
-
-  return Material(
-    color: Colors.transparent,
-    child: InkWell(
-      onTap: () => context.push(AppRoutes.ownerBentoDashboard),
-      borderRadius: BorderRadius.circular(28),
-      child: Container(
-        height: 58,
-        padding: const EdgeInsets.symmetric(horizontal: 18),
-        decoration: BoxDecoration(
-          color: Colors.white.withValues(alpha: 0.2),
-          borderRadius: BorderRadius.circular(28),
-          border: Border.all(color: Colors.white.withValues(alpha: 0.26)),
-        ),
-        child: Row(
-          children: [
-            const Icon(
-              Icons.manage_search_rounded,
-              color: Colors.white,
-              size: 24,
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Text(
-                l10n.ownerOverviewHeroSearchHint,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                textAlign: isRtl ? TextAlign.right : TextAlign.left,
-                style: TextStyle(
-                  color: Colors.white.withValues(alpha: 0.88),
-                  fontSize: 15,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
-}
-
-/// Purple gradient hero (greeting, salon, AI, notifications, quick search) used on
-/// owner overview and other owner shell tabs (Team, Customers, Finance).
+/// Purple gradient hero (greeting, salon, AI, notifications) used on owner overview
+/// and other owner shell tabs (Team, Customers, Finance).
 class OwnerDashboardHeroHeader extends ConsumerWidget {
-  const OwnerDashboardHeroHeader({super.key, required this.user});
+  const OwnerDashboardHeroHeader({
+    super.key,
+    required this.user,
+    this.compact = false,
+  });
 
   final AppUser user;
+
+  /// When true (e.g. Team tab), reduces vertical padding and avatar size ~20%.
+  final bool compact;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -159,6 +93,7 @@ class OwnerDashboardHeroHeader extends ConsumerWidget {
       state: state,
       l10n: l10n,
       salonLabel: salonLabel,
+      compact: compact,
     );
   }
 }
@@ -170,26 +105,33 @@ Widget _buildOwnerHeroHeader({
   required OwnerOverviewState state,
   required AppLocalizations l10n,
   required String salonLabel,
+  bool compact = false,
 }) {
   final isRtl = Directionality.of(context) == TextDirection.rtl;
   final displayName = _resolveDisplayName(user, state);
   final formattedName = displayName.trim().toUpperCaseFirst();
-  final headline = formattedName.isEmpty
-      ? getGreeting(l10n)
-      : '${getGreeting(l10n)}, $formattedName';
+  final greeting = getGreeting(l10n);
   final trimmedSalon = salonLabel.trim();
   final salonTitle = trimmedSalon.isNotEmpty
       ? trimmedSalon
       : l10n.ownerDashboardTitle;
   final initials = _heroUserInitials(user.name);
   final photo = user.photoUrl?.trim();
+  final canOpenOwnerSettings =
+      user.role == UserRoles.owner || user.role == UserRoles.admin;
+  final unread = ref.watch(unreadNotificationCountProvider);
+  final iconSize = compact ? 19.0 : 21.0;
 
   final startAlign = isRtl ? CrossAxisAlignment.end : CrossAxisAlignment.start;
   final textAlign = isRtl ? TextAlign.right : TextAlign.left;
 
+  final heroTop = compact ? 6.0 : 10.0;
+  final heroBottom = compact ? 18.0 : 26.0;
+  final avatarRadius = compact ? 18.0 : 22.0;
+
   return Container(
     width: double.infinity,
-    padding: const EdgeInsets.fromLTRB(20, 14, 20, 36),
+    padding: EdgeInsets.fromLTRB(18, heroTop, 18, heroBottom),
     decoration: const BoxDecoration(
       gradient: LinearGradient(
         colors: [Color(0xFF5B2BE0), Color(0xFF7B3FF2), Color(0xFFA77BFF)],
@@ -211,10 +153,14 @@ Widget _buildOwnerHeroHeader({
               Material(
                 color: Colors.transparent,
                 child: InkWell(
-                  onTap: () => context.push(AppRoutes.settings),
+                  onTap: () => context.push(
+                    canOpenOwnerSettings
+                        ? AppRoutes.ownerSettings
+                        : AppRoutes.settings,
+                  ),
                   customBorder: const CircleBorder(),
                   child: CircleAvatar(
-                    radius: 26,
+                    radius: avatarRadius,
                     backgroundColor: Colors.white.withValues(alpha: 0.22),
                     backgroundImage: photo != null && photo.isNotEmpty
                         ? CachedNetworkImageProvider(photo)
@@ -225,7 +171,7 @@ Widget _buildOwnerHeroHeader({
                             style: const TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w800,
-                              fontSize: 14,
+                              fontSize: OwnerOverviewTypography.heroAvatarInitials,
                             ),
                           )
                         : null,
@@ -236,58 +182,81 @@ Widget _buildOwnerHeroHeader({
               Expanded(
                 child: Column(
                   crossAxisAlignment: startAlign,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      headline,
+                      greeting,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       textAlign: textAlign,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w800,
-                        height: 1.05,
+                      style: TextStyle(
+                        color: Colors.white.withValues(alpha: 0.92),
+                        fontSize: OwnerOverviewTypography.heroGreeting,
+                        fontWeight: FontWeight.w600,
+                        height: 1.1,
                       ),
                     ),
+                    if (formattedName.isNotEmpty) ...[
+                      const SizedBox(height: 3),
+                      Text(
+                        formattedName,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: textAlign,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: OwnerOverviewTypography.heroName,
+                          fontWeight: FontWeight.w800,
+                          height: 1.05,
+                        ),
+                      ),
+                    ],
                     const SizedBox(height: 5),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            salonTitle,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: textAlign,
-                            style: TextStyle(
-                              color: Colors.white.withValues(alpha: 0.75),
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 3),
-                        Icon(
-                          Icons.keyboard_arrow_down_rounded,
-                          color: Colors.white.withValues(alpha: 0.82),
-                          size: 18,
-                        ),
-                      ],
+                    Text(
+                      salonTitle,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: textAlign,
+                      style: TextStyle(
+                        color: Colors.white.withValues(alpha: 0.75),
+                        fontSize: OwnerOverviewTypography.heroSalon,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ],
                 ),
               ),
               const SizedBox(width: 12),
               _buildAiHeroButton(context, l10n),
-              const SizedBox(width: 8),
-              _buildHeroNotificationButton(
-                context: context,
-                ref: ref,
-                l10n: l10n,
+              const SizedBox(width: 6),
+              ZuranoHeaderIconButton(
+                tooltip: l10n.notificationsInboxTooltip,
+                compact: true,
+                onTap: () => context.push(AppRoutes.notifications),
+                icon: AppNotificationBadge(
+                  count: unread,
+                  child: Icon(
+                    Icons.notifications_none_rounded,
+                    color: Colors.white,
+                    size: iconSize,
+                  ),
+                ),
               ),
+              if (canOpenOwnerSettings) ...[
+                const SizedBox(width: 6),
+                ZuranoHeaderIconButton(
+                  tooltip: l10n.ownerDashboardSettingsTooltip,
+                  compact: true,
+                  onTap: () => context.push(AppRoutes.ownerSettings),
+                  icon: Icon(
+                    Icons.settings_rounded,
+                    color: Colors.white,
+                    size: iconSize,
+                  ),
+                ),
+              ],
             ],
           ),
-          const SizedBox(height: 22),
-          _buildOwnerQuickActionBar(context, l10n),
         ],
       ),
     ),
@@ -302,6 +271,7 @@ class OwnerDashboardHeroTabScaffold extends StatelessWidget {
     required this.body,
     this.bodyScaffoldBackgroundColor,
     this.enableBodyOverlap = true,
+    this.compactHero = false,
   });
 
   final AppUser user;
@@ -311,6 +281,9 @@ class OwnerDashboardHeroTabScaffold extends StatelessWidget {
   final Color? bodyScaffoldBackgroundColor;
   final bool enableBodyOverlap;
 
+  /// Shorter hero (e.g. Team tab) while keeping gradient and actions.
+  final bool compactHero;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -318,7 +291,7 @@ class OwnerDashboardHeroTabScaffold extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          OwnerDashboardHeroHeader(user: user),
+          OwnerDashboardHeroHeader(user: user, compact: compactHero),
           Expanded(
             child: Transform.translate(
               offset: Offset(0, enableBodyOverlap ? -18 : 0),

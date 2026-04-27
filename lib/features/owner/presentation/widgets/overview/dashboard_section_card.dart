@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'overview_design_tokens.dart';
+
 class DashboardSectionCard extends StatelessWidget {
   const DashboardSectionCard({
     super.key,
@@ -94,7 +96,7 @@ class DashboardMiniActionCard extends StatelessWidget {
                         textAlign: TextAlign.start,
                         style: const TextStyle(
                           fontWeight: FontWeight.w900,
-                          fontSize: 16,
+                          fontSize: OwnerOverviewTypography.miniTitle,
                         ),
                       ),
                       const SizedBox(height: 4),
@@ -105,7 +107,7 @@ class DashboardMiniActionCard extends StatelessWidget {
                         textAlign: TextAlign.start,
                         style: const TextStyle(
                           color: Color(0xFF6B7280),
-                          fontSize: 13,
+                          fontSize: OwnerOverviewTypography.miniSubtitle,
                         ),
                       ),
                     ],

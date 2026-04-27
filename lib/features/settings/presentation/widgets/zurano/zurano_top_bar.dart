@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../core/theme/app_colors.dart';
 import 'package:barber_shop_app/core/ui/app_icons.dart';
 
-/// In-body top bar (shell may hide its AppBar on the More tab).
+/// In-body top bar for settings and nested owner settings pages.
 class ZuranoTopBar extends StatelessWidget {
   const ZuranoTopBar({super.key, required this.title, required this.onBack});
 

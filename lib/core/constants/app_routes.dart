@@ -214,6 +214,9 @@ class AppRoutes {
   static const ownerServices = '/owner/services';
   static const ownerTeam = '/owner/team';
 
+  /// Opens [AddBarberSheet] via [AddTeamMemberGatewayScreen] (root stack).
+  static const ownerAddTeamMember = '/owner/add-team-member';
+
   /// Full-screen team module pushed from the hub (root stack); avoids shell key clashes.
   static const ownerTeamStack = '/owner/team-stack';
   static const ownerCustomers = '/owner/customers';
@@ -484,6 +487,7 @@ abstract final class AppRouteNames {
   static const revenue = 'revenue';
   static const addSale = 'addSale';
   static const team = 'team';
+  static const addTeamMember = 'addTeamMember';
   static const bookings = 'bookings';
   static const expenses = 'expenses';
   static const addExpense = 'addExpense';
@@ -498,6 +502,7 @@ abstract final class AppRoutePaths {
   static const revenue = AppRoutes.ownerSales;
   static const addSale = AppRoutes.ownerSalesAdd;
   static const team = AppRoutes.ownerTeamStack;
+  static const addTeamMember = AppRoutes.ownerAddTeamMember;
   static const bookings = AppRoutes.bookingsNew;
   static const expenses = AppRoutes.ownerExpenses;
 }
