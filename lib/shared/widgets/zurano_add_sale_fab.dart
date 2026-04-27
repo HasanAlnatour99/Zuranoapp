@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/theme/app_colors.dart';
 import '../../l10n/app_localizations.dart';
 
 class ZuranoAddSaleFab extends StatelessWidget {
@@ -19,17 +20,14 @@ class ZuranoAddSaleFab extends StatelessWidget {
       return const SizedBox.shrink();
     }
     final l10n = AppLocalizations.of(context)!;
-    return FloatingActionButton.extended(
+    return FloatingActionButton(
       heroTag: heroTag,
       elevation: 8,
-      backgroundColor: const Color(0xFF7C3AED),
+      backgroundColor: ZuranoPremiumUiColors.primaryPurple,
       foregroundColor: Colors.white,
+      tooltip: l10n.employeeAddSaleFab,
       onPressed: onPressed,
-      icon: const Icon(Icons.add_rounded),
-      label: Text(
-        l10n.employeeAddSaleFab,
-        style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 14),
-      ),
+      child: const Icon(Icons.add_rounded),
     );
   }
 }

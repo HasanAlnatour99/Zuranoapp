@@ -1,10 +1,15 @@
+import 'dart:async';
+
 import 'package:geolocator/geolocator.dart';
 
 /// Device GPS: current position, distance, and salon-radius checks.
 ///
 /// Onboarding [LocationService] handles country/city lists — keep names distinct.
 class DeviceGeolocationService {
-  Future<Position> getCurrentPosition() async {
+  Future<Position> getCurrentPosition({
+    Duration timeout = const Duration(seconds: 12),
+    LocationAccuracy accuracy = LocationAccuracy.high,
+  }) async {
     final serviceEnabled = await Geolocator.isLocationServiceEnabled();
 
     if (!serviceEnabled) {
@@ -27,9 +32,36 @@ class DeviceGeolocationService {
       );
     }
 
-    return Geolocator.getCurrentPosition(
-      locationSettings: const LocationSettings(accuracy: LocationAccuracy.high),
-    );
+    final lastKnown = await Geolocator.getLastKnownPosition();
+    try {
+      return await Geolocator.getCurrentPosition(
+        locationSettings: LocationSettings(
+          accuracy: accuracy,
+          timeLimit: timeout,
+        ),
+      );
+    } on TimeoutException {
+      if (lastKnown != null) {
+        return lastKnown;
+      }
+      throw Exception('Location request timed out. Please try again.');
+    } on Object {
+      if (lastKnown != null) {
+        return lastKnown;
+      }
+      rethrow;
+    }
+  }
+
+  Future<Position?> tryGetCurrentPosition({
+    Duration timeout = const Duration(seconds: 8),
+    LocationAccuracy accuracy = LocationAccuracy.medium,
+  }) async {
+    try {
+      return await getCurrentPosition(timeout: timeout, accuracy: accuracy);
+    } on Object {
+      return await Geolocator.getLastKnownPosition();
+    }
   }
 
   double distanceBetweenMeters({

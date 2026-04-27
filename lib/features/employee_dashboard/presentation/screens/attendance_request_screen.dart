@@ -112,9 +112,7 @@ class _AttendanceRequestScreenState
         return;
       }
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(e.message ?? l10n.employeeRequestFailed),
-        ),
+        SnackBar(content: Text(e.message ?? l10n.employeeRequestFailed)),
       );
     } finally {
       if (mounted) {
@@ -132,7 +130,7 @@ class _AttendanceRequestScreenState
         padding: const EdgeInsets.all(20),
         children: [
           DropdownButtonFormField<AttendancePunchType>(
-            value: _type,
+            initialValue: _type,
             decoration: InputDecoration(
               labelText: l10n.employeeAttendanceRequestPunchLabel,
             ),

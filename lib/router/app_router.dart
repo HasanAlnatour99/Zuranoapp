@@ -582,7 +582,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: AppRoutes.employeeAttendancePolicy,
         pageBuilder: (context, state) => appFadeThroughPage(
           key: state.pageKey,
-          child: const AttendancePolicyScreen(),
+          child: const EmployeeAttendancePolicyScreen(),
         ),
       ),
       GoRoute(

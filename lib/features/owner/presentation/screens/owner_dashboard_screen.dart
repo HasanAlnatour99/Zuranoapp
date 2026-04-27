@@ -18,6 +18,7 @@ import '../../../../providers/notification_providers.dart';
 import '../../../../providers/auth_session_actions.dart';
 import '../../../../providers/session_provider.dart';
 import 'package:barber_shop_app/core/ui/app_icons.dart';
+import '../widgets/owner_bottom_nav_bar.dart';
 
 Future<void> _toggleDashboardLocale(WidgetRef ref) async {
   final loc = ref.read(appLocalePreferenceProvider);
@@ -208,21 +209,18 @@ class _OwnerDashboardScreenState extends ConsumerState<OwnerDashboardScreen> {
 
     final scheme = Theme.of(context).colorScheme;
 
-    /// Overview, Team, Customers, Finance embed the purple hero in the tab body.
-    /// Include More (settings) so the shell AppBar does not stack above
-    /// [AppSettingsScreen]'s in-body [ZuranoTopBar].
-    final usesOwnerHeroInBody = widget.navigationShell.currentIndex <= 4;
+    /// Finance, Customers, Team, and Overview embed the purple hero in the tab body.
+    /// Settings opens from the hero header (narrow) or rail (wide), not as a tab.
+    final usesOwnerHeroInBody = widget.navigationShell.currentIndex <= 3;
+
+    final canOpenOwnerSettings =
+        user.role == UserRoles.owner || user.role == UserRoles.admin;
 
     final destinations = <AdaptiveShellDestination>[
       AdaptiveShellDestination(
-        icon: const Icon(AppIcons.dashboard_outlined),
-        selectedIcon: const Icon(AppIcons.dashboard),
-        label: l10n.ownerTabOverview,
-      ),
-      AdaptiveShellDestination(
-        icon: const Icon(AppIcons.groups_outlined),
-        selectedIcon: const Icon(AppIcons.groups),
-        label: l10n.ownerTabTeam,
+        icon: const Icon(AppIcons.account_balance_wallet_outlined),
+        selectedIcon: const Icon(AppIcons.account_balance_wallet),
+        label: l10n.ownerTabFinance,
       ),
       AdaptiveShellDestination(
         icon: const Icon(AppIcons.groups_2_outlined),
@@ -230,25 +228,20 @@ class _OwnerDashboardScreenState extends ConsumerState<OwnerDashboardScreen> {
         label: l10n.ownerTabCustomers,
       ),
       AdaptiveShellDestination(
-        icon: const Icon(AppIcons.account_balance_wallet_outlined),
-        selectedIcon: const Icon(AppIcons.account_balance_wallet),
-        label: l10n.ownerTabFinance,
+        icon: const Icon(AppIcons.groups_outlined),
+        selectedIcon: const Icon(AppIcons.groups),
+        label: l10n.ownerTabTeam,
       ),
       AdaptiveShellDestination(
-        icon: const Icon(AppIcons.tune),
-        selectedIcon: const Icon(AppIcons.tune_rounded),
-        label: l10n.ownerShellMore,
+        icon: const Icon(AppIcons.dashboard_outlined),
+        selectedIcon: const Icon(AppIcons.dashboard),
+        label: l10n.ownerTabOverview,
       ),
     ];
 
     final appBarActions = <Widget>[
       _NotificationsButton(l10n: l10n),
       _OwnerAiAssistantAppBarButton(tooltip: l10n.ownerAiAssistantTooltip),
-      IconButton(
-        tooltip: l10n.appSettingsTitle,
-        onPressed: () => context.push(AppRoutes.settings),
-        icon: const Icon(AppIcons.settings_outlined),
-      ),
       IconButton(
         tooltip: l10n.ownerTooltipLanguageShort,
         onPressed: () => _toggleDashboardLocale(ref),
@@ -272,11 +265,12 @@ class _OwnerDashboardScreenState extends ConsumerState<OwnerDashboardScreen> {
         tooltip: l10n.notificationsInboxTooltip,
         onTap: () => context.push(AppRoutes.notifications),
       ),
-      AdaptiveShellRailAction(
-        icon: const Icon(AppIcons.settings_outlined),
-        tooltip: l10n.appSettingsTitle,
-        onTap: () => context.push(AppRoutes.settings),
-      ),
+      if (canOpenOwnerSettings)
+        AdaptiveShellRailAction(
+          icon: const Icon(AppIcons.settings_outlined),
+          tooltip: l10n.ownerDashboardSettingsTooltip,
+          onTap: () => context.push(AppRoutes.ownerSettings),
+        ),
       AdaptiveShellRailAction(
         icon: const Icon(AppIcons.language_outlined),
         tooltip: l10n.ownerTooltipLanguage,
@@ -308,6 +302,123 @@ class _OwnerDashboardScreenState extends ConsumerState<OwnerDashboardScreen> {
       ),
       railActions: railActions,
       body: widget.navigationShell,
+      bottomNavigationBar: OwnerBottomNavBar(
+        selectedIndex: widget.navigationShell.currentIndex,
+        onDestinationSelected: (i) {
+          widget.navigationShell.goBranch(
+            i,
+            initialLocation: i == widget.navigationShell.currentIndex,
+          );
+        },
+        onCenterAddTap: () => _showOwnerShellQuickActions(context),
+      ),
+    );
+  }
+}
+
+Future<void> _showOwnerShellQuickActions(BuildContext context) async {
+  final l10n = AppLocalizations.of(context)!;
+  final scheme = Theme.of(context).colorScheme;
+  final nav = Navigator.of(context);
+  final router = GoRouter.of(context);
+
+  void popAndPush(String path) {
+    nav.pop();
+    Future.microtask(() => router.push(path));
+  }
+
+  void popAndPushNamed(String name) {
+    nav.pop();
+    Future.microtask(() => router.pushNamed(name));
+  }
+
+  await showModalBottomSheet<void>(
+    context: context,
+    showDragHandle: true,
+    backgroundColor: scheme.surface,
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+    ),
+    builder: (ctx) {
+      return SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                l10n.ownerOverviewFabSheetTitle,
+                style: Theme.of(
+                  ctx,
+                ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700),
+              ),
+              const SizedBox(height: AppSpacing.small),
+              _OwnerQuickActionTile(
+                icon: AppIcons.badge_outlined,
+                label: l10n.teamAddBarberAction,
+                onTap: () => popAndPushNamed(AppRouteNames.addTeamMember),
+              ),
+              _OwnerQuickActionTile(
+                icon: AppIcons.point_of_sale_outlined,
+                label: l10n.ownerOverviewQuickAddSale,
+                onTap: () => popAndPush(AppRoutes.ownerSalesAdd),
+              ),
+              _OwnerQuickActionTile(
+                icon: AppIcons.event_available_outlined,
+                label: l10n.ownerOverviewFabBookAppointment,
+                onTap: () => popAndPush(AppRoutes.bookingsNew),
+              ),
+              _OwnerQuickActionTile(
+                icon: AppIcons.receipt_long_outlined,
+                label: l10n.ownerOverviewQuickAddExpense,
+                onTap: () => popAndPush(AppRoutes.ownerExpensesAdd),
+              ),
+              _OwnerQuickActionTile(
+                icon: AppIcons.design_services_outlined,
+                label: l10n.ownerOverviewSmartAddService,
+                onTap: () => popAndPush(AppRoutes.ownerServices),
+              ),
+              _OwnerQuickActionTile(
+                icon: AppIcons.person_add_alt_outlined,
+                label: l10n.customersAddCustomerFab,
+                onTap: () => popAndPush(AppRoutes.customerNew),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+}
+
+class _OwnerQuickActionTile extends StatelessWidget {
+  const _OwnerQuickActionTile({
+    required this.icon,
+    required this.label,
+    required this.onTap,
+  });
+
+  final IconData icon;
+  final String label;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      contentPadding: EdgeInsets.zero,
+      leading: Icon(icon, color: Theme.of(context).colorScheme.primary),
+      title: Text(
+        label,
+        style: Theme.of(
+          context,
+        ).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w600),
+      ),
+      trailing: Icon(
+        AppIcons.chevron_right_rounded,
+        color: Theme.of(context).colorScheme.onSurfaceVariant,
+      ),
+      onTap: onTap,
     );
   }
 }

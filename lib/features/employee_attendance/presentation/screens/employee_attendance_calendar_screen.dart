@@ -9,7 +9,8 @@ import '../../../employee_dashboard/application/employee_dashboard_providers.dar
 import '../../../employee_today/data/models/et_attendance_day.dart';
 import '../../../employee_today/data/repositories/employee_today_attendance_repository.dart';
 import '../../../employee_today/presentation/employee_today_theme.dart';
-import '../../../employee_today/presentation/widgets/employee_today_bottom_nav.dart';
+import '../../../employee_dashboard/presentation/widgets/employee_bottom_nav_bar.dart';
+import '../../../employee_dashboard/presentation/widgets/employee_quick_action_fab.dart';
 import '../providers/employee_attendance_providers.dart';
 
 class EmployeeAttendanceCalendarScreen extends ConsumerWidget {
@@ -31,6 +32,9 @@ class EmployeeAttendanceCalendarScreen extends ConsumerWidget {
     }
 
     return Scaffold(
+      extendBody: true,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: const EmployeeQuickActionFab(),
       appBar: AppBar(
         title: Text(DateFormat.yMMMM().format(now)),
         backgroundColor: Colors.transparent,
@@ -96,10 +100,9 @@ class EmployeeAttendanceCalendarScreen extends ConsumerWidget {
           );
         },
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (_, __) =>
-            Center(child: Text(l10n.employeeCalendarLoadError)),
+        error: (_, _) => Center(child: Text(l10n.employeeCalendarLoadError)),
       ),
-      bottomNavigationBar: EmployeeTodayBottomNav(currentPath: path),
+      bottomNavigationBar: EmployeeBottomNavBar(currentPath: path),
     );
   }
 }

@@ -14,13 +14,13 @@ void main() {
           .collection('customers')
           .doc('c-1')
           .set({
-        'id': 'c-1',
-        'salonId': 'salon-1',
-        'fullName': 'Ali',
-        'phone': '5550000',
-        'isActive': true,
-        'createdBy': 'u-1',
-      });
+            'id': 'c-1',
+            'salonId': 'salon-1',
+            'fullName': 'Ali',
+            'phone': '5550000',
+            'isActive': true,
+            'createdBy': 'u-1',
+          });
 
       await repository.deleteCustomer('salon-1', 'c-1');
 
@@ -44,26 +44,30 @@ void main() {
       expect(normalizeCustomerPhone('+974 5500-1122'), '97455001122');
     });
 
-    test('Arabic search matches normalized Arabic name', () async {
-      final firestore = FakeFirebaseFirestore();
-      final repository = CustomerRepository(firestore: firestore);
-      await firestore
-          .collection('salons')
-          .doc('salon-1')
-          .collection('customers')
-          .doc('c-ar')
-          .set({
-        'id': 'c-ar',
-        'salonId': 'salon-1',
-        'fullName': 'أحمد علي',
-        'phone': '5550000',
-        'isActive': true,
-        'createdBy': 'u-1',
-        'searchKeywords': ['أ', 'أح', 'أحم', 'أحمد'],
-      });
+    test(
+      'Arabic search matches normalized Arabic name',
+      () async {
+        final firestore = FakeFirebaseFirestore();
+        final repository = CustomerRepository(firestore: firestore);
+        await firestore
+            .collection('salons')
+            .doc('salon-1')
+            .collection('customers')
+            .doc('c-ar')
+            .set({
+              'id': 'c-ar',
+              'salonId': 'salon-1',
+              'fullName': 'أحمد علي',
+              'phone': '5550000',
+              'isActive': true,
+              'createdBy': 'u-1',
+              'searchKeywords': ['أ', 'أح', 'أحم', 'أحمد'],
+            });
 
-      final results = await repository.searchCustomers('salon-1', 'أحمد');
-      expect(results.map((c) => c.id), contains('c-ar'));
-    }, tags: ['critical', 'localization']);
+        final results = await repository.searchCustomers('salon-1', 'أحمد');
+        expect(results.map((c) => c.id), contains('c-ar'));
+      },
+      tags: ['critical', 'localization'],
+    );
   });
 }

@@ -69,10 +69,7 @@ class EmployeeAttendanceOverviewCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(l10n.employeeAttendanceSummaryLoadError),
-                TextButton(
-                  onPressed: onRetry,
-                  child: Text(l10n.commonRetry),
-                ),
+                TextButton(onPressed: onRetry, child: Text(l10n.commonRetry)),
               ],
             )
           else if (stats == null)

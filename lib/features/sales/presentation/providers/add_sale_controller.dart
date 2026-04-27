@@ -500,25 +500,30 @@ class AddSaleController extends Notifier<AddSaleState> {
       }
     }
 
-    final employees = ref.read(employeesStreamProvider).asData?.value;
-    if (employees == null) {
-      return false;
-    }
-
     final targetBarberId = mode == AddSaleEntryMode.employee
         ? user.employeeId!.trim()
         : state.selectedBarberId!.trim();
 
     Employee? barber;
-    for (final e in employees) {
-      if (e.id == targetBarberId) {
-        barber = e;
-        break;
+    if (mode == AddSaleEntryMode.employee) {
+      barber = await ref
+          .read(employeeRepositoryProvider)
+          .getEmployee(salonId, targetBarberId);
+    } else {
+      final employees = ref.read(employeesStreamProvider).asData?.value;
+      if (employees == null) {
+        return false;
       }
+      for (final e in employees) {
+        if (e.id == targetBarberId) {
+          barber = e;
+          break;
+        }
+      }
+      barber ??= await ref
+          .read(employeeRepositoryProvider)
+          .getEmployee(salonId, targetBarberId);
     }
-    barber ??= await ref
-        .read(employeeRepositoryProvider)
-        .getEmployee(salonId, targetBarberId);
     if (barber == null || !barber.isActive) {
       return false;
     }
@@ -635,8 +640,8 @@ class AddSaleController extends Notifier<AddSaleState> {
           ReportPeriod.yearFrom(soldAt),
           ReportPeriod.monthFrom(soldAt),
         ),
-        if (receiptUrl != null) 'receiptPhotoUrl': receiptUrl,
-        if (receiptPath != null) 'receiptStoragePath': receiptPath,
+        'receiptPhotoUrl': ?receiptUrl,
+        'receiptStoragePath': ?receiptPath,
       };
 
       if (linkedId != null && linkedId.isNotEmpty) {

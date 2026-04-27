@@ -16,6 +16,7 @@ import '../features/customers/presentation/screens/edit_customer_screen.dart';
 import '../features/expenses/presentation/screens/add_expense_screen.dart';
 import '../features/expenses/presentation/screens/expenses_screen.dart';
 import '../features/bento/presentation/screens/bento_dashboard_screen.dart';
+import '../features/owner/presentation/screens/add_team_member_gateway_screen.dart';
 import '../features/owner/presentation/screens/owner_dashboard_screen.dart';
 import '../features/owner/presentation/widgets/owner_overview_section.dart';
 import '../features/owner/presentation/widgets/overview/owner_dashboard_hero_header.dart';
@@ -26,6 +27,7 @@ import '../features/payroll/presentation/screens/payroll_elements_screen.dart';
 import '../features/payroll/presentation/screens/payroll_run_review_screen.dart';
 import '../features/payroll/presentation/screens/payslip_screen.dart';
 import '../features/payroll/presentation/screens/quick_pay_screen.dart';
+import '../features/sales/domain/add_sale_entry_mode.dart';
 import '../features/sales/presentation/screens/add_sale_screen.dart';
 import '../features/sales/presentation/screens/sale_details_screen.dart';
 import '../features/sales/presentation/screens/sales_screen.dart';
@@ -58,6 +60,8 @@ Page<Object?> _ownerTeamOperationsPage(
         return OwnerDashboardHeroTabScaffold(
           user: user,
           enableBodyOverlap: false,
+          compactHero: true,
+          bodyScaffoldBackgroundColor: const Color(0xFFF6F2FB),
           body: TeamOperationsModule(salonId: salonId),
         );
       },
@@ -95,6 +99,93 @@ final List<RouteBase> ownerRoutes = [
       return OwnerDashboardScreen(navigationShell: navigationShell);
     },
     branches: [
+      StatefulShellBranch(
+        navigatorKey: ownerShellBranchMoneyNavigatorKey,
+        routes: [
+          GoRoute(
+            path: AppRoutes.ownerMoney,
+            pageBuilder: (context, state) => appFadeThroughPage(
+              key: state.pageKey,
+              child: Consumer(
+                builder: (context, ref, _) {
+                  final session = ref.watch(sessionUserProvider);
+                  final user = session.asData?.value;
+                  if (user == null) {
+                    return const DashboardSkeleton();
+                  }
+                  return OwnerDashboardHeroTabScaffold(
+                    user: user,
+                    enableBodyOverlap: false,
+                    bodyScaffoldBackgroundColor:
+                        FinanceDashboardColors.background,
+                    body: const MoneyDashboardModule(
+                      ownerShellHeroEmbedded: true,
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
+      ),
+      StatefulShellBranch(
+        navigatorKey: ownerShellBranchCustomersNavigatorKey,
+        routes: [
+          GoRoute(
+            path: AppRoutes.ownerCustomers,
+            pageBuilder: (context, state) => appFadeThroughPage(
+              key: state.pageKey,
+              child: Consumer(
+                builder: (context, ref, _) {
+                  final session = ref.watch(sessionUserProvider);
+                  final user = session.asData?.value;
+                  if (user == null) {
+                    return const DashboardSkeleton();
+                  }
+                  return OwnerDashboardHeroTabScaffold(
+                    user: user,
+                    enableBodyOverlap: false,
+                    body: const CustomersScreen(ownerShellHeroEmbedded: true),
+                  );
+                },
+              ),
+            ),
+            routes: [
+              GoRoute(
+                path: ':customerId',
+                parentNavigatorKey: appRootNavigatorKey,
+                pageBuilder: (context, state) => appFadeThroughPage(
+                  key: state.pageKey,
+                  child: CustomerDetailsScreen(
+                    customerId: state.pathParameters['customerId'] ?? '',
+                  ),
+                ),
+                routes: [
+                  GoRoute(
+                    path: 'edit',
+                    parentNavigatorKey: appRootNavigatorKey,
+                    pageBuilder: (context, state) => appFadeThroughPage(
+                      key: state.pageKey,
+                      child: EditCustomerScreen(
+                        customerId: state.pathParameters['customerId'] ?? '',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
+      StatefulShellBranch(
+        navigatorKey: ownerShellBranchTeamNavigatorKey,
+        routes: [
+          GoRoute(
+            path: AppRoutes.ownerTeam,
+            pageBuilder: _ownerTeamOperationsPage,
+          ),
+        ],
+      ),
       StatefulShellBranch(
         navigatorKey: ownerShellBranchOverviewNavigatorKey,
         routes: [
@@ -143,124 +234,35 @@ final List<RouteBase> ownerRoutes = [
           ),
         ],
       ),
-      StatefulShellBranch(
-        navigatorKey: ownerShellBranchTeamNavigatorKey,
-        routes: [
-          GoRoute(
-            path: AppRoutes.ownerTeam,
-            pageBuilder: _ownerTeamOperationsPage,
-          ),
-        ],
+    ],
+  ),
+  GoRoute(
+    path: AppRoutes.ownerSettings,
+    parentNavigatorKey: appRootNavigatorKey,
+    pageBuilder: (context, state) => appFadeThroughPage(
+      key: state.pageKey,
+      child: const AppSettingsScreen(),
+    ),
+    routes: [
+      GoRoute(
+        path: 'hr-violations',
+        redirect: (_, _) =>
+            '${AppRoutes.ownerAttendanceSettings}?section=violations',
       ),
-      StatefulShellBranch(
-        navigatorKey: ownerShellBranchCustomersNavigatorKey,
-        routes: [
-          GoRoute(
-            path: AppRoutes.ownerCustomers,
-            pageBuilder: (context, state) => appFadeThroughPage(
-              key: state.pageKey,
-              child: Consumer(
-                builder: (context, ref, _) {
-                  final session = ref.watch(sessionUserProvider);
-                  final user = session.asData?.value;
-                  if (user == null) {
-                    return const DashboardSkeleton();
-                  }
-                  return OwnerDashboardHeroTabScaffold(
-                    user: user,
-                    body: const CustomersScreen(ownerShellHeroEmbedded: true),
-                  );
-                },
-              ),
-            ),
-            routes: [
-              GoRoute(
-                path: ':customerId',
-                parentNavigatorKey: appRootNavigatorKey,
-                pageBuilder: (context, state) => appFadeThroughPage(
-                  key: state.pageKey,
-                  child: CustomerDetailsScreen(
-                    customerId: state.pathParameters['customerId'] ?? '',
-                  ),
-                ),
-                routes: [
-                  GoRoute(
-                    path: 'edit',
-                    parentNavigatorKey: appRootNavigatorKey,
-                    pageBuilder: (context, state) => appFadeThroughPage(
-                      key: state.pageKey,
-                      child: EditCustomerScreen(
-                        customerId: state.pathParameters['customerId'] ?? '',
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ],
+      GoRoute(
+        path: 'attendance',
+        name: AppRouteNames.ownerAttendanceSettings,
+        pageBuilder: (context, state) => appFadeThroughPage(
+          key: state.pageKey,
+          child: const OwnerAttendanceSettingsScreen(),
+        ),
       ),
-      StatefulShellBranch(
-        navigatorKey: ownerShellBranchMoneyNavigatorKey,
-        routes: [
-          GoRoute(
-            path: AppRoutes.ownerMoney,
-            pageBuilder: (context, state) => appFadeThroughPage(
-              key: state.pageKey,
-              child: Consumer(
-                builder: (context, ref, _) {
-                  final session = ref.watch(sessionUserProvider);
-                  final user = session.asData?.value;
-                  if (user == null) {
-                    return const DashboardSkeleton();
-                  }
-                  return OwnerDashboardHeroTabScaffold(
-                    user: user,
-                    bodyScaffoldBackgroundColor:
-                        FinanceDashboardColors.background,
-                    body: const MoneyDashboardModule(
-                      ownerShellHeroEmbedded: true,
-                    ),
-                  );
-                },
-              ),
-            ),
-          ),
-        ],
-      ),
-      StatefulShellBranch(
-        navigatorKey: ownerShellBranchSettingsNavigatorKey,
-        routes: [
-          GoRoute(
-            path: AppRoutes.ownerSettings,
-            pageBuilder: (context, state) => appFadeThroughPage(
-              key: state.pageKey,
-              child: const AppSettingsScreen(),
-            ),
-            routes: [
-              GoRoute(
-                path: 'hr-violations',
-                redirect: (_, _) =>
-                    '${AppRoutes.ownerAttendanceSettings}?section=violations',
-              ),
-              GoRoute(
-                path: 'attendance',
-                name: AppRouteNames.ownerAttendanceSettings,
-                pageBuilder: (context, state) => appFadeThroughPage(
-                  key: state.pageKey,
-                  child: const OwnerAttendanceSettingsScreen(),
-                ),
-              ),
-              GoRoute(
-                path: 'customer-booking',
-                pageBuilder: (context, state) => appFadeThroughPage(
-                  key: state.pageKey,
-                  child: const OwnerCustomerBookingSettingsScreen(),
-                ),
-              ),
-            ],
-          ),
-        ],
+      GoRoute(
+        path: 'customer-booking',
+        pageBuilder: (context, state) => appFadeThroughPage(
+          key: state.pageKey,
+          child: const OwnerCustomerBookingSettingsScreen(),
+        ),
       ),
     ],
   ),
@@ -269,6 +271,15 @@ final List<RouteBase> ownerRoutes = [
     name: AppRouteNames.team,
     parentNavigatorKey: appRootNavigatorKey,
     pageBuilder: _ownerTeamOperationsPage,
+  ),
+  GoRoute(
+    path: AppRoutes.ownerAddTeamMember,
+    name: AppRouteNames.addTeamMember,
+    parentNavigatorKey: appRootNavigatorKey,
+    pageBuilder: (context, state) => appFadeThroughPage(
+      key: state.pageKey,
+      child: const AddTeamMemberGatewayScreen(),
+    ),
   ),
   GoRoute(
     path: AppRoutes.customers,
@@ -398,6 +409,9 @@ final List<RouteBase> ownerRoutes = [
     pageBuilder: (context, state) => appFadeThroughPage(
       key: state.pageKey,
       child: AddSaleScreen(
+        entryMode: addSaleEntryModeFromSourceQuery(
+          state.uri.queryParameters['source'],
+        ),
         initialBarberId: state.uri.queryParameters['employeeId'],
         initialServiceId: state.uri.queryParameters['serviceId'],
         initialCustomerId: state.uri.queryParameters['customerId'],

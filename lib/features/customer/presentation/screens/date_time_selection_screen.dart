@@ -89,26 +89,26 @@ class _DateTimeSelectionScreenState
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    ref.listen(
-      customerPublicBookingFlowSettingsProvider(widget.salonId),
-      (prev, next) {
-        next.whenData((settings) {
-          final today = DateUtils.dateOnly(DateTime.now());
-          final selected = ref.read(selectedCustomerBookingDateProvider);
-          if (!settings.allowSameDayBooking &&
-              DateUtils.isSameDay(selected, today)) {
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              if (!context.mounted) {
-                return;
-              }
-              ref
-                  .read(selectedCustomerBookingDateProvider.notifier)
-                  .setDate(today.add(const Duration(days: 1)));
-            });
-          }
-        });
-      },
-    );
+    ref.listen(customerPublicBookingFlowSettingsProvider(widget.salonId), (
+      prev,
+      next,
+    ) {
+      next.whenData((settings) {
+        final today = DateUtils.dateOnly(DateTime.now());
+        final selected = ref.read(selectedCustomerBookingDateProvider);
+        if (!settings.allowSameDayBooking &&
+            DateUtils.isSameDay(selected, today)) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (!context.mounted) {
+              return;
+            }
+            ref
+                .read(selectedCustomerBookingDateProvider.notifier)
+                .setDate(today.add(const Duration(days: 1)));
+          });
+        }
+      });
+    });
     final draft = ref.watch(customerBookingDraftProvider);
     final selectedDate = ref.watch(selectedCustomerBookingDateProvider);
     final settingsAsync = ref.watch(

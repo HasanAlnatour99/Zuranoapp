@@ -19,11 +19,7 @@ void main() {
     );
     navigateForNotificationPayload(
       router: router,
-      data: {
-        'route': 'booking',
-        'salonId': 's1',
-        'bookingId': 'b1',
-      },
+      data: {'route': 'booking', 'salonId': 's1', 'bookingId': 'b1'},
       session: const AppUser(
         uid: 'u',
         name: 'n',

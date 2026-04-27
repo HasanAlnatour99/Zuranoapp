@@ -8,7 +8,8 @@ import '../../../employee_dashboard/application/employee_dashboard_providers.dar
 import '../../../employee_dashboard/domain/enums/attendance_punch_type.dart';
 import '../../../employee_today/data/models/et_attendance_punch.dart';
 import '../../../employee_today/presentation/employee_today_theme.dart';
-import '../../../employee_today/presentation/widgets/employee_today_bottom_nav.dart';
+import '../../../employee_dashboard/presentation/widgets/employee_bottom_nav_bar.dart';
+import '../../../employee_dashboard/presentation/widgets/employee_quick_action_fab.dart';
 import '../../../employee_today/providers/employee_today_providers.dart';
 
 class EmployeeAttendanceDetailsScreen extends ConsumerWidget {
@@ -69,6 +70,9 @@ class EmployeeAttendanceDetailsScreen extends ConsumerWidget {
     );
 
     return Scaffold(
+      extendBody: true,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: const EmployeeQuickActionFab(),
       appBar: AppBar(
         title: Text(l10n.employeeAttendanceDayTitle),
         backgroundColor: Colors.transparent,
@@ -122,12 +126,8 @@ class EmployeeAttendanceDetailsScreen extends ConsumerWidget {
                       title: Text(_punchTitle(l10n, p.type)),
                       subtitle: Text(
                         Localizations.localeOf(context).languageCode == 'ar'
-                            ? DateFormat.jm(
-                                'ar',
-                              ).format(p.punchTime.toLocal())
-                            : DateFormat.jm(
-                                'en',
-                              ).format(p.punchTime.toLocal()),
+                            ? DateFormat.jm('ar').format(p.punchTime.toLocal())
+                            : DateFormat.jm('en').format(p.punchTime.toLocal()),
                       ),
                       trailing: p.insideZone == true
                           ? const Icon(
@@ -145,7 +145,7 @@ class EmployeeAttendanceDetailsScreen extends ConsumerWidget {
           );
         },
       ),
-      bottomNavigationBar: EmployeeTodayBottomNav(currentPath: path),
+      bottomNavigationBar: EmployeeBottomNavBar(currentPath: path),
     );
   }
 }

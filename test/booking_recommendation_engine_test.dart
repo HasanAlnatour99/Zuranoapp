@@ -147,7 +147,7 @@ void main() {
       weights: w,
     );
     expect(r!.bestOverall.employeeId, 'b1');
- });
+  });
 
   test('preferred barber surfaced when has slot', () {
     final b1 = _barber('b1', 'Ann');

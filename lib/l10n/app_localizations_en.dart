@@ -27,6 +27,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get customerDiscoverTitle => 'Discover';
 
   @override
+  String get customerHomeMenuTooltip => 'More options';
+
+  @override
+  String get customerHomeEmptyTitle => 'No salons to show';
+
+  @override
+  String get customerHomeResetFilters => 'Reset search';
+
+  @override
   String get customerSignOut => 'Sign out';
 
   @override
@@ -4463,6 +4472,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get ownerOverviewFabSheetTitle => 'Quick actions';
 
   @override
+  String get ownerOverviewFabBookAppointment => 'Book appointment';
+
+  @override
   String get attendanceReviewTitle => 'Attendance requests';
 
   @override
@@ -4630,7 +4642,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get teamAddBarberAction => 'Add Team Member';
 
   @override
-  String get teamSearchHint => 'Search by name, phone or username...';
+  String get teamHeroSearchHint => 'Search members by name or phone';
+
+  @override
+  String get teamSearchHint => 'Search by name or phone';
+
+  @override
+  String get teamMemberWhatsAppNoPhone =>
+      'No phone number on file for this team member';
 
   @override
   String get teamFilterAction => 'Filter team';
@@ -4756,6 +4775,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get teamMemberInactiveStatus => 'Inactive';
+
+  @override
+  String get teamCardAttendanceNotRequired => 'Attendance not required';
+
+  @override
+  String get teamCardAttendanceOnBreak => 'On break';
+
+  @override
+  String get teamCardAccountFrozen => 'Frozen';
 
   @override
   String teamMemberLateAt(String time) {
@@ -6358,6 +6386,101 @@ class AppLocalizationsEn extends AppLocalizations {
       'You need an internet connection to punch.';
 
   @override
+  String get employeeTodayPunchUnavailableAttendanceDisabled =>
+      'Attendance is turned off for this salon.';
+
+  @override
+  String get employeeTodayPunchUnavailableMoveToZone =>
+      'Move inside the salon zone to punch in or out.';
+
+  @override
+  String get employeeTodayPunchUnavailableShiftComplete =>
+      'You have reached today\'s punch limit. If something looks wrong, submit a correction request.';
+
+  @override
+  String get employeeTodayPunchUnavailableGeneric =>
+      'No punch actions are available right now.';
+
+  @override
+  String get employeeTodayPrimaryPunchInSubtitle => 'Start your work session';
+
+  @override
+  String get employeeTodayPrimaryPunchOutSubtitle => 'End your current session';
+
+  @override
+  String get employeeTodayPrimaryBreakOutSubtitle => 'Start a break';
+
+  @override
+  String get employeeTodayPrimaryBreakInSubtitle => 'Resume your shift';
+
+  @override
+  String get employeeTodayNoAction => 'No action';
+
+  @override
+  String get employeeTodayActionUnavailable => 'Action is unavailable';
+
+  @override
+  String get employeeTodayPunchUnavailableMissingPunch =>
+      'Please request a correction for the missing punch.';
+
+  @override
+  String get employeeTodayAttendanceLoadErrorTitle => 'Attendance unavailable';
+
+  @override
+  String get employeeTodayAttendanceStatusLabel => 'Status';
+
+  @override
+  String get employeeTodayLastPunchLabel => 'Last punch';
+
+  @override
+  String get employeeTodayLocationContextLabel => 'Location';
+
+  @override
+  String get employeeQuickActionsTitle => 'Quick actions';
+
+  @override
+  String get employeeQuickActionAddSaleSubtitle =>
+      'Record a service or payment';
+
+  @override
+  String get employeeQuickActionRequestCorrectionTitle => 'Request correction';
+
+  @override
+  String get employeeQuickActionRequestCorrectionSubtitle =>
+      'Fix a missing or wrong punch';
+
+  @override
+  String get employeeQuickActionViewPolicySubtitle =>
+      'Attendance rules and violations';
+
+  @override
+  String get employeeQuickActionPayrollTitle => 'Payroll';
+
+  @override
+  String get employeeQuickActionPayrollSubtitle =>
+      'Payslips and payroll history';
+
+  @override
+  String get employeeTodaySectionLoadFailed =>
+      'We couldn\'t load this section.';
+
+  @override
+  String get employeeTodayTryAgain => 'Try again';
+
+  @override
+  String get employeeTodayNoActivityTitle => 'No punches yet';
+
+  @override
+  String get employeeTodayNoActivityBody =>
+      'Your timeline will fill in as you punch in and out.';
+
+  @override
+  String get employeeTodaySemanticNotifications => 'Notifications';
+
+  @override
+  String get employeeTodaySemanticSettings => 'Settings';
+
+  @override
   String get employeeActivityTimelineTitle => 'Today activity';
 
   @override
@@ -6796,7 +6919,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get ownerTabFinance => 'Finance';
 
   @override
-  String get ownerShellMore => 'More';
+  String get ownerDashboardSettingsTooltip => 'Settings';
 
   @override
   String get ownerServicesWaitingForSalon =>
@@ -7662,6 +7785,100 @@ class AppLocalizationsEn extends AppLocalizations {
   String get employeePolicyDefaultTitle => 'Attendance policy';
 
   @override
+  String get employeeTodaySubmitCorrection => 'Submit correction';
+
+  @override
+  String get employeeTodayStatusMissingPunch => 'Missing punch';
+
+  @override
+  String employeeTodayLastPunchAt(String time) {
+    return 'Last punch: $time';
+  }
+
+  @override
+  String get employeeMapOpenInMaps => 'Open in Maps';
+
+  @override
+  String get employeePolicySummaryStatic =>
+      'These rules follow your salon’s attendance settings. Your owner can change them anytime.';
+
+  @override
+  String get employeePolicyDeductionsSection => 'Deductions';
+
+  @override
+  String employeePolicyRuleMaxPunchesOneLine(int max) {
+    return 'You can record up to $max punches per calendar day.';
+  }
+
+  @override
+  String employeePolicyRuleMaxBreakMinutesOneLine(int minutes) {
+    return 'Total break time is limited to $minutes minutes per day (combined breaks).';
+  }
+
+  @override
+  String get employeePolicyRuleBreakOrderOneLine =>
+      'Break Out must always be followed by Break In before other punches.';
+
+  @override
+  String employeePolicyRuleGpsRequiredOneLine(int radius) {
+    return 'Attendance requires your phone location. Stay within $radius m of the salon center when punching.';
+  }
+
+  @override
+  String get employeePolicyRuleGpsOptionalOneLine =>
+      'GPS may be used to verify punches. Stay inside the salon zone when your owner requires it.';
+
+  @override
+  String get employeePolicyRuleCorrectionForgotOneLine =>
+      'If you miss a punch, submit an attendance correction request for admin approval.';
+
+  @override
+  String get employeePolicyRuleCorrectionApprovedOneLine =>
+      'Approved corrections are added safely to your punch history.';
+
+  @override
+  String employeePolicyRuleLateGraceOneLine(int grace) {
+    return 'Late arrival is counted only after $grace minutes grace.';
+  }
+
+  @override
+  String employeePolicyRuleLateMonthlyOneLine(int count) {
+    return 'You may have up to $count late arrivals per month after grace before extra review applies.';
+  }
+
+  @override
+  String employeePolicyRuleEarlyGraceOneLine(int grace) {
+    return 'Early exit is counted only after $grace minutes grace.';
+  }
+
+  @override
+  String employeePolicyRuleEarlyMonthlyOneLine(int count) {
+    return 'You may have up to $count early exits per month after grace before extra review applies.';
+  }
+
+  @override
+  String get employeePolicyDeductionNone => 'None';
+
+  @override
+  String employeePolicyDeductionPercentValue(int percent) {
+    return '$percent%';
+  }
+
+  @override
+  String get employeePolicyDeductionMissingCheckoutTitle => 'Missing checkout';
+
+  @override
+  String get employeePolicyDeductionMissingCheckoutSubtitle =>
+      'Configured deduction when checkout is missing.';
+
+  @override
+  String get employeePolicyDeductionAbsenceTitle => 'Absence';
+
+  @override
+  String get employeePolicyDeductionAbsenceSubtitle =>
+      'Configured deduction for unexcused absence days.';
+
+  @override
   String get employeeCalendarLoadError => 'Could not load calendar';
 
   @override
@@ -7757,6 +7974,48 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get employeeBottomNavProfile => 'Profile';
+
+  @override
+  String get employeeProfileTabOverview => 'Overview';
+
+  @override
+  String get employeeProfileTabAccountInfo => 'Account info';
+
+  @override
+  String get employeeProfilePhotoTitle => 'Profile photo';
+
+  @override
+  String get employeeProfilePhotoUpdateAction => 'Update photo';
+
+  @override
+  String get employeeProfileResetPasswordHint =>
+      'Send a reset link to your account email.';
+
+  @override
+  String get employeeProfileResetPasswordAction => 'Send reset link';
+
+  @override
+  String get employeeProfileUsernameLabel => 'Username';
+
+  @override
+  String get employeeProfileRoleLabel => 'Role';
+
+  @override
+  String get employeeProfileAccountStatusLabel => 'Account status';
+
+  @override
+  String get employeeSettingsHeaderSubtitle =>
+      'Manage your profile, security, and app preferences.';
+
+  @override
+  String get employeeProfileSummarySubtitle =>
+      'Keep your workspace profile updated.';
+
+  @override
+  String get employeeProfileUpdateShort => 'Update';
+
+  @override
+  String get employeeNoData => 'Not set';
 
   @override
   String get ownerCustomerBookingTileTitle => 'Customer booking';

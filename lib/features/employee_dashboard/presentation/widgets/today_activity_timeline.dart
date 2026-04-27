@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
 
-import '../../../../core/theme/app_colors.dart';
 import '../../../../l10n/app_localizations.dart';
+import '../../../employee_today/presentation/employee_today_theme.dart';
 import '../../data/models/attendance_event_model.dart';
 import '../../domain/enums/attendance_punch_type.dart';
 
@@ -34,7 +34,7 @@ class TodayActivityTimeline extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.w800,
-                  color: ZuranoPremiumUiColors.textPrimary,
+                  color: EmployeeTodayColors.deepText,
                 ),
               ),
               const Spacer(),
@@ -42,7 +42,7 @@ class TodayActivityTimeline extends StatelessWidget {
                 l10n.employeeActivityTimelineLive,
                 style: const TextStyle(
                   fontSize: 13,
-                  color: ZuranoPremiumUiColors.primaryPurple,
+                  color: EmployeeTodayColors.primaryPurple,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -52,7 +52,7 @@ class TodayActivityTimeline extends StatelessWidget {
           if (events.isEmpty)
             Text(
               l10n.employeeActivityTimelineEmpty,
-              style: TextStyle(color: ZuranoPremiumUiColors.textSecondary),
+              style: const TextStyle(color: EmployeeTodayColors.mutedText),
             )
           else
             ...events.map((e) => _Row(e: e, l10n: l10n, locale: locale)),
@@ -81,7 +81,7 @@ class _Row extends StatelessWidget {
     final isPunchIn = e.type == AttendancePunchType.punchIn;
     final color = isPunchIn
         ? const Color(0xFF16A34A)
-        : ZuranoPremiumUiColors.primaryPurple;
+        : EmployeeTodayColors.primaryPurple;
     final timeText = TodayActivityTimeline._formatPunchTime(
       e.createdAt,
       locale,
@@ -108,16 +108,16 @@ class _Row extends StatelessWidget {
                   _label,
                   style: const TextStyle(
                     fontWeight: FontWeight.w700,
-                    color: ZuranoPremiumUiColors.textPrimary,
+                    color: EmployeeTodayColors.deepText,
                   ),
                 ),
                 Directionality(
                   textDirection: timeDirection,
                   child: Text(
                     timeText,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 13,
-                      color: ZuranoPremiumUiColors.textSecondary,
+                      color: EmployeeTodayColors.mutedText,
                     ),
                   ),
                 ),

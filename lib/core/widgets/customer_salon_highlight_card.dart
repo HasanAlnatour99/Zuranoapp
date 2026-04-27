@@ -6,7 +6,7 @@ import 'app_surface_card.dart';
 import '../../features/salon/data/models/salon.dart';
 import 'package:barber_shop_app/core/ui/app_icons.dart';
 
-/// Wide discovery row inspired by “top pick” lists — uses theme surfaces only.
+/// Salon row for discovery — white card, monogram, metadata, chevron.
 class CustomerSalonHighlightCard extends StatelessWidget {
   const CustomerSalonHighlightCard({
     super.key,
@@ -23,6 +23,14 @@ class CustomerSalonHighlightCard extends StatelessWidget {
   final String? metadataLine;
   final IconData metadataIcon;
 
+  static String _initial(String name) {
+    final t = name.trim();
+    if (t.isEmpty) {
+      return '?';
+    }
+    return t.characters.first.toUpperCase();
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -31,14 +39,39 @@ class CustomerSalonHighlightCard extends StatelessWidget {
     final subtitle = (category != null && category.isNotEmpty)
         ? category
         : salon.address;
+    final letter = _initial(salon.name);
 
     final card = AppSurfaceCard(
       margin: EdgeInsets.zero,
       onTap: onTap,
       borderRadius: AppRadius.xlarge,
+      color: scheme.surface,
+      showBorder: true,
+      outlineOpacity: 0.12,
+      shadowOpacity: 0.07,
+      shadowBlurRadius: 20,
+      shadowYOffset: 8,
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          Container(
+            width: 52,
+            height: 52,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: scheme.primaryContainer.withValues(alpha: 0.65),
+              border: Border.all(color: scheme.primary.withValues(alpha: 0.2)),
+            ),
+            alignment: Alignment.center,
+            child: Text(
+              letter,
+              style: theme.textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.w800,
+                color: scheme.primary,
+              ),
+            ),
+          ),
+          const SizedBox(width: AppSpacing.medium),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,20 +88,27 @@ class CustomerSalonHighlightCard extends StatelessWidget {
                       ),
                     ),
                     if (badgeLabel != null && badgeLabel!.trim().isNotEmpty)
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: AppSpacing.small,
-                          vertical: 4,
+                      Padding(
+                        padding: const EdgeInsetsDirectional.only(
+                          start: AppSpacing.small,
                         ),
-                        decoration: BoxDecoration(
-                          color: scheme.primaryContainer,
-                          borderRadius: BorderRadius.circular(AppRadius.large),
-                        ),
-                        child: Text(
-                          badgeLabel!.trim(),
-                          style: theme.textTheme.labelSmall?.copyWith(
-                            color: scheme.onPrimaryContainer,
-                            fontWeight: FontWeight.w700,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: AppSpacing.small,
+                            vertical: 4,
+                          ),
+                          decoration: BoxDecoration(
+                            color: scheme.primaryContainer,
+                            borderRadius: BorderRadius.circular(
+                              AppRadius.large,
+                            ),
+                          ),
+                          child: Text(
+                            badgeLabel!.trim(),
+                            style: theme.textTheme.labelSmall?.copyWith(
+                              color: scheme.onPrimaryContainer,
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
                         ),
                       ),
@@ -108,6 +148,7 @@ class CustomerSalonHighlightCard extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(width: AppSpacing.small),
           Icon(AppIcons.chevron_right_rounded, color: scheme.onSurfaceVariant),
         ],
       ),

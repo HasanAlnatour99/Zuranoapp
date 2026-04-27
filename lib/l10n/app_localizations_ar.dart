@@ -27,6 +27,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get customerDiscoverTitle => 'استكشف';
 
   @override
+  String get customerHomeMenuTooltip => 'المزيد';
+
+  @override
+  String get customerHomeEmptyTitle => 'لا صالونات للعرض';
+
+  @override
+  String get customerHomeResetFilters => 'إعادة ضبط البحث';
+
+  @override
   String get customerSignOut => 'تسجيل الخروج';
 
   @override
@@ -4480,6 +4489,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get ownerOverviewFabSheetTitle => 'إجراءات سريعة';
 
   @override
+  String get ownerOverviewFabBookAppointment => 'حجز موعد';
+
+  @override
   String get attendanceReviewTitle => 'طلبات الحضور';
 
   @override
@@ -4647,7 +4659,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get teamAddBarberAction => 'إضافة عضو فريق';
 
   @override
-  String get teamSearchHint => 'ابحث بالاسم أو الهاتف أو اسم المستخدم...';
+  String get teamHeroSearchHint => 'ابحث عن عضو بالاسم أو الهاتف';
+
+  @override
+  String get teamSearchHint => 'ابحث عن عضو بالاسم أو الهاتف';
+
+  @override
+  String get teamMemberWhatsAppNoPhone => 'لا يوجد رقم هاتف لهذا العضو';
 
   @override
   String get teamFilterAction => 'تصفية الفريق';
@@ -4774,6 +4792,15 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get teamMemberInactiveStatus => 'غير نشط';
+
+  @override
+  String get teamCardAttendanceNotRequired => 'لا يُطلب تسجيل الحضور';
+
+  @override
+  String get teamCardAttendanceOnBreak => 'في استراحة';
+
+  @override
+  String get teamCardAccountFrozen => 'مجمّد';
 
   @override
   String teamMemberLateAt(String time) {
@@ -6360,6 +6387,97 @@ class AppLocalizationsAr extends AppLocalizations {
   String get employeeTodayOfflinePunch => 'تحتاج إلى اتصال بالإنترنت للتسجيل.';
 
   @override
+  String get employeeTodayPunchUnavailableAttendanceDisabled =>
+      'تم إيقاف نظام الحضور لهذا الصالون.';
+
+  @override
+  String get employeeTodayPunchUnavailableMoveToZone =>
+      'ادخل إلى نطاق الصالون لتسجيل الدخول أو الخروج.';
+
+  @override
+  String get employeeTodayPunchUnavailableShiftComplete =>
+      'وصلت إلى الحد الأقصى لتسجيلات اليوم. إذا بدا الأمر خاطئًا، أرسل طلب تصحيح.';
+
+  @override
+  String get employeeTodayPunchUnavailableGeneric =>
+      'لا تتوفر أي إجراءات تسجيل الآن.';
+
+  @override
+  String get employeeTodayPrimaryPunchInSubtitle => 'ابدأ جلسة العمل';
+
+  @override
+  String get employeeTodayPrimaryPunchOutSubtitle => 'أنهِ جلستك الحالية';
+
+  @override
+  String get employeeTodayPrimaryBreakOutSubtitle => 'ابدأ استراحة';
+
+  @override
+  String get employeeTodayPrimaryBreakInSubtitle => 'استأنف ورديتك';
+
+  @override
+  String get employeeTodayNoAction => 'لا يوجد إجراء';
+
+  @override
+  String get employeeTodayActionUnavailable => 'الإجراء غير متاح حالياً';
+
+  @override
+  String get employeeTodayPunchUnavailableMissingPunch =>
+      'يرجى طلب تصحيح للبصمة الناقصة.';
+
+  @override
+  String get employeeTodayAttendanceLoadErrorTitle => 'تعذر تحميل الحضور';
+
+  @override
+  String get employeeTodayAttendanceStatusLabel => 'الحالة';
+
+  @override
+  String get employeeTodayLastPunchLabel => 'آخر بصمة';
+
+  @override
+  String get employeeTodayLocationContextLabel => 'الموقع';
+
+  @override
+  String get employeeQuickActionsTitle => 'إجراءات سريعة';
+
+  @override
+  String get employeeQuickActionAddSaleSubtitle => 'سجّل خدمة أو دفعة';
+
+  @override
+  String get employeeQuickActionRequestCorrectionTitle => 'طلب تصحيح';
+
+  @override
+  String get employeeQuickActionRequestCorrectionSubtitle =>
+      'أصلح بصمة ناقصة أو خاطئة';
+
+  @override
+  String get employeeQuickActionViewPolicySubtitle => 'قواعد الحضور والمخالفات';
+
+  @override
+  String get employeeQuickActionPayrollTitle => 'الرواتب';
+
+  @override
+  String get employeeQuickActionPayrollSubtitle => 'قسائم الرواتب وسجل الرواتب';
+
+  @override
+  String get employeeTodaySectionLoadFailed => 'تعذر تحميل هذا القسم.';
+
+  @override
+  String get employeeTodayTryAgain => 'إعادة المحاولة';
+
+  @override
+  String get employeeTodayNoActivityTitle => 'لا تسجيلات بعد';
+
+  @override
+  String get employeeTodayNoActivityBody =>
+      'سيظهر خط زمني لتسجيلاتك عند تسجيل الدخول والخروج.';
+
+  @override
+  String get employeeTodaySemanticNotifications => 'الإشعارات';
+
+  @override
+  String get employeeTodaySemanticSettings => 'الإعدادات';
+
+  @override
   String get employeeActivityTimelineTitle => 'نشاط اليوم';
 
   @override
@@ -6790,7 +6908,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get ownerTabFinance => 'المالية';
 
   @override
-  String get ownerShellMore => 'المزيد';
+  String get ownerDashboardSettingsTooltip => 'الإعدادات';
 
   @override
   String get ownerServicesWaitingForSalon => 'بانتظار ربط صالون بملفك…';
@@ -7641,6 +7759,100 @@ class AppLocalizationsAr extends AppLocalizations {
   String get employeePolicyDefaultTitle => 'سياسة الحضور';
 
   @override
+  String get employeeTodaySubmitCorrection => 'إرسال تصحيح';
+
+  @override
+  String get employeeTodayStatusMissingPunch => 'بصمة ناقصة';
+
+  @override
+  String employeeTodayLastPunchAt(String time) {
+    return 'آخر بصمة: $time';
+  }
+
+  @override
+  String get employeeMapOpenInMaps => 'فتح في الخرائط';
+
+  @override
+  String get employeePolicySummaryStatic =>
+      'هذه القواعد تعكس إعدادات حضور الصالون. يمكن لمالك الصالون تعديلها في أي وقت.';
+
+  @override
+  String get employeePolicyDeductionsSection => 'الخصومات';
+
+  @override
+  String employeePolicyRuleMaxPunchesOneLine(int max) {
+    return 'يمكنك تسجيل حتى $max بصمات في اليوم.';
+  }
+
+  @override
+  String employeePolicyRuleMaxBreakMinutesOneLine(int minutes) {
+    return 'مدة الاستراحات الإجمالية محدودة بـ $minutes دقيقة يوميًا (مجموع الاستراحات).';
+  }
+
+  @override
+  String get employeePolicyRuleBreakOrderOneLine =>
+      'يجب أن تلي «بدء الاستراحة» دائمًا «نهاية الاستراحة» قبل بصمات أخرى.';
+
+  @override
+  String employeePolicyRuleGpsRequiredOneLine(int radius) {
+    return 'الحضور يتطلب موقع هاتفك. ابقَ ضمن $radius م من مركز الصالون عند البصمة.';
+  }
+
+  @override
+  String get employeePolicyRuleGpsOptionalOneLine =>
+      'قد يُستخدم GPS للتحقق من البصمات. ابقَ داخل نطاق الصالون عندما يطلب المالك ذلك.';
+
+  @override
+  String get employeePolicyRuleCorrectionForgotOneLine =>
+      'إذا فاتتك بصمة، أرسل طلب تصحيح حضور لموافقة المسؤول.';
+
+  @override
+  String get employeePolicyRuleCorrectionApprovedOneLine =>
+      'التصحيحات الموافق عليها تُضاف بأمان إلى سجل بصماتك.';
+
+  @override
+  String employeePolicyRuleLateGraceOneLine(int grace) {
+    return 'يُحتسب التأخير فقط بعد فترة سماح $grace دقيقة.';
+  }
+
+  @override
+  String employeePolicyRuleLateMonthlyOneLine(int count) {
+    return 'يُسمح بما يصل إلى $count حالات تأخير شهريًا بعد السماح قبل مراجعة إضافية.';
+  }
+
+  @override
+  String employeePolicyRuleEarlyGraceOneLine(int grace) {
+    return 'يُحتسب الخروج المبكر فقط بعد فترة سماح $grace دقيقة.';
+  }
+
+  @override
+  String employeePolicyRuleEarlyMonthlyOneLine(int count) {
+    return 'يُسمح بما يصل إلى $count حالات خروج مبكر شهريًا بعد السماح قبل مراجعة إضافية.';
+  }
+
+  @override
+  String get employeePolicyDeductionNone => 'لا يوجد';
+
+  @override
+  String employeePolicyDeductionPercentValue(int percent) {
+    return '$percent٪';
+  }
+
+  @override
+  String get employeePolicyDeductionMissingCheckoutTitle => 'تسجيل خروج ناقص';
+
+  @override
+  String get employeePolicyDeductionMissingCheckoutSubtitle =>
+      'الخصم المُعدّ عند غياب تسجيل الخروج.';
+
+  @override
+  String get employeePolicyDeductionAbsenceTitle => 'الغياب';
+
+  @override
+  String get employeePolicyDeductionAbsenceSubtitle =>
+      'الخصم المُعدّ لأيام الغياب غير المبررة.';
+
+  @override
   String get employeeCalendarLoadError => 'تعذّر تحميل التقويم';
 
   @override
@@ -7736,6 +7948,47 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get employeeBottomNavProfile => 'الملف';
+
+  @override
+  String get employeeProfileTabOverview => 'نظرة عامة';
+
+  @override
+  String get employeeProfileTabAccountInfo => 'معلومات الحساب';
+
+  @override
+  String get employeeProfilePhotoTitle => 'الصورة الشخصية';
+
+  @override
+  String get employeeProfilePhotoUpdateAction => 'تحديث الصورة';
+
+  @override
+  String get employeeProfileResetPasswordHint =>
+      'إرسال رابط إعادة التعيين إلى بريد حسابك.';
+
+  @override
+  String get employeeProfileResetPasswordAction => 'إرسال رابط إعادة التعيين';
+
+  @override
+  String get employeeProfileUsernameLabel => 'اسم المستخدم';
+
+  @override
+  String get employeeProfileRoleLabel => 'الدور';
+
+  @override
+  String get employeeProfileAccountStatusLabel => 'حالة الحساب';
+
+  @override
+  String get employeeSettingsHeaderSubtitle =>
+      'إدارة الملف الشخصي والأمان وتفضيلات التطبيق.';
+
+  @override
+  String get employeeProfileSummarySubtitle => 'حافظ على تحديث ملفك المهني.';
+
+  @override
+  String get employeeProfileUpdateShort => 'تحديث';
+
+  @override
+  String get employeeNoData => 'غير متوفر';
 
   @override
   String get ownerCustomerBookingTileTitle => 'حجز العملاء';

@@ -356,8 +356,9 @@ class _AddSaleScreenState extends ConsumerState<AddSaleScreen> {
     final locale = Localizations.localeOf(context);
     final sessionAsync = ref.watch(sessionUserProvider);
 
+    final scheme = Theme.of(context).colorScheme;
     return Scaffold(
-      backgroundColor: FinanceDashboardColors.background,
+      backgroundColor: scheme.surfaceContainer,
       resizeToAvoidBottomInset: true,
       body: sessionAsync.when(
         loading: () => const _LoadingShell(),
@@ -423,7 +424,9 @@ class _AddSaleBody extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final servicesAsync = ref.watch(servicesStreamProvider);
-    final employeesAsync = ref.watch(employeesStreamProvider);
+    final employeesAsync = entryMode == AddSaleEntryMode.employee
+        ? const AsyncData<List<Employee>>(<Employee>[])
+        : ref.watch(employeesStreamProvider);
     final salonAsync = ref.watch(sessionSalonStreamProvider);
     final addState = ref.watch(addSaleControllerProvider);
     final addNotifier = ref.read(addSaleControllerProvider.notifier);
@@ -431,11 +434,13 @@ class _AddSaleBody extends ConsumerWidget {
         ref.watch(salonSalesSettingsStreamProvider).asData?.value ??
         SalonSalesSettings.defaults();
 
-    ref.listen(employeesStreamProvider, (previous, next) {
-      next.whenData((employees) {
-        addNotifier.applyDefaultBarberIfNeeded(user, employees);
+    if (entryMode != AddSaleEntryMode.employee) {
+      ref.listen(employeesStreamProvider, (previous, next) {
+        next.whenData((employees) {
+          addNotifier.applyDefaultBarberIfNeeded(user, employees);
+        });
       });
-    });
+    }
 
     ref.listen(salonSalesSettingsStreamProvider, (previous, next) {
       next.whenData((settings) {
@@ -547,34 +552,29 @@ class _AddSaleBody extends ConsumerWidget {
             receiptOk: receiptOk,
           );
 
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            FinanceDashboardColors.lightPurple.withValues(alpha: 0.42),
-            FinanceDashboardColors.background,
-            Colors.white,
-          ],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          stops: const [0, 0.34, 1],
+    final scheme = Theme.of(context).colorScheme;
+    final compactHeader = MediaQuery.sizeOf(context).width < 360;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        SafeArea(
+          bottom: false,
+          child: AddBarberHeader(
+            title: l10n.ownerAddSaleTitle,
+            subtitle: l10n.ownerAddSaleSubtitle,
+            compact: compactHeader,
+            onBack: () => Navigator.of(context).maybePop(),
+          ),
         ),
-      ),
-      child: Column(
-        children: [
-          Expanded(
-            child: AppFadeIn(
+        Expanded(
+          child: AppFadeIn(
+            child: ColoredBox(
+              color: scheme.surfaceContainerLow,
               child: CustomScrollView(
                 keyboardDismissBehavior:
                     ScrollViewKeyboardDismissBehavior.onDrag,
                 slivers: [
-                  SliverToBoxAdapter(
-                    child: AddBarberHeader(
-                      title: l10n.ownerAddSaleTitle,
-                      subtitle: l10n.ownerAddSaleSubtitle,
-                      onBack: () => Navigator.of(context).maybePop(),
-                    ),
-                  ),
                   SliverToBoxAdapter(
                     child: ServiceSelectionCard(
                       l10n: l10n,
@@ -588,6 +588,9 @@ class _AddSaleBody extends ConsumerWidget {
                       onRemoveLine: addNotifier.removeLine,
                       serviceStripScrollController:
                           serviceStripScrollController,
+                      showManageServicesLink:
+                          user.role != UserRoles.employee &&
+                          entryMode != AddSaleEntryMode.employee,
                     ),
                   ),
                   if (entryMode != AddSaleEntryMode.employee)
@@ -651,45 +654,45 @@ class _AddSaleBody extends ConsumerWidget {
               ),
             ),
           ),
-          _CheckoutBar(
-            l10n: l10n,
-            locale: locale,
-            currencyCode: currencyCode,
-            total: addState.totalAmount,
-            enabled: canRecord,
-            isLoading: addState.isSubmitting,
-            disabledReason: disabledReason,
-            onPressed: () async {
-              if (!addState.canSubmit) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(l10n.ownerAddSaleValidation)),
-                );
-                return;
-              }
-              if (!receiptOk) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(l10n.addSaleReceiptRequiredCard)),
-                );
-                return;
-              }
-              final ok = await addNotifier.recordSale();
-              if (!context.mounted) return;
-              if (ok) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(
-                      entryMode == AddSaleEntryMode.employee
-                          ? l10n.employeeSaleRecordedSuccess
-                          : l10n.ownerAddSaleSuccess,
-                    ),
+        ),
+        _CheckoutBar(
+          l10n: l10n,
+          locale: locale,
+          currencyCode: currencyCode,
+          total: addState.totalAmount,
+          enabled: canRecord,
+          isLoading: addState.isSubmitting,
+          disabledReason: disabledReason,
+          onPressed: () async {
+            if (!addState.canSubmit) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text(l10n.ownerAddSaleValidation)),
+              );
+              return;
+            }
+            if (!receiptOk) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text(l10n.addSaleReceiptRequiredCard)),
+              );
+              return;
+            }
+            final ok = await addNotifier.recordSale();
+            if (!context.mounted) return;
+            if (ok) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    entryMode == AddSaleEntryMode.employee
+                        ? l10n.employeeSaleRecordedSuccess
+                        : l10n.ownerAddSaleSuccess,
                   ),
-                );
-                context.pop(true);
-              }
-            },
-          ),
-        ],
-      ),
+                ),
+              );
+              context.pop(true);
+            }
+          },
+        ),
+      ],
     );
   }
 }

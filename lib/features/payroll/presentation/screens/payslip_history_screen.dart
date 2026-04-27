@@ -12,7 +12,8 @@ import '../../../../shared/widgets/zurano_empty_state.dart';
 import '../../../../shared/widgets/zurano_permission_state.dart';
 import '../../../employee_dashboard/application/employee_dashboard_providers.dart';
 import '../../../employee_dashboard/application/employee_workspace_scope.dart';
-import '../../../employee_today/presentation/widgets/employee_today_bottom_nav.dart';
+import '../../../employee_dashboard/presentation/widgets/employee_bottom_nav_bar.dart';
+import '../../../employee_dashboard/presentation/widgets/employee_quick_action_fab.dart';
 import '../../providers/payroll_providers.dart';
 import '../widgets/payroll_error_state.dart';
 import '../widgets/recent_payslip_tile.dart';
@@ -34,7 +35,10 @@ class PayslipHistoryScreen extends ConsumerWidget {
       return Scaffold(
         appBar: AppBar(title: Text(l10n.employeePayrollHistoryTitle)),
         body: Center(child: Text(l10n.employeePayrollNoWorkspace)),
-        bottomNavigationBar: EmployeeTodayBottomNav(currentPath: path),
+        extendBody: true,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: const EmployeeQuickActionFab(),
+        bottomNavigationBar: EmployeeBottomNavBar(currentPath: path),
       );
     }
     if (scope == null) {
@@ -51,13 +55,20 @@ class PayslipHistoryScreen extends ConsumerWidget {
               ),
             ),
           ),
-          bottomNavigationBar: EmployeeTodayBottomNav(currentPath: path),
+          extendBody: true,
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
+          floatingActionButton: const EmployeeQuickActionFab(),
+          bottomNavigationBar: EmployeeBottomNavBar(currentPath: path),
         );
       }
       return Scaffold(
         appBar: AppBar(title: Text(l10n.employeePayrollHistoryTitle)),
         body: Center(child: Text(l10n.employeePayrollNoWorkspace)),
-        bottomNavigationBar: EmployeeTodayBottomNav(currentPath: path),
+        extendBody: true,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: const EmployeeQuickActionFab(),
+        bottomNavigationBar: EmployeeBottomNavBar(currentPath: path),
       );
     }
 
@@ -101,7 +112,10 @@ class PayslipHistoryScreen extends ConsumerWidget {
           );
         },
       ),
-      bottomNavigationBar: EmployeeTodayBottomNav(currentPath: path),
+      extendBody: true,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: const EmployeeQuickActionFab(),
+      bottomNavigationBar: EmployeeBottomNavBar(currentPath: path),
     );
   }
 }

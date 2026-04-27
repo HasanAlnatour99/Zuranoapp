@@ -14,7 +14,8 @@ import '../../../employee_dashboard/application/employee_dashboard_providers.dar
 import '../../../employee_dashboard/application/employee_session_scope.dart';
 import '../../../employee_dashboard/application/employee_workspace_scope.dart';
 import '../../data/models/payslip_model.dart';
-import '../../../employee_today/presentation/widgets/employee_today_bottom_nav.dart';
+import '../../../employee_dashboard/presentation/widgets/employee_bottom_nav_bar.dart';
+import '../../../employee_dashboard/presentation/widgets/employee_quick_action_fab.dart';
 import '../../providers/payroll_providers.dart';
 import '../services/payslip_pdf_exporter.dart';
 import '../widgets/current_payslip_card.dart';
@@ -49,7 +50,10 @@ class EmployeePayrollScreen extends ConsumerWidget {
     if (session == null) {
       return Scaffold(
         body: Center(child: Text(l10n.employeePayrollNoWorkspace)),
-        bottomNavigationBar: EmployeeTodayBottomNav(currentPath: path),
+        extendBody: true,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: const EmployeeQuickActionFab(),
+        bottomNavigationBar: EmployeeBottomNavBar(currentPath: path),
       );
     }
     if (scope == null) {
@@ -66,12 +70,19 @@ class EmployeePayrollScreen extends ConsumerWidget {
               ),
             ),
           ),
-          bottomNavigationBar: EmployeeTodayBottomNav(currentPath: path),
+          extendBody: true,
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
+          floatingActionButton: const EmployeeQuickActionFab(),
+          bottomNavigationBar: EmployeeBottomNavBar(currentPath: path),
         );
       }
       return Scaffold(
         body: Center(child: Text(l10n.employeePayrollNoWorkspace)),
-        bottomNavigationBar: EmployeeTodayBottomNav(currentPath: path),
+        extendBody: true,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: const EmployeeQuickActionFab(),
+        bottomNavigationBar: EmployeeBottomNavBar(currentPath: path),
       );
     }
 
@@ -80,7 +91,10 @@ class EmployeePayrollScreen extends ConsumerWidget {
       return Scaffold(
         backgroundColor: const Color(0xFFF8F9FE),
         body: const Center(child: CircularProgressIndicator.adaptive()),
-        bottomNavigationBar: EmployeeTodayBottomNav(currentPath: path),
+        extendBody: true,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: const EmployeeQuickActionFab(),
+        bottomNavigationBar: EmployeeBottomNavBar(currentPath: path),
       );
     }
     if (sessionScope.hasError) {
@@ -91,7 +105,10 @@ class EmployeePayrollScreen extends ConsumerWidget {
             message: FirebaseErrorMessage.fromException(sessionScope.error!),
           ),
         ),
-        bottomNavigationBar: EmployeeTodayBottomNav(currentPath: path),
+        extendBody: true,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: const EmployeeQuickActionFab(),
+        bottomNavigationBar: EmployeeBottomNavBar(currentPath: path),
       );
     }
     final EmployeeSessionScope? sess = sessionScope.asData?.value;
@@ -107,7 +124,10 @@ class EmployeePayrollScreen extends ConsumerWidget {
             ),
           ),
         ),
-        bottomNavigationBar: EmployeeTodayBottomNav(currentPath: path),
+        extendBody: true,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: const EmployeeQuickActionFab(),
+        bottomNavigationBar: EmployeeBottomNavBar(currentPath: path),
       );
     }
 
@@ -271,7 +291,10 @@ class EmployeePayrollScreen extends ConsumerWidget {
           ),
         ),
       ),
-      bottomNavigationBar: EmployeeTodayBottomNav(currentPath: path),
+      extendBody: true,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: const EmployeeQuickActionFab(),
+      bottomNavigationBar: EmployeeBottomNavBar(currentPath: path),
     );
   }
 }

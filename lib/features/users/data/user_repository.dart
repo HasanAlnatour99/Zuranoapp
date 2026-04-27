@@ -215,6 +215,18 @@ class UserRepository {
     return _users.doc(authUid).set(payload, SetOptions(merge: true));
   }
 
+  Future<void> updateUserPhoto({
+    required String uid,
+    required String photoUrl,
+  }) async {
+    _assertFirebaseAuthReadyForUserDoc(uid);
+    final authUid = FirebaseAuth.instance.currentUser!.uid;
+    final payload = FirestoreWritePayload.withServerTimestampForUpdate({
+      'photoUrl': photoUrl,
+    });
+    await _users.doc(authUid).set(payload, SetOptions(merge: true));
+  }
+
   /// Clears `mustChangePassword` on `users/{uid}` and the linked employee row
   /// after the staff member rotates their Firebase password in-app.
   ///

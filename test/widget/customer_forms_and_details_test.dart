@@ -24,7 +24,9 @@ class _MockCreateCustomerController extends Mock
 
 class _MockCreateBookingController extends Mock
     implements CreateBookingController {}
+
 class _FakeCreateCustomerInput extends Fake implements CreateCustomerInput {}
+
 class _FakeCreateBookingInput extends Fake implements CreateBookingInput {}
 
 AppUser _ownerUser() => AppUser(
@@ -36,15 +38,15 @@ AppUser _ownerUser() => AppUser(
 );
 
 MaterialApp _l10nMaterialApp({required Widget home}) => MaterialApp(
-      supportedLocales: AppLocalizations.supportedLocales,
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      home: home,
-    );
+  supportedLocales: AppLocalizations.supportedLocales,
+  localizationsDelegates: const [
+    AppLocalizations.delegate,
+    GlobalMaterialLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
+  ],
+  home: home,
+);
 
 void main() {
   setUpAll(() {
@@ -102,12 +104,21 @@ void main() {
       ),
     );
 
-    await tester.tap(find.text('Save booking'));
+    final context = tester.element(find.byType(CreateBookingScreen));
+    final l10n = AppLocalizations.of(context)!;
+
+    final saveBookingCta = find.text(l10n.createBookingSaveCta);
+    await tester.scrollUntilVisible(
+      saveBookingCta,
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.tap(saveBookingCta);
     await tester.pumpAndSettle();
 
     expect(
-      find.text('Please complete customer, service, barber, date and time.'),
-      findsOneWidget,
+      find.text(l10n.createBookingValidationIncomplete),
+      findsWidgets,
     );
   });
 

@@ -98,10 +98,7 @@ class EmployeeRecentAttendanceCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(l10n.employeeRecentAttendanceLoadError),
-                TextButton(
-                  onPressed: onRetry,
-                  child: Text(l10n.commonRetry),
-                ),
+                TextButton(onPressed: onRetry, child: Text(l10n.commonRetry)),
               ],
             )
           else if (days.isEmpty)
@@ -117,7 +114,7 @@ class EmployeeRecentAttendanceCard extends StatelessWidget {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: days.length,
-              separatorBuilder: (_, __) => const Divider(height: 20),
+              separatorBuilder: (_, _) => const Divider(height: 20),
               itemBuilder: (context, i) {
                 final d = days[i];
                 final dateLine = DateFormat.yMMMd(

@@ -7,7 +7,8 @@ import '../../../../core/constants/app_routes.dart' show AppRoutes;
 import '../../../../core/theme/app_colors.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../../providers/repository_providers.dart';
-import '../../../employee_today/presentation/widgets/employee_today_bottom_nav.dart';
+import '../widgets/employee_bottom_nav_bar.dart';
+import '../widgets/employee_quick_action_fab.dart';
 import '../../application/employee_dashboard_providers.dart';
 import '../../data/models/attendance_day_model.dart';
 
@@ -26,6 +27,9 @@ class EmployeeAttendanceScreen extends ConsumerWidget {
     }
 
     return Scaffold(
+      extendBody: true,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: const EmployeeQuickActionFab(),
       backgroundColor: const Color(0xFFFCFAFF),
       appBar: AppBar(
         title: Text(l10n.employeeHistoryTitle),
@@ -62,7 +66,7 @@ class EmployeeAttendanceScreen extends ConsumerWidget {
           return ListView.separated(
             padding: const EdgeInsets.all(16),
             itemCount: rows.length,
-            separatorBuilder: (_, __) => const SizedBox(height: 8),
+            separatorBuilder: (_, _) => const SizedBox(height: 8),
             itemBuilder: (context, i) {
               final r = rows[i];
               return Card(
@@ -80,7 +84,7 @@ class EmployeeAttendanceScreen extends ConsumerWidget {
           );
         },
       ),
-      bottomNavigationBar: EmployeeTodayBottomNav(currentPath: path),
+      bottomNavigationBar: EmployeeBottomNavBar(currentPath: path),
     );
   }
 }

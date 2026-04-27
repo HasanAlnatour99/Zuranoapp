@@ -6,6 +6,9 @@
   "genericError": "Something went wrong.",
   "loadingPlaceholder": "…",
   "customerDiscoverTitle": "Discover",
+  "customerHomeMenuTooltip": "More options",
+  "customerHomeEmptyTitle": "No salons to show",
+  "customerHomeResetFilters": "Reset search",
   "customerSignOut": "Sign out",
   "signOutSubtitle": "You'll need to sign in again to use your account.",
   "customerSearchHint": "Search salons, areas…",
@@ -1768,6 +1771,7 @@
     }
   },
   "ownerOverviewFabSheetTitle": "Quick actions",
+  "ownerOverviewFabBookAppointment": "Book appointment",
   "attendanceReviewTitle": "Attendance requests",
   "attendanceReviewEmptyTitle": "No pending attendance requests",
   "attendanceReviewEmptyMessage": "Everything is up to date.",
@@ -1842,7 +1846,9 @@
   "teamFilterTopPerformers": "Top Performers",
   "teamFilterNeedsAttention": "Needs attention",
   "teamAddBarberAction": "Add Team Member",
-  "teamSearchHint": "Search by name, phone or username...",
+  "teamHeroSearchHint": "Search members by name or phone",
+  "teamSearchHint": "Search by name or phone",
+  "teamMemberWhatsAppNoPhone": "No phone number on file for this team member",
   "teamFilterAction": "Filter team",
   "teamEmptyTitle": "No team members yet",
   "teamEmptySubtitle": "Add your first team member to start tracking attendance, sales, and payroll.",
@@ -1901,6 +1907,9 @@
   "teamMemberNoAttendanceToday": "No attendance yet today",
   "teamMemberNotCheckedIn": "Not checked in",
   "teamMemberInactiveStatus": "Inactive",
+  "teamCardAttendanceNotRequired": "Attendance not required",
+  "teamCardAttendanceOnBreak": "On break",
+  "teamCardAccountFrozen": "Frozen",
   "teamMemberLateAt": "Late · {time}",
   "@teamMemberLateAt": {
     "placeholders": {
@@ -2603,6 +2612,34 @@
     }
   },
   "employeeTodayOfflinePunch": "You need an internet connection to punch.",
+  "employeeTodayPunchUnavailableAttendanceDisabled": "Attendance is turned off for this salon.",
+  "employeeTodayPunchUnavailableMoveToZone": "Move inside the salon zone to punch in or out.",
+  "employeeTodayPunchUnavailableShiftComplete": "You have reached today's punch limit. If something looks wrong, submit a correction request.",
+  "employeeTodayPunchUnavailableGeneric": "No punch actions are available right now.",
+  "employeeTodayPrimaryPunchInSubtitle": "Start your work session",
+  "employeeTodayPrimaryPunchOutSubtitle": "End your current session",
+  "employeeTodayPrimaryBreakOutSubtitle": "Start a break",
+  "employeeTodayPrimaryBreakInSubtitle": "Resume your shift",
+  "employeeTodayNoAction": "No action",
+  "employeeTodayActionUnavailable": "Action is unavailable",
+  "employeeTodayPunchUnavailableMissingPunch": "Please request a correction for the missing punch.",
+  "employeeTodayAttendanceLoadErrorTitle": "Attendance unavailable",
+  "employeeTodayAttendanceStatusLabel": "Status",
+  "employeeTodayLastPunchLabel": "Last punch",
+  "employeeTodayLocationContextLabel": "Location",
+  "employeeQuickActionsTitle": "Quick actions",
+  "employeeQuickActionAddSaleSubtitle": "Record a service or payment",
+  "employeeQuickActionRequestCorrectionTitle": "Request correction",
+  "employeeQuickActionRequestCorrectionSubtitle": "Fix a missing or wrong punch",
+  "employeeQuickActionViewPolicySubtitle": "Attendance rules and violations",
+  "employeeQuickActionPayrollTitle": "Payroll",
+  "employeeQuickActionPayrollSubtitle": "Payslips and payroll history",
+  "employeeTodaySectionLoadFailed": "We couldn't load this section.",
+  "employeeTodayTryAgain": "Try again",
+  "employeeTodayNoActivityTitle": "No punches yet",
+  "employeeTodayNoActivityBody": "Your timeline will fill in as you punch in and out.",
+  "employeeTodaySemanticNotifications": "Notifications",
+  "employeeTodaySemanticSettings": "Settings",
   "employeeActivityTimelineTitle": "Today activity",
   "employeeActivityTimelineLive": "Live",
   "employeeActivityTimelineEmpty": "No punches yet today.",
@@ -2749,7 +2786,7 @@
   "firstTimeRoleError": "We couldn’t finish setting up your profile. Please try again.",
   "ownerTabCustomers": "Customers",
   "ownerTabFinance": "Finance",
-  "ownerShellMore": "More",
+  "ownerDashboardSettingsTooltip": "Settings",
   "ownerServicesWaitingForSalon": "Waiting for salon on your profile…",
   "onboardingSalonCreatedTitle": "Salon created",
   "onboardingSalonCreatedSubtitle": "Opening your dashboard…",
@@ -3156,6 +3193,74 @@
   "employeePolicyLateEarly": "Late & early exit",
   "employeePolicyCorrectionSection": "Correction requests",
   "employeePolicyDefaultTitle": "Attendance policy",
+  "employeeTodaySubmitCorrection": "Submit correction",
+  "employeeTodayStatusMissingPunch": "Missing punch",
+  "employeeTodayLastPunchAt": "Last punch: {time}",
+  "@employeeTodayLastPunchAt": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "employeeMapOpenInMaps": "Open in Maps",
+  "employeePolicySummaryStatic": "These rules follow your salon’s attendance settings. Your owner can change them anytime.",
+  "employeePolicyDeductionsSection": "Deductions",
+  "employeePolicyRuleMaxPunchesOneLine": "You can record up to {max} punches per calendar day.",
+  "@employeePolicyRuleMaxPunchesOneLine": {
+    "placeholders": {
+      "max": {"type": "int"}
+    }
+  },
+  "employeePolicyRuleMaxBreakMinutesOneLine": "Total break time is limited to {minutes} minutes per day (combined breaks).",
+  "@employeePolicyRuleMaxBreakMinutesOneLine": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "employeePolicyRuleBreakOrderOneLine": "Break Out must always be followed by Break In before other punches.",
+  "employeePolicyRuleGpsRequiredOneLine": "Attendance requires your phone location. Stay within {radius} m of the salon center when punching.",
+  "@employeePolicyRuleGpsRequiredOneLine": {
+    "placeholders": {
+      "radius": {"type": "int"}
+    }
+  },
+  "employeePolicyRuleGpsOptionalOneLine": "GPS may be used to verify punches. Stay inside the salon zone when your owner requires it.",
+  "employeePolicyRuleCorrectionForgotOneLine": "If you miss a punch, submit an attendance correction request for admin approval.",
+  "employeePolicyRuleCorrectionApprovedOneLine": "Approved corrections are added safely to your punch history.",
+  "employeePolicyRuleLateGraceOneLine": "Late arrival is counted only after {grace} minutes grace.",
+  "@employeePolicyRuleLateGraceOneLine": {
+    "placeholders": {
+      "grace": {"type": "int"}
+    }
+  },
+  "employeePolicyRuleLateMonthlyOneLine": "You may have up to {count} late arrivals per month after grace before extra review applies.",
+  "@employeePolicyRuleLateMonthlyOneLine": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "employeePolicyRuleEarlyGraceOneLine": "Early exit is counted only after {grace} minutes grace.",
+  "@employeePolicyRuleEarlyGraceOneLine": {
+    "placeholders": {
+      "grace": {"type": "int"}
+    }
+  },
+  "employeePolicyRuleEarlyMonthlyOneLine": "You may have up to {count} early exits per month after grace before extra review applies.",
+  "@employeePolicyRuleEarlyMonthlyOneLine": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "employeePolicyDeductionNone": "None",
+  "employeePolicyDeductionPercentValue": "{percent}%",
+  "@employeePolicyDeductionPercentValue": {
+    "placeholders": {
+      "percent": {"type": "int"}
+    }
+  },
+  "employeePolicyDeductionMissingCheckoutTitle": "Missing checkout",
+  "employeePolicyDeductionMissingCheckoutSubtitle": "Configured deduction when checkout is missing.",
+  "employeePolicyDeductionAbsenceTitle": "Absence",
+  "employeePolicyDeductionAbsenceSubtitle": "Configured deduction for unexcused absence days.",
   "employeeCalendarLoadError": "Could not load calendar",
   "employeeAttendanceDayTitle": "Attendance day",
   "employeeAttendanceDayNoRecord": "No record for this day.",
@@ -3197,6 +3302,19 @@
   "employeeBottomNavAttendance": "Attendance",
   "employeeBottomNavPayroll": "Payroll",
   "employeeBottomNavProfile": "Profile",
+  "employeeProfileTabOverview": "Overview",
+  "employeeProfileTabAccountInfo": "Account info",
+  "employeeProfilePhotoTitle": "Profile photo",
+  "employeeProfilePhotoUpdateAction": "Update photo",
+  "employeeProfileResetPasswordHint": "Send a reset link to your account email.",
+  "employeeProfileResetPasswordAction": "Send reset link",
+  "employeeProfileUsernameLabel": "Username",
+  "employeeProfileRoleLabel": "Role",
+  "employeeProfileAccountStatusLabel": "Account status",
+  "employeeSettingsHeaderSubtitle": "Manage your profile, security, and app preferences.",
+  "employeeProfileSummarySubtitle": "Keep your workspace profile updated.",
+  "employeeProfileUpdateShort": "Update",
+  "employeeNoData": "Not set",
   "ownerCustomerBookingTileTitle": "Customer booking",
   "ownerCustomerBookingTileSubtitle": "Control online booking, availability, and public visibility",
   "ownerCustomerBookingTitle": "Customer booking",
